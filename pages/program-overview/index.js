@@ -11,7 +11,7 @@ import {
   Circle,
   Hyperlink,
 } from '../../styles/generalStyles'
-import { OverviewWrapper } from './programOverviewStyles'
+import { OverviewWrapper } from '../../styles/programOverviewStyles'
 
 const PDF = '/assets/programOverview/pdf/DADSS_ProgramOverview.pdf'
 const source1 = '/assets/programOverview/pdf/2013 Alcohol-Impaired Driving TSF Sheet.pdf'

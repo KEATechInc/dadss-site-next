@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { fontGray } from '../../styles/generalStyles'
+import { fontGray } from './generalStyles'
 
 export const OverviewWrapper = styled.div`
 	display: flex;
