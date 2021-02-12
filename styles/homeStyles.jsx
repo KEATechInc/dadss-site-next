@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { fontGray, bgGray } from '../../styles/generalStyles'
+import { fontGray, bgGray } from './generalStyles'
 
 export const AboutSection = styled.section`
 	display: flex;

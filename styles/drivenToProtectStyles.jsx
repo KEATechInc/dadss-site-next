@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { bgGray, fontGray, boxShadow } from '../../styles/generalStyles'
+import { bgGray, fontGray, boxShadow } from './generalStyles'
 
 const HeroImage = '/assets/drivenToProtect/GreyWash2.jpg'
 const HeroImageV = '/assets/drivenToProtect/GreyWash1.jpg'

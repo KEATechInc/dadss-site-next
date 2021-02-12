@@ -11,7 +11,7 @@ import {
 	Circle,
 } from '../../styles/generalStyles'
 import Head from 'next/head'
-import { TouchBasedWrapper } from './touchBasedTechStyles'
+import { TouchBasedWrapper } from '../../styles/touchBasedTechStyles'
 
 const DadssStill1 = '/assets/touchBasedTech/touch-based-still1.webp'
 const DadssStill2 = '/assets/touchBasedTech/touch-based-still2.webp'

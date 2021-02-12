@@ -13,7 +13,7 @@ import {
   Circle,
 } from '../../styles/generalStyles'
 import Head from 'next/head'
-import { BreathBasedWrapper } from './breathBasedTechStyles'
+import { BreathBasedWrapper } from '../../styles/breathBasedTechStyles'
 
 const DadssStill1 = '/assets/breathBasedTech/breath-based-still1.webp'
 const DadssStill2 = '/assets/breathBasedTech/breath-based-still2.webp'

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
-import { SupportersWrapper } from './supportersStyles'
+import { SupportersWrapper } from '../../styles/supportersStyles'
 import {
   ContentBlock,
   Header3,

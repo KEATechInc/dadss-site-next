@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import { useRouter } from 'next/router'
-import { DrivenToProtectWrapper } from './drivenToProtectStyles'
+import { DrivenToProtectWrapper } from '../../styles/drivenToProtectStyles'
 import {
   Content,
   ContentBlock,

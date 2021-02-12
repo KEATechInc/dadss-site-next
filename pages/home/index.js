@@ -11,7 +11,7 @@ import {
   Circle,
   Hyperlink,
 } from '../../styles/generalStyles'
-import { AboutSection, Quote } from './homeStyles'
+import { AboutSection, Quote } from '../../styles/homeStyles'
 import { ImQuotesLeft } from '@react-icons/all-files/im/ImQuotesLeft'
 import { ImQuotesRight } from '@react-icons/all-files/im/ImQuotesRight'
 

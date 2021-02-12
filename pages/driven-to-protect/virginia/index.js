@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
-import { DrivenToProtectWrapper } from '../drivenToProtectStyles'
+import { DrivenToProtectWrapper } from '../../../styles/drivenToProtectStyles'
 import {
   Content,
   ContentBlock,

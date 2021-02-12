@@ -1,4 +1,4 @@
-import { GridWrap } from './imageGridStyles'
+import { GridWrap } from '../../../styles/imageGridStyles'
 
 const aamva = '/assets/logos/supporters/aamva.webp'
 const ahua = '/assets/logos/supporters/ahua.webp'
