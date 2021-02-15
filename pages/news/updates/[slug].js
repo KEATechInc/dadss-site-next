@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
 import styled from 'styled-components'
-import { sanityClient, PortableText } from '../../lib/sanity'
+import { sanityClient, PortableText } from '../../../lib/sanity'
 import { postSlugsQuery, postBySlugQuery } from '../../../lib/queries'
 import {
   ContentBlock,
