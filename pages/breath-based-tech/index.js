@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import styled from 'styled-components'
 import {
   HeadBlock,
   Header1,
@@ -7,13 +9,11 @@ import {
   ContentBlock,
   Content,
   Hyperlink,
-  Image,
   Button,
   Break,
   Circle,
 } from '../../styles/generalStyles'
 import Head from 'next/head'
-import { BreathBasedWrapper } from '../../styles/breathBasedTechStyles'
 
 const DadssStill1 = '/assets/breathBasedTech/breath-based-still1.webp'
 const DadssStill2 = '/assets/breathBasedTech/breath-based-still2.webp'
@@ -54,7 +54,12 @@ const BreathBasedTech = () => {
             will simply be able to enter the vehicle and breathe as they
             normally would.
           </Content>
-          <Image src={DadssStill1} alt='Breath-Based System' />
+          <Image
+            src={DadssStill1}
+            alt='Breath-Based System'
+            height={560}
+            width={1000}
+          />
         </ContentBlock>
         <ContentBlock className='Orange'>
           <Header2 className='Gray'>How it Works</Header2>
@@ -81,7 +86,7 @@ const BreathBasedTech = () => {
             sensitive and able to analyze diluted breath samples at dilutions
             expected from a driver’s natural breath plume.
           </Content>
-          <Image src={DadssStill2} alt='Molecules' loading='lazy' />
+          <Image src={DadssStill2} alt='Molecules' height={560} width={1000} />
         </ContentBlock>
 
         <ContentBlock>
@@ -103,7 +108,12 @@ const BreathBasedTech = () => {
             situations, from temperature shifts, to sudden changes in motion, to
             interference such as dust or mechanical shock.
           </Content>
-          <Image src={DadssStill3} alt='Vehicle Testing' loading='lazy' />
+          <Image
+            src={DadssStill3}
+            alt='Vehicle Testing'
+            height={560}
+            width={1000}
+          />
           <Content>
             In order to determine how best to install this system into new
             vehicles, extensive research is being undertaken to fully understand
@@ -140,5 +150,9 @@ const BreathBasedTech = () => {
     </>
   )
 }
+
+const BreathBasedWrapper = styled.div`
+  margin-top: 85px;
+`
 
 export default BreathBasedTech

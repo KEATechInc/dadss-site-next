@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Image from 'next/image'
 import ReactGA from 'react-ga'
 import { SupportersWrapper } from '../../styles/supportersStyles'
 import {
@@ -14,7 +15,7 @@ import {
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
 
-const allCars = '/assets/logos/supporters/all-cars.webp'
+const allCars = '/assets/logos/supporters/all-cars.jpg'
 
 const Supporters = () => {
   useEffect(() => {
@@ -55,13 +56,13 @@ const Supporters = () => {
             The world's leading car companies are involved in the DADSS research
             program, including:
           </Header3>
-          <img
+          <Image
             src={allCars}
             alt='Leading Car Manufacturers'
             className='Manufacturers'
+            height={630}
+            width={900}
           />
-        </ContentBlock>
-        <ContentBlock>
           <Content>
             If your organization is interested in supporting the DADSS program,
             please contact{' '}

@@ -64,41 +64,18 @@ export const AboutSection = styled.section`
 		padding-bottom: 50px;
 		.LogoWrapper {
 			display: flex;
+			width: 40%;
 			flex-wrap: wrap;
-			justify-content: center;
+			justify-content: space-evenly;
 		}
 	}
 	.ContentLogo {
-		height: 100px;
-		margin: 20px 0;
-		&.Family {
-			height: 170px;
-			width: 170px;
-		}
-		&.DADSS {
-			height: 120px;
-			width: 310px;
-		}
-		&.Breath {
-			height: 150px;
-			width: 115px;
-		}
-		&.Touch {
-			height: 150px;
-			width: 87px;
-		}
 		&.ACTS {
-			height: 75px;
-			width: 160px;
-			margin: 25px 10px 50px;
 			:hover {
 				cursor: pointer;
 			}
 		}
 		&.NHTSA {
-			height: 70px;
-			width: 255px;
-			margin: 25px 10px 50px;
 			:hover {
 				cursor: pointer;
 			}

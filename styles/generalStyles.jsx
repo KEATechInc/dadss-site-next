@@ -44,7 +44,7 @@ export const Header1 = styled.h1`
 export const Header2 = styled.h2`
 	font-size: 2.2rem;
 	text-transform: capitalize;
-	margin: 20px 0 0;
+	margin: 20px 0 5px;
 	color: ${darkOrange};
 	letter-spacing: 1.2px;
 	text-align: center;
@@ -62,7 +62,7 @@ export const Header2 = styled.h2`
 export const Header3 = styled.h3`
 	font-size: 1.5rem;
 	color: ${darkOrange};
-	margin: 20px 0 0;
+	margin: 20px 0 5px;
 	text-align: center;
 	text-transform: capitalize;
 	letter-spacing: 1.1px;

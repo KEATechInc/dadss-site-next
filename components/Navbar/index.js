@@ -57,7 +57,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href='/news-updates' onClick={closeMenu}>
+            <Link href='/news' onClick={closeMenu}>
               News
             </Link>
           </li>
@@ -114,7 +114,7 @@ const Navbar = () => {
             <Link href='/fleets'>Fleets</Link>
           </li>
           <li>
-            <Link href='/news-updates'>News</Link>
+            <Link href='/news'>News</Link>
           </li>
           <li>
             <a

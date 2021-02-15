@@ -139,7 +139,7 @@ const DTPVirginia = () => {
                 <Hyperlink
                   className='Blue'
                   onClick={() =>
-                    router.push('/driven-to-protect/virginia/events')
+                    router.push('/driven-to-protect/virginia/events-VA')
                   }>
                   View past and upcoming events in Virginia, showcasing the
                   technology

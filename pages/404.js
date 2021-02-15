@@ -49,8 +49,7 @@ const PageNotFound = () => {
           />
           <Content>
             Sorry about that. Follow this link to{' '}
-            <Hyperlink onClick={() => router.push('/')}>Return Home</Hyperlink>{' '}
-            .
+            <Hyperlink onClick={() => router.push('/')}>Return Home</Hyperlink>.
           </Content>
         </ContentBlock>
       </BodyWrapper>

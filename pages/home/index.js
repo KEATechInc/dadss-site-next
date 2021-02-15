@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 import {
   ContentBlock,
   Content,
@@ -79,11 +80,12 @@ export default function Home() {
           <Break>
             <hr /> <Circle /> <hr />
           </Break>
-          <img
+          <Image
             src={Family}
             alt='DADSS Logo'
             className='ContentLogo Family'
-            loading='lazy'
+            height={170}
+            width={170}
           />
           <Content>
             Despite progress over the past three decades, drunk driving claims
@@ -114,11 +116,12 @@ export default function Home() {
           <Break>
             <hr />
           </Break>
-          <img
+          <Image
             src={Car}
             alt='DADSS Logo'
             className='ContentLogo DADSS'
-            loading='lazy'
+            height={120}
+            width={310}
           />
           <Content>
             The Driver Alcohol Detection System for Safety (DADSS) research
@@ -140,19 +143,21 @@ export default function Home() {
             made available as a consumer option.
           </Content>
           <div className='LogoWrapper'>
-            <img
+            <Image
               src={ACTS}
               alt='ACTS Logo'
               className='ContentLogo ACTS'
-              loading='lazy'
+              height={75}
+              width={160}
               onClick={() => window.open('/driven-to-protect', '_blank')}
             />
-            <img
+            <Image
               src={NHTSA}
               alt='NHTSA Logo'
               className='ContentLogo NHTSA'
               onClick={() => window.open('https://www.nhtsa.gov/', '_blank')}
-              loading='lazy'
+              height={75}
+              width={255}
             />
           </div>
           <Button onClick={() => router.push('/program-overview')}>
@@ -176,11 +181,12 @@ export default function Home() {
           </Content>
           <div className='BlockWrapper'>
             <div className='SubWrapper'>
-              <img
+              <Image
                 src={Breath}
                 alt='Breath System'
                 className='ContentLogo Breath'
-                loading='lazy'
+                height={150}
+                width={115}
               />
               <Header3 className='Gray'>Breath-Based System</Header3>
               <Content>
@@ -197,11 +203,12 @@ export default function Home() {
               </Button>
             </div>
             <div className='SubWrapper'>
-              <img
+              <Image
                 src={Touch}
                 alt='Touch System'
                 className='ContentLogo Touch'
-                loading='lazy'
+                height={150}
+                width={115}
               />
               <Header3 className='Gray'>Touch-Based System</Header3>
               <Content>
