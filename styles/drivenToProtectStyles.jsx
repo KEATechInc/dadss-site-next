@@ -141,8 +141,8 @@ export const DrivenToProtectWrapper = styled.div`
 		}
 		.DivideWrapper {
 			display: flex;
-			justify-content: center;
-			align-items: top;
+			justify-content: flex-start;
+			align-items: flex-start;
 			margin: 0;
 			max-width: 1000px;
 		}
@@ -154,6 +154,7 @@ export const DrivenToProtectWrapper = styled.div`
 			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
+			cursor: pointer;
 			img {
 				height: 100px;
 				padding: 25px;
@@ -197,8 +198,8 @@ export const DrivenToProtectWrapper = styled.div`
 		}
 		.DivideWrapper {
 			display: flex;
-			justify-content: center;
-			align-items: top;
+			justify-content: flex-start;
+			align-items: flex-start;
 			margin: 0;
 			max-width: 1000px;
 		}
@@ -210,6 +211,7 @@ export const DrivenToProtectWrapper = styled.div`
 			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
+			cursor: pointer;
 			img {
 				height: 100px;
 				padding: 25px;
