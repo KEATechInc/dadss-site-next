@@ -23,10 +23,10 @@ const Supporters = () => {
     ReactGA.pageview(window.location.pathname)
   }, [])
 
-  const description = `The Driver Alcohol Detection System for Safety (DADSS) research
-	program is supported by safety and children’s advocates, insurance
-	companies, state and local government representatives and members of
-	the alcohol industry – who all agree that technology can be the
+  const description = `The Driver Alcohol Detection System for Safety (DADSS) research\
+  program is supported by safety and children’s advocates, insurance\
+	companies, state and local government representatives and members of\
+	the alcohol industry – who all agree that technology can be the\
 	answer to the persistent problem of drunk driving.`
 
   return (

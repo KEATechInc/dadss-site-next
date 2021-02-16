@@ -23,7 +23,7 @@ const ProgramOverview = () => {
     ReactGA.pageview(window.location.pathname)
   }, [])
 
-  const description = `Drunk driving remains a serious public health and safety issue.
+  const description = `Drunk driving remains a serious public health and safety issue.\
 	But what if we could help invent a world without drunk driving?`
 
   return (

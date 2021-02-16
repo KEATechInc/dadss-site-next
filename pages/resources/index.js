@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import { ResourcesWrapper } from '../../styles/resourcesStyles'
 import {
@@ -34,12 +34,12 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      posts
-    }
+      posts,
+    },
   }
 }
 
-const Resources = (props) => {
+const Resources = ({posts}) => {
   useEffect(() => {
     ReactGA.initialize('UA-58614629-1')
     ReactGA.pageview(window.location.pathname)
@@ -48,15 +48,15 @@ const Resources = (props) => {
   const renderPosts = () => {
     return (
       <CardWrapper>
-        {props.posts &&
-          props.posts.map((post, index) => (
-            <div className='UpdateCard' key={`${index} + ${post.slug.current}`}>
+        {posts &&
+          posts.map((post, index) => (
+            <div className='UpdateCard' key={index}>
               <p className='Category'>{post.category}</p>
               <p className='Published'>
                 Published: {DateHandler(post.published)}
               </p>
               <PortableText blocks={post.preview} />
-              <Link href={'/news-updates/' + post.slug.current}>
+              <Link href={'/news/' + post.slug.current}>
                 <p className='More'>
                   Learn more <AiFillCaretRight />
                 </p>
@@ -67,9 +67,9 @@ const Resources = (props) => {
     )
   }
 
-  const description = `In the Fall of 2020, we launched the Driven to Protect Discovery
-	Hub, offering free videos and educational resources – including
-	a series of STEM- inspired lessons – about alcohol-impaired
+  const description = `In the Fall of 2020, we launched the Driven to Protect Discovery\
+	Hub, offering free videos and educational resources – including\
+	a series of STEM- inspired lessons – about alcohol-impaired\
 	driving and the ways the DADSS technology can prevent it.`
 
   return (

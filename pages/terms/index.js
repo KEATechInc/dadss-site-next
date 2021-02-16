@@ -14,10 +14,10 @@ const TermsWrapper = styled.div`
 `
 
 const Terms = () => {
-	const description = `By utilizing this site, you assume full responsibility for ensuring
-	your appropriate use and reliance upon the information and agree to
-	hold harmless ACTS and DADSS sponsors and partners for any claims
-	connected to your use of the information, other than those resulting
+	const description = `By utilizing this site, you assume full responsibility for ensuring\
+	your appropriate use and reliance upon the information and agree to\
+	hold harmless ACTS and DADSS sponsors and partners for any claims\
+	connected to your use of the information, other than those resulting\
 	from ACTS violation of any third party’s proprietary rights.`
 
 	return (

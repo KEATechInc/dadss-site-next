@@ -9,11 +9,11 @@ import {
   Hyperlink,
   Break,
   Circle,
-  Image,
 } from '../../../styles/generalStyles'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import Image from 'next/image'
 
 const dtpLogo = '/assets/logos/dtpLogos/VA-logo.webp'
 const acts = '/assets/logos/dtpLogos/acts-logo.webp'
@@ -32,9 +32,9 @@ const DTPVirginia = () => {
     ReactGA.pageview(window.location.pathname)
   }, [])
 
-  const description = `Recognizing the potential of the DADSS technology to save lives by
-	preventing drunk driving, Virginia became the first state to use
-	NHTSA highway safety grant funds to partner with the DADSS Program
+  const description = `Recognizing the potential of the DADSS technology to save lives by\
+	preventing drunk driving, Virginia became the first state to use\
+	NHTSA highway safety grant funds to partner with the DADSS Program\
 	through the Department of Motor Vehicles.`
 
   const router = useRouter()
@@ -48,7 +48,14 @@ const DTPVirginia = () => {
       <DrivenToProtectWrapper className='Virginia'>
         <HeadBlock className='HeroImage'>
           <div className='LogoWrapper'>
-            <img src={dtpLogo} alt='DTP Logo' />
+            <Image
+              src={dtpLogo}
+              alt='DTP Logo'
+              width={850}
+              height={110}
+              object-fit='cover'
+              priority={true}
+            />
           </div>
         </HeadBlock>
         <HeadBlock>
@@ -155,10 +162,38 @@ const DTPVirginia = () => {
             </ul>
           </ContentBlock>
           <div className='ImgWrapper'>
-            <Image src={VAimg1} alt='Driven to Protect' />
-            <Image src={VAimg2} alt='Driven to Protect' />
-            <Image src={VAimg3} alt='Driven to Protect' />
-            <Image src={VAimg4} alt='Driven to Protect' />
+            <Image
+              src={VAimg1}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={VAimg2}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={VAimg3}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={VAimg4}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
           </div>
         </div>
         <Break>

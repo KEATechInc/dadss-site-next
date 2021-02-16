@@ -86,6 +86,7 @@ export default function Home() {
             className='ContentLogo Family'
             height={170}
             width={170}
+            priority={true}
           />
           <Content>
             Despite progress over the past three decades, drunk driving claims
@@ -143,21 +144,17 @@ export default function Home() {
             made available as a consumer option.
           </Content>
           <div className='LogoWrapper'>
-            <Image
+            <img
               src={ACTS}
               alt='ACTS Logo'
               className='ContentLogo ACTS'
-              height={75}
-              width={160}
               onClick={() => window.open('/driven-to-protect', '_blank')}
             />
-            <Image
+            <img
               src={NHTSA}
               alt='NHTSA Logo'
               className='ContentLogo NHTSA'
               onClick={() => window.open('https://www.nhtsa.gov/', '_blank')}
-              height={75}
-              width={255}
             />
           </div>
           <Button onClick={() => router.push('/program-overview')}>
@@ -256,7 +253,7 @@ export default function Home() {
             commercially, but developing a system that is seamless, accurate and
             reliable is the first step and a top priority.
           </Content>
-          <Button onClick={() => router.push('/news-updates')}>
+          <Button onClick={() => router.push('/news')}>
             More News & Updates
           </Button>
         </ContentBlock>

@@ -34,11 +34,7 @@ export const DrivenToProtectWrapper = styled.div`
 			width: 100%;
 			height: 100%;
 			backdrop-filter: brightness(70%) blur(2px);
-
-			img {
-				min-width: 300px;
-				width: 50%;
-			}
+			padding: 25px;
 		}
 	}
 	.DirectoryWrapper {
@@ -172,18 +168,10 @@ export const DrivenToProtectWrapper = styled.div`
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
-				justify-content: flex-start;
-				padding: 25px;
+				justify-content: space-between;
+				padding: 35px 25px 25px;
 				min-width: 300px;
-				height: 100%;
-
-				img {
-					height: 175px;
-					width: 250px;
-					object-fit: cover;
-					object-position: center top;
-					margin: 10px 0;
-				}
+				height: 825px;
 			}
 		}
 	}
@@ -235,18 +223,10 @@ export const DrivenToProtectWrapper = styled.div`
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
-				justify-content: flex-start;
-				padding: 25px;
+				justify-content: space-between;
+				padding: 35px 25px 25px;
 				min-width: 300px;
-				height: 100%;
-
-				img {
-					height: 175px;
-					width: 250px;
-					object-fit: cover;
-					object-position: center top;
-					margin: 10px 0;
-				}
+				height: 825px;
 			}
 		}
 	}

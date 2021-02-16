@@ -13,11 +13,12 @@ import {
   Circle,
 } from '../../styles/generalStyles'
 import Head from 'next/head'
+import Image from 'next/image'
 
 const dtpLogo = '/assets/logos/dtpLogos/DTP-logo.webp'
-const description = `Driven to Protect is a public-private partnership between the
-	Driver Alcohol Detection System for Safety (DADSS) Program
-	and individual state governments that is helping to develop
+const description = `Driven to Protect is a public-private partnership between the\
+	Driver Alcohol Detection System for Safety (DADSS) Program\
+	and individual state governments that is helping to develop\
 	technology to eliminate drunk driving and save lives.`
 
 const DrivenToProtect = () => {
@@ -26,7 +27,7 @@ const DrivenToProtect = () => {
     ReactGA.pageview(window.location.pathname)
   }, [])
   const router = useRouter()
-  
+
   return (
     <>
       <Head>
@@ -36,7 +37,14 @@ const DrivenToProtect = () => {
       <DrivenToProtectWrapper>
         <HeadBlock className='HeroImage'>
           <div className='LogoWrapper'>
-            <img src={dtpLogo} alt='DTP Logo' />
+            <Image
+              src={dtpLogo}
+              alt='DTP Logo'
+              width={850}
+              height={110}
+              object-fit='cover'
+              priority={true}
+            />
           </div>
         </HeadBlock>
         <HeadBlock>

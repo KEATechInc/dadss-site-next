@@ -18,11 +18,11 @@ const DadssStill2 = '/assets/touchBasedTech/touch-based-still2.webp'
 const PDF = '/assets/touchBasedTech/pdf/DADSS_Touch-Based.pdf'
 
 const TouchBasedTech = () => {
-  const description = `The DADSS Research Program is working on a new approach to measuring
-	blood alcohol concentration: a touch-based system that uses
-	spectroscopy to measure alcohol in the driver’s tissue. This
-	technology broadens the options for an integrated system that can
-	reliably prevent drunk driving while remaining invisible to any
+  const description = `The DADSS Research Program is working on a new approach to measuring\
+	blood alcohol concentration: a touch-based system that uses\
+	spectroscopy to measure alcohol in the driver’s tissue. This\
+	technology broadens the options for an integrated system that can\
+	reliably prevent drunk driving while remaining invisible to any\
 	driver under the legal limit.`
 
   return (

@@ -12,8 +12,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 const Contact = () => {
-	const description = `For all general questions about the DADSS program, please email
-	info@dadss.org. For any media inquiries,
+	const description = `For all general questions about the DADSS program, please email\
+	info@dadss.org. For any media inquiries,\
 	please email media@dadss.org.`
 
 	const router = useRouter()

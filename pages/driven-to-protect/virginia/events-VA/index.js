@@ -58,9 +58,9 @@ const EventsDTPVA = (props) => {
     )
   }
 
-  const description = `Driven to Protect will be at conferences, 
-    events and venues throughout Virginia in the coming months. 
-    Find out when Driven to Protect will be exhibiting 
+  const description = `Driven to Protect will be at conferences,\
+    events and venues throughout Virginia in the coming months.\
+    Find out when Driven to Protect will be exhibiting\
     or presenting near you.`
 
   return (

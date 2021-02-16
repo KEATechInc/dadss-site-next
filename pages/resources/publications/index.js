@@ -35,7 +35,7 @@ const Publications = (props) => {
   }, [])
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(5)
+  const [postsPerPage] = useState(3)
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage
@@ -85,10 +85,10 @@ const Publications = (props) => {
     )
   }
 
-  const description = `As with any research and development effort, the DADSS Research
-	Program has published findings throughout the process. In the links
-	below, you can access these articles and research papers, published
-	from 2009 through the present.`
+  const description = `As with any research and development effort, the DADSS Research\
+	Program has published findings throughout the process. In the links\
+	below, you can access these articles and research papers, published\
+  from 2009 through the present.`
 
   return (
     <>
@@ -133,7 +133,7 @@ const PublicationWrapper = styled.div`
     padding-bottom: 25px;
   }
   .Subtitle {
-    font-weight: 500;
+    font-weight: 600;
     text-transform: capitalize;
   }
   .Pagination {

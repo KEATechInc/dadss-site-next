@@ -21,8 +21,8 @@ const DadssStill3 = '/assets/breathBasedTech/breath-based-still3.webp'
 const PDF = '/assets/breathBasedTech/pdf/DADSS_Breath-Based.pdf'
 
 const BreathBasedTech = () => {
-  const description = `The breath-based system being developed by SenseAir,
-	and their tier one auto supplier, Autoliv Development, is designed
+  const description = `The breath-based system being developed by SenseAir,\
+	and their tier one auto supplier, Autoliv Development, is designed\
 	to unobtrusively analyze alcohol in the driver’s breath.`
 
   return (

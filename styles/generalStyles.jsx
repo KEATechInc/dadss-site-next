@@ -12,7 +12,7 @@ export const breakShadow = '0px 1px 2px rgb(0,0,0,0.25)'
 export const textShadow = '0px 1px 2px rgb(0,0,0,0.25)'
 export const dadssGradientBG = 'rgb(240,153,34)'
 export const dadssGradient =
-	'linear-gradient(90deg, #FF9969 0%, #DA3D1D 75%)'
+	'linear-gradient(90deg, #FF9969 0%, #DA3D1D 90%)'
 
 export const HeadBlock = styled.header`
 	display: flex;
@@ -186,14 +186,17 @@ export const CardWrapper = styled.div`
 	}
 	h3 {
 		text-align: left;
+		cursor: pointer;
 	}
 	.More {
 		display: flex;
 		align-items: center;
 		text-transform: capitalize;
 		margin-top: 5px;
-		font-weight: 500;
+		font-weight: 600;
 		color: ${darkOrange};
+		width: 110px;
+		cursor: pointer;
 		:hover {
 			text-decoration: underline;
 		}
@@ -201,11 +204,11 @@ export const CardWrapper = styled.div`
 	.Category {
 		margin-top: 10px;
 		text-transform: capitalize;
-		font-weight: 500;
+		font-weight: 600;
 	}
 	.Published {
 		text-transform: capitalize;
-		font-weight: 500;
+		font-weight: 600;
 	}
 `
 

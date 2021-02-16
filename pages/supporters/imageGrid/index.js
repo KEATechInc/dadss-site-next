@@ -64,6 +64,7 @@ const imgGrid = images.map((image, index) => {
       key={index}
       height={142}
       width={275}
+	  priority={true}
       onClick={() => window.open(`${image.url}`, '_blank')}
     />
   )

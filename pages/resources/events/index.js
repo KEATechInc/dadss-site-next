@@ -64,9 +64,9 @@ const Events = (props) => {
     )
   }
 
-  const description = `Over the years, the DADSS Program has organized, presented at and
-	exhibited at a range of events – from traffic safety and advanced
-	technology conferences, to media events, to briefings with key
+  const description = `Over the years, the DADSS Program has organized, presented at and\
+	exhibited at a range of events – from traffic safety and advanced\
+	technology conferences, to media events, to briefings with key\
 	partners. Learn about past events and check back for upcoming ones.`
 
   return (
@@ -129,6 +129,7 @@ const EventsWrapper = styled.div`
         font-size: 1.2rem;
         margin: 0 8px 0 0;
         text-align: left;
+        cursor: pointer;
       }
       a {
         text-decoration: none;

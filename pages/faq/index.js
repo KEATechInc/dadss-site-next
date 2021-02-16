@@ -12,7 +12,7 @@ import {
 import Head from 'next/head'
 
 const FAQ = () => {
-  const description = `What is the Driver Alcohol Detection System for Safety (DADSS)
+  const description = `What is the Driver Alcohol Detection System for Safety (DADSS)\
 	research program? Learn about this and more in our FAQ section.`
 
   return (

@@ -12,11 +12,10 @@ import {
   Circle,
   bgGray,
   fontGray,
-  Image,
 } from '../../styles/generalStyles'
-
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const acts = '/assets/logos/dtpLogos/acts-logo.webp'
 const dadss = '/assets/logos/dtpLogos/dadss-logo.webp'
@@ -33,8 +32,8 @@ const Fleets = () => {
     ReactGA.pageview(window.location.pathname)
   }, [])
 
-  const description = `DADSS is currently seeking opportunities to partner with state
-	fleets and/or private fleet organizations for trial deployment of
+  const description = `DADSS is currently seeking opportunities to partner with state\
+	fleets and/or private fleet organizations for trial deployment of\
 	this vehicle technology.`
 
   return (
@@ -94,9 +93,30 @@ const Fleets = () => {
             </Content>
           </ContentBlock>
           <div className='ImgWrapper'>
-            <Image src={Art1} alt='DADSS Sensor' />
-            <Image src={Art2} alt='DADSS Sensor 2' />
-            <Image src={Art3} alt='DADSS Fleet' />
+            <Image
+              src={Art1}
+              alt='DADSS Sensor'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={Art2}
+              alt='DADSS Sensor 2'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={Art3}
+              alt='DADSS Fleet'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
           </div>
         </div>
         <Break>
@@ -160,8 +180,8 @@ const FleetsWrapper = styled.div`
   }
   .DivideWrapper {
     display: flex;
-    justify-content: center;
-    align-items: top;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin: 0;
     max-width: 1000px;
   }
@@ -187,21 +207,10 @@ const FleetsWrapper = styled.div`
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: flex-start;
-      padding: 25px;
+      justify-content: space-between;
+      padding: 45px 25px 25px;
       min-width: 300px;
-      height: 100%;
-
-      img {
-        height: 175px;
-        width: 250px;
-        object-fit: cover;
-        object-position: center top;
-        margin: 10px 0;
-        :first-of-type {
-          margin-top: 20px;
-        }
-      }
+      height: 625px;
     }
   }
 `

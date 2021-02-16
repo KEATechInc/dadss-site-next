@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
 import styled from 'styled-components'
-import { sanityClient, PortableText } from '../../../lib/sanity'
-import { postSlugsQuery, postBySlugQuery } from '../../../lib/queries'
+import { sanityClient, PortableText } from '../../lib/sanity'
+import { postSlugsQuery, postQuery } from '../../lib/queries'
 import {
   ContentBlock,
   HeadBlock,
@@ -13,7 +13,7 @@ import {
   boxShadow,
   Break,
   Circle,
-} from '../../../styles/generalStyles'
+} from '../../styles/generalStyles'
 
 export const getStaticPaths = async () => {
   const paths = await sanityClient.fetch(postSlugsQuery)
@@ -24,25 +24,27 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const post = await sanityClient.fetch(postBySlugQuery, { slug: params.slug })
+  const post = await sanityClient.fetch(postQuery, { slug: params.slug })
   return {
     props: {
-      post
-    }
+      post,
+    },
   }
 }
 
-const SinglePost = ({post}) => {
+const SinglePost = ({ post }) => {
   useEffect(() => {
     ReactGA.initialize('UA-58614629-1')
     ReactGA.pageview(window.location.pathname)
   }, [])
 
+  const filteredPreview = post.preview[0].children[0].text
+
   return (
     <PostWrapper>
       <Head>
         <title>{`DADSS | ${post.title}`}</title>
-        <meta name='description' content={post.preview} />
+        <meta name='description' content={filteredPreview} />
       </Head>
       <HeadBlock>
         <Header2>{post.title}</Header2>
@@ -65,9 +67,6 @@ const PostWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  &.Loading {
-    height: 100vh;
-  }
   figure {
     display: flex;
     justify-content: center;
@@ -86,14 +85,17 @@ const PostWrapper = styled.div`
     padding: 5px 0;
     max-width: 1000px;
   }
-  ul > li {
-    color: ${fontGray};
+  ul {
+    margin-left: 50px;
+    li {
+      color: ${fontGray};
+      margin: 10px 0;
+    }
   }
   a {
     color: ${darkOrange};
     font-weight: bold;
     text-decoration: none;
-
     :hover {
       text-decoration: underline;
     }

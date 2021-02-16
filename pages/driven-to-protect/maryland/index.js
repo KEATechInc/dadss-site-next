@@ -9,10 +9,10 @@ import {
   Hyperlink,
   Break,
   Circle,
-  Image,
 } from '../../../styles/generalStyles'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
 
 const dtpLogo = '/assets/logos/dtpLogos/MD-logo.webp'
 const acts = '/assets/logos/dtpLogos/acts-logo.webp'
@@ -30,11 +30,11 @@ const DTPMaryland = () => {
     ReactGA.pageview(window.location.pathname)
   }, [])
 
-  const description = `In August 2019, the state of Maryland formally announced the
-	launch of its partnership between the Automotive Coalition for
-	Traffic Safety’s DADSS Program and the Maryland Department of
-	Transportation’s Motor Vehicle Administration (MDOT MVA) to test
-	advanced prototype driver alcohol detection sensors installed in
+  const description = `In August 2019, the state of Maryland formally announced the\
+	launch of its partnership between the Automotive Coalition for\
+	Traffic Safety’s DADSS Program and the Maryland Department of\
+	Transportation’s Motor Vehicle Administration (MDOT MVA) to test\
+	advanced prototype driver alcohol detection sensors installed in\
 	state–owned vehicles.`
 
   return (
@@ -46,7 +46,14 @@ const DTPMaryland = () => {
       <DrivenToProtectWrapper className='Maryland'>
         <HeadBlock className='HeroImage'>
           <div className='LogoWrapper'>
-            <img src={dtpLogo} alt='DTP Logo' />
+            <Image
+              src={dtpLogo}
+              alt='DTP Logo'
+              width={850}
+              height={110}
+              object-fit='cover'
+              priority={true}
+            />
           </div>
         </HeadBlock>
         <HeadBlock>
@@ -126,10 +133,38 @@ const DTPMaryland = () => {
             </Content>
           </ContentBlock>
           <div className='ImgWrapper'>
-            <Image src={MDimg1} alt='Driven to Protect' />
-            <Image src={MDimg2} alt='Driven to Protect' />
-            <Image src={MDimg3} alt='Driven to Protect' />
-            <Image src={MDimg4} alt='Driven to Protect' />
+            <Image
+              src={MDimg1}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={MDimg2}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={MDimg3}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image
+              src={MDimg4}
+              alt='Driven to Protect'
+              height={175}
+              width={250}
+              objectFit='cover'
+              objectPosition='center'
+            />
           </div>
         </div>
         <Break>

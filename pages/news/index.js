@@ -77,7 +77,7 @@ const NewsUpdates = (props) => {
     )
   }
 
-  const description = `See the most recent news and updates for the DADSS
+  const description = `See the most recent news and updates for the DADSS\
 	program here.`
 
   return (
