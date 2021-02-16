@@ -203,12 +203,14 @@ export const CardWrapper = styled.div`
 	}
 	.Category {
 		margin-top: 10px;
+		margin-bottom: 0px;
 		text-transform: capitalize;
 		font-weight: 600;
 	}
 	.Published {
 		text-transform: capitalize;
 		font-weight: 600;
+		margin: 0;
 	}
 `
 

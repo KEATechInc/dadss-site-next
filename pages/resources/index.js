@@ -113,7 +113,7 @@ const Resources = ({posts}) => {
                   rel='noreferrer'>
                   YouTube page
                 </Hyperlink>
-                .
+                :
               </Content>
               <ul>
                 <li>

@@ -86,10 +86,10 @@ const PostWrapper = styled.div`
     max-width: 1000px;
   }
   ul {
-    margin-left: 50px;
+    padding-left: 25px;
     li {
       color: ${fontGray};
-      margin: 10px 0;
+      padding: 8px 0;
     }
   }
   a {

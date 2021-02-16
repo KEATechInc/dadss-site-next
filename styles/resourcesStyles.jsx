@@ -12,14 +12,13 @@ export const ResourcesWrapper = styled.div`
 		color: inherit;
 	}
 	ul {
-		list-style-type: none;
 		margin: 0;
-		padding: 0;
+		padding-left: 25px;
 		width: 100%;
 		max-width: 1000px;
 
 		li {
-			margin: 10px 0;
+			padding: 8px 0;
 		}
 	}
 	.DivideWrapper {
