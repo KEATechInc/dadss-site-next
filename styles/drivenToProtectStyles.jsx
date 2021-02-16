@@ -134,9 +134,8 @@ export const DrivenToProtectWrapper = styled.div`
 			padding: 0;
 			width: 100%;
 			max-width: 1000px;
-			font-size: 1.05rem;
 			li {
-				margin: 10px 0;
+				padding: 8px 0;
 			}
 		}
 		.DivideWrapper {
@@ -186,14 +185,12 @@ export const DrivenToProtectWrapper = styled.div`
 			color: inherit;
 		}
 		ul {
-			list-style-type: none;
+			list-style: none;
 			width: 100%;
 			max-width: 1000px;
-			margin: 0;
 			padding: 0;
-			font-size: 1.05rem;
 			li {
-				margin: 10px 0;
+				padding: 8px 0;
 			}
 		}
 		.DivideWrapper {
