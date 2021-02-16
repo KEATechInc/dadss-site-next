@@ -53,9 +53,9 @@ const Events = (props) => {
       <>
         {currentPosts.map((post, index) => (
           <div className='Details' key={index}>
-            <Link href={post.url} target='_blank' rel='noreferrer'>
+            <a href={post.url} target='_blank' rel='noreferrer'>
               <Header3>{post.title}</Header3>
-            </Link>
+            </a>
             |<p className='EventDate'>{DateHandler(post.eventDate)}</p> |
             <p className='Location'>{post.location}</p>
           </div>

@@ -80,7 +80,6 @@ export const Links = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  font-weight: 600;
   a {
     color: ${fontGray};
     text-decoration: none;
