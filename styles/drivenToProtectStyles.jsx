@@ -134,9 +134,6 @@ export const DrivenToProtectWrapper = styled.div`
 			padding: 0;
 			width: 100%;
 			max-width: 1000px;
-			li {
-				padding: 8px 0;
-			}
 		}
 		.DivideWrapper {
 			display: flex;
@@ -183,15 +180,6 @@ export const DrivenToProtectWrapper = styled.div`
 		}
 		.Link {
 			color: inherit;
-		}
-		ul {
-			list-style: none;
-			width: 100%;
-			max-width: 1000px;
-			padding: 0;
-			li {
-				padding: 8px 0;
-			}
 		}
 		.DivideWrapper {
 			display: flex;

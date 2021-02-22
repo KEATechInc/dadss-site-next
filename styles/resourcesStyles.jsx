@@ -11,16 +11,6 @@ export const ResourcesWrapper = styled.div`
 	.Link {
 		color: inherit;
 	}
-	ul {
-		margin: 0;
-		padding-left: 25px;
-		width: 100%;
-		max-width: 1000px;
-
-		li {
-			padding: 8px 0;
-		}
-	}
 	.DivideWrapper {
 		display: flex;
 		max-width: 1000px;

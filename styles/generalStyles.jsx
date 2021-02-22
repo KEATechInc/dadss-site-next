@@ -11,8 +11,7 @@ export const boxShadow = '0px 2px 4px rgb(0,0,0,0.5)'
 export const breakShadow = '0px 1px 2px rgb(0,0,0,0.25)'
 export const textShadow = '0px 1px 2px rgb(0,0,0,0.25)'
 export const dadssGradientBG = 'rgb(240,153,34)'
-export const dadssGradient =
-	'linear-gradient(90deg, #FF9969 0%, #DA3D1D 90%)'
+export const dadssGradient = 'linear-gradient(90deg, #FF9969 0%, #DA3D1D 90%)'
 
 export const HeadBlock = styled.header`
 	display: flex;
@@ -85,6 +84,16 @@ export const ContentBlock = styled.section`
 	width: 100%;
 	background: white;
 	padding: 25px 25px 50px;
+	line-height: 1.5rem;
+	ul, ol {
+		margin: 0;
+		padding-left: 30px;
+		width: 100%;
+		max-width: 1000px;
+		li {
+			padding: 5px 0;
+		}
+	}
 	&.Orange {
 		background: ${bgOrange};
 		border-top: 5px solid ${darkOrange};
