@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import { darkOrange } from '../../styles/generalStyles'
 
 const LoaderWrapper = styled.div`
-  margin: 25px;
+  height: 100vh;
+  width: 100vh;
   &.lds-facebook {
     display: inline-block;
     position: relative;

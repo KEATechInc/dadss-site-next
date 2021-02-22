@@ -25,10 +25,11 @@ export const getStaticProps = async () => {
     props: {
       newsUpdates,
     },
+    revalidate: 60
   }
 }
 
-const NewsUpdates = (props) => {
+const NewsUpdates = ({newsUpdates}) => {
   useEffect(() => {
     ReactGA.initialize('UA-58614629-1')
     ReactGA.pageview(window.location.pathname)
@@ -40,11 +41,11 @@ const NewsUpdates = (props) => {
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = props.newsUpdates.slice(
+  const currentPosts =newsUpdates.slice(
     indexOfFirstPost,
     indexOfLastPost
   )
-  const totalPosts = props.newsUpdates.length
+  const totalPosts = newsUpdates.length
   const pageCount = Math.ceil(totalPosts / postsPerPage)
 
   const handleChange = (event, value) => {
