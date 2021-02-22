@@ -11,7 +11,6 @@ import {
 	Content,
 } from '../../../styles/generalStyles'
 import Head from 'next/head'
-import Link from 'next/link'
 import DateHandler from '../../../components/Dates'
 import { Pagination } from '@material-ui/lab'
 import { eventsQuery } from '../../../lib/queries'

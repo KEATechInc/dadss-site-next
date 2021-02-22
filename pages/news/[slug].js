@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
 	const paths = await sanityClient.fetch(postSlugsQuery)
 	return {
 		paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true
+		fallback: true,
 	}
 }
 
@@ -30,7 +30,8 @@ export const getStaticProps = async ({ params }) => {
 	return {
 		props: {
 			post,
-		}, revalidate: 60
+		},
+		revalidate: 60,
 	}
 }
 
@@ -40,17 +41,18 @@ const SinglePost = ({ post }) => {
 		ReactGA.pageview(window.location.pathname)
 	}, [])
 
-	const filteredPreview = post.preview[0].children[0].text
-  const router = useRouter()
+	const router = useRouter()
+	let filteredPreview
 
-  if (router.isFallback) {
-    return <Loader></Loader>
-  }
+	if (router.isFallback) {
+		return <Loader></Loader>
+	}
 
 	return (
 		<PostWrapper>
 			<Head>
 				<title>{`DADSS | ${post.title}`}</title>
+				{(filteredPreview = post.preview[0].children[0].text)}
 				<meta name='description' content={filteredPreview} />
 			</Head>
 			<HeadBlock>
