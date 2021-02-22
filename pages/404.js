@@ -41,9 +41,7 @@ const PageNotFound = () => {
 				</HeadBlock>
 				<ContentBlock>
 					<Header3>Oops. Something has gone wrong.</Header3>
-					<Link href='/'>
-						<img src={DADSSLogo} alt='DADSS Car Logo' />
-					</Link>
+					<img src={DADSSLogo} alt='DADSS Car Logo' />
 					<Content>
 						Sorry about that. Follow this link to{' '}
 						<Link href='/'>
@@ -64,7 +62,6 @@ const BodyWrapper = styled.div`
 		max-height: 150px;
 		width: auto;
 		margin: 25px;
-		cursor: pointer;
 	}
 	p {
 		text-align: center;
