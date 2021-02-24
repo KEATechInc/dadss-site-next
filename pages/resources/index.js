@@ -57,7 +57,7 @@ const Resources = ({ posts }) => {
 								Published: {DateHandler(post.published)}
 							</p>
 							<PortableText blocks={post.preview} />
-							<Link href={'/news/' + post.slug.current}>
+							<Link href={'/news/updates/' + post.slug.current}>
 								<p className='More'>
 									Learn more <AiFillCaretRight />
 								</p>
