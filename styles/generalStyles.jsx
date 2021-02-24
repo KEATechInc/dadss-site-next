@@ -177,7 +177,6 @@ export const Image = styled.img`
 	max-width: 1000px;
 	width: 100%;
 	margin: 25px;
-	box-shadow: ${boxShadow};
 `
 export const CardWrapper = styled.div`
 	display: flex;

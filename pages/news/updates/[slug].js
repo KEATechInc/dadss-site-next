@@ -3,9 +3,9 @@ import ReactGA from 'react-ga'
 import Head from 'next/head'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import Loader from '../../components/Loader'
-import { sanityClient, PortableText } from '../../lib/sanity'
-import { postSlugsQuery, postQuery } from '../../lib/queries'
+import Loader from '../../../components/Loader'
+import { sanityClient, PortableText } from '../../../lib/sanity'
+import { postSlugsQuery, postQuery } from '../../../lib/queries'
 import {
 	ContentBlock,
 	HeadBlock,
@@ -15,13 +15,13 @@ import {
 	boxShadow,
 	Break,
 	Circle,
-} from '../../styles/generalStyles'
+} from '../../../styles/generalStyles'
 
 export const getStaticPaths = async () => {
 	const paths = await sanityClient.fetch(postSlugsQuery)
 	return {
 		paths: paths.map((slug) => ({ params: { slug } })),
-		fallback: true,
+		fallback: false,
 	}
 }
 
@@ -86,7 +86,6 @@ const PostWrapper = styled.div`
 			margin: 25px;
 			max-height: 500px;
 			width: auto;
-			box-shadow: ${boxShadow};
 		}
 	}
 	p {
