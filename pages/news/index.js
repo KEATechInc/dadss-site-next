@@ -18,6 +18,7 @@ import DateHandler from '../../components/Dates'
 import Link from 'next/link'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
+import Loader from '../../components/Loader'
 
 export const getStaticProps = async ({ params }) => {
 	const currentPage = params?.currentPage
@@ -54,6 +55,10 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
 
 	const handleChange = (event, value) => {
 		router.push('/news/' + value)
+	}
+
+	if (router.isFallback) {
+		return <Loader></Loader>
 	}
 
 	// Render component

@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
+import Loader from '../../../components/Loader'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import { postSlugsQuery, postQuery } from '../../../lib/queries'
@@ -18,7 +20,7 @@ export const getStaticPaths = async () => {
 	const paths = await sanityClient.fetch(postSlugsQuery)
 	return {
 		paths: paths.map((slug) => ({ params: { slug } })),
-		fallback: false,
+		fallback: true,
 	}
 }
 
@@ -28,7 +30,7 @@ export const getStaticProps = async ({ params }) => {
 		props: {
 			post,
 		},
-		revalidate: 20,
+		revalidate: 60,
 	}
 }
 
@@ -39,6 +41,11 @@ const SinglePost = ({ post }) => {
 	}, [])
 
 	let filteredPreview
+	const router = useRouter()
+
+	if (router.isFallback) {
+		return <Loader></Loader>
+	}
 
 	return (
 		<PostWrapper>
