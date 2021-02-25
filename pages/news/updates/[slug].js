@@ -2,8 +2,6 @@ import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
-import Loader from '../../../components/Loader'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import { postSlugsQuery, postQuery } from '../../../lib/queries'
 import {
@@ -12,7 +10,6 @@ import {
 	Header2,
 	fontGray,
 	darkOrange,
-	boxShadow,
 	Break,
 	Circle,
 } from '../../../styles/generalStyles'
@@ -31,7 +28,7 @@ export const getStaticProps = async ({ params }) => {
 		props: {
 			post,
 		},
-		revalidate: 60,
+		revalidate: 20,
 	}
 }
 
@@ -41,12 +38,7 @@ const SinglePost = ({ post }) => {
 		ReactGA.pageview(window.location.pathname)
 	}, [])
 
-	const router = useRouter()
 	let filteredPreview
-
-	if (router.isFallback) {
-		return <Loader></Loader>
-	}
 
 	return (
 		<PostWrapper>
