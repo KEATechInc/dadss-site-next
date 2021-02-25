@@ -17,7 +17,7 @@ export const AboutSection = styled.section`
     align-items: center;
     background: ${bgGray};
     .Discovery {
-      padding: 0 0 25px;
+      padding: 15px 0 25px;
       p {
         max-width: 800px;
         text-align: center;

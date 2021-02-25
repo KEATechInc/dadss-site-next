@@ -11,7 +11,6 @@ import {
 } from '../../styles/generalStyles'
 import styled from 'styled-components'
 import Head from 'next/head'
-import Loader from '../../components/Loader'
 import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../lib/sanity'
 import { newsQuery } from '../../lib/queries'
@@ -84,10 +83,6 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
 
 	const description = `See the most recent news and updates for the DADSS\
 	program here.`
-
-	if (router.isFallback) {
-		return <Loader></Loader>
-	}
 
 	return (
 		<>

@@ -23,7 +23,7 @@ export async function getStaticProps() {
 		props: {
 			events,
 		},
-		revalidate: 60,
+		revalidate: 86400,
 	}
 }
 
@@ -129,7 +129,6 @@ const EventsWrapper = styled.div`
 				font-size: 1.2rem;
 				margin: 0 8px 0 0;
 				text-align: left;
-				cursor: pointer;
 			}
 			a {
 				text-decoration: none;

@@ -184,14 +184,7 @@ const ProgramOverview = () => {
           <Content>
             <sup>4</sup>Insurance Institute for Highway Safety Data Institute.
             “Alcohol Detection Device Project is now in Development Phase.”
-            Insurance Institute for Highway Safety, Nov. 2011. Available at URL:
-            <br />
-            <Hyperlink
-              href='http://www.iihs.org/iihs/sr/statusreport/article/46/10/4'
-              target='_blank'
-              rel='noreferrer'>
-              www.iihs.org/iihs/sr/statusreport/article/46/10/4
-            </Hyperlink>
+            Insurance Institute for Highway Safety, Nov. 2011.
           </Content>
           <Break className='BottomBreak'>
             <hr /> <Circle /> <hr />
