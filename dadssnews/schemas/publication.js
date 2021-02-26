@@ -18,6 +18,11 @@ export default {
 			title: 'File upload',
 			type: 'file',
         },
+		{
+			name: 'url',
+			title: 'URL',
+			type: 'url',
+        },
         {
 			name: 'paperNumber',
 			title: 'Paper number',

@@ -127,9 +127,11 @@ const NewsWrapper = styled.div`
 		display: flex;
 		align-items: flex-start;
 		justify-content: flex-start;
-
 		a {
 			color: inherit;
+		}
+		h3 {
+			cursor: pointer;
 		}
 	}
 	.Pagination {

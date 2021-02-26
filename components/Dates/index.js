@@ -8,4 +8,10 @@ export const DateHandler = (date) => {
   return newDate
 }
 
+export const YearHandler = (date) => {
+  let year = date.slice(0, 4)
+
+  return year
+}
+
 export default DateHandler

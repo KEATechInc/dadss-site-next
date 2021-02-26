@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { dtpLightBlue } from './generalStyles'
 
 export const ResourcesWrapper = styled.div`
 	margin-top: 85px;
@@ -19,7 +18,6 @@ export const ResourcesWrapper = styled.div`
 			display: flex;
 			flex-direction: column;
 			.VABlock {
-				border: 5px solid ${dtpLightBlue};
 				.VADivider {
 					.Toggle {
 						display: none;
@@ -48,8 +46,6 @@ export const ResourcesWrapper = styled.div`
 			.DivideLeft {
 				max-width: none;
 				.VABlock {
-					border-left: none;
-					border-right: none;
 					.VADivider {
 						.Toggle {
 							display: inline;

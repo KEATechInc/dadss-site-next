@@ -11,7 +11,7 @@ import {
 	Header3,
 	CardWrapper,
 } from '../../../styles/generalStyles'
-import DateHandler from '../../../components/Dates'
+import { YearHandler } from '../../../components/Dates'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import Head from 'next/head'
 import { publicationsQuery } from '../../../lib/queries'
@@ -25,7 +25,7 @@ export const getStaticProps = async () => {
 		props: {
 			publications,
 		},
-		revalidate: 60,
+		revalidate: 86400,
 	}
 }
 
@@ -59,27 +59,27 @@ const Publications = (props) => {
 			<CardWrapper>
 				{currentPosts.map((post, index) => (
 					<div className='UpdateCard' key={index}>
-						<a href={post.fileUpload} target='_blank' rel='noreferrer'>
+						<a
+							href={post.url || post.fileUpload}
+							target='_blank'
+							rel='noreferrer'>
 							<Header3>{post.title}</Header3>
 						</a>
 						<p className='Subtitle'>{post.subtitle}</p>
 						<p className='Category'>Paper Number: {post.paperNumber}</p>
 						<p className='Published'>
-							Published: {DateHandler(post.publishDate)}
+							Publish Year: {YearHandler(post.publishDate)}
 						</p>
-						<PortableText
-							blocks={post.description}
-							projectId='9i9p7w70'
-							dataset='production'
-							useCdn='true'
-						/>
-						<a
-							className='More'
-							href={post.fileUpload}
-							target='_blank'
-							rel='noreferrer'>
-							Learn more <AiFillCaretRight />
-						</a>
+						<PortableText blocks={post.description} />
+						{(post.url || post.fileUpload) && (
+							<a
+								className='More'
+								href={post.url || post.fileUpload}
+								target='_blank'
+								rel='noreferrer'>
+								Learn more <AiFillCaretRight />
+							</a>
+						)}
 					</div>
 				))}
 			</CardWrapper>

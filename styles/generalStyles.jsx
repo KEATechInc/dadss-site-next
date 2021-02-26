@@ -85,7 +85,8 @@ export const ContentBlock = styled.section`
 	background: white;
 	padding: 25px 25px 50px;
 	line-height: 1.5rem;
-	ul, ol {
+	ul,
+	ol {
 		margin: 0;
 		padding-left: 30px;
 		width: 100%;
@@ -103,11 +104,6 @@ export const ContentBlock = styled.section`
 		background: ${bgGray};
 		border-top: 5px solid ${fontGray};
 		border-bottom: 5px solid ${fontGray};
-	}
-	&.Blue {
-		background: white;
-		border-top: 5px solid ${dtpLightBlue};
-		border-bottom: 5px solid ${dtpLightBlue};
 	}
 `
 export const Content = styled.p`
@@ -194,7 +190,6 @@ export const CardWrapper = styled.div`
 	}
 	h3 {
 		text-align: left;
-		cursor: pointer;
 	}
 	.More {
 		display: flex;
