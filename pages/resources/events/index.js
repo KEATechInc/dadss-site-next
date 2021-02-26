@@ -7,11 +7,13 @@ import {
 	ContentBlock,
 	HeadBlock,
 	Header1,
+	Header2,
 	Header3,
 	Content,
+	fontGray,
 } from '../../../styles/generalStyles'
 import Head from 'next/head'
-import DateHandler from '../../../components/Dates'
+import DateHandler, { YearHandler } from '../../../components/Dates'
 import { Pagination } from '@material-ui/lab'
 import { eventsQuery } from '../../../lib/queries'
 import { sanityClient } from '../../../lib/sanity'
@@ -36,7 +38,6 @@ const Events = (props) => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [postsPerPage] = useState(10)
 
-	// Get current posts
 	const indexOfLastPost = currentPage * postsPerPage
 	const indexOfFirstPost = indexOfLastPost - postsPerPage
 	const currentPosts = props.events.slice(indexOfFirstPost, indexOfLastPost)
@@ -48,11 +49,23 @@ const Events = (props) => {
 		window.scrollTo(0, 0)
 	}
 
-	const renderPosts = () => {
+	const years = props.events.map((post) => {
+		return YearHandler(post.eventDate)
+	})
+	const uniqueYears = [...new Set(years)]
+
+	const sortPosts = (sortByYear) => {
+		const sortedPosts = currentPosts.filter((posts) => {
+			return YearHandler(posts.eventDate) == sortByYear
+		})
+		return sortedPosts
+	}
+
+	const renderPosts = (sortedPosts) => {
 		return (
 			<>
-				{currentPosts.map((post, index) => (
-					<div className='Details' key={index}>
+				{sortedPosts.map((post) => (
+					<div className='Details' key={post.title}>
 						<a href={post.url} target='_blank' rel='noreferrer'>
 							<Header3>{post.title}</Header3>
 						</a>
@@ -93,7 +106,18 @@ const Events = (props) => {
 					</Content>
 				</ContentBlock>
 				<ContentBlock className='ContentWrapper'>
-					{renderPosts()}
+					{uniqueYears.map((year) => {
+						return (
+							<>
+								{sortPosts(year).length > 0 && (
+									<>
+										<Header2>{year}</Header2>
+										{renderPosts(sortPosts(year))}
+									</>
+								)}
+							</>
+						)
+					})}
 					<Pagination
 						count={pageCount}
 						page={currentPage}
