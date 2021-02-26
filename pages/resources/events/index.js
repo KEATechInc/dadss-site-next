@@ -10,7 +10,6 @@ import {
 	Header2,
 	Header3,
 	Content,
-	fontGray,
 } from '../../../styles/generalStyles'
 import Head from 'next/head'
 import DateHandler, { YearHandler } from '../../../components/Dates'
@@ -112,6 +111,9 @@ const Events = (props) => {
 								{sortPosts(year).length > 0 && (
 									<>
 										<Header2>{year}</Header2>
+										<Break>
+											<hr />
+										</Break>
 										{renderPosts(sortPosts(year))}
 									</>
 								)}
@@ -138,6 +140,9 @@ const EventsWrapper = styled.div`
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		h2 {
+			font-size: 2rem;
+		}
 
 		.Details {
 			display: flex;

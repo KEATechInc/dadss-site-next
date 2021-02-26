@@ -236,6 +236,16 @@ export const Break = styled.span`
 			background: white;
 			border: 1.5px solid white;
 		}
+		&.DarkOrange {
+			color: ${darkOrange};
+			background: ${darkOrange};
+			border: 1.5px solid ${darkOrange};
+		}
+		&.DTPLightBlue {
+			color: ${dtpLightBlue};
+			background: ${dtpLightBlue};
+			border: 1.5px solid ${dtpLightBlue};
+		}
 	}
 `
 export const Circle = styled.div`
@@ -247,5 +257,11 @@ export const Circle = styled.div`
 	box-shadow: ${breakShadow};
 	&.White {
 		background: white;
+	}
+	&.DarkOrange {
+		background: ${darkOrange};
+	}
+	&.DTPLightBlue {
+		background: ${dtpLightBlue};
 	}
 `
