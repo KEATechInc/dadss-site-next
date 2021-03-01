@@ -67,13 +67,16 @@ export const AboutSection = styled.section`
       flex-wrap: wrap;
       justify-content: center;
       margin: 25px 0;
+      img {
+        margin: 10px;
+      }
     }
   }
   .ContentLogo {
     &.ACTS {
       height: 75px;
       width: 160px;
-      margin: 10px;
+      
       :hover {
         cursor: pointer;
       }

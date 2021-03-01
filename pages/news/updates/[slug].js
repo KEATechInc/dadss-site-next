@@ -14,6 +14,7 @@ import {
 	darkOrange,
 	Break,
 	Circle,
+	boxShadow
 } from '../../../styles/generalStyles'
 
 export const getStaticPaths = async () => {
@@ -47,6 +48,8 @@ const SinglePost = ({ post }) => {
 		return <Loader></Loader>
 	}
 
+	console.log(post)
+
 	return (
 		<PostWrapper>
 			<Head>
@@ -76,20 +79,26 @@ const PostWrapper = styled.div`
 	align-items: center;
 	flex-direction: column;
 	figure {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0;
-		width: auto;
-		img {
-			margin: 25px;
-			max-height: 500px;
-			width: auto;
+		.FigWrapper {
+			display: flex;
+			flex-direction: column;
+			padding: 25px;
+			img {
+				box-shadow: ${boxShadow};
+				margin-bottom: 5px;
+				object-fit: contain;
+			}
+			p {
+				font-size: 0.95em;
+				margin: 0;
+				padding: 0;
+			}
 		}
 	}
 	p {
 		color: ${fontGray};
 		padding: 5px 0;
+		margin: 0;
 		max-width: 1000px;
 	}
 	ul {
