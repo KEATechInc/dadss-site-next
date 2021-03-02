@@ -89,7 +89,9 @@ const Fleets = () => {
 						</ol>
 						<Content>
 							To explore how to become a DADSS deployment partner, contact{' '}
-							<Hyperlink>info@dadss.org.</Hyperlink>
+							<Hyperlink href='mailto:info@dadss.org?subject=I want to learn more about DADSS' >
+								info@dadss.org.
+							</Hyperlink>
 						</Content>
 					</ContentBlock>
 					<div className='ImgWrapper'>

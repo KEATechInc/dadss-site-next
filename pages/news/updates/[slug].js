@@ -88,6 +88,8 @@ const PostWrapper = styled.div`
 			img {
 				box-shadow: ${boxShadow};
 				margin-bottom: 5px;
+				max-width: 100%;
+				height: auto;
 				object-fit: contain;
 			}
 			p {
