@@ -69,7 +69,6 @@ export const DrivenToProtectWrapper = styled.div`
 				}
 			}
 		}
-
 		.Maryland {
 			max-width: 525px;
 			margin: 0 10px;
@@ -102,7 +101,6 @@ export const DrivenToProtectWrapper = styled.div`
 			text-transform: capitalize;
 		}
 	}
-
 	${'' /* Virginia Styles */}
 	&.Virginia {
 		.HeroImage {
@@ -156,7 +154,6 @@ export const DrivenToProtectWrapper = styled.div`
 				padding: 25px;
 			}
 		}
-
 		@media screen and (min-width: 900px) {
 			.Content {
 				max-width: 700px;
@@ -172,7 +169,6 @@ export const DrivenToProtectWrapper = styled.div`
 			}
 		}
 	}
-
 	${'' /* Maryland Styles */}
 	&.Maryland {
 		.HeroImage {
