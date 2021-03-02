@@ -35,6 +35,8 @@ export const getStaticProps = async ({ params }) => {
 
 	const pageCount = Math.ceil(totalPosts / 5)
 
+	const notFound = currentPageNumber ? false : true
+
 	return {
 		props: {
 			currentPageNumber,
@@ -42,6 +44,7 @@ export const getStaticProps = async ({ params }) => {
 			pageCount,
 		},
 		revalidate: 60,
+		notFound
 	}
 }
 

@@ -14,7 +14,7 @@ import {
 	darkOrange,
 	Break,
 	Circle,
-	boxShadow
+	boxShadow,
 } from '../../../styles/generalStyles'
 
 export const getStaticPaths = async () => {
@@ -27,11 +27,15 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
 	const post = await sanityClient.fetch(postQuery, { slug: params.slug })
+
+	const notFound = post === undefined ? false : true
+
 	return {
 		props: {
 			post,
 		},
 		revalidate: 60,
+		notFound,
 	}
 }
 
@@ -47,8 +51,6 @@ const SinglePost = ({ post }) => {
 	if (router.isFallback) {
 		return <Loader></Loader>
 	}
-
-	console.log(post)
 
 	return (
 		<PostWrapper>
