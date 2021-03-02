@@ -28,14 +28,14 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
 	const post = await sanityClient.fetch(postQuery, { slug: params.slug })
 
-	// const notFound = post === undefined ? false : true
+	const notFound = Object.keys(post).length === 0 ? true : false
 
 	return {
 		props: {
 			post,
 		},
 		revalidate: 60,
-		// notFound,
+		notFound,
 	}
 }
 

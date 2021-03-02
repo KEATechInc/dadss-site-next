@@ -44,7 +44,7 @@ export const getStaticProps = async ({ params }) => {
 			pageCount,
 		},
 		revalidate: 60,
-		notFound
+		notFound,
 	}
 }
 

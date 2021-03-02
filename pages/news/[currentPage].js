@@ -1,6 +1,6 @@
 import NewsUpdates, { getStaticProps } from './'
 import { sanityClient } from '../../lib/sanity'
-import { newsQuery } from '../../lib/queries'   
+import { newsQuery } from '../../lib/queries'
 
 export default NewsUpdates
 export { getStaticProps }
