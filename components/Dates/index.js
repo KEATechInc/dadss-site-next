@@ -1,17 +1,32 @@
 export const DateHandler = (date) => {
-  let year = date.slice(0, 4)
-  let month = date.slice(5, 7)
-  let day = date.slice(8, 10)
+	const monthNames = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December',
+	]
 
-  let newDate = `${month}-${day}-${year}`
+	let year = date.slice(0, 4)
+	let month = date.slice(5, 7)
+	let day = date.slice(8, 10)
 
-  return newDate
+	let newDate = `${monthNames[parseInt(month) - 1]} ${day}, ${year}`
+
+	return newDate
 }
 
 export const YearHandler = (date) => {
-  let year = date.slice(0, 4)
+	let year = date.slice(0, 4)
 
-  return year
+	return year
 }
 
 export default DateHandler
