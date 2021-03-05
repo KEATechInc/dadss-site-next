@@ -2,6 +2,7 @@ import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styled from 'styled-components'
 import {
 	HeadBlock,
@@ -22,7 +23,7 @@ const PageNotFound = () => {
 		ReactGA.pageview(window.location.pathname)
 	}, [])
 
-	const description = `Oops. It appears something has gone wrong.`
+	const description = `Page not found. Oops. It appears something has gone wrong.`
 
 	return (
 		<>
@@ -41,7 +42,7 @@ const PageNotFound = () => {
 				</HeadBlock>
 				<ContentBlock>
 					<Header3>Oops. Something has gone wrong.</Header3>
-					<img src={DADSSLogo} alt='DADSS Car Logo' />
+					<Image src={DADSSLogo} alt='DADSS Car Logo' height={250} width={350} />
 					<Content>
 						Sorry about that. Follow this link to{' '}
 						<Link href='/'>
@@ -57,12 +58,6 @@ const PageNotFound = () => {
 
 const BodyWrapper = styled.div`
 	margin-top: 85px;
-
-	img {
-		max-height: 150px;
-		width: auto;
-		margin: 25px;
-	}
 	p {
 		text-align: center;
 	}

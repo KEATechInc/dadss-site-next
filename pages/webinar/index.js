@@ -22,14 +22,15 @@ import { sanityClient, PortableText, urlFor } from '../../lib/sanity'
 export const getStaticProps = async () => {
 	const webinarInfo = await sanityClient.fetch(webinarQuery)
 
-	// const notFound = Object.keys(post).length === 0 ? true : false
+	const notFound = Object.keys(webinarInfo).length === 0 ? true : false
+	console.log(notFound)
 
 	return {
 		props: {
 			webinarInfo,
 		},
-		revalidate: 60,
-		// notFound,
+		revalidate: 3600,
+		notFound,
 	}
 }
 

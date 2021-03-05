@@ -49,13 +49,15 @@ const TouchBasedTech = () => {
 						reliably prevent drunk driving while remaining invisible to any
 						driver under the legal limit.
 					</Content>
-					<Image
-						src={DadssStill2}
-						alt='Touch-Based System'
-						height={560}
-						width={1000}
-						priority={true}
-					/>
+					<div className='ImageWrapper'>
+						<Image
+							src={DadssStill2}
+							alt='Touch-Based System'
+							height={560}
+							width={1000}
+							priority={true}
+						/>
+					</div>
 				</ContentBlock>
 				<ContentBlock className='Orange'>
 					<Header2 className='Gray'>How it Works</Header2>
@@ -81,12 +83,14 @@ const TouchBasedTech = () => {
 						focuses precisely at the wavelengths where alcohol can be found. The
 						system will be able to take multiple readings in less than a second.
 					</Content>
-					<Image
-						src={DadssStill1}
-						alt='How It Works Image'
-						height={560}
-						width={1000}
-					/>
+					<div className='ImageWrapper'>
+						<Image
+							src={DadssStill1}
+							alt='How It Works Image'
+							height={560}
+							width={1000}
+						/>
+					</div>
 				</ContentBlock>
 				<ContentBlock>
 					<Header2>Testing the Prototype</Header2>
@@ -131,6 +135,9 @@ const TouchBasedTech = () => {
 
 const TouchBasedWrapper = styled.div`
 	margin-top: 85px;
+	.ImageWrapper {
+		margin: 10px 0 5px;
+	}
 `
 
 export default TouchBasedTech

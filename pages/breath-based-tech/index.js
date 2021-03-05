@@ -54,13 +54,15 @@ const BreathBasedTech = () => {
 						will simply be able to enter the vehicle and breathe as they
 						normally would.
 					</Content>
-					<Image
-						src={DadssStill1}
-						alt='Breath-Based System'
-						height={560}
-						width={1000}
-						priority={true}
-					/>
+					<div className='ImageWrapper'>
+						<Image
+							src={DadssStill1}
+							alt='Breath-Based System'
+							height={560}
+							width={1000}
+							priority={true}
+						/>
+					</div>
 				</ContentBlock>
 				<ContentBlock className='Orange'>
 					<Header2 className='Gray'>How it Works</Header2>
@@ -87,7 +89,14 @@ const BreathBasedTech = () => {
 						sensitive and able to analyze diluted breath samples at dilutions
 						expected from a driver’s natural breath plume.
 					</Content>
-					<Image src={DadssStill2} alt='Molecules' height={560} width={1000} />
+					<div className='ImageWrapper'>
+						<Image
+							src={DadssStill2}
+							alt='Molecules'
+							height={560}
+							width={1000}
+						/>
+					</div>
 				</ContentBlock>
 
 				<ContentBlock>
@@ -109,12 +118,14 @@ const BreathBasedTech = () => {
 						situations, from temperature shifts, to sudden changes in motion, to
 						interference such as dust or mechanical shock.
 					</Content>
-					<Image
-						src={DadssStill3}
-						alt='Vehicle Testing'
-						height={560}
-						width={1000}
-					/>
+					<div className='ImageWrapper'>
+						<Image
+							src={DadssStill3}
+							alt='Vehicle Testing'
+							height={560}
+							width={1000}
+						/>
+					</div>
 					<Content>
 						In order to determine how best to install this system into new
 						vehicles, extensive research is being undertaken to fully understand
@@ -154,6 +165,9 @@ const BreathBasedTech = () => {
 
 const BreathBasedWrapper = styled.div`
 	margin-top: 85px;
+	.ImageWrapper {
+		margin: 10px 0 5px;
+	}
 `
 
 export default BreathBasedTech

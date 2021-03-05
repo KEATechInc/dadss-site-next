@@ -24,7 +24,7 @@ export async function getStaticProps() {
 		props: {
 			events,
 		},
-		revalidate: 86400,
+		revalidate: 3600,
 	}
 }
 
@@ -75,8 +75,6 @@ const Events = (props) => {
 			</>
 		)
 	}
-
-	console.log(process.env.SC_PROJECT_ID)
 
 	const description = `Over the years, the DADSS Program has organized, presented at and\
 	exhibited at a range of events – from traffic safety and advanced\
