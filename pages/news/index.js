@@ -14,7 +14,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../lib/sanity'
 import { newsQuery } from '../../lib/queries'
-import DateHandler from '../../components/Dates'
+import { formatDate } from '../../util/dateHandler'
 import Link from 'next/link'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
@@ -74,9 +74,7 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
 							<Header3>{post.title}</Header3>
 						</Link>
 						<p className='Category'>{post.category}</p>
-						<p className='Published'>
-							Published: {DateHandler(post.published)}
-						</p>
+						<p className='Published'>Published: {formatDate(post.published)}</p>
 						<PortableText blocks={post.preview} />
 						<Link href={'/news/updates/' + post.slug.current}>
 							<p className='More'>

@@ -11,7 +11,7 @@ import {
 	Header3,
 	CardWrapper,
 } from '../../../styles/generalStyles'
-import { YearHandler } from '../../../components/Dates'
+import { getYear } from '../../../util/dateHandler'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import Head from 'next/head'
 import { publicationsQuery } from '../../../lib/queries'
@@ -68,7 +68,7 @@ const Publications = (props) => {
 						<p className='Subtitle'>{post.subtitle}</p>
 						<p className='Category'>Paper Number: {post.paperNumber}</p>
 						<p className='Published'>
-							Publish Year: {YearHandler(post.publishDate)}
+							Publish Year: {getYear(post.publishDate)}
 						</p>
 						<PortableText blocks={post.description} />
 						{(post.url || post.fileUpload) && (

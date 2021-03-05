@@ -7,12 +7,12 @@ import {
 	ContentBlock,
 	HeadBlock,
 	Header1,
-  Header2,
+	Header2,
 	Header3,
 	Content,
 	dtpBlue,
 } from '../../../../styles/generalStyles'
-import DateHandler, {YearHandler} from '../../../../components/Dates'
+import { formatDate, getYear } from '../../../../util/dateHandler'
 import Head from 'next/head'
 import { sanityClient } from '../../../../lib/sanity'
 import { eventsVaQuery } from '../../../../lib/queries'
@@ -50,13 +50,13 @@ const EventsDTPVA = (props) => {
 	}
 
 	const years = props.events.map((post) => {
-		return YearHandler(post.eventDate)
+		return getYear(post.eventDate)
 	})
 	const uniqueYears = [...new Set(years)]
 
 	const sortPosts = (sortByYear) => {
 		const sortedPosts = currentPosts.filter((posts) => {
-			return YearHandler(posts.eventDate) == sortByYear
+			return getYear(posts.eventDate) == sortByYear
 		})
 		return sortedPosts
 	}
@@ -69,7 +69,7 @@ const EventsDTPVA = (props) => {
 						<a href={post.url} target='_blank' rel='noreferrer'>
 							<Header3>{post.title}</Header3>
 						</a>
-						|<p className='EventDate'>{DateHandler(post.eventDate)}</p> |
+						|<p className='EventDate'>{formatDate(post.eventDate)}</p> |
 						<p className='Location'>{post.location}</p>
 					</div>
 				))}

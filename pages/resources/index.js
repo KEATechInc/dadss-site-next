@@ -15,7 +15,7 @@ import {
 } from '../../styles/generalStyles'
 import Link from 'next/link'
 import Head from 'next/head'
-import DateHandler from '../../components/Dates'
+import { formatDate } from '../../util/dateHandler'
 import { PortableText, sanityClient } from '../../lib/sanity'
 import { recentPostsQuery } from '../../lib/queries'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
@@ -54,7 +54,7 @@ const Resources = ({ posts }) => {
 						<div className='UpdateCard' key={index}>
 							<p className='Category'>{post.category}</p>
 							<p className='Published'>
-								Published: {DateHandler(post.published)}
+								Published: {formatDate(post.published)}
 							</p>
 							<PortableText blocks={post.preview} />
 							<Link href={'/news/updates/' + post.slug.current}>

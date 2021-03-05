@@ -12,7 +12,7 @@ import {
 	Content,
 } from '../../../styles/generalStyles'
 import Head from 'next/head'
-import DateHandler, { YearHandler } from '../../../components/Dates'
+import { formatDate, getYear } from '../../../util/dateHandler'
 import { Pagination } from '@material-ui/lab'
 import { eventsQuery } from '../../../lib/queries'
 import { sanityClient } from '../../../lib/sanity'
@@ -49,13 +49,13 @@ const Events = (props) => {
 	}
 
 	const years = props.events.map((post) => {
-		return YearHandler(post.eventDate)
+		return getYear(post.eventDate)
 	})
 	const uniqueYears = [...new Set(years)]
 
 	const sortPosts = (sortByYear) => {
 		const sortedPosts = currentPosts.filter((posts) => {
-			return YearHandler(posts.eventDate) == sortByYear
+			return getYear(posts.eventDate) == sortByYear
 		})
 		return sortedPosts
 	}
@@ -63,18 +63,20 @@ const Events = (props) => {
 	const renderPosts = (sortedPosts) => {
 		return (
 			<>
-				{sortedPosts.map((post) => (
-					<div className='Details' key={post.title}>
+				{sortedPosts.map((post, index) => (
+					<div className='Details' key={post.title, index}>
 						<a href={post.url} target='_blank' rel='noreferrer'>
 							<Header3>{post.title}</Header3>
 						</a>
-						|<p className='EventDate'>{DateHandler(post.eventDate)}</p> |
+						|<p className='EventDate'>{formatDate(post.eventDate)}</p> |
 						<p className='Location'>{post.location}</p>
 					</div>
 				))}
 			</>
 		)
 	}
+
+	console.log(process.env.SC_PROJECT_ID)
 
 	const description = `Over the years, the DADSS Program has organized, presented at and\
 	exhibited at a range of events – from traffic safety and advanced\
@@ -105,12 +107,12 @@ const Events = (props) => {
 					</Content>
 				</ContentBlock>
 				<ContentBlock className='ContentWrapper'>
-					{uniqueYears.map((year) => {
+					{uniqueYears.map((year, index) => {
 						return (
 							<>
 								{sortPosts(year).length > 0 && (
 									<>
-										<Header2>{year}</Header2>
+										<Header2 key={year, index}>{year}</Header2>
 										<Break>
 											<hr />
 										</Break>

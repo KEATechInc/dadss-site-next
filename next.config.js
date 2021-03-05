@@ -1,4 +1,9 @@
 module.exports = {
+	env: {
+		dataset: 'production',
+		project_id: '9i9p7w70',
+		use_cdn: 'true',
+	},
 	async redirects() {
 		return [
 			{

@@ -15,7 +15,7 @@ import {
 	dtpLightBlue,
 	bgOrange,
 } from '../../styles/generalStyles'
-import DateHandler from '../../components/Dates'
+import { formatDate } from '../../util/dateHandler'
 import { webinarQuery } from '../../lib/queries'
 import { sanityClient, PortableText, urlFor } from '../../lib/sanity'
 
@@ -81,7 +81,7 @@ const Webinar = ({ webinarInfo }) => {
 						</Break>
 						<p>
 							<b>Date: </b>
-							{DateHandler(webinarInfo.callToAction.webinarDate)}
+							{formatDate(webinarInfo.callToAction.webinarDate)}
 						</p>
 						<p>
 							<b>Time: </b>
@@ -231,13 +231,13 @@ const PageWrapper = styled.div`
 	.CalloutSection {
 		padding: 15px;
 		.FooterCallout {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			p {
 				font-size: 0.9em;
 				width: 60%;
-                text-align: center;
+				text-align: center;
 			}
 		}
 	}

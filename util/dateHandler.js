@@ -1,4 +1,4 @@
-export const DateHandler = (date) => {
+export const formatDate = (date) => {
 	const monthNames = [
 		'January',
 		'February',
@@ -23,10 +23,8 @@ export const DateHandler = (date) => {
 	return newDate
 }
 
-export const YearHandler = (date) => {
+export const getYear = (date) => {
 	let year = date.slice(0, 4)
 
 	return year
 }
-
-export default DateHandler
