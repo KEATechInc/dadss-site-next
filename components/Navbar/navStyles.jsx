@@ -90,7 +90,7 @@ export const Links = styled.ul`
 	li {
 		margin: 0;
 		padding: 15px 10px;
-		font-size: 1.4rem;
+		font-size: 1.2rem;
 		color: ${fontGray};
 		a {
 			color: ${fontGray};
@@ -169,9 +169,13 @@ export const MobileNavigation = styled.div`
 	width: 50%;
 	background: white;
 	z-index: 11;
-	padding: 25px;
+	padding: 25px 8px;
 	border-left: 5px solid ${bgOrange};
 	box-shadow: 0px 1px 4px ${bgGray};
+	@media only screen and (min-width: 550px) {
+		padding-left: 15px;
+		width: 35%;
+	}
 `
 export const MenuMask = styled.div`
 	position: fixed;

@@ -23,7 +23,6 @@ export const getStaticProps = async () => {
 	const webinarInfo = await sanityClient.fetch(webinarQuery)
 
 	const notFound = Object.keys(webinarInfo).length === 0 ? true : false
-	console.log(notFound)
 
 	return {
 		props: {

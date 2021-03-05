@@ -110,6 +110,9 @@ export const AboutSection = styled.section`
       }
     }
   }
+  .ImageWrapper {
+		margin: 10px 0 5px;
+	}
 `
 export const Quote = styled.blockquote`
   display: flex;

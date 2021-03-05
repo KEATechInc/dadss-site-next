@@ -46,6 +46,7 @@ export const Header2 = styled.h2`
 	margin: 20px 0 5px;
 	color: ${darkOrange};
 	letter-spacing: 1.2px;
+	line-height: 2.5rem;
 	text-align: center;
 	max-width: 1000px;
 	&.White {
@@ -65,6 +66,7 @@ export const Header3 = styled.h3`
 	text-align: center;
 	text-transform: capitalize;
 	letter-spacing: 1.1px;
+	line-height: 1.6rem;
 	max-width: 1000px;
 	&.White {
 		color: white;
