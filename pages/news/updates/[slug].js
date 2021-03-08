@@ -81,6 +81,9 @@ const PostWrapper = styled.div`
 	align-items: center;
 	flex-direction: column;
 	figure {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		.FigWrapper {
 			display: flex;
 			flex-direction: column;
@@ -93,9 +96,9 @@ const PostWrapper = styled.div`
 				object-fit: contain;
 			}
 			p {
-				font-size: 0.95em;
+				font-size: 0.9em;
 				margin: 0;
-				padding: 0;
+				padding: 0 5px;
 			}
 		}
 	}
