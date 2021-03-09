@@ -101,7 +101,7 @@ const PostWrapper = styled.div`
 				padding: 0 5px;
 			}
 		}
-	}
+	} 
 	p {
 		color: ${fontGray};
 		padding: 5px 0;
