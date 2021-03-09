@@ -15,6 +15,7 @@ import {
 import { AboutSection, Quote } from '../../styles/homeStyles'
 import { ImQuotesLeft } from '@react-icons/all-files/im/ImQuotesLeft'
 import { ImQuotesRight } from '@react-icons/all-files/im/ImQuotesRight'
+import Link from 'next/link'
 
 const Car = '/assets/logos/graphic-logo-car.svg'
 const Family = '/assets/logos/graphic-family.svg'
@@ -149,19 +150,29 @@ export default function Home() {
 						be further tested under real-world operating conditions before it is
 						made available as a consumer option.
 					</Content>
-					<div className='LogoWrapper'>
-						<img
-							src={ACTS}
-							alt='ACTS Logo'
-							className='ContentLogo ACTS'
-							onClick={() => window.open('/driven-to-protect', '_blank')}
-						/>
-						<img
-							src={NHTSA}
-							alt='NHTSA Logo'
-							className='ContentLogo NHTSA'
-							onClick={() => window.open('https://www.nhtsa.gov/', '_blank')}
-						/>
+					<div className='LogoContainer'>
+						<a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
+							<div className='LogoWrapper'>
+								<Image
+									src={NHTSA}
+									height={70}
+									width={190}
+									objectFit='contain'
+									alt='NHTSA Logo'
+								/>
+							</div>
+						</a>
+						<div className='LogoWrapper'>
+							<Link href='/driven-to-protect'>
+								<Image
+									src={ACTS}
+									height={60}
+									width={150}
+									objectFit='contain'
+									alt='ACTS Logo'
+								/>
+							</Link>
+						</div>
 					</div>
 					<Button onClick={() => router.push('/program-overview')}>
 						Program Overview
