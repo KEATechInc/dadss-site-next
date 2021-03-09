@@ -89,12 +89,12 @@ const Fleets = () => {
 						</ol>
 						<Content>
 							To explore how to become a DADSS deployment partner, contact{' '}
-							<Hyperlink href='mailto:info@dadss.org?subject=I want to learn more about DADSS' >
+							<Hyperlink href='mailto:info@dadss.org?subject=I want to learn more about DADSS'>
 								info@dadss.org.
 							</Hyperlink>
 						</Content>
 					</ContentBlock>
-					<div className='ImgWrapper'>
+					<div className='ImageWrapper'>
 						<Image
 							src={Art1}
 							alt='DADSS Sensor'
@@ -128,14 +128,38 @@ const Fleets = () => {
 				</Break>
 				<div className='LogoContainer'>
 					<a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
-						<img src={nhtsa} alt='NHTSA Logo' />
+						<div className='LogoWrapper'>
+							<Image
+								src={nhtsa}
+								height={70}
+								width={190}
+								objectFit='contain'
+								alt='NHTSA Logo'
+							/>
+						</div>
 					</a>
-					<Link href='/'>
-						<img src={dadss} alt='DADSS Logo' />
-					</Link>
-					<Link href='/driven-to-protect'>
-						<img src={acts} alt='ACTS Logo' />
-					</Link>
+					<div className='LogoWrapper'>
+						<Link href='/'>
+							<Image
+								src={dadss}
+								height={65}
+								width={220}
+								objectFit='contain'
+								alt='DADSS Logo'
+							/>
+						</Link>
+					</div>
+					<div className='LogoWrapper'>
+						<Link href='/driven-to-protect'>
+							<Image
+								src={acts}
+								height={60}
+								width={150}
+								objectFit='contain'
+								alt='ACTS Logo'
+							/>
+						</Link>
+					</div>
 				</div>
 				<Break>
 					<hr />
@@ -178,16 +202,14 @@ const FleetsWrapper = styled.div`
 		margin: 0;
 		max-width: 1000px;
 	}
-	.ImgWrapper {
+	.ImageWrapper {
 		display: none;
 	}
 	.LogoContainer {
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
-		img {
-			height: 100px;
-			width: auto;
+		.LogoWrapper {
 			padding: 25px;
 			cursor: pointer;
 		}
@@ -197,7 +219,7 @@ const FleetsWrapper = styled.div`
 		.Content {
 			max-width: 700px;
 		}
-		.ImgWrapper {
+		.ImageWrapper {
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;

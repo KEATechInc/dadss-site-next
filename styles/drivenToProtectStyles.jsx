@@ -100,6 +100,16 @@ export const DrivenToProtectWrapper = styled.div`
 		a {
 			text-transform: capitalize;
 		}
+		.LearnWrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
 	}
 	${'' /* Virginia Styles */}
 	&.Virginia {
@@ -149,8 +159,7 @@ export const DrivenToProtectWrapper = styled.div`
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
-			img {
-				height: 100px;
+			.LogoWrapper {
 				padding: 25px;
 			}
 		}
@@ -193,8 +202,7 @@ export const DrivenToProtectWrapper = styled.div`
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
-			img {
-				height: 100px;
+			.LogoWrapper {
 				padding: 25px;
 			}
 		}
