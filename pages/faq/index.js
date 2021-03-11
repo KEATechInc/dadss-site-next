@@ -36,7 +36,7 @@ const FAQ = () => {
 		setExpanded(route.slice(5).toString())
 	}, [])
 
-	return (
+	return ( 
 		<>
 			<Head>
 				<title>DADSS | FAQ</title>
