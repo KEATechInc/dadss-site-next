@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
 		props: {
 			webinarInfo,
 		},
-		revalidate: 3600,
+		revalidate: 300,
 		notFound,
 	}
 }
