@@ -43,7 +43,7 @@ export const getStaticProps = async ({ params }) => {
 			currentPosts,
 			pageCount,
 		},
-		revalidate: 3600,
+		revalidate: 300,
 		notFound,
 	}
 }
