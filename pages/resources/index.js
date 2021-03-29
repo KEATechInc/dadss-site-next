@@ -90,7 +90,7 @@ const Resources = ({ posts }) => {
 				</HeadBlock>
 				<div className='DivideWrapper'>
 					<div className='DivideLeft'>
-						<ContentBlock style={{paddingTop: '25px'}}>
+						<ContentBlock style={{ paddingTop: '25px' }}>
 							<Content>
 								In the Fall of 2020, we launched the Driven to Protect Discovery
 								Hub, offering free videos and educational resources – including
@@ -98,12 +98,9 @@ const Resources = ({ posts }) => {
 								driving and the ways the DADSS technology can prevent it.
 							</Content>
 							<Content>
-								<Hyperlink
-									href='https://www.discoveryhub.actsautosafety.org/'
-									target='_blank'
-									rel='noreferrer'>
-									Explore the Discovery Hub
-								</Hyperlink>
+								<Link href='/discovery-hub'>
+									<Hyperlink>Explore the Discovery Hub</Hyperlink>
+								</Link>
 							</Content>
 							<Content>
 								For additional background on the DADSS program and resulting

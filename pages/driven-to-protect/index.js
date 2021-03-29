@@ -14,6 +14,7 @@ import {
 } from '../../styles/generalStyles'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 
 const dtpLogo = '/assets/logos/dtpLogos/DTP-logo.webp'
@@ -56,7 +57,7 @@ const DrivenToProtect = () => {
 						<hr />
 					</Break>
 				</HeadBlock>
-				<ContentBlock style={{paddingTop: '25px'}}>
+				<ContentBlock style={{ paddingTop: '25px' }}>
 					<Content>
 						Driven to Protect is a public-private partnership between the{' '}
 						<Hyperlink
@@ -86,17 +87,16 @@ const DrivenToProtect = () => {
 						and help launch the Driven to Protect Initiative, followed by
 						Maryland in 2019. Learn more about each state’s role in the fight
 						against drunk driving below and visit the{' '}
-						<Hyperlink
-							className='Blue'
-							href='https://www.discoveryhub.actsautosafety.org/'
-							target='_blank'
-							rel='noreferrer'>
-							Driven to Protect Discovery Hub
-						</Hyperlink>{' '}
+						<Link href='/discovery-hub'>
+							<Hyperlink className='Blue'>
+								Driven to Protect Discovery Hub
+							</Hyperlink>
+						</Link>{' '}
 						for free educational resources.
 					</Content>
 				</ContentBlock>
-				<ContentBlock className='DirectoryWrapper' style={{paddingTop: '0'}}>
+				
+				<ContentBlock className='DirectoryWrapper' style={{ paddingTop: '0' }}>
 					<div className='Virginia'>
 						<div
 							className='ImgWrapper'

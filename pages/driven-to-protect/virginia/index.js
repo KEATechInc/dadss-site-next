@@ -69,7 +69,7 @@ const DTPVirginia = () => {
 					</Break>
 				</HeadBlock>
 				<div className='DivideWrapper'>
-					<ContentBlock className='Content' style={{paddingTop: '25px'}}>
+					<ContentBlock className='Content' style={{ paddingTop: '25px' }}>
 						<Content>
 							Recognizing the potential of the DADSS technology to save lives by
 							preventing drunk driving, Virginia became the first state to use
@@ -81,13 +81,11 @@ const DTPVirginia = () => {
 						</Content>
 						<Content>
 							Visit the{' '}
-							<Hyperlink
-								className='Blue'
-								href='https://www.discoveryhub.actsautosafety.org/'
-								target='_blank'
-								rel='noreferrer'>
-								Driven to Protect Discovery Hub
-							</Hyperlink>{' '}
+							<Link href='/discovery-hub'>
+								<Hyperlink className='Blue'>
+									Driven to Protect Discovery Hub
+								</Hyperlink>
+							</Link>{' '}
 							for free educational resources.
 						</Content>
 						<Content>
