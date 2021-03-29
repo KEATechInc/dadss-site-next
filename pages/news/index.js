@@ -105,7 +105,7 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
 						<hr />
 					</Break>
 				</HeadBlock>
-				<ContentBlock>
+				<ContentBlock style={{ padding: '25px' }}>
 					{renderPosts()}
 					<Pagination
 						count={pageCount}

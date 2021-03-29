@@ -42,7 +42,7 @@ const Supporters = () => {
             <hr /> <Circle /> <hr />
           </Break>
         </HeadBlock>
-        <ContentBlock>
+        <ContentBlock style={{ padding: '25px' }}>
           <Content>
             The Driver Alcohol Detection System for Safety (DADSS) research
             program is supported by safety and children’s advocates, insurance

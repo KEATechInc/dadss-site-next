@@ -64,7 +64,7 @@ const Events = (props) => {
 		return (
 			<>
 				{sortedPosts.map((post, index) => (
-					<div className='Details' key={post.title, index}>
+					<div className='Details' key={(post.title, index)}>
 						<a href={post.url} target='_blank' rel='noreferrer'>
 							<Header3>{post.title}</Header3>
 						</a>
@@ -96,7 +96,9 @@ const Events = (props) => {
 						<hr />
 					</Break>
 				</HeadBlock>
-				<ContentBlock className='Orange OpeningContent' style={{padding: '50px 25px'}}>
+				<ContentBlock
+					className='OpeningContent'
+					style={{ padding: '25px 25px 0' }}>
 					<Content>
 						Over the years, the DADSS Program has organized, presented at and
 						exhibited at a range of events – from traffic safety and advanced
@@ -110,7 +112,7 @@ const Events = (props) => {
 							<>
 								{sortPosts(year).length > 0 && (
 									<>
-										<Header2 key={year, index}>{year}</Header2>
+										<Header2 key={(year, index)}>{year}</Header2>
 										<Break>
 											<hr />
 										</Break>
