@@ -69,7 +69,7 @@ const DTPVirginia = () => {
 					</Break>
 				</HeadBlock>
 				<div className='DivideWrapper'>
-					<ContentBlock className='Content'>
+					<ContentBlock className='Content' style={{paddingTop: '25px'}}>
 						<Content>
 							Recognizing the potential of the DADSS technology to save lives by
 							preventing drunk driving, Virginia became the first state to use

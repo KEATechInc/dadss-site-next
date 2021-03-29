@@ -90,7 +90,7 @@ const Resources = ({ posts }) => {
 				</HeadBlock>
 				<div className='DivideWrapper'>
 					<div className='DivideLeft'>
-						<ContentBlock>
+						<ContentBlock style={{paddingTop: '25px'}}>
 							<Content>
 								In the Fall of 2020, we launched the Driven to Protect Discovery
 								Hub, offering free videos and educational resources – including

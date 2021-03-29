@@ -106,7 +106,7 @@ const Publications = (props) => {
 						<hr></hr>
 					</Break>
 				</HeadBlock>
-				<ContentBlock className='OpenerContent'>
+				<ContentBlock className='Orange OpenerContent' style={{paddingBottom: '50px'}}>
 					<Content>
 						As with any research and development effort, the DADSS Research
 						Program has published findings throughout the process. In the links

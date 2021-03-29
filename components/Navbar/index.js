@@ -149,12 +149,7 @@ const Navbar = () => {
 						<Link href='/news'>News</Link>
 					</li>
 					<li>
-						<a
-							href='https://www.discoveryhub.actsautosafety.org/'
-							target='_blank'
-							rel='noreferrer'>
-							Discovery Hub
-						</a>
+					<Link href='/discovery-hub'>Discovery Hub</Link>
 					</li>
 				</Links>
 			</div>

@@ -11,10 +11,13 @@ import {
 	Break,
 	Circle,
 	Hyperlink,
+	PlayerContainer,
+	ContainerH,
 } from '../../styles/generalStyles'
 import { AboutSection, Quote } from '../../styles/homeStyles'
 import { ImQuotesLeft } from '@react-icons/all-files/im/ImQuotesLeft'
 import { ImQuotesRight } from '@react-icons/all-files/im/ImQuotesRight'
+import ReactPlayer from 'react-player'
 import Link from 'next/link'
 
 const Car = '/assets/logos/graphic-logo-car.svg'
@@ -37,20 +40,22 @@ export default function Home() {
 			</Head>
 			<AboutSection>
 				<section className='HeroWrapper'>
-					<div className='SectionWrapper'>
-						<ContentBlock className='QuoteVideoWrapper'>
-							<div className='VideoWrapper'>
-								<iframe
+					<ContainerH>
+						<PlayerContainer style={{ margin: '0' }}>
+							<div className='PlayerWrap'>
+								<ReactPlayer
+									className='ReactPlayer shadowNone'
 									title='Driver Alcohol Detection System for Safety'
-									width='560'
-									height='315'
-									src='https://www.youtube.com/embed/a_BojOOFiKg'
-									frameBorder='0'
-									allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>
+									width='100%'
+									height='100%'
+									controls={true}
+									url='https://www.youtube.com/embed/a_BojOOFiKg'
+								/>
 							</div>
-						</ContentBlock>
-					</div>
-					<ContentBlock className='Discovery Gray'>
+						</PlayerContainer>
+					</ContainerH>
+
+					<ContentBlock className='Discovery Gray' style={{ padding: '25px' }}>
 						<Header2 className='White'>Discovery Hub</Header2>
 						<Content className='White'>
 							Visit the Driven to Protect Discovery Hub to learn about the
@@ -58,29 +63,30 @@ export default function Home() {
 							the DADSS Program is developing to make our roads and highways
 							safer.
 						</Content>
-						<a
-							href='https://www.discoveryhub.actsautosafety.org/'
-							target='_blank'
-							rel='noreferrer'>
-							<Button>Visit the Hub</Button>
-						</a>
+						<Button
+							onClick={() => {
+								router.push('/discovery-hub')
+							}}>
+							Visit the Hub
+						</Button>
 					</ContentBlock>
 				</section>
+
 				<ContentBlock className='Work'>
 					<Quote>
 						<p>
 							<ImQuotesLeft />
-							Every year in the U.S., drunk driving claims approximately
-						</p>
-						<p>
-							10,000 lives and costs approximately $194 billion.
+							Every year in the U.S., drunk driving claims approximately 10,000
+							lives and costs approximately $194 billion.
 							<ImQuotesRight />
 						</p>
 					</Quote>
+
 					<Header1>Our Work</Header1>
 					<Break>
 						<hr /> <Circle /> <hr />
 					</Break>
+
 					<div className='ImageWrapper'>
 						<Image
 							src={Family}
@@ -244,9 +250,9 @@ export default function Home() {
 				<ContentBlock className='Gray Next'>
 					<Header2 className='White'>What's Next?</Header2>
 					<Break>
-						<hr className='White' />
-						<Circle className='White' />
-						<hr className='White' />
+						<hr backgroundColor='bgOrange' />
+						<Circle backgroundColor='bgOrange' />
+						<hr backgroundColor='bgOrange' />
 					</Break>
 					<Content className='White'>
 						When the Program began in 2008, DADSS focused on research and

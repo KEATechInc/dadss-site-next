@@ -56,7 +56,7 @@ const DrivenToProtect = () => {
 						<hr />
 					</Break>
 				</HeadBlock>
-				<ContentBlock>
+				<ContentBlock style={{paddingTop: '25px'}}>
 					<Content>
 						Driven to Protect is a public-private partnership between the{' '}
 						<Hyperlink
@@ -96,7 +96,7 @@ const DrivenToProtect = () => {
 						for free educational resources.
 					</Content>
 				</ContentBlock>
-				<ContentBlock className='DirectoryWrapper'>
+				<ContentBlock className='DirectoryWrapper' style={{paddingTop: '0'}}>
 					<div className='Virginia'>
 						<div
 							className='ImgWrapper'

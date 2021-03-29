@@ -619,8 +619,7 @@ const FAQWrapper = styled.div`
 		}
 		h3 {
 			width: 100%;
-			margin: 10px 0 5px;
-			font-size: 1.2em;
+			font-size: 1.4em;
 			text-align: left;
 		}
 	}

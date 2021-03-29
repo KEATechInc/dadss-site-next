@@ -96,7 +96,7 @@ const Events = (props) => {
 						<hr />
 					</Break>
 				</HeadBlock>
-				<ContentBlock className='OpeningContent'>
+				<ContentBlock className='Orange OpeningContent' style={{padding: '50px 25px'}}>
 					<Content>
 						Over the years, the DADSS Program has organized, presented at and
 						exhibited at a range of events – from traffic safety and advanced
