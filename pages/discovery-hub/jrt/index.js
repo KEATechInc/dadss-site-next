@@ -17,12 +17,12 @@ import {
 	Break,
 	Circle,
 	boxShadow,
-} from '../../styles/generalStyles'
+} from '../../../styles/generalStyles'
 import styled from 'styled-components'
 import ReactPlayer from 'react-player/lazy'
 import Head from 'next/head'
 
-const landingHero = '/assets/landingPage/fw.png'
+const landingHero = '/assets/landingPage/JRT.jpg'
 
 const brain = '/assets/landingPage/brain.jpg'
 const shots = '/assets/landingPage/shots.jpg'
@@ -30,14 +30,11 @@ const whiskey = '/assets/landingPage/whiskey.jpg'
 const BT = '/assets/landingPage/B-T.jpg'
 const zero = '/assets/landingPage/zero.png'
 
-const businessGuy = '/assets/landingPage/businessGuy.jpg'
 const floyd = '/assets/landingPage/floyd.jpg'
-const dash = '/assets/landingPage/dash.png'
-const data = '/assets/landingPage/dataanalysis.png'
 
 const description = `A landing page containing learning resources and educational modules detailing the dangers of driving under the influence and describe the efforts the DADSS program is taking to prevent them.`
 
-export default function DiscoverHub() {
+export default function JRTeLearning() {
 	return (
 		<>
 			<Head>
@@ -48,20 +45,25 @@ export default function DiscoverHub() {
 			<PageWrap>
 				<HeroImage
 					landingHero={landingHero}
-					position='center 50%'
+					position='center 35%'
 					height='45vh'>
 					<HeaderTextContainer>
 						<div className='TextWrap'>
-							<Header1 className='White'>Discovery Hub</Header1>
+							<Header1 className='White'>
+								James River Transportation
+								<br />
+								Discovery Hub
+							</Header1>
 						</div>
 					</HeaderTextContainer>
 				</HeroImage>
 
 				<ContentBlock className='Gray'>
 					<Content style={{ padding: '25px 0' }}>
-						<b>Welcome to the Discovery Hub.</b> Here, you can learn about the
-						dangers of alcohol–impaired driving and the innovative technologies
-						currently in development to make our roads and highways safer.
+						<b>Welcome to the James River Transportation Discovery Hub.</b>{' '}
+						Here, you can learn about the dangers of alcohol–impaired driving
+						and the innovative technologies currently in development to make our
+						roads and highways safer.
 					</Content>
 				</ContentBlock>
 
@@ -118,44 +120,13 @@ export default function DiscoverHub() {
 								everyday lives, such as internet, GPS, and the microchip.
 							</Content>
 						</ContentCard>
-						<ContentCard>
-							<Content className='Header'>
-								DADSS Driven to Protect Discovery Hub
-							</Content>
-							<hr />
-							<Content>The learning modules below allow you to:</Content>
-							<ul>
-								<li>
-									Explore how alcohol is absorbed, processed and eliminated by
-									the human body
-								</li>
-								<li>
-									Learn how alcohol impairs your ability to safely operate a
-									motor vehicle
-								</li>
-								<li>
-									Obtain actionable information so you can avoid the dangers
-									associated with drunk driving
-								</li>
-								<li>
-									Find out how the novel DADSS technologies currently under
-									development and testing will protect you and other motorists
-									on the road in the future
-								</li>
-							</ul>
-							<Content>
-								There are also Science, Technology, Engineering, and Math (STEM)
-								modules available so students can learn about the science and
-								engineering behind the DADSS technologies.
-							</Content>
-						</ContentCard>
 					</ContainerH>
 				</MultiContentBlock>
 
 				<ContentBlock className='Gray'>
-					{eModules.length > 0 && (
+					{jrtModules.length > 0 && (
 						<>
-							<Header2 className='White'>General Education Modules</Header2>
+							<Header2 className='White'>JRT DADSS Training Modules</Header2>
 							<Break>
 								<hr />
 								<Circle />
@@ -163,7 +134,7 @@ export default function DiscoverHub() {
 							</Break>
 							<HubCardContainer>
 								<ContainerH>
-									{eModules.map((module, index) => {
+									{jrtModules.map((module, index) => {
 										return (
 											<HubCardWrap key={index}>
 												<a
@@ -183,7 +154,7 @@ export default function DiscoverHub() {
 						</>
 					)}
 
-					{stemModules.length > 0 && (
+					{eModules.length > 0 && (
 						<>
 							<Header2 className='White'>STEM Modules</Header2>
 							<Break>
@@ -193,7 +164,7 @@ export default function DiscoverHub() {
 							</Break>
 							<HubCardContainer>
 								<ContainerH>
-									{stemModules.map((module, index) => {
+									{eModules.map((module, index) => {
 										return (
 											<HubCardWrap key={index}>
 												<a
@@ -257,9 +228,10 @@ const HeaderTextContainer = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
-	backdrop-filter: blur(0.5px);
+	backdrop-filter: blur(2px);
 	.TextWrap {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		padding: 40px 25px;
@@ -270,6 +242,9 @@ const HeaderTextContainer = styled.div`
 		width: 100%;
 		text-align: right;
 		margin: 0;
+	}
+	h2 {
+		text-align: right;
 	}
 `
 
@@ -296,6 +271,14 @@ const PlayerContainer = styled.div`
 		text-align: center;
 	}
 `
+
+const jrtModules = [
+	{
+		title: `JRT DADSS Familarization`,
+		image: floyd,
+		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/JRT-training-modules/JRT+DADSS+Familiarization/index.html`,
+	},
+]
 
 const eModules = [
 	{
@@ -325,29 +308,6 @@ const eModules = [
 	},
 ]
 
-const stemModules = [
-	{
-		title: `STEM Part 1: Spectroscopy `,
-		image: floyd,
-		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+1+Spectroscopy+Raw/index.html#/`,
-	},
-	{
-		title: `STEM Part 2: The DADSS Benchtop Unit`,
-		image: dash,
-		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+2+The+DADSS+Benchtop+Unit+Raw/index.html#/`,
-	},
-	{
-		title: `STEM Part 3a: Data Collection and Analysis (Basic)`,
-		image: businessGuy,
-		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+3a+Data+Collection+And+Analysis+Basic+Raw/index.html#/`,
-	},
-	{
-		title: `STEM Part 3b: Data Collection and Analysis (Advanced)`,
-		image: data,
-		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+3b+Data+Collection+And+Analysis+Advanced/index.html#/`,
-	},
-]
-
 const videos = [
 	{
 		title: `The DADSS and Driven To Protect Demonstration Vehicle`,
@@ -360,10 +320,6 @@ const videos = [
 	{
 		title: `First Anniversary of our Partnership with James River Transportation`,
 		url: `https://youtu.be/LVud69MWn3Q`,
-	},
-	{
-		title: `IIHS/HLDI Reception Featuring the DADSS and Driven To Protect Vehicle`,
-		url: `https://youtu.be/ngkDsZ3sm-c`,
 	},
 	{
 		title: `Time-lapse of a DADSS Vehicle Integration`,
