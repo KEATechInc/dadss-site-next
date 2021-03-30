@@ -1,4 +1,7 @@
 module.exports = {
+	future: {
+		webpack5: true
+	  },
 	env: {
 		dataset: 'production',
 		project_id: '9i9p7w70',

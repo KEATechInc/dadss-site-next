@@ -408,9 +408,9 @@ export const Break = styled.span`
 		max-width: 475px;
 		color: ${bgOrange};
 		background: ${bgOrange};
-		background: ${props => props.backgroundColor};
+		background: ${props => props.backgroundcolor};
 		border: 1.5px solid ${bgOrange};
-		border: 1.5px solid	${props => props.backgroundColor};
+		border: 1.5px solid	${props => props.backgroundcolor};
 		border-radius: 10px;
 		box-shadow: ${breakShadow};
 		&.White {
@@ -430,7 +430,7 @@ export const Circle = styled.div`
 	width: 12px;
 	border-radius: 50px;
 	background: ${bgOrange};
-	background: ${props => props.backgroundColor};
+	background: ${props => props.backgroundcolor};
 	margin: 0px 15px;
 	box-shadow: ${breakShadow};
 	&.White {

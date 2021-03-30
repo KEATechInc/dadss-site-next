@@ -250,9 +250,9 @@ export default function Home() {
 				<ContentBlock className='Gray Next'>
 					<Header2 className='White'>What's Next?</Header2>
 					<Break>
-						<hr backgroundColor='bgOrange' />
-						<Circle backgroundColor='bgOrange' />
-						<hr backgroundColor='bgOrange' />
+						<hr backgroundcolor='bgOrange' />
+						<Circle backgroundcolor='bgOrange' />
+						<hr backgroundcolor='bgOrange' />
 					</Break>
 					<Content className='White'>
 						When the Program began in 2008, DADSS focused on research and
