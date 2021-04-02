@@ -40,7 +40,7 @@ const BreathBasedTech = () => {
 						<hr />
 					</Break>
 				</HeadBlock>
-				<ContentBlock>
+				<ContentBlock style={{ paddingTop: '25px' }}>
 					<Content>
 						When it comes to measuring a person’s blood alcohol concentration,
 						most Americans are familiar with breathalyzers that require drivers

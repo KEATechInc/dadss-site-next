@@ -94,12 +94,9 @@ const Navbar = () => {
 						</div>
 					</li>
 					<li>
-						<a
-							href='https://www.discoveryhub.actsautosafety.org/'
-							target='_blank'
-							rel='noreferrer'>
+						<div onClick={() => handleClick('/discovery-hub')} className='Link'>
 							Discovery Hub
-						</a>
+						</div>
 					</li>
 				</Links>
 			</MobileNavigation>
@@ -149,7 +146,7 @@ const Navbar = () => {
 						<Link href='/news'>News</Link>
 					</li>
 					<li>
-					<Link href='/discovery-hub'>Discovery Hub</Link>
+						<Link href='/discovery-hub'>Discovery Hub</Link>
 					</li>
 				</Links>
 			</div>

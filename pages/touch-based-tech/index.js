@@ -40,7 +40,7 @@ const TouchBasedTech = () => {
 						<hr />
 					</Break>
 				</HeadBlock>
-				<ContentBlock>
+				<ContentBlock style={{ paddingTop: '25px' }}>
 					<Content>
 						The DADSS Research Program is working on a new approach to measuring
 						blood alcohol concentration: a touch-based system that uses

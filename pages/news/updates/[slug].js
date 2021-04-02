@@ -67,7 +67,7 @@ const SinglePost = ({ post }) => {
 					<hr />
 				</Break>
 			</HeadBlock>
-			<ContentBlock>
+			<ContentBlock style={{ paddingTop: '25px' }}>
 				<PortableText className='Block' blocks={post.body} />
 			</ContentBlock>
 		</PostWrapper>
@@ -101,7 +101,7 @@ const PostWrapper = styled.div`
 				padding: 0 5px;
 			}
 		}
-	} 
+	}
 	p {
 		color: ${fontGray};
 		padding: 5px 0;
