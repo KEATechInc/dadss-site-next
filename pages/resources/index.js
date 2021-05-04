@@ -12,6 +12,7 @@ import {
   Hyperlink,
   Header3,
   CardWrapper,
+  Sidebar,
 } from '../../styles/generalStyles'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -186,6 +187,7 @@ const Resources = ({ posts }) => {
                 </li>
               </ul>
             </ContentBlock>
+
             <ContentBlock className='Blue VABlock'>
               <Header2 className='Blue'>Driven to Protect VA</Header2>
               <Break className='VADivider'>
@@ -219,13 +221,15 @@ const Resources = ({ posts }) => {
               </ul>
             </ContentBlock>
           </div>
-          <div className='DivideRight'>
+          
+          <Sidebar className='DivideRight'>
             <Header3>Recent Updates</Header3>
             <Break>
               <hr />
             </Break>
             {renderPosts()}
-          </div>
+          </Sidebar>
+
         </div>
       </ResourcesWrapper>
     </>

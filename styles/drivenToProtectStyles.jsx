@@ -111,6 +111,7 @@ export const DrivenToProtectWrapper = styled.div`
 			}
 		}
 	}
+
 	${'' /* Virginia Styles */}
 	&.Virginia {
 		.HeroImage {
@@ -125,7 +126,7 @@ export const DrivenToProtectWrapper = styled.div`
 			width: 100%;
 			max-width: 1000px;
 			padding-top: 56.25%;
-			margin-top: 10px;
+			margin: 10px 0;
 			iframe {
 				position: absolute;
 				top: 0;
@@ -150,9 +151,7 @@ export const DrivenToProtectWrapper = styled.div`
 			margin: 0;
 			max-width: 1000px;
 		}
-		.ImgWrapper {
-			display: none;
-		}
+
 		.LogoContainer {
 			display: flex;
 			flex-wrap: wrap;
@@ -167,17 +166,9 @@ export const DrivenToProtectWrapper = styled.div`
 			.Content {
 				max-width: 700px;
 			}
-			.ImgWrapper {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-				justify-content: space-between;
-				padding: 35px 25px 25px;
-				min-width: 300px;
-				height: 825px;
-			}
 		}
 	}
+
 	${'' /* Maryland Styles */}
 	&.Maryland {
 		.HeroImage {

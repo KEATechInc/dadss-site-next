@@ -12,6 +12,7 @@ import {
   Circle,
   bgGray,
   fontGray,
+  Sidebar,
 } from '../../styles/generalStyles'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -106,7 +107,7 @@ const Fleets = () => {
               safe driving goals.
             </Content>
           </ContentBlock>
-          <div className='ImageWrapper'>
+          <Sidebar className='ImageWrapper'>
             <Image
               src={Art1}
               alt='DADSS Sensor'
@@ -131,7 +132,7 @@ const Fleets = () => {
               objectFit='cover'
               objectPosition='center'
             />
-          </div>
+          </Sidebar>
         </div>
         <Break>
           <hr />

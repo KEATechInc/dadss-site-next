@@ -9,6 +9,7 @@ import {
 	Hyperlink,
 	Break,
 	Circle,
+	Sidebar,
 } from '../../../styles/generalStyles'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -132,7 +133,8 @@ const DTPMaryland = () => {
 							leadership in the state-level fight against drunk driving.
 						</Content>
 					</ContentBlock>
-					<div className='ImgWrapper'>
+
+					<Sidebar className='ImgWrapper'>
 						<Image
 							src={MDimg1}
 							alt='Driven to Protect'
@@ -165,7 +167,8 @@ const DTPMaryland = () => {
 							objectFit='cover'
 							objectPosition='center'
 						/>
-					</div>
+					</Sidebar>
+
 				</div>
 				<Break>
 					<hr />

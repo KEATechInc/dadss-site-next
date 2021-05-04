@@ -137,6 +137,41 @@ export const ContainerH = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 `
+export const Sidebar = styled.div`
+	display: none;
+
+	@media screen and (min-width: 900px) {
+		position: sticky;
+		top: 85px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 35px 25px 25px;
+		width: 300px;
+		height: 825px;
+		h3 {
+			margin: 0;
+		}
+		span > hr {
+			max-width: 225px;
+		}
+		.learnMore {
+			margin-top: 10px;
+			a {
+				display: flex;
+				align-items: center;
+				svg {
+					margin-left: 1px;
+				}
+			}
+		}
+
+		.sidebarCard {
+			margin-bottom: 50px;
+		}
+	}
+`
 //  video player
 export const PlayerContainer = styled.div`
 	display: flex;
@@ -408,9 +443,9 @@ export const Break = styled.span`
 		max-width: 475px;
 		color: ${bgOrange};
 		background: ${bgOrange};
-		background: ${props => props.backgroundcolor};
+		background: ${(props) => props.backgroundcolor};
 		border: 1.5px solid ${bgOrange};
-		border: 1.5px solid	${props => props.backgroundcolor};
+		border: 1.5px solid ${(props) => props.backgroundcolor};
 		border-radius: 10px;
 		box-shadow: ${breakShadow};
 		&.White {
@@ -430,7 +465,7 @@ export const Circle = styled.div`
 	width: 12px;
 	border-radius: 50px;
 	background: ${bgOrange};
-	background: ${props => props.backgroundcolor};
+	background: ${(props) => props.backgroundcolor};
 	margin: 0px 15px;
 	box-shadow: ${breakShadow};
 	&.White {
