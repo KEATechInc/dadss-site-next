@@ -247,12 +247,16 @@ const DTPVirginia = () => {
 								sharing social content, sending an e-newsletter or posting copy
 								on your website.
 							</Content>
-{/* 
+
 							<div className='learnMore'>
-								<Hyperlink href='/discovery-hub' className='Blue'>
+								<Hyperlink
+									href='https://thesocialpresskit.com/driven-to-protect-powered-by-dadss-virginia'
+									target='_blank'
+									rel='noreferrer'
+									className='Blue'>
 									Learn More <AiFillCaretRight />
 								</Hyperlink>
-							</div> */}
+							</div>
 						</div>
 					</Sidebar>
 				</div>
