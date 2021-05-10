@@ -149,7 +149,7 @@ export const Sidebar = styled.div`
 		justify-content: flex-start;
 		padding: 35px 25px 25px;
 		width: 300px;
-		height: 825px;
+		height: fit-content;
 		h3 {
 			margin: 0;
 		}
