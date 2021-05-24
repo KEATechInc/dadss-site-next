@@ -51,9 +51,6 @@ const Supporters = () => {
             the alcohol industry – who all agree that technology can be the
             answer to the persistent problem of drunk driving.
           </Content>
-          <Header3>Supporters of the DADSS program include:</Header3>
-
-          <ImageGrid imageArray={supportersData} />
 
           <Header3>
             The world's leading car companies are involved in the DADSS research
@@ -61,6 +58,12 @@ const Supporters = () => {
           </Header3>
 
           <ImageGrid imageArray={manufacturerData} />
+
+          <Header3 style={{ marginBottom: 25 }}>
+            Other supporters of the DADSS program include:
+          </Header3>
+
+          <ImageGrid imageArray={supportersData} />
 
           <Content>
             If your organization is interested in supporting the DADSS program,
