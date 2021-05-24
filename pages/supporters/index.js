@@ -14,6 +14,7 @@ import {
 } from '../../styles/generalStyles'
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
+import { supportersData, manufacturerData } from '../../lib/supportersData'
 
 const allCars = '/assets/logos/supporters/all-cars.jpg'
 
@@ -51,18 +52,16 @@ const Supporters = () => {
             answer to the persistent problem of drunk driving.
           </Content>
           <Header3>Supporters of the DADSS program include:</Header3>
-          <ImageGrid />
+
+          <ImageGrid imageArray={supportersData} />
+
           <Header3>
             The world's leading car companies are involved in the DADSS research
             program, including:
           </Header3>
-          <Image
-            src={allCars}
-            alt='Leading Car Manufacturers'
-            className='Manufacturers'
-            height={630}
-            width={900}
-          />
+
+          <ImageGrid imageArray={manufacturerData} />
+
           <Content>
             If your organization is interested in supporting the DADSS program,
             please contact{' '}
