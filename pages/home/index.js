@@ -24,8 +24,8 @@ const Car = '/assets/logos/graphic-logo-car.svg'
 const Family = '/assets/logos/graphic-family.svg'
 const Breath = '/assets/logos/graphic-tech-breath.svg'
 const Touch = '/assets/logos/graphic-tech-touch.svg'
-const ACTS = '/assets/logos/supporters/dadss-acts.webp'
-const NHTSA = '/assets/logos/supporters/dadss-nhtsa.webp'
+const ACTS = '/assets/logos/dadss-acts.webp'
+const NHTSA = '/assets/logos/dadss-nhtsa.webp'
 
 export default function Home() {
   const router = useRouter()
