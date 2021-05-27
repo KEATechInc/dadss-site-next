@@ -19,7 +19,7 @@ import {
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Head from 'next/head'
-import { faqData } from './faqData'
+import { faqData } from '../../src/faqData'
 
 const FAQ = () => {
   const [expanded, setExpanded] = useState(false)
