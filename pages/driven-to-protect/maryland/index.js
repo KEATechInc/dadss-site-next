@@ -13,7 +13,6 @@ import {
 } from '../../../styles/generalStyles'
 import Link from 'next/link'
 import Head from 'next/head'
-import Image from 'next/image'
 
 const dtpLogo = '/assets/logos/dtpLogos/MD-logo.webp'
 const acts = '/assets/logos/dtpLogos/acts-logo.webp'
@@ -47,7 +46,7 @@ const DTPMaryland = () => {
 			<DrivenToProtectWrapper className='Maryland'>
 				<HeadBlock className='HeroImage'>
 					<div className='LogoWrapper'>
-						<Image
+						<img
 							src={dtpLogo}
 							alt='DTP Logo'
 							width={850}
@@ -135,7 +134,7 @@ const DTPMaryland = () => {
 					</ContentBlock>
 
 					<Sidebar className='ImgWrapper'>
-						<Image
+						<img
 							src={MDimg1}
 							alt='Driven to Protect'
 							height={175}
@@ -143,7 +142,7 @@ const DTPMaryland = () => {
 							objectFit='cover'
 							objectPosition='center'
 						/>
-						<Image
+						<img
 							src={MDimg2}
 							alt='Driven to Protect'
 							height={175}
@@ -151,7 +150,7 @@ const DTPMaryland = () => {
 							objectFit='cover'
 							objectPosition='center'
 						/>
-						<Image
+						<img
 							src={MDimg3}
 							alt='Driven to Protect'
 							height={175}
@@ -159,7 +158,7 @@ const DTPMaryland = () => {
 							objectFit='cover'
 							objectPosition='center'
 						/>
-						<Image
+						<img
 							src={MDimg4}
 							alt='Driven to Protect'
 							height={175}
@@ -181,7 +180,7 @@ const DTPMaryland = () => {
 						target='_blank'
 						rel='noreferrer'>
 						<div className='LogoWrapper'>
-							<Image
+							<img
 								src={dmv}
 								height={38}
 								width={250}
@@ -192,7 +191,7 @@ const DTPMaryland = () => {
 					</a>
 					<a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
 						<div className='LogoWrapper'>
-							<Image
+							<img
 								src={nhtsa}
 								height={70}
 								width={190}
@@ -204,7 +203,7 @@ const DTPMaryland = () => {
 
 					<div className='LogoWrapper'>
 						<Link href='/'>
-							<Image
+							<img
 								src={dadss}
 								height={65}
 								width={220}
@@ -215,7 +214,7 @@ const DTPMaryland = () => {
 					</div>
 					<div className='LogoWrapper'>
 						<Link href='/driven-to-protect'>
-							<Image
+							<img
 								src={acts}
 								height={60}
 								width={150}

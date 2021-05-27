@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 
 const ImageGrid = ({ imageArray, padding }) => {
   return (
@@ -8,7 +7,7 @@ const ImageGrid = ({ imageArray, padding }) => {
         <GridWrap>
           {imageArray.map((image, index) => {
             return (
-              <Image
+              <img
                 key={index}
                 src={image.src}
                 alt='Supporter Logo'

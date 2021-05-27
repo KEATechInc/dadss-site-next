@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 import {
   ContentBlock,
   Content,
@@ -89,7 +88,7 @@ export default function Home() {
           </Break>
 
           <div className='ImageWrapper'>
-            <Image
+            <img
               src={Family}
               alt='DADSS Logo'
               className='ContentLogo Family'
@@ -129,7 +128,7 @@ export default function Home() {
             <hr />
           </Break>
           <div className='ImageWrapper'>
-            <Image
+            <img
               src={Car}
               alt='DADSS Logo'
               className='ContentLogo DADSS'
@@ -160,10 +159,10 @@ export default function Home() {
           <div className='LogoContainer'>
             <a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
               <div className='LogoWrapper'>
-                <Image
+                <img
                   src={NHTSA}
                   height={70}
-                  width={190}
+                  width={245}
                   objectFit='contain'
                   alt='NHTSA Logo'
                 />
@@ -171,9 +170,9 @@ export default function Home() {
             </a>
             <div className='LogoWrapper'>
               <Link href='/driven-to-protect'>
-                <Image
+                <img
                   src={ACTS}
-                  height={60}
+                  height={70}
                   width={150}
                   objectFit='contain'
                   alt='ACTS Logo'
@@ -202,7 +201,7 @@ export default function Home() {
           </Content>
           <div className='BlockWrapper'>
             <div className='SubWrapper'>
-              <Image
+              <img
                 src={Breath}
                 alt='Breath System'
                 className='ContentLogo Breath'
@@ -224,7 +223,7 @@ export default function Home() {
               </Button>
             </div>
             <div className='SubWrapper'>
-              <Image
+              <img
                 src={Touch}
                 alt='Touch System'
                 className='ContentLogo Touch'

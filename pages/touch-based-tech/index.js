@@ -50,7 +50,7 @@ const TouchBasedTech = () => {
 						driver under the legal limit.
 					</Content>
 					<div className='ImageWrapper'>
-						<Image
+						<img
 							src={DadssStill2}
 							alt='Touch-Based System'
 							height={560}
@@ -84,7 +84,7 @@ const TouchBasedTech = () => {
 						system will be able to take multiple readings in less than a second.
 					</Content>
 					<div className='ImageWrapper'>
-						<Image
+						<img
 							src={DadssStill1}
 							alt='How It Works Image'
 							height={560}

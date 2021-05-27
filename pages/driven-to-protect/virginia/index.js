@@ -16,7 +16,6 @@ import {
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Image from 'next/image'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 
 const dtpLogo = '/assets/logos/dtpLogos/VA-logo.webp'
@@ -48,7 +47,7 @@ const DTPVirginia = () => {
 			<DrivenToProtectWrapper className='Virginia'>
 				<HeadBlock className='HeroImage'>
 					<div className='LogoWrapper'>
-						<Image
+						<img
 							src={dtpLogo}
 							alt='DTP Logo'
 							width={850}
@@ -273,7 +272,7 @@ const DTPVirginia = () => {
 						target='_blank'
 						rel='noreferrer'>
 						<div className='LogoWrapper'>
-							<Image
+							<img
 								src={dmv}
 								height={55}
 								width={200}
@@ -284,7 +283,7 @@ const DTPVirginia = () => {
 					</a>
 					<a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
 						<div className='LogoWrapper'>
-							<Image
+							<img
 								src={nhtsa}
 								height={70}
 								width={190}
@@ -296,7 +295,7 @@ const DTPVirginia = () => {
 
 					<div className='LogoWrapper'>
 						<Link href='/'>
-							<Image
+							<img
 								src={dadss}
 								height={65}
 								width={220}
@@ -307,7 +306,7 @@ const DTPVirginia = () => {
 					</div>
 					<div className='LogoWrapper'>
 						<Link href='/driven-to-protect'>
-							<Image
+							<img
 								src={acts}
 								height={60}
 								width={150}

@@ -16,7 +16,6 @@ import {
 } from '../../styles/generalStyles'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const acts = '/assets/logos/dtpLogos/acts-logo.webp'
 const dadss = '/assets/logos/dtpLogos/dadss-logo.webp'
@@ -108,7 +107,7 @@ const Fleets = () => {
             </Content>
           </ContentBlock>
           <Sidebar className='ImageWrapper'>
-            <Image
+            <img
               src={Art1}
               alt='DADSS Sensor'
               height={175}
@@ -116,7 +115,7 @@ const Fleets = () => {
               objectFit='cover'
               objectPosition='center'
             />
-            <Image
+            <img
               src={Art2}
               alt='DADSS Sensor 2'
               height={175}
@@ -124,7 +123,7 @@ const Fleets = () => {
               objectFit='cover'
               objectPosition='center'
             />
-            <Image
+            <img
               src={Art3}
               alt='DADSS Fleet'
               height={175}
@@ -142,7 +141,7 @@ const Fleets = () => {
         <div className='LogoContainer'>
           <a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
             <div className='LogoWrapper'>
-              <Image
+              <img
                 src={nhtsa}
                 height={70}
                 width={190}
@@ -153,7 +152,7 @@ const Fleets = () => {
           </a>
           <div className='LogoWrapper'>
             <Link href='/'>
-              <Image
+              <img
                 src={dadss}
                 height={65}
                 width={220}
@@ -164,7 +163,7 @@ const Fleets = () => {
           </div>
           <div className='LogoWrapper'>
             <Link href='/driven-to-protect'>
-              <Image
+              <img
                 src={acts}
                 height={60}
                 width={150}

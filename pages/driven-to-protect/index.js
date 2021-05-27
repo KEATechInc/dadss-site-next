@@ -15,7 +15,6 @@ import {
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const dtpLogo = '/assets/logos/dtpLogos/DTP-logo.webp'
 const description = `Driven to Protect is a public-private partnership between the\
@@ -39,7 +38,7 @@ const DrivenToProtect = () => {
 			<DrivenToProtectWrapper>
 				<HeadBlock className='HeroImage'>
 					<div className='LogoWrapper'>
-						<Image
+						<img
 							src={dtpLogo}
 							alt='DTP Logo'
 							width={850}

@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import styled from 'styled-components'
 import {
 	HeadBlock,
@@ -55,7 +54,7 @@ const BreathBasedTech = () => {
 						normally would.
 					</Content>
 					<div className='ImageWrapper'>
-						<Image
+						<img
 							src={DadssStill1}
 							alt='Breath-Based System'
 							height={560}
@@ -90,7 +89,7 @@ const BreathBasedTech = () => {
 						expected from a driver’s natural breath plume.
 					</Content>
 					<div className='ImageWrapper'>
-						<Image
+						<img
 							src={DadssStill2}
 							alt='Molecules'
 							height={560}
@@ -119,7 +118,7 @@ const BreathBasedTech = () => {
 						interference such as dust or mechanical shock.
 					</Content>
 					<div className='ImageWrapper'>
-						<Image
+						<img
 							src={DadssStill3}
 							alt='Vehicle Testing'
 							height={560}

@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Image from 'next/image'
 import ReactGA from 'react-ga'
 import { SupportersWrapper } from '../../styles/supportersStyles'
 import {
