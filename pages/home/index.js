@@ -112,14 +112,9 @@ export default function Home() {
             driver assist vehicle technologies.
           </Content>
           <Content>
-            Watch our{' '}
-            <Hyperlink
-              target='_blank'
-              rel='noreferrer'
-              href='https://www.youtube.com/watch?v=Wk_DS91Y-mo'>
-              August 2020 "Ask The Experts" presentation
-            </Hyperlink>{' '}
-            for more on the technology development process.
+            Read our{' '}
+            <Hyperlink href='/faq'>Frequently Asked Questions</Hyperlink> for
+            more information on the development process and how the technology works.
           </Content>
         </ContentBlock>
         <ContentBlock className='DADSSBlock'>
