@@ -13,7 +13,7 @@ import {
 } from '../../styles/generalStyles'
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
-import { supportersData, manufacturerData } from '../../lib/supportersData'
+import { supportersData, manufacturerData } from '../../src/supportersData'
 
 const allCars = '/assets/logos/supporters/all-cars.jpg'
 

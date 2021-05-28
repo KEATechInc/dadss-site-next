@@ -24,18 +24,18 @@ import Head from 'next/head'
 import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 
-const landingHero = '/assets/landingPage/fw.png'
+const landingHero = '/assets/landingPage/fw.webp'
 
-const brain = '/assets/landingPage/brain.jpg'
-const shots = '/assets/landingPage/shots.jpg'
+const brain = '/assets/landingPage/brain.webp'
+const shots = '/assets/landingPage/shots.webp'
 const whiskey = '/assets/landingPage/whiskey.jpg'
 const BT = '/assets/landingPage/B-T.jpg'
 const zero = '/assets/landingPage/zero.png'
 
-const businessGuy = '/assets/landingPage/businessGuy.jpg'
-const floyd = '/assets/landingPage/floyd.jpg'
-const dash = '/assets/landingPage/dash.png'
-const data = '/assets/landingPage/dataanalysis.png'
+const businessGuy = '/assets/landingPage/businessGuy.webp'
+const floyd = '/assets/landingPage/floyd.webp'
+const dash = '/assets/landingPage/dash.webp'
+const data = '/assets/landingPage/dataanalysis.webp'
 
 const description = `A landing page containing learning resources and educational modules detailing the dangers of driving under the influence and describe the efforts the DADSS program is taking to prevent them.`
 
@@ -55,8 +55,8 @@ export default function DiscoverHub() {
 			<PageWrap>
 				<HeroImage
 					landingHero={landingHero}
-					position='center 50%'
-					height='45vh'>
+					position='center 60%'
+					height='50vh'>
 					<HeaderTextContainer>
 						<div className='TextWrap'>
 							<Header1 className='White'>Discovery Hub</Header1>
@@ -65,7 +65,7 @@ export default function DiscoverHub() {
 				</HeroImage>
 
 				<ContentBlock className='Gray'>
-					<Content style={{ padding: '25px 0' }}>
+					<Content>
 						<b>Welcome to the Discovery Hub.</b> Here, you can learn about the
 						dangers of alcohol–impaired driving and the innovative technologies
 						currently in development to make our roads and highways safer.

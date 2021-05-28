@@ -22,7 +22,7 @@ import { recentPostsQuery } from '../../lib/queries'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 
 const programPDF = '/assets/programOverview/pdf/DADSS_ProgramOverview.pdf'
-const faqPDF = '/assets/resources/pdf/DADSS-Resources-FAQ.pdf'
+const faqPDF = '/assets/resources/pdf/FAQ.pdf'
 const breathPDF = '/assets/breathBasedTech/pdf/DADSS_Breath-Based.pdf'
 const touchPDF = '/assets/touchBasedTech/pdf/DADSS_Touch-Based.pdf'
 const opinionPDF =

@@ -142,7 +142,7 @@ export const Sidebar = styled.div`
 
 	@media screen and (min-width: 900px) {
 		position: sticky;
-		top: 85px;
+		top: 70px;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
