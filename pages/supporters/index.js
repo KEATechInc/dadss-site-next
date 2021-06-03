@@ -42,7 +42,7 @@ const Supporters = () => {
             <hr /> <Circle /> <hr />
           </Break>
         </HeadBlock>
-        <ContentBlock style={{ padding: '25px' }}>
+        <ContentBlock>
           <Content>
             The Driver Alcohol Detection System for Safety (DADSS) research
             program is supported by safety and children’s advocates, insurance
@@ -50,20 +50,26 @@ const Supporters = () => {
             the alcohol industry – who all agree that technology can be the
             answer to the persistent problem of drunk driving.
           </Content>
+        </ContentBlock>
 
+        <ContentBlock>
           <Header3>
             The world's leading car companies are involved in the DADSS research
             program, including:
           </Header3>
 
           <ImageGrid imageArray={manufacturerData} />
+        </ContentBlock>
 
+        <ContentBlock>
           <Header3 style={{ marginBottom: 25 }}>
             Other supporters of the DADSS program include:
           </Header3>
 
           <ImageGrid imageArray={supportersData} />
+        </ContentBlock>
 
+        <ContentBlock>
           <Content>
             If your organization is interested in supporting the DADSS program,
             please contact{' '}

@@ -106,7 +106,7 @@ export const ContentBlock = styled.section`
 	align-items: center;
 	width: 100%;
 	background: white;
-	padding: 50px 25px;
+	padding: 25px;
 	line-height: 1.5rem;
 	ul,
 	ol {
@@ -129,6 +129,16 @@ export const ContentBlock = styled.section`
 		border-bottom: 5px solid ${fontGray};
 		color: white;
 	}
+	&.Gradient {
+		background: ${dadssGradient};
+		border-top: 5px solid ${fontGray};
+		border-bottom: 5px solid ${fontGray};
+		color: white;
+
+	}
+	&.NoBorder {
+			border: none;
+		}
 `
 export const ContainerH = styled.div`
 	width: 100%;
@@ -437,7 +447,7 @@ export const Break = styled.span`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 25px 0;
+	margin: 16px 0;
 	hr {
 		width: 30vw;
 		max-width: 475px;

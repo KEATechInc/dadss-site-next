@@ -55,20 +55,21 @@ export default function Home() {
             </PlayerContainer>
           </ContainerH>
 
-          <ContentBlock className='Discovery Gray' style={{ padding: '25px' }}>
-            <Header2 className='White'>Discovery Hub</Header2>
+          <ContentBlock className='Gradient'>
+            <Header2 className='White'>Announcement</Header2>
             <Content className='White'>
-              Visit the Driven to Protect Discovery Hub to learn about the
-              dangers of alcohol–impaired driving and the innovative technology
-              the DADSS Program is developing to make our roads and highways
-              safer.
+              The Automotive Coalition for Traffic Safety has announced the
+              first product equipped with DADSS Technology will be coming out of
+              the lab and into commercial vehicles later this year, and the
+              technology is now available for open-source licensing in
+              commercial vehicles.
             </Content>
-            <Button
-              onClick={() => {
-                router.push('/discovery-hub')
-              }}>
-              Visit the Hub
-            </Button>
+            <a
+              href='https://www.actsautosafety.org/announcementpage?fbclid=IwAR1wAvDwsa5fIeB9RnkWAWfKIwCd7ykbCD5rwiaXThy-cpSnNcqC3Pzxm9I'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Button className='White'>Learn More</Button>
+            </a>
           </ContentBlock>
         </section>
 
@@ -114,7 +115,8 @@ export default function Home() {
           <Content>
             Read our{' '}
             <Hyperlink href='/faq'>Frequently Asked Questions</Hyperlink> for
-            more information on the development process and how the technology works.
+            more information on the development process and how the technology
+            works.
           </Content>
         </ContentBlock>
         <ContentBlock className='DADSSBlock'>
@@ -179,6 +181,7 @@ export default function Home() {
             Program Overview
           </Button>
         </ContentBlock>
+
         <ContentBlock className='Orange Tech'>
           <Header2 className='Gray'>Technologies We're Exploring</Header2>
           <Break>

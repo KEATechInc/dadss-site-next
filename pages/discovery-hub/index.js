@@ -264,13 +264,12 @@ const HeaderTextContainer = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
-	backdrop-filter: blur(0.5px);
 	.TextWrap {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		padding: 40px 25px;
-		background: ${transGray};
+		background: rgba(0, 0, 0, 70%);
 		width: 100%;
 	}
 	h1 {
