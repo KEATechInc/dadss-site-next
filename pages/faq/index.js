@@ -6,8 +6,6 @@ import {
   HeadBlock,
   Header1,
   Header3,
-  Break,
-  Circle,
   boxShadow,
   darkOrange
 } from '../../styles/generalStyles'
@@ -20,6 +18,7 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Head from 'next/head'
 import { faqData } from '../../src/faqData'
+import Divider from '../../components/Divider'
 
 const FAQ = () => {
   const [expanded, setExpanded] = useState(false)
@@ -46,11 +45,7 @@ const FAQ = () => {
       <FAQWrapper>
         <HeadBlock>
           <Header1>Frequently Asked Questions</Header1>
-          <Break>
-            <hr />
-            <Circle />
-            <hr />
-          </Break>
+          <Divider />
         </HeadBlock>
 
         <ContentBlock className='FAQWrapper'>

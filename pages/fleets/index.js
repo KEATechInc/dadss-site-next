@@ -16,6 +16,7 @@ import {
 } from '../../styles/generalStyles'
 import Head from 'next/head'
 import Link from 'next/link'
+import Divider from '../../components/Divider'
 
 const acts = '/assets/logos/dtpLogos/acts-logo.webp'
 const dadss = '/assets/logos/dtpLogos/dadss-logo.webp'
@@ -46,9 +47,7 @@ const Fleets = () => {
         <HeadBlock className='HeroImage'></HeadBlock>
         <HeadBlock>
           <Header1>Fleets</Header1>
-          <Break>
-            <hr /> <Circle /> <hr />
-          </Break>
+          <Divider />
         </HeadBlock>
         <div className='DivideWrapper'>
           <ContentBlock className='Content' style={{ paddingTop: '25px' }}>
@@ -133,11 +132,9 @@ const Fleets = () => {
             />
           </Sidebar>
         </div>
-        <Break>
-          <hr />
-          <Circle />
-          <hr />
-        </Break>
+
+        <Divider />
+
         <div className='LogoContainer'>
           <a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
             <div className='LogoWrapper'>
@@ -162,22 +159,22 @@ const Fleets = () => {
             </Link>
           </div>
           <div className='LogoWrapper'>
-            <Link href='/driven-to-protect'>
+            <a
+              href='https://www.actsautosafety.org/'
+              target='_blank'
+              rel='noreferrer'>
               <img
                 src={acts}
-                height={60}
+                height={65}
                 width={150}
                 objectFit='contain'
                 alt='ACTS Logo'
               />
-            </Link>
+            </a>
           </div>
         </div>
-        <Break>
-          <hr />
-          <Circle />
-          <hr />
-        </Break>
+
+        <Divider />
       </FleetsWrapper>
     </>
   )

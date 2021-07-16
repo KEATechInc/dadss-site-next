@@ -172,12 +172,12 @@ const Resources = ({ posts }) => {
                 </li>
                 <li>
                   <Hyperlink href={breathPDF} target='_blank' rel='noreferrer'>
-                    A Look at the Technology: Breath-Based System
+                    A Look at the Technology: Breath System
                   </Hyperlink>
                 </li>
                 <li>
                   <Hyperlink href={touchPDF} target='_blank' rel='noreferrer'>
-                    A Look at the Technology: Touch-Based System
+                    A Look at the Technology: Touch System
                   </Hyperlink>
                 </li>
                 <li>

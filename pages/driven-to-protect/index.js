@@ -9,8 +9,6 @@ import {
 	Header1,
 	Hyperlink,
 	Header2,
-	Break,
-	Circle,
 } from '../../styles/generalStyles'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Head from 'next/head'
@@ -50,11 +48,7 @@ const DrivenToProtect = () => {
 				</HeadBlock>
 				<HeadBlock>
 					<Header1 className='Blue'>Driven to Protect</Header1>
-					<Break>
-						<hr />
-						<Circle />
-						<hr />
-					</Break>
+					<Divider />
 				</HeadBlock>
 				<ContentBlock style={{ paddingTop: '25px' }}>
 					<Content>

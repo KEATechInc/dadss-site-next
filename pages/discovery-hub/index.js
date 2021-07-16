@@ -13,8 +13,6 @@ import {
   HubCardBack,
   HubCardFront,
   transDarkOrange,
-  Break,
-  Circle,
   boxShadow,
 } from '../../styles/generalStyles'
 import styled from 'styled-components'
@@ -22,6 +20,7 @@ import ReactPlayer from 'react-player/lazy'
 import Head from 'next/head'
 import ReactGA from 'react-ga'
 import { useEffect } from 'react'
+import Divider from '../../components/Divider'
 
 const landingHero = '/assets/landingPage/fw.webp'
 
@@ -73,11 +72,7 @@ export default function DiscoverHub() {
 
         <MultiContentBlock>
           <Header2 className='White'>Overview</Header2>
-          <Break>
-            <hr className='White' />
-            <Circle className='White' />
-            <hr className='White' />
-          </Break>
+          <Divider color='white' />
           <ContainerH>
             <ContentCard>
               <Content className='Header'>
@@ -162,11 +157,7 @@ export default function DiscoverHub() {
           {eModules.length > 0 && (
             <>
               <Header2 className='White'>General Education Modules</Header2>
-              <Break>
-                <hr />
-                <Circle />
-                <hr />
-              </Break>
+              <Divider />
               <HubCardContainer>
                 <ContainerH>
                   {eModules.map((module, index) => {
@@ -192,11 +183,7 @@ export default function DiscoverHub() {
           {stemModules.length > 0 && (
             <>
               <Header2 className='White'>STEM Modules</Header2>
-              <Break>
-                <hr />
-                <Circle />
-                <hr />
-              </Break>
+              <Divider />
               <HubCardContainer>
                 <ContainerH>
                   {stemModules.map((module, index) => {
@@ -222,11 +209,7 @@ export default function DiscoverHub() {
           {videos.length > 0 && (
             <>
               <Header2 className='White'>Educational Videos</Header2>
-              <Break>
-                <hr />
-                <Circle />
-                <hr />
-              </Break>
+              <Divider />
               <HubCardContainer>
                 <ContainerH>
                   {videos.map((video, index) => {

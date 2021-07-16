@@ -7,8 +7,6 @@ import {
   Header2,
   Header3,
   Button,
-  Break,
-  Circle,
   Hyperlink,
   PlayerContainer,
   ContainerH,
@@ -18,6 +16,7 @@ import { ImQuotesLeft } from '@react-icons/all-files/im/ImQuotesLeft'
 import { ImQuotesRight } from '@react-icons/all-files/im/ImQuotesRight'
 import ReactPlayer from 'react-player'
 import Link from 'next/link'
+import Divider from '../../components/Divider'
 
 const Car = '/assets/logos/graphic-logo-car.svg'
 const Family = '/assets/logos/graphic-family.svg'
@@ -84,9 +83,7 @@ export default function Home() {
           </Quote>
 
           <Header1>Our Work</Header1>
-          <Break>
-            <hr /> <Circle /> <hr />
-          </Break>
+          <Divider />
 
           <div className='ImageWrapper'>
             <img
@@ -121,9 +118,7 @@ export default function Home() {
         </ContentBlock>
         <ContentBlock className='DADSSBlock'>
           <Header2>About DADSS</Header2>
-          <Break>
-            <hr />
-          </Break>
+          <Divider />
           <div className='ImageWrapper'>
             <img
               src={Car}
@@ -184,11 +179,9 @@ export default function Home() {
 
         <ContentBlock className='Orange Tech'>
           <Header2 className='Gray'>Technologies We're Exploring</Header2>
-          <Break>
-            <hr className='White' />
-            <Circle className='White' />
-            <hr className='White' />
-          </Break>
+
+          <Divider color='white' />
+
           <Content>
             The goal of the DADSS Research Program is to advance the state of
             alcohol detection technology by developing a system that is fast,
@@ -206,7 +199,7 @@ export default function Home() {
                 height={150}
                 width={115}
               />
-              <Header3 className='Gray'>Breath-Based System</Header3>
+              <Header3 className='Gray'>Breath System</Header3>
               <Content>
                 This system measures alcohol as a driver breathes normally, when
                 in the driver's seat. It will be designed to take instantaneous
@@ -216,7 +209,7 @@ export default function Home() {
               </Content>
               <Button
                 className='White'
-                onClick={() => router.push('/breath-based-tech')}>
+                onClick={() => router.push('/breath-technology')}>
                 Overview
               </Button>
             </div>
@@ -228,7 +221,7 @@ export default function Home() {
                 height={150}
                 width={115}
               />
-              <Header3 className='Gray'>Touch-Based System</Header3>
+              <Header3 className='Gray'>Touch System</Header3>
               <Content>
                 This technology measures blood alcohol levels under the skin’s
                 surface by shining an infrared-light through the fingertip of
@@ -238,7 +231,7 @@ export default function Home() {
               </Content>
               <Button
                 className='White'
-                onClick={() => router.push('/touch-based-tech')}>
+                onClick={() => router.push('/touch-technology')}>
                 Overview
               </Button>
             </div>
@@ -247,11 +240,8 @@ export default function Home() {
 
         <ContentBlock className='Gray Next'>
           <Header2 className='White'>What's Next?</Header2>
-          <Break>
-            <hr backgroundcolor='bgOrange' />
-            <Circle backgroundcolor='bgOrange' />
-            <hr backgroundcolor='bgOrange' />
-          </Break>
+          <Divider />
+
           <Content className='White'>
             When the Program began in 2008, DADSS focused on research and
             creation of proof-of-concept laboratory prototypes to determine

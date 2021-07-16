@@ -14,6 +14,7 @@ import {
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
 import { supportersData, manufacturerData } from '../../src/supportersData'
+import Divider from '../../components/Divider'
 
 const allCars = '/assets/logos/supporters/all-cars.jpg'
 
@@ -38,9 +39,7 @@ const Supporters = () => {
       <SupportersWrapper>
         <HeadBlock>
           <Header1>Our Supporters</Header1>
-          <Break>
-            <hr /> <Circle /> <hr />
-          </Break>
+          <Divider />
         </HeadBlock>
         <ContentBlock>
           <Content>

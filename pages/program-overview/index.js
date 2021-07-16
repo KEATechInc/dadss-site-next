@@ -12,10 +12,13 @@ import {
   Hyperlink,
 } from '../../styles/generalStyles'
 import { OverviewWrapper } from '../../styles/programOverviewStyles'
+import Divider from '../../components/Divider'
 
 const PDF = '/assets/programOverview/pdf/DADSS_ProgramOverview.pdf'
-const source1 = '/assets/programOverview/pdf/2013 Alcohol-Impaired Driving TSF Sheet.pdf'
-const source2 = '/assets/programOverview/pdf/The Economic and Societal Impact Of Motor Vehicle Crashes, 2010 (Revised May 2015).pdf'
+const source1 =
+  '/assets/programOverview/pdf/2013 Alcohol-Impaired Driving TSF Sheet.pdf'
+const source2 =
+  '/assets/programOverview/pdf/The Economic and Societal Impact Of Motor Vehicle Crashes, 2010 (Revised May 2015).pdf'
 
 const ProgramOverview = () => {
   useEffect(() => {
@@ -35,11 +38,7 @@ const ProgramOverview = () => {
       <OverviewWrapper>
         <HeadBlock className='HeadBlock'>
           <Header2>The Problem</Header2>
-          <Break>
-            <hr />
-            <Circle />
-            <hr />
-          </Break>
+          <Divider />
         </HeadBlock>
         <ContentBlock className='Problem'>
           <ul>
@@ -66,11 +65,7 @@ const ProgramOverview = () => {
         </ContentBlock>
         <ContentBlock className='Orange'>
           <Header2 className='Gray'>A New Approach</Header2>
-          <Break>
-            <hr className='White' />
-            <Circle className='White' />
-            <hr className='White' />
-          </Break>
+          <Divider color='white' />
           <Content className='Gray'>
             The Driver Alcohol Detection System for Safety (DADSS) Research
             Program brings together the Automotive Coalition for Traffic Safety
@@ -101,9 +96,7 @@ const ProgramOverview = () => {
         </ContentBlock>
         <ContentBlock>
           <Header2>Technologies Under Exploration</Header2>
-          <Break>
-            <hr /> <Circle /> <hr />
-          </Break>
+          <Divider />
           <Content>
             Congress recognized the life-saving potential of the DADSS Program
             and has made it part of a multi-faceted national commitment to
@@ -116,7 +109,7 @@ const ProgramOverview = () => {
           </Content>
           <ul>
             <li>
-              A breath-based system, which measures alcohol as a driver breathes
+              A breath system, which measures alcohol as a driver breathes
               normally, when in the driver’s seat. It will be designed to take
               instantaneous readings as the driver breathes normally and to
               accurately and reliably distinguish between the driver’s breath
@@ -156,9 +149,7 @@ const ProgramOverview = () => {
         </ContentBlock>
 
         <ContentBlock className='Footnotes'>
-          <Break>
-            <hr /> <Circle /> <hr />
-          </Break>
+          <Divider />
           <Content>
             <sup>1</sup>National Highway Traffic Safety Administration (NHTSA).
             “The Economic and Societal Impact Of Motor Vehicle Crashes, 2010.”
@@ -186,9 +177,7 @@ const ProgramOverview = () => {
             “Alcohol Detection Device Project is now in Development Phase.”
             Insurance Institute for Highway Safety, Nov. 2011.
           </Content>
-          <Break className='BottomBreak'>
-            <hr /> <Circle /> <hr />
-          </Break>
+          <Divider />
         </ContentBlock>
       </OverviewWrapper>
     </>
