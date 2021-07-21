@@ -5,8 +5,6 @@ import {
   HeadBlock,
   Header1,
   Header2,
-  Break,
-  Circle,
   ContentBlock,
   Content,
   Hyperlink,
