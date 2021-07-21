@@ -8,7 +8,7 @@ const VideoPlayer = ({ videos }) => {
   const [current, setCurrent] = useState(0)
 
   return (
-    <Container>
+    <Container style={{ marginTop: 50 }}>
       <VideoPlayerWrapper>
         <PlayerContainer>
           <PlayerWrap>

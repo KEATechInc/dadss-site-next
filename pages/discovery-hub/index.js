@@ -20,6 +20,7 @@ import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 import Divider from '../../components/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
+import { Box } from '@material-ui/core'
 
 const landingHero = '/assets/landingPage/fw.webp'
 
