@@ -54,7 +54,7 @@ export default function Home() {
             </PlayerContainer>
           </ContainerH>
 
-          <ContentBlock className='Gradient'>
+          <ContentBlock className='Gradient' style={{borderTop: 'none'}}>
             <Header2 className='White'>Announcement</Header2>
             <Content className='White'>
               The Automotive Coalition for Traffic Safety has announced the

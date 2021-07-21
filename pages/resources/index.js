@@ -20,6 +20,7 @@ import { formatDate } from '../../util/dateHandler'
 import { PortableText, sanityClient } from '../../lib/sanity'
 import { recentPostsQuery } from '../../lib/queries'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
+import Divider from '../../components/Divider'
 
 const programPDF = '/assets/programOverview/pdf/DADSS_ProgramOverview.pdf'
 const faqPDF = '/assets/resources/pdf/FAQ.pdf'
@@ -83,11 +84,7 @@ const Resources = ({ posts }) => {
       <ResourcesWrapper>
         <HeadBlock>
           <Header1>Resources</Header1>
-          <Break>
-            <hr />
-            <Circle></Circle>
-            <hr />
-          </Break>
+          <Divider />
         </HeadBlock>
         <div className='DivideWrapper'>
           <div className='DivideLeft'>
@@ -190,11 +187,7 @@ const Resources = ({ posts }) => {
 
             <ContentBlock className='Blue VABlock'>
               <Header2 className='Blue'>Driven to Protect VA</Header2>
-              <Break className='VADivider'>
-                <hr />
-                <Circle className='Toggle' />
-                <hr className='Toggle' />
-              </Break>
+              <Divider />
               <Content className='Gray'>
                 You can also download materials about the Driven to Protect
                 program in Virginia:
@@ -221,15 +214,12 @@ const Resources = ({ posts }) => {
               </ul>
             </ContentBlock>
           </div>
-          
+
           <Sidebar className='DivideRight'>
             <Header3>Recent Updates</Header3>
-            <Break>
-              <hr />
-            </Break>
+            <Divider size='small' />
             {renderPosts()}
           </Sidebar>
-
         </div>
       </ResourcesWrapper>
     </>
