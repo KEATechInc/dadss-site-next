@@ -12,6 +12,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@react-icons/all-files": "^4.1.0",
+    "@react-spring/web": "^9.2.4",
     "@sanity/cli": "^2.4.0",
     "@sanity/image-url": "^0.140.22",
     "next": "^10.1.2",

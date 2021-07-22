@@ -35,7 +35,7 @@ const VideoPlayer = ({ videos }) => {
           })}
         </VideoSelection>
 
-        <Typography style={{ color: 'white' }}>
+        <Typography variant='h6' style={{ color: 'white' }}>
           {videos[current].title}
         </Typography>
       </VideoPlayerWrapper>

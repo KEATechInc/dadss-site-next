@@ -7,7 +7,7 @@ import { FaBars } from '@react-icons/all-files/fa/FaBars'
 const logo1 = '../../../assets/logos/dadss-logo.svg'
 
 const Navbar = () => {
-	// Store state for mobile menu
+	// set state for mobile menu
 	const [showMenu, setShowMenu] = useState(false)
 
 	//Initializing variables for mobile menu and close on click function
@@ -22,7 +22,6 @@ const Navbar = () => {
 		setShowMenu(false)
 	}
 
-	// Store useHistory function into variable and create a function
 	const router = useRouter()
 
 	const goHome = () => {

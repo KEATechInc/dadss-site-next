@@ -1,6 +1,7 @@
 import { styled } from '@material-ui/core'
 import { useState, useEffect } from 'react'
 import { dtpLightBlue } from '../../styles/generalStyles'
+import { useSpring, animated as a } from '@react-spring/web'
 
 const Thumbnail = ({ current, setCurrent, thumbnail, index }) => {
   const [active, setActive] = useState(false)
@@ -17,6 +18,10 @@ const Thumbnail = ({ current, setCurrent, thumbnail, index }) => {
     }
   }, [current])
 
+  const thumbnailStyles = useSpring({
+    background: active ? dtpLightBlue : 'transparent',
+  })
+
   const ImageHolder = styled('div')({
     height: 100,
     minWidth: 130,
@@ -27,14 +32,10 @@ const Thumbnail = ({ current, setCurrent, thumbnail, index }) => {
     backgroundSize: 'contain',
   })
 
-  const ImageWrapper = styled('div')({
-    background: active ? dtpLightBlue : 'black',
-  })
-
   return (
-    <ImageWrapper className='playerContainer'>
+    <a.div className='playerContainer' style={thumbnailStyles}>
       <ImageHolder onClick={() => handleClick(index)} />
-    </ImageWrapper>
+    </a.div>
   )
 }
 
