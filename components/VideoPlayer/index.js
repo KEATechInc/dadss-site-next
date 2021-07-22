@@ -1,7 +1,7 @@
 import { Container, styled, Typography, Paper } from '@material-ui/core'
 import ReactPlayer from 'react-player/lazy'
 import { useState } from 'react'
-import { dadssGradient } from '../../styles/generalStyles'
+import { bgOrange } from '../../styles/generalStyles'
 import Thumbnail from './Thumbnail'
 
 const VideoPlayer = ({ videos }) => {
@@ -47,7 +47,7 @@ export default VideoPlayer
 
 const VideoPlayerWrapper = styled(Paper)({
   padding: 16,
-  background: dadssGradient,
+  background: bgOrange,
 })
 
 const PlayerContainer = styled(Paper)({

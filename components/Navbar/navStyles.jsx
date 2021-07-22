@@ -13,7 +13,7 @@ export const Wrapper = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 80px;
+	height: 65px;
 	width: 100%;
 	background: white;
 	color: #3b3b3b;
@@ -24,7 +24,7 @@ export const Wrapper = styled.nav`
 	:after {
 		content: '';
 		position: absolute;
-		top: 80px;
+		top: 65px;
 		width: 100%;
 		height: 5px;
 		background: ${dadssGradientBG};

@@ -1,22 +1,24 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import ContentBlock from '../../components/ContentBlock'
 import {
-  ContentBlock,
   Content,
   Header1,
   Header2,
   Header3,
-  Button,
   Hyperlink,
   PlayerContainer,
   ContainerH,
+  bgGray,
 } from '../../styles/generalStyles'
 import { AboutSection, Quote } from '../../styles/homeStyles'
 import { ImQuotesLeft } from '@react-icons/all-files/im/ImQuotesLeft'
 import { ImQuotesRight } from '@react-icons/all-files/im/ImQuotesRight'
-import ReactPlayer from 'react-player'
 import Link from 'next/link'
 import Divider from '../../components/Divider'
+import { Typography, Button } from '@material-ui/core'
+import theme, { dadssGradient } from '../../src/theme'
+import HomeHero from '../../components/HomeHero'
 
 const Car = '/assets/logos/graphic-logo-car.svg'
 const Family = '/assets/logos/graphic-family.svg'
@@ -24,6 +26,8 @@ const Breath = '/assets/logos/graphic-tech-breath.svg'
 const Touch = '/assets/logos/graphic-tech-touch.svg'
 const ACTS = '/assets/logos/dadss-acts.webp'
 const NHTSA = '/assets/logos/dadss-nhtsa.webp'
+
+const url = `https://www.youtube.com/watch?v=a_BojOOFiKg`
 
 export default function Home() {
   const router = useRouter()
@@ -37,40 +41,28 @@ export default function Home() {
         <meta name='description' content={description} />
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
-      <AboutSection>
-        <section className='HeroWrapper'>
-          <ContainerH>
-            <PlayerContainer style={{ margin: '0' }}>
-              <div className='PlayerWrap'>
-                <ReactPlayer
-                  className='ReactPlayer shadowNone'
-                  title='Driver Alcohol Detection System for Safety'
-                  width='100%'
-                  height='100%'
-                  controls={true}
-                  url='https://www.youtube.com/embed/a_BojOOFiKg'
-                />
-              </div>
-            </PlayerContainer>
-          </ContainerH>
+      <main>
+        <HomeHero videoUrl={url} />
 
-          <ContentBlock className='Gradient' style={{borderTop: 'none'}}>
-            <Header2 className='White'>Announcement</Header2>
-            <Content className='White'>
-              The Automotive Coalition for Traffic Safety has announced the
-              first product equipped with DADSS Technology will be coming out of
-              the lab and into commercial vehicles later this year, and the
-              technology is now available for open-source licensing in
-              commercial vehicles.
-            </Content>
-            <a
-              href='https://www.actsautosafety.org/announcementpage?fbclid=IwAR1wAvDwsa5fIeB9RnkWAWfKIwCd7ykbCD5rwiaXThy-cpSnNcqC3Pzxm9I'
-              target='_blank'
-              rel='noopener noreferrer'>
-              <Button className='White'>Learn More</Button>
-            </a>
-          </ContentBlock>
-        </section>
+        <ContentBlock background={dadssGradient} border={bgGray}>
+          <Typography variant='h4' color='textSecondary' gutterBottom>
+            Announcement
+          </Typography>
+          <Typography color='textSecondary' paragraph>
+            The Automotive Coalition for Traffic Safety has announced the first
+            product equipped with DADSS Technology will be coming out of the lab
+            and into commercial vehicles later this year, and the technology is
+            now available for open-source licensing in commercial vehicles.
+          </Typography>
+          <Button
+            variant='contained'
+            color='secondary'
+            href='https://www.actsautosafety.org/announcementpage?fbclid=IwAR1wAvDwsa5fIeB9RnkWAWfKIwCd7ykbCD5rwiaXThy-cpSnNcqC3Pzxm9I'
+            target='_blank'
+            rel='noopener noreferrer'>
+            Learn More
+          </Button>
+        </ContentBlock>
 
         <ContentBlock className='Work'>
           <Quote>
@@ -268,7 +260,7 @@ export default function Home() {
             More News & Updates
           </Button>
         </ContentBlock>
-      </AboutSection>
+      </main>
     </>
   )
 }
