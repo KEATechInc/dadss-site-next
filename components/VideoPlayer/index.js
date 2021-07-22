@@ -8,7 +8,7 @@ const VideoPlayer = ({ videos }) => {
   const [current, setCurrent] = useState(0)
 
   return (
-    <Container style={{ marginTop: 50 }}>
+    <Container maxWidth='md' style={{ marginTop: 50 }}>
       <VideoPlayerWrapper>
         <PlayerContainer>
           <PlayerWrap>
@@ -35,7 +35,7 @@ const VideoPlayer = ({ videos }) => {
           })}
         </VideoSelection>
 
-        <Typography variant='h6' style={{ color: 'white' }}>
+        <Typography style={{ color: 'white' }}>
           {videos[current].title}
         </Typography>
       </VideoPlayerWrapper>
