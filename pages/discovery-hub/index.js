@@ -13,14 +13,14 @@ import {
   HubCardBack,
   HubCardFront,
   transDarkOrange,
-  boxShadow,
 } from '../../styles/generalStyles'
 import styled from 'styled-components'
-import ReactPlayer from 'react-player/lazy'
 import Head from 'next/head'
 import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 import Divider from '../../components/Divider'
+import VideoPlayer from '../../components/VideoPlayer'
+import { Box } from '@material-ui/core'
 
 const landingHero = '/assets/landingPage/fw.webp'
 
@@ -210,28 +210,8 @@ export default function DiscoverHub() {
             <>
               <Header2 className='White'>Educational Videos</Header2>
               <Divider />
-              <HubCardContainer>
-                <ContainerH>
-                  {videos.map((video, index) => {
-                    return (
-                      <PlayerContainer key={index}>
-                        <Content className='TitleWrap'>{video.title}</Content>
 
-                        <div className='PlayerWrap'>
-                          <ReactPlayer
-                            key={index}
-                            className='ReactPlayer'
-                            url={video.url}
-                            width='100%'
-                            height='100%'
-                            controls={true}
-                          />
-                        </div>
-                      </PlayerContainer>
-                    )
-                  })}
-                </ContainerH>
-              </HubCardContainer>
+              <VideoPlayer videos={videos} />
             </>
           )}
         </ContentBlock>
@@ -258,30 +238,6 @@ const HeaderTextContainer = styled.div`
     width: 100%;
     text-align: right;
     margin: 0;
-  }
-`
-
-const PlayerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 400px;
-  margin: 25px;
-  justify-content: flex-end;
-  align-items: center;
-  .PlayerWrap {
-    position: relative;
-    padding-top: 56.25%;
-    width: 100%;
-
-    .ReactPlayer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      box-shadow: ${boxShadow};
-    }
-  }
-  .TitleWrap {
-    text-align: center;
   }
 `
 
@@ -339,30 +295,30 @@ const stemModules = [
 const videos = [
   {
     title: `Breakthrough Invention Aims to Eliminate Drunk Driving`,
-    url: `https://www.youtube.com/watch?v=DaBmFClU9r8`,
+    id: `DaBmFClU9r8`,
   },
   {
     title: `The DADSS and Driven To Protect Demonstration Vehicle`,
-    url: `https://youtu.be/D4AuGbnitZk`,
+    id: `D4AuGbnitZk`,
   },
   {
     title: `Overview of the DADSS Technology`,
-    url: `https://youtu.be/SQK5H6h_JHc`,
+    id: `SQK5H6h_JHc`,
   },
   {
     title: `First Anniversary of our Partnership with James River Transportation`,
-    url: `https://youtu.be/LVud69MWn3Q`,
+    id: `LVud69MWn3Q`,
   },
   {
     title: `IIHS/HLDI Reception Featuring the DADSS and Driven To Protect Vehicle`,
-    url: `https://youtu.be/ngkDsZ3sm-c`,
+    id: `ngkDsZ3sm-c`,
   },
   {
     title: `Time-lapse of a DADSS Vehicle Integration`,
-    url: `https://youtu.be/JuGxxPAhbhI`,
+    id: `JuGxxPAhbhI`,
   },
   {
     title: `A Day in the Life of a Breath Sensor: The Testing Process`,
-    url: `https://youtu.be/P8fLx0OF57U`,
+    id: `P8fLx0OF57U`,
   },
 ]
