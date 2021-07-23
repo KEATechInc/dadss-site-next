@@ -11,7 +11,6 @@ const Divider = ({ color, size }) => {
     width: '100%',
     '& hr': {
       width: '100%',
-      maxWidth: 475,
       color: bgOrange,
       background: color ? color : bgOrange,
       border: color ? `1.5px solid ${color}` : `1.5px solid ${bgOrange}`,

@@ -1,5 +1,5 @@
-import Navbar from '../Navbar'
-import Footer from '../Footer'
+import Navbar from './Navbar'
+import Footer from './Footer'
 import { styled } from '@material-ui/core'
 
 const Layout = ({ children }) => {
@@ -15,5 +15,5 @@ const Layout = ({ children }) => {
 export default Layout
 
 const PageWrap = styled('div')({
-  paddingTop: 70,
+  paddingTop: 65,
 })

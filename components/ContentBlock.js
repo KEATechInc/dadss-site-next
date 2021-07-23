@@ -12,20 +12,20 @@ const ContentBlock = ({
 }) => {
   const SectionWrapper = styled('section')({
     background: background,
-    borderTop: border ? `5px solid ${border}` : null,
-    borderBottom: border ? `5px solid ${border}` : null,
+    borderTop: border ? `3px solid ${border}` : null,
+    borderBottom: border ? `3px solid ${border}` : null,
     width: '100%',
   })
   const HeadText = styled(Typography)({
-    color: headerColor ? headerColor : theme.palette.text.primary,
+    color: headerColor ? headerColor : theme.palette.primary.dark,
   })
   const ContentContainer = styled(Container)({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
     color: fontColor ? fontColor : theme.palette.text.primary,
   })
 

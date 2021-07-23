@@ -15,6 +15,7 @@
     "@react-spring/web": "^9.2.4",
     "@sanity/cli": "^2.4.0",
     "@sanity/image-url": "^0.140.22",
+    "hamburger-react": "^2.4.1",
     "next": "^10.1.2",
     "next-sanity": "^0.1.10",
     "prop-types": "^15.6.0",

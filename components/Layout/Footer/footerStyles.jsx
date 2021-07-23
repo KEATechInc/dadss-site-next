@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { darkOrange, fontGray } from '../../styles/generalStyles'
+import { darkOrange, fontGray } from '../../../styles/generalStyles'
 
 export const FooterWrapper = styled.div`
   display: flex;

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FooterWrapper } from './footerStyles'
 import { RiTwitterFill } from '@react-icons/all-files/ri/RiTwitterFill'
 import { RiYoutubeFill } from '@react-icons/all-files/ri/RiYoutubeFill'
+import { Typography } from '@material-ui/core'
 
 const Footer = () => {
   const router = useRouter()
@@ -26,22 +27,22 @@ const Footer = () => {
         </a>
       </div>
       <div className='LinkWrapper'>
-        <ul>
-          <li>
-            <Link href='/terms'>Terms</Link>
-          </li>
-          <li>
-            <Link href='/contact'>Contact</Link>
-          </li>
-          <li>
-            <Link href='/faq'>FAQ</Link>
-          </li>
-        </ul>
+          <ul>
+            <li>
+              <Link href='/terms'>Terms</Link>
+            </li>
+            <li>
+              <Link href='/contact'>Contact</Link>
+            </li>
+            <li>
+              <Link href='/faq'>FAQ</Link>
+            </li>
+          </ul>
       </div>
-      <div className='RightsWrapper'>
+      <Typography variant='body2'>
         © 2021 Driver Alcohol Detection System for Safety (DADSS). All rights
         reserved.
-      </div>
+      </Typography>
     </FooterWrapper>
   )
 }
