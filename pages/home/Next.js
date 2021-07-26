@@ -8,7 +8,8 @@ const Next = () => {
     <>
       <ContentBlock
         background={bgGray}
-        border={fontGray}
+        borderTop={fontGray}
+        borderBottom={fontGray}
         header={`What's Next?`}
         headerColor={theme.palette.text.secondary}>
         <Divider />

@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from '@material-ui/core'
-import { bgOrange, dtpLightBlue, breakShadow } from '../styles/generalStyles'
+import theme, { bgOrange, dtpLightBlue } from '../src/theme'
 
 const Divider = ({ color, size }) => {
   const Break = styled('span')({
@@ -15,7 +15,7 @@ const Divider = ({ color, size }) => {
       background: color ? color : bgOrange,
       border: color ? `1.5px solid ${color}` : `1.5px solid ${bgOrange}`,
       borderRadius: 10,
-      boxShadow: breakShadow,
+      boxShadow: theme.shadows[1],
     },
   })
 
@@ -26,7 +26,7 @@ const Divider = ({ color, size }) => {
     borderRadius: 50,
     background: color ? color : bgOrange,
     margin: '0px 15px',
-    boxShadow: breakShadow,
+    boxShadow: theme.shadows[1],
     '&.White': {
       background: 'white',
     },

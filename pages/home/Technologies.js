@@ -2,11 +2,9 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import ContentBlock from '../../components/ContentBlock'
 import Divider from '../../components/Divider'
-import { Typography, Button, Box, styled, Grid } from '@material-ui/core'
+import { Typography, Button, styled, Grid } from '@material-ui/core'
 import theme, {
-  dadssGradient,
   darkOrange,
-  bgGray,
   bgOrange,
   fontGray,
 } from '../../src/theme'
@@ -20,7 +18,8 @@ const Technologies = () => {
       {/* DADSS tech */}
       <ContentBlock
         background={bgOrange}
-        border={darkOrange}
+        borderTop={darkOrange}
+        borderBottom={darkOrange}
         header={`Technologies We're Exploring`}
         headerColor={fontGray}>
         <Divider color='white' />
@@ -35,7 +34,7 @@ const Technologies = () => {
         </Typography>
 
         <Grid container spacing={4}>
-          <SubContent item xs={12} md={6}>
+          <SubContent item xs={12} sm={6}>
             <Image src={Breath} alt='Breath System' height={150} width={115} />
             <Typography variant='h4' gutterBottom>
               Breath System
@@ -57,7 +56,7 @@ const Technologies = () => {
             </Button>
           </SubContent>
 
-          <SubContent item xs={12} md={6}>
+          <SubContent item xs={12} sm={6}>
             <Image src={Touch} alt='Touch System' height={150} width={115} />
             <Typography variant='h4' gutterBottom>
               Touch System

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { AppBar, Container, Hidden, Toolbar, styled } from '@material-ui/core'
 import Hamburger from 'hamburger-react'
-import theme, { dadssGradient } from '../../../src/theme'
+import theme, { dadssGradient, fontGray } from '../../../src/theme'
 import { linkData } from '../../../src/linkData'
 import AnimatedLink from './AnimatedLink'
 
@@ -29,7 +29,11 @@ const Navbar = () => {
 
       <Toolbar
         component={Container}
-        style={{ display: 'flex', justifyContent: 'space-between' }}>
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          minHeight: 64,
+        }}>
         {/* clickable logo */}
         <img
           src={logo1}
@@ -41,17 +45,17 @@ const Navbar = () => {
         />
 
         {/* generate links */}
-        <Hidden xsDown>
+        <Hidden smDown>
           <div style={{ display: 'flex', height: '64px' }}>
             {linkData?.map((link, i) => {
-              return <AnimatedLink url={link.url} label={link.label} key={i} />
+              return <AnimatedLink link={link} key={i} />
             })}
           </div>
         </Hidden>
 
         {/* hamburger menu conditionally visible */}
-        <Hidden xsUp>
-          <Hamburger toggled={isOpen} toggle={setOpen} />
+        <Hidden mdUp>
+          <Hamburger color={fontGray} toggled={isOpen} toggle={setOpen} />
         </Hidden>
       </Toolbar>
     </AppBar>

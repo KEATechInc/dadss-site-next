@@ -20,8 +20,8 @@ export const dadssGradient = 'linear-gradient(90deg, #FF9969 0%, #DA3D1D 90%)'
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#FF9969',
-      dark: '#DA3D1D',
+      light: '#FF9969',
+      main: '#DA3D1D',
     },
     secondary: {
       main: '#333436',
@@ -65,10 +65,17 @@ const theme = createTheme({
             textDecoration: 'underline',
           },
         },
+        'ul, ol': {
+          margin: 0,
+          paddingLeft: 32,
+          fontSize: 16,
+          '& li': {
+            marginBottom: 8,
+          },
+        },
       },
     },
   },
 })
 
 export default theme
-

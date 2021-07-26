@@ -5,34 +5,43 @@ import theme from '../src/theme'
 const ContentBlock = ({
   children,
   background,
-  border,
+  borderTop,
+  borderBottom,
   header,
   headerColor,
   fontColor,
+  linkColor,
+  sticky,
+  noPadding,
 }) => {
   const SectionWrapper = styled('section')({
+    display: 'flex',
     background: background,
-    borderTop: border ? `3px solid ${border}` : null,
-    borderBottom: border ? `3px solid ${border}` : null,
+    borderTop: borderTop ? `3px solid ${borderTop}` : null,
+    borderBottom: borderBottom ? `3px solid ${borderBottom}` : null,
     width: '100%',
+    position: sticky ? 'sticky' : null,
+    top: sticky ? 64 : null,
   })
   const HeadText = styled(Typography)({
-    color: headerColor ? headerColor : theme.palette.primary.dark,
+    color: headerColor ? headerColor : theme.palette.primary.main,
   })
   const ContentContainer = styled(Container)({
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: !noPadding ? theme.spacing(4) : null,
+    paddingBottom: !noPadding ? theme.spacing(4) : null,
     color: fontColor ? fontColor : theme.palette.text.primary,
+    '& a': {
+      color: linkColor ? linkColor : null,
+    },
   })
 
   return (
     <SectionWrapper>
       <ContentContainer>
-        <HeadText variant='h3' gutterBottom>
+        <HeadText variant='h3' align='center' gutterBottom>
           {header}
         </HeadText>
         {children}

@@ -1,20 +1,22 @@
-import styled from 'styled-components'
+import { Grid, styled } from '@material-ui/core'
 
-const ImageGrid = ({ imageArray, padding }) => {
+const ImageGrid = ({ imageArray }) => {
   return (
     <>
       {imageArray && (
-        <GridWrap>
+        <GridWrap container justifyContent='center' align='center'>
           {imageArray.map((image, index) => {
             return (
-              <img
-                key={index}
-                src={image.src}
-                alt='Supporter Logo'
-                height={142}
-                width={275}
-                onClick={() => window.open(`${image.url}`, '_blank')}
-              />
+              <Grid item md={4}>
+                <img
+                  key={index}
+                  src={image.src}
+                  alt='Supporter Logo'
+                  height={125}
+                  width={250}
+                  onClick={() => window.open(`${image.url}`, '_blank')}
+                />
+              </Grid>
             )
           })}
         </GridWrap>
@@ -25,21 +27,12 @@ const ImageGrid = ({ imageArray, padding }) => {
 
 export default ImageGrid
 
-const GridWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 900px;
-  min-height: 550px;
-  margin-bottom: 25px;
-  width: 90%;
-
-  img {
-    object-fit: contain;
-    object-position: center;
-    :hover {
-      cursor: pointer;
-    }
-  }
-`
+const GridWrap = styled(Grid)({
+  '& img': {
+    objectFit: 'contain',
+    objectPosition: 'center',
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+})

@@ -35,8 +35,12 @@ export default function Home() {
         <HomeHero videoUrl={url} />
 
         {/* banner */}
-        <ContentBlock background={dadssGradient} border={bgGray}>
-          <Typography variant='h4' color='textSecondary' gutterBottom>
+        <ContentBlock background={dadssGradient} borderBottom={bgGray}>
+          <Typography
+            variant='h4'
+            color='textSecondary'
+            align='center'
+            gutterBottom>
             Announcement
           </Typography>
           <Typography color='textSecondary' paragraph>
@@ -65,10 +69,7 @@ export default function Home() {
           </Typography>
 
           <Box mt={3}>
-            <Typography
-              variant='h3'
-              style={{ color: theme.palette.primary.dark }}
-              gutterBottom>
+            <Typography variant='h3' color='primary' gutterBottom>
               Our Work
             </Typography>
           </Box>
@@ -100,10 +101,7 @@ export default function Home() {
 
           {/* about */}
           <Box mt={3}>
-            <Typography
-              variant='h3'
-              style={{ color: theme.palette.primary.dark }}
-              gutterBottom>
+            <Typography variant='h3' color='primary' gutterBottom>
               About DADSS
             </Typography>
           </Box>
@@ -136,7 +134,7 @@ export default function Home() {
               <img
                 src={NHTSA}
                 height={60}
-                width={235}
+                width={165}
                 alt='NHTSA Logo'
                 style={{ margin: theme.spacing(2) }}
               />
