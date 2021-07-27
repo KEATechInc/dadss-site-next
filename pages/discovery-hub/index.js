@@ -1,26 +1,18 @@
-import {
-  PageWrap,
-  HeroImage,
-  Header1,
-  ContentBlock,
-  Header2,
-  Content,
-  ContainerH,
-  MultiContentBlock,
-  ContentCard,
-  HubCardContainer,
-  HubCardWrap,
-  HubCardBack,
-  HubCardFront,
-  transDarkOrange,
-} from '../../styles/generalStyles'
-import styled from 'styled-components'
 import Head from 'next/head'
 import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 import Divider from '../../components/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
-import { Box } from '@material-ui/core'
+import HeroImage from '../../components/Layout/HeroImage'
+import { Box, Typography, styled, Grid, Container } from '@material-ui/core'
+import theme, {
+  bgGray,
+  dadssGradient,
+  fontGray,
+  transDarkOrange,
+} from '../../src/theme'
+import ContentBlock from '../../components/ContentBlock'
+import Thumb from '../../components/Layout/Thumb'
 
 const landingHero = '/assets/landingPage/fw.webp'
 
@@ -50,196 +42,223 @@ export default function DiscoverHub() {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta name='description' content={description} />
       </Head>
-      <PageWrap>
-        <HeroImage
-          landingHero={landingHero}
-          position='center 60%'
-          height='50vh'>
-          <HeaderTextContainer>
-            <div className='TextWrap'>
-              <Header1 className='White'>Discovery Hub</Header1>
-            </div>
-          </HeaderTextContainer>
+
+      <main>
+        <HeroImage image={landingHero}>
+          <div>
+            <Typography variant='h1' color='textSecondary'>
+              Discovery Hub
+            </Typography>
+          </div>
         </HeroImage>
 
-        <ContentBlock className='Gray'>
-          <Content>
+        <ContentBlock borderBottom={fontGray} background={bgGray}>
+          <Typography color='textSecondary' paragraph>
             <b>Welcome to the Discovery Hub.</b> Here, you can learn about the
             dangers of alcohol–impaired driving and the innovative technologies
             currently in development to make our roads and highways safer.
-          </Content>
+          </Typography>
         </ContentBlock>
 
-        <MultiContentBlock>
-          <Header2 className='White'>Overview</Header2>
-          <Divider color='white' />
-          <ContainerH>
-            <ContentCard>
-              <Content className='Header'>
-                Driver Alcohol Detection System for Safety (DADSS) Program
-              </Content>
-              <hr />
-              <Content>
-                DADSS is a first-of-its-kind, vehicle–integrated, alcohol
-                detection technology. By passively detecting a driver's blood
-                alcohol concentration (BAC), it prevents a car from moving while
-                the driver’s BAC is at or above the legal limit of 0.08%.
-              </Content>
-              <Content>
-                This technology must meet rigorous performance standards before
-                it can be installed in cars or trucks. When ready, it will be
-                offered to vehicle owners as a voluntary safety option, much
-                like other driver–assist systems (i.e., automatic emergency
-                braking or lane departure warning systems).
-              </Content>
-            </ContentCard>
-            <ContentCard>
-              <Content className='Header'>
-                Key Partners in the DADSS Program
-              </Content>
-              <hr />
-              <Content>DADSS Program partners include:</Content>
-              <ul>
-                <li>
-                  Automotive Coalition for Traffic Safety (ACTS), a Virginia
-                  nonprofit funded by the world's leading automakers
-                </li>
-                <li>
-                  U.S. Department of Transportation’s National Highway Traffic
-                  Safety Administration (NHTSA)
-                </li>
-                <li>
-                  Virginia Department of Motor Vehicle's Highway Safety Office
-                </li>
-              </ul>
-              <Content>
-                The DADSS Program is one of the most important government and
-                private sector partnerships in recent years. Public-private
-                partnerships like DADSS have led to innovations that enhance our
-                everyday lives, such as internet, GPS, and the microchip.
-              </Content>
-            </ContentCard>
-            <ContentCard>
-              <Content className='Header'>
-                DADSS Driven to Protect Discovery Hub
-              </Content>
-              <hr />
-              <Content>The learning modules below allow you to:</Content>
-              <ul>
-                <li>
-                  Explore how alcohol is absorbed, processed and eliminated by
-                  the human body
-                </li>
-                <li>
-                  Learn how alcohol impairs your ability to safely operate a
-                  motor vehicle
-                </li>
-                <li>
-                  Obtain actionable information so you can avoid the dangers
-                  associated with drunk driving
-                </li>
-                <li>
-                  Find out how the novel DADSS technologies currently under
-                  development and testing will protect you and other motorists
-                  on the road in the future
-                </li>
-              </ul>
-              <Content>
-                There are also Science, Technology, Engineering, and Math (STEM)
-                modules available so students can learn about the science and
-                engineering behind the DADSS technologies.
-              </Content>
-            </ContentCard>
-          </ContainerH>
-        </MultiContentBlock>
+        <section style={{ width: '100%', background: dadssGradient }}>
+          <Container>
+            <Typography
+              variant='h3'
+              align='center'
+              color='textSecondary'
+              style={{
+                paddingTop: theme.spacing(3),
+                marginBottom: theme.spacing(2),
+              }}>
+              Overview
+            </Typography>
+            <Divider color='white' />
 
-        <ContentBlock className='Gray'>
-          {eModules.length > 0 && (
-            <>
-              <Header2 className='White'>General Education Modules</Header2>
-              <Divider />
-              <HubCardContainer>
-                <ContainerH>
-                  {eModules.map((module, index) => {
-                    return (
-                      <HubCardWrap key={index}>
-                        <a
-                          href={module.url}
-                          target='_blank'
-                          rel='noopener noreferrer'>
-                          <HubCardFront>
-                            <p>{module.title}</p>
-                          </HubCardFront>
-                          <HubCardBack bgImage={module.image}></HubCardBack>
-                        </a>
-                      </HubCardWrap>
-                    )
-                  })}
-                </ContainerH>
-              </HubCardContainer>
-            </>
-          )}
+            <Box pb={6}>
+              <Grid
+                container
+                justifyContent='space-between'
+                align='stretch'
+                spacing={3}>
+                <Grid item xs={12}>
+                  <ContentBlock
+                    shadow
+                    background={bgGray}
+                    fontColor={theme.palette.text.secondary}>
+                    <Typography variant='h4' align='center' gutterBottom>
+                      Driver Alcohol Detection System For Safety (DADSS) Program
+                    </Typography>
+                    <Divider size='small' />
+                    <Box>
+                      <Typography paragraph>
+                        DADSS is a first-of-its-kind, vehicle–integrated,
+                        alcohol detection technology. By passively detecting a
+                        driver's blood alcohol concentration (BAC), it prevents
+                        a car from moving while the driver’s BAC is at or above
+                        the legal limit of 0.08%.
+                      </Typography>
+                      <Typography paragraph>
+                        This technology must meet rigorous performance standards
+                        before it can be installed in cars or trucks. When
+                        ready, it will be offered to vehicle owners as a
+                        voluntary safety option, much like other driver–assist
+                        systems (i.e., automatic emergency braking or lane
+                        departure warning systems).
+                      </Typography>
+                    </Box>
+                  </ContentBlock>
+                </Grid>
 
-          {stemModules.length > 0 && (
-            <>
-              <Header2 className='White'>STEM Modules</Header2>
-              <Divider />
-              <HubCardContainer>
-                <ContainerH>
-                  {stemModules.map((module, index) => {
-                    return (
-                      <HubCardWrap key={index}>
-                        <a
-                          href={module.url}
-                          target='_blank'
-                          rel='noopener noreferrer'>
-                          <HubCardFront background={transDarkOrange}>
-                            <p>{module.title}</p>
-                          </HubCardFront>
-                          <HubCardBack bgImage={module.image}></HubCardBack>
-                        </a>
-                      </HubCardWrap>
-                    )
-                  })}
-                </ContainerH>
-              </HubCardContainer>
-            </>
-          )}
+                <Grid item xs={12}>
+                  <ContentBlock
+                    shadow
+                    background={bgGray}
+                    fontColor={theme.palette.text.secondary}>
+                    <Typography variant='h4' align='center' gutterBottom>
+                      Key Partners In The DADSS Program
+                    </Typography>
+                    <Divider size='small' />
+                    <Box>
+                      <Typography paragraph>
+                        DADSS Program partners include:
+                      </Typography>
+                      <Box>
+                        <ul>
+                          <li>
+                            Automotive Coalition for Traffic Safety (ACTS), a
+                            Virginia nonprofit funded by the world's leading
+                            automakers
+                          </li>
+                          <li>
+                            U.S. Department of Transportation’s National Highway
+                            Traffic Safety Administration (NHTSA)
+                          </li>
+                          <li>
+                            Virginia Department of Motor Vehicle's Highway
+                            Safety Office
+                          </li>
+                        </ul>
+                      </Box>
+                      <Typography paragraph>
+                        The DADSS Program is one of the most important
+                        government and private sector partnerships in recent
+                        years. Public-private partnerships like DADSS have led
+                        to innovations that enhance our everyday lives, such as
+                        internet, GPS, and the microchip.
+                      </Typography>
+                    </Box>
+                  </ContentBlock>
+                </Grid>
 
-          {videos.length > 0 && (
-            <>
-              <Header2 className='White'>Educational Videos</Header2>
-              <Divider />
+                <Grid item xs={12}>
+                  <ContentBlock
+                    shadow
+                    background={bgGray}
+                    fontColor={theme.palette.text.secondary}>
+                    <Typography variant='h4' align='center' gutterBottom>
+                      DADSS Driven To Protect Discovery Hub
+                    </Typography>
+                    <Divider size='small' />
+                    <Box>
+                      <Typography paragraph>
+                        The learning modules below allow you to:
+                      </Typography>
+                      <Box mb={2}>
+                        <ul>
+                          <li>
+                            Explore how alcohol is absorbed, processed and
+                            eliminated by the human body
+                          </li>
+                          <li>
+                            Learn how alcohol impairs your ability to safely
+                            operate a motor vehicle
+                          </li>
+                          <li>
+                            Obtain actionable information so you can avoid the
+                            dangers associated with drunk driving
+                          </li>
+                          <li>
+                            Find out how the novel DADSS technologies currently
+                            under development and testing will protect you and
+                            other motorists on the road in the future
+                          </li>
+                        </ul>
+                      </Box>
+                      <Typography paragraph>
+                        There are also Science, Technology, Engineering, and
+                        Math (STEM) modules available so students can learn
+                        about the science and engineering behind the DADSS
+                        technologies.
+                      </Typography>
+                    </Box>
+                  </ContentBlock>
+                </Grid>
+              </Grid>
+            </Box>
+          </Container>
+        </section>
 
-              <VideoPlayer videos={videos} />
-            </>
-          )}
-        </ContentBlock>
-      </PageWrap>
+        <section>
+          <ContentBlock
+            header='General Education Modules'
+            headerColor={theme.palette.text.secondary}
+            background={bgGray}
+            borderTop={fontGray}
+            borderBottom={fontGray}>
+            {eModules.length > 0 && (
+              <>
+                <Divider />
+                {eModules.map((module, index) => {
+                  return (
+                    <Thumb
+                      img={module.image}
+                      url={module.url}
+                      label={module.title}
+                      key={index}
+                    />
+                  )
+                })}
+              </>
+            )}
+
+            {stemModules.length > 0 && (
+              <>
+                <Box mt={3}>
+                  <Typography variant='h3' color='textSecondary'>
+                    STEM Modules
+                  </Typography>
+                </Box>
+
+                <Divider />
+                {stemModules.map((module, index) => {
+                  return (
+                    <Thumb
+                      img={module.image}
+                      url={module.url}
+                      label={module.title}
+                      key={index}
+                    />
+                  )
+                })}
+              </>
+            )}
+            {videos.length > 0 && (
+              <>
+                <Box mt={3}>
+                  <Typography variant='h3' color='textSecondary' gutterBottom>
+                    Educational Videos
+                  </Typography>
+                </Box>
+                <Divider />
+                <VideoPlayer videos={videos} />
+              </>
+            )}
+          </ContentBlock>
+        </section>
+      </main>
     </>
   )
 }
-
-const HeaderTextContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  .TextWrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 25px;
-    background: rgba(0, 0, 0, 70%);
-    width: 100%;
-  }
-  h1 {
-    width: 100%;
-    text-align: right;
-    margin: 0;
-  }
-`
 
 const eModules = [
   {

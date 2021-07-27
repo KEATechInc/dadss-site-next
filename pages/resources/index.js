@@ -58,7 +58,9 @@ const Resources = ({ posts }) => {
               <Typography>
                 <b>Published: {formatDate(post.published)}</b>
               </Typography>
-              <Typography component={PortableText} blocks={post.preview} />
+              <span style={{ fontSize: 16 }}>
+                <Typography component={PortableText} blocks={post.preview} />
+              </span>
               <Button
                 fullWidth
                 variant='outlined'
@@ -86,7 +88,7 @@ const Resources = ({ posts }) => {
         <meta name='description' content={description} />
       </Head>
       <main>
-        <Grid container component={Container} justifyContent='flex-start'>
+        <Grid container component={Container} justifyContent='space-between'>
           <Grid item xs={12}>
             <Typography
               variant='h3'
@@ -245,7 +247,7 @@ const Resources = ({ posts }) => {
           {/* sidebar */}
           <Hidden smDown>
             <Grid item md={3}>
-              <ContentBlock sticky noPadding>
+              <ContentBlock sticky sidebar>
                 <Typography
                   variant='h5'
                   align='center'

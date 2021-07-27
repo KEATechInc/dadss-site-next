@@ -3,18 +3,12 @@ import ReactGA from 'react-ga'
 import Head from 'next/head'
 import Loader from '../../../components/Loader'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import { postSlugsQuery, postQuery } from '../../../lib/queries'
-import {
-  ContentBlock,
-  HeadBlock,
-  Header2,
-  fontGray,
-  darkOrange,
-  boxShadow,
-} from '../../../styles/generalStyles'
 import Divider from '../../../components/Divider'
+import { styled, Typography } from '@material-ui/core'
+import ContentBlock from '../../../components/ContentBlock'
+import theme from '../../../src/theme'
 
 export const getStaticPaths = async () => {
   const paths = await sanityClient.fetch(postSlugsQuery)
@@ -58,69 +52,40 @@ const SinglePost = ({ post }) => {
         {(filteredPreview = post.preview[0].children[0].text)}
         <meta name='description' content={filteredPreview} />
       </Head>
-      <HeadBlock>
-        <Header2>{post.title}</Header2>
+
+      <ContentBlock header={post.title}>
         <Divider />
-      </HeadBlock>
-      <ContentBlock style={{ paddingTop: '25px' }}>
-        <PortableText className='Block' blocks={post.body} />
+        <span style={{ fontSize: 16 }}>
+          <Typography component={PortableText} blocks={post.body} />
+        </span>
       </ContentBlock>
     </PostWrapper>
   )
 }
 
-const PostWrapper = styled.div`
-  margin-top: 85px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  figure {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .FigWrapper {
-      display: flex;
-      flex-direction: column;
-      padding: 25px;
-      img {
-        box-shadow: ${boxShadow};
-        margin-bottom: 5px;
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
-      }
-      p {
-        font-size: 0.9em;
-        margin: 0;
-        padding: 0 5px;
-      }
-    }
-  }
-  p {
-    color: ${fontGray};
-    padding: 5px 0;
-    margin: 0;
-    max-width: 1000px;
-  }
-  ul {
-    padding-left: 25px;
-    li {
-      color: ${fontGray};
-      padding: 8px 0;
-    }
-  }
-  a {
-    color: ${darkOrange};
-    font-weight: bold;
-    text-decoration: none;
-    :hover {
-      text-decoration: underline;
-    }
-  }
-  .Block {
-    max-width: 1000px;
-  }
-`
+const PostWrapper = styled('div')({
+  '& figure': {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '& .FigWrapper': {
+      display: 'flex',
+      flexDirection: 'column',
+      padding: theme.spacing(2),
+      '& img': {
+        boxShadow: theme.shadows[2],
+        marginBottom: 5,
+        maxWidth: '100%',
+        height: 'auto',
+        objectFit: 'contain',
+      },
+      '& p': {
+        fontSize: '0.9em',
+        margin: 0,
+        padding: '0 5px',
+      },
+    },
+  },
+})
 
 export default SinglePost

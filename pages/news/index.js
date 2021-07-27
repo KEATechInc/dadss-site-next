@@ -1,18 +1,12 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
-import {
-  HeadBlock,
-  Header1,
-  ContentBlock,
-  Header3,
-  CardWrapper,
-} from '../../styles/generalStyles'
-import styled from 'styled-components'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../lib/sanity'
 import { newsQuery } from '../../lib/queries'
 import { formatDate } from '../../util/dateHandler'
+import { Typography, Button, Box } from '@material-ui/core'
+import ContentBlock from '../../components/ContentBlock'
 import Link from 'next/link'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
@@ -66,23 +60,30 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
   // Render component
   const renderPosts = () => {
     return (
-      <CardWrapper className='CardWrapper'>
+      <>
         {currentPosts.map((post, index) => (
-          <div className='UpdateCard' key={`${index}`}>
-            <Link href={'/news/updates/' + post.slug.current}>
-              <Header3>{post.title}</Header3>
-            </Link>
-            <p className='Category'>{post.category}</p>
-            <p className='Published'>Published: {formatDate(post.published)}</p>
-            <PortableText blocks={post.preview} />
-            <Link href={'/news/updates/' + post.slug.current}>
-              <p className='More'>
-                Learn more <AiFillCaretRight />
-              </p>
-            </Link>
-          </div>
+          <Box key={index} mb={3}>
+            <Typography variant='h6' color='primary' gutterBottom>
+              <b>{post.title}</b>
+            </Typography>
+            <Typography>
+              <b>{post.category}</b>
+            </Typography>
+            <Typography>
+              <b>Published: {formatDate(post.published)}</b>
+            </Typography>
+            <span style={{ fontSize: 16 }}>
+              <Typography component={PortableText} blocks={post.preview} />
+            </span>
+            <Button
+              variant='outlined'
+              color='primary'
+              onClick={() => router.push('/news/updates/' + post.slug.current)}>
+              Learn more <AiFillCaretRight />
+            </Button>
+          </Box>
         ))}
-      </CardWrapper>
+      </>
     )
   }
 
@@ -95,44 +96,22 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
         <title>DADSS | News & Updates</title>
         <meta name='description' content={description} />
       </Head>
-      <NewsWrapper>
-        <HeadBlock>
-          <Header1>News & Updates</Header1>
+      <main>
+        <ContentBlock header='News & Updates'>
           <Divider />
-        </HeadBlock>
-        <ContentBlock style={{ padding: '25px' }}>
           {renderPosts()}
-          <Pagination
-            count={pageCount}
-            page={currentPageNumber}
-            onChange={handleChange}
-            className='Pagination'></Pagination>
+          <Box mt={2}>
+            <Pagination
+              color='primary'
+              count={pageCount}
+              page={currentPageNumber}
+              onChange={handleChange}
+            />
+          </Box>
         </ContentBlock>
-      </NewsWrapper>
+      </main>
     </>
   )
 }
-
-const NewsWrapper = styled.div`
-  margin-top: 85px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .CardWrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    a {
-      color: inherit;
-    }
-    h3 {
-      cursor: pointer;
-    }
-  }
-  .Pagination {
-    margin-top: 25px;
-  }
-`
 
 export default NewsUpdates

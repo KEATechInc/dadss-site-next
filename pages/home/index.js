@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Divider from '../../components/Divider'
 import { Typography, Button, Box, styled } from '@material-ui/core'
 import theme, { dadssGradient, bgGray } from '../../src/theme'
-import HomeHero from '../../components/HomeHero'
+import HomeHero from './HomeHero'
 import Technologies from './Technologies'
 import Next from './Next'
 

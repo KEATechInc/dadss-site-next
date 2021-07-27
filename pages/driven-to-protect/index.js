@@ -4,11 +4,12 @@ import { useRouter } from 'next/router'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Head from 'next/head'
 import Link from 'next/link'
-import Thumb from './Thumb'
+import Thumb from '../../components/Layout/Thumb'
 import ContentBlock from '../../components/ContentBlock'
 import Divider from '../../components/Divider'
-import { Grid, styled, Typography, Box, Button } from '@material-ui/core'
-import theme, { dtpBlue, fontGray } from '../../src/theme'
+import { Grid, Typography, Box, Button } from '@material-ui/core'
+import  { dtpBlue } from '../../src/theme'
+import HeroImage from '../../components/Layout/HeroImage'
 
 const heroBg = '/assets/drivenToProtect/GreyWash2.webp'
 const vaBg = '/assets/drivenToProtect/Blue-Image2.webp'
@@ -33,14 +34,14 @@ const DrivenToProtect = () => {
         <meta name='description' content={description} />
       </Head>
       <main>
-        <HeroImage>
+        <HeroImage image={heroBg}>
           <div>
             <img
               src={dtpLogo}
               alt='DTP Logo'
               width={850}
               height={110}
-              object-fit='cover'
+              objectFit='contain'
             />
           </div>
         </HeroImage>
@@ -134,20 +135,3 @@ const DrivenToProtect = () => {
 }
 
 export default DrivenToProtect
-
-const HeroImage = styled('div')({
-  height: 250,
-  width: '100%',
-  backgroundImage: `url(${heroBg})`,
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  borderBottom: `3px solid ${fontGray}`,
-  '& > div': {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: '100%',
-    backdropFilter: 'blur(2px) brightness(.7)',
-  },
-})

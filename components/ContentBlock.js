@@ -11,8 +11,10 @@ const ContentBlock = ({
   headerColor,
   fontColor,
   linkColor,
+  sidebar,
   sticky,
   noPadding,
+  shadow,
 }) => {
   const SectionWrapper = styled('section')({
     display: 'flex',
@@ -22,6 +24,7 @@ const ContentBlock = ({
     width: '100%',
     position: sticky ? 'sticky' : null,
     top: sticky ? 64 : null,
+    boxShadow: shadow ? theme.shadows[3] : null,
   })
   const HeadText = styled(Typography)({
     color: headerColor ? headerColor : theme.palette.primary.main,
@@ -30,8 +33,9 @@ const ContentBlock = ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: !noPadding ? theme.spacing(4) : null,
-    paddingBottom: !noPadding ? theme.spacing(4) : null,
+    paddingTop: noPadding ? 0 : sidebar ? 0 : theme.spacing(4),
+    paddingBottom: noPadding ? 0 : theme.spacing(4),
+    paddingRight: sidebar ? 0 : null,
     color: fontColor ? fontColor : theme.palette.text.primary,
     '& a': {
       color: linkColor ? linkColor : null,
