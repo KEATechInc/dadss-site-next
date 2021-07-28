@@ -2,17 +2,10 @@ import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
-import styled from 'styled-components'
-import Divider from '../components/Divider'
-import {
-  HeadBlock,
-  Header1,
-  Header3,
-  ContentBlock,
-  Content,
-  Hyperlink,
-} from '../styles/generalStyles'
+import ContentBlock from '../components/Layout/ContentBlock'
+import { Typography } from '@material-ui/core'
+import Image from '../components/Layout/Image'
+import theme from '../src/theme'
 
 const DADSSLogo = '/assets/logos/graphic-logo-car.svg'
 
@@ -30,37 +23,26 @@ const PageNotFound = () => {
         <title>DADSS | 404 - Page Not Found</title>
         <meta name='description' content={description} />
       </Head>
-      <BodyWrapper>
-        <HeadBlock>
-          <Header1>Page Not Found</Header1>
-          <Divider />
-        </HeadBlock>
-        <ContentBlock>
-          <Header3>Oops. Something has gone wrong.</Header3>
-          <Image
+      <main>
+        <ContentBlock header='Page Not Found' divider>
+          <Typography variant='h4' gutterBottom>
+            Oops. Something has gone wrong.
+          </Typography>
+          <img
             src={DADSSLogo}
             alt='DADSS Car Logo'
-            height={250}
-            width={350}
+            height='150px'
+            width='100%'
+            style={{ margin: theme.spacing(2) }}
           />
-          <Content>
+          <Typography>
             Sorry about that. Follow this link to{' '}
-            <Link href='/'>
-              <Hyperlink>Return Home</Hyperlink>
-            </Link>
-            .
-          </Content>
+            <Link href='/'>Return Home</Link>.
+          </Typography>
         </ContentBlock>
-      </BodyWrapper>
+      </main>
     </>
   )
 }
-
-const BodyWrapper = styled.div`
-  margin-top: 85px;
-  p {
-    text-align: center;
-  }
-`
 
 export default PageNotFound

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
 import { Box, Typography } from '@material-ui/core'
-import ContentBlock from '../../../components/ContentBlock'
-import Divider from '../../../components/Divider'
+import ContentBlock from '../../../components/Layout/ContentBlock'
+import Divider from '../../../components/Layout/Divider'
 import { formatDate, getYear } from '../../../util/dateHandler'
 import { Pagination } from '@material-ui/lab'
 import { eventsQuery } from '../../../lib/queries'
@@ -103,7 +103,7 @@ const Events = (props) => {
 
           {uniqueYears.map((year, i) => {
             return (
-              <>
+              <div key={i} style={{ width: '100%' }}>
                 {sortPosts(year).length > 0 && (
                   <Box key={i} mt={1} style={{ width: '100%' }}>
                     <Typography variant='h4' color='primary' align='center'>
@@ -113,7 +113,7 @@ const Events = (props) => {
                     {renderPosts(sortPosts(year))}
                   </Box>
                 )}
-              </>
+              </div>
             )
           })}
 

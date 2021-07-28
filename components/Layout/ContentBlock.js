@@ -1,6 +1,7 @@
 import { Container, styled, Typography } from '@material-ui/core'
 import React from 'react'
-import theme from '../src/theme'
+import theme from '../../src/theme'
+import Divider from './Divider'
 
 const ContentBlock = ({
   children,
@@ -9,6 +10,8 @@ const ContentBlock = ({
   borderBottom,
   header,
   headerColor,
+  divider,
+  dividerColor,
   fontColor,
   linkColor,
   sidebar,
@@ -48,6 +51,7 @@ const ContentBlock = ({
         <HeadText variant='h3' align='center' gutterBottom>
           {header}
         </HeadText>
+        {divider && <Divider color={dividerColor} />}
         {children}
       </ContentContainer>
     </SectionWrapper>

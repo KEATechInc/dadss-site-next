@@ -2,13 +2,9 @@ import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
-import ContentBlock from '../../components/ContentBlock'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import { supportersData, manufacturerData } from '../../src/supportersData'
-import Divider from '../../components/Divider'
 import { Box, Typography } from '@material-ui/core'
-import theme, { darkOrange } from '../../src/theme'
-
-const allCars = '/assets/logos/supporters/all-cars.jpg'
 
 const Supporters = () => {
   useEffect(() => {
@@ -29,9 +25,7 @@ const Supporters = () => {
         <meta name='description' content={description} />
       </Head>
       <main>
-        <ContentBlock header='Our Supporters'>
-          <Divider />
-
+        <ContentBlock header='Our Supporters' divider>
           <Typography>
             The Driver Alcohol Detection System for Safety (DADSS) research
             program is supported by safety and children’s advocates, insurance
@@ -53,7 +47,7 @@ const Supporters = () => {
             <ImageGrid imageArray={manufacturerData} />
           </Box>
 
-          <Box mt={3}>
+          <Box mb={3} mt={3}>
             <Typography
               variant='h5'
               color='primary'

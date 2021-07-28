@@ -1,4 +1,4 @@
-import Divider from '../Divider'
+import Divider from './Divider'
 import theme from '../../src/theme'
 import { styled } from '@material-ui/core'
 

@@ -1,79 +1,48 @@
-import styled from 'styled-components'
-import {
-	HeadBlock,
-	Header1,
-	Hyperlink,
-	Break,
-	Circle,
-	Content,
-	ContentBlock,
-} from '../../styles/generalStyles'
+import { Typography, Box } from '@material-ui/core'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const Contact = () => {
-	const description = `For all general questions about the DADSS program, please email\
+  const description = `For all general questions about the DADSS program, please email\
 	info@dadss.org. For any media inquiries,\
 	please email media@dadss.org.`
 
-	const router = useRouter()
+  const router = useRouter()
 
-	return (
-		<>
-			<Head>
-				<title>DADSS | Contact Us</title>
-				<meta name='description' content={description} />
-			</Head>
-			<ContactWrapper>
-				<HeadBlock>
-					<Header1>Contact Us</Header1>
-					<Break>
-						<hr />
-						<Circle />
-						<hr />
-					</Break>
-				</HeadBlock>
-				<ContentBlock>
-					<Content>
-						For all general questions about the DADSS program, please email{' '}
-						<Hyperlink href='mailto:info@dadss.org?subject=I want to learn more about DADSS'>
-							info@dadss.org
-						</Hyperlink>
-						. For any media inquiries, please email{' '}
-						<Hyperlink href='mailto:media@dadss.org?subject=I have a question about DADSS media'>
-							media@dadss.org
-						</Hyperlink>
-						.
-					</Content>
-					<Content>
-						You can also visit our{' '}
-						<Hyperlink onClick={() => router.push('/faq')}>
-							Frequently Asked Questions
-						</Hyperlink>{' '}
-						and our{' '}
-						<Hyperlink onClick={() => router.push('/news-updates')}>
-							News and Updates
-						</Hyperlink>{' '}
-						pages. For additional background on the program and resulting
-						technologies, visit our{' '}
-						<Hyperlink onClick={() => router.push('/resources')}>
-							Resources
-						</Hyperlink>{' '}
-						page.
-					</Content>
-				</ContentBlock>
-			</ContactWrapper>
-		</>
-	)
+  return (
+    <>
+      <Head>
+        <title>DADSS | Contact Us</title>
+        <meta name='description' content={description} />
+      </Head>
+      <main>
+        <ContentBlock header='Contact Us' divider>
+          <Box>
+            <Typography>
+              For all general questions about the DADSS program, please email{' '}
+              <a href='mailto:info@dadss.org?subject=I want to learn more about DADSS'>
+                info@dadss.org
+              </a>
+              . For any media inquiries, please email{' '}
+              <a href='mailto:media@dadss.org?subject=I have a question about DADSS media'>
+                media@dadss.org
+              </a>
+              .
+            </Typography>
+            <Typography>
+              You can also visit our{' '}
+              <Link href='/faq'>Frequently Asked Questions</Link> and our{' '}
+              <Link href='/news-updates'>News and Updates</Link> pages. For
+              additional background on the program and resulting technologies,
+              visit our <Link href='/resources'>Resources</Link> page.
+            </Typography>
+          </Box>
+        </ContentBlock>
+      </main>
+    </>
+  )
 }
-
-const ContactWrapper = styled.div`
-	margin-top: 85px;
-	a {
-		a {
-			color: inherit;
-		}
-	}
-`
 
 export default Contact

@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
-import Divider from '../../../components/Divider'
+import Divider from '../../../components/Layout/Divider'
 import HeroImage from '../../../components/Layout/HeroImage'
-import ContentBlock from '../../../components/ContentBlock'
+import ContentBlock from '../../../components/Layout/ContentBlock'
 import { dtpBlue } from '../../../src/theme'
 import {
   Box,
@@ -49,19 +49,12 @@ const DTPVirginia = () => {
       </Head>
 
       <PageWrap>
-        <HeroImage image={heroBg}>
-          <div>
-            <img
-              src={dtpLogo}
-              alt='DTP Logo'
-              width={850}
-              height={110}
-            />
-          </div>
+        <HeroImage image={heroBg} darken>
+          <img src={dtpLogo} alt='DTP Logo' width={'100%'} height={'100%'} />
         </HeroImage>
 
         <Container>
-          <Grid container justifyContent='space-between'>
+          <Grid container justifyContent='space-between' spacing={2}>
             <Grid item xs={12}>
               <Typography
                 variant='h3'

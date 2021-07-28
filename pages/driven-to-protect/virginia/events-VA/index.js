@@ -6,8 +6,8 @@ import { sanityClient } from '../../../../lib/sanity'
 import { eventsVaQuery } from '../../../../lib/queries'
 import { Pagination } from '@material-ui/lab'
 import { Box, styled, Typography } from '@material-ui/core'
-import ContentBlock from '../../../../components/ContentBlock'
-import Divider from '../../../../components/Divider'
+import ContentBlock from '../../../../components/Layout/ContentBlock'
+import Divider from '../../../../components/Layout/Divider'
 import theme, { dtpBlue } from '../../../../src/theme'
 
 export const getStaticProps = async () => {

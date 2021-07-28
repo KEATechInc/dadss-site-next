@@ -1,18 +1,13 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import ContentBlock from '../../components/ContentBlock'
-import Divider from '../../components/Divider'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import { Typography, Button, styled, Grid } from '@material-ui/core'
-import theme, {
-  darkOrange,
-  bgOrange,
-  fontGray,
-} from '../../src/theme'
+import theme, { darkOrange, bgOrange, fontGray } from '../../src/theme'
+import {useRouter} from 'next/router'
 
 const Breath = '/assets/logos/graphic-tech-breath.svg'
 const Touch = '/assets/logos/graphic-tech-touch.svg'
 
 const Technologies = () => {
+  const router = useRouter()
   return (
     <>
       {/* DADSS tech */}
@@ -21,9 +16,9 @@ const Technologies = () => {
         borderTop={darkOrange}
         borderBottom={darkOrange}
         header={`Technologies We're Exploring`}
-        headerColor={fontGray}>
-        <Divider color='white' />
-
+        headerColor={fontGray}
+        divider
+        dividerColor='white'>
         <Typography paragraph>
           The goal of the DADSS Research Program is to advance the state of
           alcohol detection technology by developing a system that is fast,

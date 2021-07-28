@@ -5,10 +5,10 @@ import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Head from 'next/head'
 import Link from 'next/link'
 import Thumb from '../../components/Layout/Thumb'
-import ContentBlock from '../../components/ContentBlock'
-import Divider from '../../components/Divider'
-import { Grid, Typography, Box, Button } from '@material-ui/core'
-import  { dtpBlue } from '../../src/theme'
+import ContentBlock from '../../components/Layout/ContentBlock'
+import Divider from '../../components/Layout/Divider'
+import { Grid, Typography, Box, Button, Container } from '@material-ui/core'
+import theme, { dtpBlue } from '../../src/theme'
 import HeroImage from '../../components/Layout/HeroImage'
 
 const heroBg = '/assets/drivenToProtect/GreyWash2.webp'
@@ -34,16 +34,13 @@ const DrivenToProtect = () => {
         <meta name='description' content={description} />
       </Head>
       <main>
-        <HeroImage image={heroBg}>
-          <div>
-            <img
-              src={dtpLogo}
-              alt='DTP Logo'
-              width={850}
-              height={110}
-              objectFit='contain'
-            />
-          </div>
+        <HeroImage image={heroBg} darken>
+          <img
+            src={dtpLogo}
+            alt='DTP Logo'
+            width={'100%'}
+            height={'100%'}
+          />
         </HeroImage>
 
         <ContentBlock
@@ -89,7 +86,11 @@ const DrivenToProtect = () => {
                   url={'/driven-to-protect/virginia'}
                   label={'Virginia'}
                 />
-                <Typography variant='body2' paragraph>
+
+                <Typography
+                  variant='body2'
+                  paragraph
+                  style={{ marginTop: theme.spacing(1) }}>
                   Learn how Virginia is testing the alcohol breath sensors in
                   partnership with James River Transportation and introducing
                   the technology to its citizens.
@@ -112,7 +113,10 @@ const DrivenToProtect = () => {
                   label={'Maryland'}
                 />
 
-                <Typography variant='body2' paragraph>
+                <Typography
+                  variant='body2'
+                  paragraph
+                  style={{ marginTop: theme.spacing(1) }}>
                   Learn how Maryland is putting the technology on the road by
                   outfitting seven fleet vehicles with the alcohol breath
                   sensors to gather real-world data.

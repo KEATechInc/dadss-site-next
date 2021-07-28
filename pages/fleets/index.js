@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
 import Link from 'next/link'
-import Divider from '../../components/Divider'
+import Divider from '../../components/Layout/Divider'
 import HeroImage from '../../components/Layout/HeroImage'
-import ContentBlock from '../../components/ContentBlock'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import {
   Box,
   Button,
@@ -46,7 +46,7 @@ const Fleets = () => {
       <main>
         <HeroImage image={heroBg} />
         <Container>
-          <Grid container justifyContent='space-between'>
+          <Grid container justifyContent='space-between' spacing={2}>
             <Grid item xs={12}>
               <Typography
                 variant='h3'

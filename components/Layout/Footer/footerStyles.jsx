@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { darkOrange, fontGray } from '../../../styles/generalStyles'
+import { darkOrange, fontGray } from '../../../src/theme'
 
 export const FooterWrapper = styled.div`
   display: flex;
@@ -40,16 +40,16 @@ export const FooterWrapper = styled.div`
       width: 100%;
       list-style-type: none;
       padding: 0;
-	  margin: 15px 0;
+      margin: 15px 0;
       li {
         margin: 0 15px;
-		a {
-			color: ${darkOrange};
-			font-weight: 600;
-			:hover {
-				text-decoration: underline;
-			}
-		}
+        a {
+          color: ${darkOrange};
+          font-weight: 600;
+          :hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }

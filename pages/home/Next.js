@@ -1,9 +1,10 @@
 import { Typography, Button } from '@material-ui/core'
-import ContentBlock from '../../components/ContentBlock'
-import Divider from '../../components/Divider'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import theme, { fontGray, bgGray } from '../../src/theme'
+import { useRouter } from 'next/router'
 
 const Next = () => {
+  const router = useRouter()
   return (
     <>
       <ContentBlock
@@ -11,9 +12,8 @@ const Next = () => {
         borderTop={fontGray}
         borderBottom={fontGray}
         header={`What's Next?`}
-        headerColor={theme.palette.text.secondary}>
-        <Divider />
-
+        headerColor={theme.palette.text.secondary}
+        divider>
         <Typography paragraph color={'textSecondary'}>
           When the Program began in 2008, DADSS focused on research and creation
           of proof-of-concept laboratory prototypes to determine which

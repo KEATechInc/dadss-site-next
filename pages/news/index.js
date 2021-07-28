@@ -6,12 +6,11 @@ import { sanityClient, PortableText } from '../../lib/sanity'
 import { newsQuery } from '../../lib/queries'
 import { formatDate } from '../../util/dateHandler'
 import { Typography, Button, Box } from '@material-ui/core'
-import ContentBlock from '../../components/ContentBlock'
-import Link from 'next/link'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
 import Loader from '../../components/Loader'
-import Divider from '../../components/Divider'
+import Divider from '../../components/Layout/Divider'
 
 export const getStaticProps = async ({ params }) => {
   const currentPage = params?.currentPage

@@ -1,17 +1,18 @@
 import Head from 'next/head'
 import ReactGA from 'react-ga'
 import { useEffect } from 'react'
-import Divider from '../../components/Divider'
+import Divider from '../../components/Layout/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
 import HeroImage from '../../components/Layout/HeroImage'
-import { Box, Typography, styled, Grid, Container } from '@material-ui/core'
+import { Box, Typography, Grid, Container } from '@material-ui/core'
 import theme, {
   bgGray,
   dadssGradient,
   fontGray,
   transDarkOrange,
+  transDtpBlue,
 } from '../../src/theme'
-import ContentBlock from '../../components/ContentBlock'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import Thumb from '../../components/Layout/Thumb'
 
 const landingHero = '/assets/landingPage/fw.webp'
@@ -44,15 +45,17 @@ export default function DiscoverHub() {
       </Head>
 
       <main>
-        <HeroImage image={landingHero}>
-          <div>
-            <Typography variant='h1' color='textSecondary'>
-              Discovery Hub
-            </Typography>
-          </div>
-        </HeroImage>
+        <HeroImage
+          image={landingHero}
+          position={'center 70%'}
+          extended
+          bannerText='Discovery Hub'
+        />
 
-        <ContentBlock borderBottom={fontGray} background={bgGray}>
+        <ContentBlock
+          headerColor='white'
+          borderBottom={fontGray}
+          background={bgGray}>
           <Typography color='textSecondary' paragraph>
             <b>Welcome to the Discovery Hub.</b> Here, you can learn about the
             dangers of alcohol–impaired driving and the innovative technologies
@@ -79,8 +82,8 @@ export default function DiscoverHub() {
                 container
                 justifyContent='space-between'
                 align='stretch'
-                spacing={3}>
-                <Grid item xs={12}>
+                spacing={2}>
+                <Grid item md={6}>
                   <ContentBlock
                     shadow
                     background={bgGray}
@@ -109,7 +112,7 @@ export default function DiscoverHub() {
                   </ContentBlock>
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid item md={6}>
                   <ContentBlock
                     shadow
                     background={bgGray}
@@ -204,51 +207,68 @@ export default function DiscoverHub() {
             headerColor={theme.palette.text.secondary}
             background={bgGray}
             borderTop={fontGray}
-            borderBottom={fontGray}>
+            borderBottom={fontGray}
+            divider>
             {eModules.length > 0 && (
-              <>
-                <Divider />
+              <Grid container spacing={2} justifyContent='center'>
                 {eModules.map((module, index) => {
                   return (
-                    <Thumb
-                      img={module.image}
-                      url={module.url}
-                      label={module.title}
-                      key={index}
-                    />
+                    <Grid item xs={12} md={6}>
+                      <Thumb
+                        img={module.image}
+                        url={module.url}
+                        label={module.title}
+                        background={transDtpBlue}
+                        filterDark
+                        external
+                        key={index}
+                      />
+                    </Grid>
                   )
                 })}
-              </>
+              </Grid>
             )}
 
             {stemModules.length > 0 && (
               <>
-                <Box mt={3}>
-                  <Typography variant='h3' color='textSecondary'>
-                    STEM Modules
-                  </Typography>
-                </Box>
-
+                <Typography
+                  variant='h3'
+                  color='textSecondary'
+                  align='center'
+                  gutterBottom
+                  style={{ marginTop: theme.spacing(6) }}>
+                  STEM Modules
+                </Typography>
                 <Divider />
-                {stemModules.map((module, index) => {
-                  return (
-                    <Thumb
-                      img={module.image}
-                      url={module.url}
-                      label={module.title}
-                      key={index}
-                    />
-                  )
-                })}
+                <Grid container spacing={2} justifyContent='center'>
+                  {stemModules.map((module, index) => {
+                    return (
+                      <Grid item xs={12} md={6}>
+                        <Thumb
+                          img={module.image}
+                          url={module.url}
+                          label={module.title}
+                          background={transDarkOrange}
+                          filterDark
+                          external
+                          key={index}
+                        />
+                      </Grid>
+                    )
+                  })}
+                </Grid>
               </>
             )}
             {videos.length > 0 && (
               <>
-                <Box mt={3}>
-                  <Typography variant='h3' color='textSecondary' gutterBottom>
-                    Educational Videos
-                  </Typography>
-                </Box>
+                <Typography
+                  variant='h3'
+                  color='textSecondary'
+                  gutterBottom
+                  align='center'
+                  style={{ marginTop: theme.spacing(6) }}>
+                  Educational Videos
+                </Typography>
                 <Divider />
                 <VideoPlayer videos={videos} />
               </>
@@ -287,7 +307,6 @@ const eModules = [
     url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Underage+Alcohol+Use+and+Zero+Tolerance+Law+Informational/index.html#/`,
   },
 ]
-
 const stemModules = [
   {
     title: `STEM Part 1: Spectroscopy `,
@@ -310,7 +329,6 @@ const stemModules = [
     url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+3b+Data+Collection+And+Analysis+Advanced/index.html#/`,
   },
 ]
-
 const videos = [
   {
     title: `Breakthrough Invention Aims to Eliminate Drunk Driving`,

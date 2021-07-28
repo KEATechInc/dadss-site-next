@@ -5,9 +5,9 @@ import Loader from '../../../components/Loader'
 import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import { postSlugsQuery, postQuery } from '../../../lib/queries'
-import Divider from '../../../components/Divider'
+import Divider from '../../../components/Layout/Divider'
 import { styled, Typography } from '@material-ui/core'
-import ContentBlock from '../../../components/ContentBlock'
+import ContentBlock from '../../../components/Layout/ContentBlock'
 import theme from '../../../src/theme'
 
 export const getStaticPaths = async () => {

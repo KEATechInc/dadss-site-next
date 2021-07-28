@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import ContentBlock from '../../components/ContentBlock'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import { ImQuotesLeft } from '@react-icons/all-files/im/ImQuotesLeft'
 import { ImQuotesRight } from '@react-icons/all-files/im/ImQuotesRight'
 import Link from 'next/link'
-import Divider from '../../components/Divider'
+import Divider from '../../components/Layout/Divider'
 import { Typography, Button, Box, styled } from '@material-ui/core'
 import theme, { dadssGradient, bgGray } from '../../src/theme'
 import HomeHero from './HomeHero'
@@ -61,18 +61,18 @@ export default function Home() {
 
         {/* content start */}
         <ContentBlock>
-          <Typography variant='h5' align='center' paragraph>
-            <ImQuotesLeft style={{ marginRight: theme.spacing(1) }} />
-            Every year in the U.S., drunk driving claims approximately 10,000
-            lives <br /> and costs approximately $194 billion.
-            <ImQuotesRight style={{ marginLeft: theme.spacing(1) }} />
-          </Typography>
-
-          <Box mt={3}>
-            <Typography variant='h3' color='primary' gutterBottom>
-              Our Work
+          <Box mb={3}>
+            <Typography variant='h5' align='center' paragraph>
+              <ImQuotesLeft style={{ marginRight: theme.spacing(1) }} />
+              Every year in the U.S., drunk driving claims approximately 10,000
+              lives <br /> and costs approximately $194 billion.
+              <ImQuotesRight style={{ marginLeft: theme.spacing(1) }} />
             </Typography>
           </Box>
+
+          <Typography variant='h3' align='center' color='primary' gutterBottom>
+            Our Work
+          </Typography>
           <Divider />
 
           <Image src={Family} alt='DADSS Logo' height={170} width={170} />
@@ -98,15 +98,14 @@ export default function Home() {
               works.
             </Typography>
           </div>
-
+          
+          <Box mt={3}/>
           {/* about */}
-          <Box mt={3}>
-            <Typography variant='h3' color='primary' gutterBottom>
-              About DADSS
-            </Typography>
-          </Box>
-
+          <Typography variant='h3' align='center' color='primary' gutterBottom>
+            About DADSS
+          </Typography>
           <Divider />
+
           <Image src={Car} alt='DADSS Logo' height={120} width={310} />
 
           <Typography paragraph>

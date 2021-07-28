@@ -7,13 +7,12 @@ const ImageGrid = ({ imageArray }) => {
         <GridWrap container justifyContent='center' align='center'>
           {imageArray.map((image, index) => {
             return (
-              <Grid item md={4}>
+              <Grid item md={3} key={index}>
                 <img
-                  key={index}
                   src={image.src}
                   alt='Supporter Logo'
-                  height={125}
-                  width={250}
+                  height={110}
+                  width={235}
                   onClick={() => window.open(`${image.url}`, '_blank')}
                 />
               </Grid>

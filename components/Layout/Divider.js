@@ -1,13 +1,14 @@
 import React from 'react'
 import { styled } from '@material-ui/core'
-import theme, { bgOrange, dtpLightBlue } from '../src/theme'
+import theme, { bgOrange, dtpLightBlue } from '../../src/theme'
 
 const Divider = ({ color, size }) => {
   const Break = styled('span')({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '16px 0',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(4),
     width: '100%',
     '& hr': {
       width: '100%',
