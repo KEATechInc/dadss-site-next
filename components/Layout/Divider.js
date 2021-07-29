@@ -8,7 +8,7 @@ const Divider = ({ color, size }) => {
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(3),
     width: '100%',
     '& hr': {
       width: '100%',

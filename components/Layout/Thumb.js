@@ -61,7 +61,7 @@ const Thumb = ({ img, url, external, label, background, filterDark }) => {
       onMouseLeave={() => setHovered(false)}>
       <a.div style={thumbStyles}></a.div>
       <CenterText
-        variant='h4'
+        variant='h5'
         align='center'
         color='textSecondary'
         style={bgStyles}>

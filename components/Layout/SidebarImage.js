@@ -24,4 +24,5 @@ const ImageWrap = styled(Paper)({
   height: 150,
   width: 225,
   margin: theme.spacing(1),
+  marginRight: 0,
 })

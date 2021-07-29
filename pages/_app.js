@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { ThemeProvider } from '@material-ui/styles'
-import { CssBaseline } from '@material-ui/core'
+import { CssBaseline, responsiveFontSizes } from '@material-ui/core'
 import theme from '../src/theme'
 import PropTypes from 'prop-types'
 
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
           rel='stylesheet'
         />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={responsiveFontSizes(theme)}>
         <CssBaseline />
         <Layout>
           <Component {...pageProps} />

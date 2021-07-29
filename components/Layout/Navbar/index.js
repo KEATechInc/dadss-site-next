@@ -5,6 +5,7 @@ import Hamburger from 'hamburger-react'
 import theme, { dadssGradient, fontGray } from '../../../src/theme'
 import { linkData } from '../../../src/linkData'
 import AnimatedLink from './AnimatedLink'
+import MobileMenu from './MobileMenu'
 
 const logo1 = '../../../assets/logos/dadss-logo.svg'
 
@@ -15,6 +16,7 @@ const Navbar = () => {
   const router = useRouter()
 
   const goHome = () => {
+    setOpen(false)
     router.push('/')
   }
 
@@ -58,6 +60,8 @@ const Navbar = () => {
           <Hamburger color={fontGray} toggled={isOpen} toggle={setOpen} />
         </Hidden>
       </Toolbar>
+
+      <MobileMenu isOpen={isOpen} setOpen={setOpen} />
     </AppBar>
   )
 }

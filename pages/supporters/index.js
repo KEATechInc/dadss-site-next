@@ -44,7 +44,9 @@ const Supporters = () => {
               research program, including:
             </Typography>
 
-            <ImageGrid imageArray={manufacturerData} />
+            <Box mt={2} mb={2}>
+              <ImageGrid imageArray={manufacturerData} />
+            </Box>
           </Box>
 
           <Box mb={3} mt={3}>
@@ -56,7 +58,9 @@ const Supporters = () => {
               Other supporters of the DADSS program include:
             </Typography>
 
-            <ImageGrid imageArray={supportersData} />
+            <Box mt={2} mb={2}>
+              <ImageGrid imageArray={supportersData} />
+            </Box>
 
             <Typography paragraph>
               If your organization is interested in supporting the DADSS

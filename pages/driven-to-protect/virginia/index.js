@@ -19,13 +19,12 @@ import {
 } from '@material-ui/core'
 import Video from '../../../components/Layout/Video'
 import LogoDivider from '../../../components/Layout/LogoDivider'
+import { ACTS, NHTSA, DADSS, VADMV } from '../../../components/Logos'
 
 const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
 const dtpLogo = '/assets/logos/dtpLogos/VA-logo.webp'
-const acts = '/assets/logos/dtpLogos/acts-logo.webp'
 const dadss = '/assets/logos/dtpLogos/dadss-logo.webp'
 const dmv = '/assets/logos/dtpLogos/dmv-logo.webp'
-const nhtsa = '/assets/logos/dadss-nhtsa.webp'
 const PDF = '/assets/drivenToProtect/pdf/Driven-to-Protect-Overview.pdf'
 
 const DTPVirginia = () => {
@@ -208,7 +207,7 @@ const DTPVirginia = () => {
             <Hidden smDown>
               <Grid item md={3}>
                 <ContentBlock sticky sidebar>
-                  <Box mb={2}>
+                  <Box mb={4}>
                     <Typography
                       variant='h5'
                       align='center'
@@ -233,7 +232,7 @@ const DTPVirginia = () => {
                     </Button>
                   </Box>
 
-                  <Box mb={2}>
+                  <Box>
                     <Typography
                       variant='h5'
                       align='center'
@@ -264,27 +263,10 @@ const DTPVirginia = () => {
             {/* logo banner */}
             <Grid item xs={12}>
               <LogoDivider>
-                <a
-                  href='https://www.dmv.virginia.gov/#/'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img src={dmv} height={55} width={200} alt='DMV Logo' />
-                </a>
-                <a
-                  href='https://www.nhtsa.gov/'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img src={nhtsa} height={60} width={165} alt='NHTSA Logo' />
-                </a>
-                <Link href='/'>
-                  <img src={dadss} height={65} width={220} alt='DADSS Logo' />
-                </Link>
-                <a
-                  href='https://www.actsautosafety.org/'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img src={acts} height={65} width={135} alt='ACTS Logo' />
-                </a>
+                <VADMV />
+                <NHTSA />
+                <DADSS />
+                <ACTS />
               </LogoDivider>
             </Grid>
           </Grid>

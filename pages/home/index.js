@@ -7,14 +7,13 @@ import Link from 'next/link'
 import Divider from '../../components/Layout/Divider'
 import { Typography, Button, Box, styled } from '@material-ui/core'
 import theme, { dadssGradient, bgGray } from '../../src/theme'
+import { NHTSA, ACTS } from '../../components/Logos'
 import HomeHero from './HomeHero'
 import Technologies from './Technologies'
 import Next from './Next'
 
 const Car = '/assets/logos/graphic-logo-car.svg'
 const Family = '/assets/logos/graphic-family.svg'
-const ACTS = '/assets/logos/dadss-acts.webp'
-const NHTSA = '/assets/logos/dadss-nhtsa.webp'
 
 const url = `https://www.youtube.com/watch?v=a_BojOOFiKg`
 
@@ -65,7 +64,7 @@ export default function Home() {
             <Typography variant='h5' align='center' paragraph>
               <ImQuotesLeft style={{ marginRight: theme.spacing(1) }} />
               Every year in the U.S., drunk driving claims approximately 10,000
-              lives <br /> and costs approximately $194 billion.
+              lives and costs approximately $194 billion.
               <ImQuotesRight style={{ marginLeft: theme.spacing(1) }} />
             </Typography>
           </Box>
@@ -98,8 +97,8 @@ export default function Home() {
               works.
             </Typography>
           </div>
-          
-          <Box mt={3}/>
+
+          <Box mt={3} />
           {/* about */}
           <Typography variant='h3' align='center' color='primary' gutterBottom>
             About DADSS
@@ -128,29 +127,15 @@ export default function Home() {
             made available as a consumer option.
           </Typography>
 
-          <div>
-            <a href='https://www.nhtsa.gov/' target='_blank' rel='noreferrer'>
-              <img
-                src={NHTSA}
-                height={60}
-                width={165}
-                alt='NHTSA Logo'
-                style={{ margin: theme.spacing(2) }}
-              />
-            </a>
-
-            <a
-              href='https://www.actsautosafety.org/'
-              target='_blank'
-              rel='noreferrer'>
-              <img
-                src={ACTS}
-                height={65}
-                width={135}
-                alt='ACTS Logo'
-                style={{ margin: theme.spacing(2) }}
-              />
-            </a>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+            }}>
+            <NHTSA />
+            <ACTS />
           </div>
 
           <Box mt={2}>
