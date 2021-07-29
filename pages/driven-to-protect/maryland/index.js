@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
-import Link from 'next/link'
 import Head from 'next/head'
 import Divider from '../../../components/Layout/Divider'
 import HeroImage from '../../../components/Layout/HeroImage'
@@ -16,13 +15,11 @@ import {
 } from '@material-ui/core'
 import LogoDivider from '../../../components/Layout/LogoDivider'
 import SidebarImage from '../../../components/Layout/SidebarImage'
+import { DADSS, NHTSA, ACTS, MDT } from '../../../components/Logos'
 
 const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
 const dtpLogo = '/assets/logos/dtpLogos/MD-logo.webp'
-const acts = '/assets/logos/dtpLogos/acts-logo.webp'
-const dadss = '/assets/logos/dtpLogos/dadss-logo.webp'
 const dmv = '/assets/logos/dtpLogos/MVA-logo.webp'
-const nhtsa = '/assets/logos/dadss-nhtsa.webp'
 const MDimg1 = '/assets/drivenToProtect/maryland/dtpMary1.webp'
 const MDimg2 = '/assets/drivenToProtect/maryland/dtpMary2.webp'
 const MDimg3 = '/assets/drivenToProtect/maryland/dtpMary3.webp'
@@ -153,34 +150,10 @@ const DTPMaryland = () => {
             {/* logo section */}
             <Grid item xs={12}>
               <LogoDivider>
-                <a
-                  href='https://mva.maryland.gov/Pages/default.aspx'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img
-                    src={dmv}
-                    height={38}
-                    width={250}
-                    objectFit='contain'
-                    alt='DMV Logo'
-                  />
-                </a>
-                <a
-                  href='https://www.nhtsa.gov/'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img src={nhtsa} height={60} width={165} alt='NHTSA Logo' />
-                </a>
-
-                <Link href='/'>
-                  <img src={dadss} height={65} width={220} alt='DADSS Logo' />
-                </Link>
-                <a
-                  href='https://www.actsautosafety.org/'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img src={acts} height={65} width={135} alt='ACTS Logo' />
-                </a>
+                <MDT />
+                <NHTSA />
+                <DADSS />
+                <ACTS />
               </LogoDivider>
             </Grid>
           </Grid>

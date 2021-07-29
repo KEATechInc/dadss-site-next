@@ -7,6 +7,7 @@ const Image = ({ src, alt, marginBottom, marginTop }) => {
     height: '100%',
     marginBottom: marginBottom ? 16 : null,
     marginTop: marginTop ? 16 : null,
+
   })
   return (
     <ImageWrap>

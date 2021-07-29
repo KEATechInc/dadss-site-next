@@ -1,25 +1,14 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
-import Link from 'next/link'
 import Divider from '../../components/Layout/Divider'
 import HeroImage from '../../components/Layout/HeroImage'
 import ContentBlock from '../../components/Layout/ContentBlock'
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Hidden,
-  styled,
-  Typography,
-} from '@material-ui/core'
+import { Box, Container, Grid, Hidden, Typography } from '@material-ui/core'
 import SidebarImage from '../../components/Layout/SidebarImage'
 import LogoDivider from '../../components/Layout/LogoDivider'
+import { ACTS, DADSS, NHTSA } from '../../components/Logos'
 
-const acts = '/assets/logos/dtpLogos/acts-logo.webp'
-const dadss = '/assets/logos/dtpLogos/dadss-logo.webp'
-const nhtsa = '/assets/logos/dadss-nhtsa.webp'
 const Guidelines = '/assets/fleets/pdf/Guidelines-for-State-DADSS-Projects.pdf'
 const heroBg = '/assets/fleets/images/DADSS.webp'
 const Art1 = '/assets/fleets/images/Artboard-1.webp'
@@ -140,22 +129,9 @@ const Fleets = () => {
 
             <Grid item xs={12}>
               <LogoDivider>
-                <a
-                  href='https://www.nhtsa.gov/'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img src={nhtsa} height={60} width={165} alt='NHTSA Logo' />
-                </a>
-
-                <Link href='/'>
-                  <img src={dadss} height={65} width={220} alt='DADSS Logo' />
-                </Link>
-                <a
-                  href='https://www.actsautosafety.org/'
-                  target='_blank'
-                  rel='noreferrer'>
-                  <img src={acts} height={65} width={135} alt='ACTS Logo' />
-                </a>
+                <NHTSA />
+                <DADSS />
+                <ACTS />
               </LogoDivider>
             </Grid>
           </Grid>
