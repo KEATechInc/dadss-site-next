@@ -1,332 +1,330 @@
-// import {
-// 	PageWrap,
-// 	HeroImage,
-// 	transGray,
-// 	Header1,
-// 	ContentBlock,
-// 	Header2,
-// 	Content,
-// 	ContainerH,
-// 	MultiContentBlock,
-// 	ContentCard,
-// 	HubCardContainer,
-// 	HubCardWrap,
-// 	HubCardBack,
-// 	HubCardFront,
-// 	transDarkOrange,
-// 	Break,
-// 	Circle,
-// 	boxShadow,
-// } from '../../../styles/generalStyles'
-// import styled from 'styled-components'
-// import ReactPlayer from 'react-player/lazy'
-// import Head from 'next/head'
+import Head from 'next/head'
+import VideoPlayer from '../../../components/VideoPlayer'
+import HeroImage from '../../../components/Layout/HeroImage'
+import { Box, Typography, Grid, Container } from '@material-ui/core'
+import theme, {
+  bgGray,
+  dadssGradient,
+  fontGray,
+  transDarkOrange,
+  transDtpBlue,
+} from '../../../src/theme'
+import ContentBlock from '../../../components/Layout/ContentBlock'
+import Thumb from '../../../components/Layout/Thumb'
+import Divider from '../../../components/Layout/Divider'
 
-// const landingHero = '/assets/landingPage/JRT.jpg'
+const landingHero = '/assets/landingPage/JRT.jpg'
 
-// const brain = '/assets/landingPage/brain.jpg'
-// const shots = '/assets/landingPage/shots.jpg'
-// const whiskey = '/assets/landingPage/whiskey.jpg'
-// const BT = '/assets/landingPage/B-T.jpg'
-// const zero = '/assets/landingPage/zero.png'
+const brain = '/assets/landingPage/brain.webp'
+const shots = '/assets/landingPage/shots.webp'
+const whiskey = '/assets/landingPage/whiskey.jpg'
+const BT = '/assets/landingPage/B-T.jpg'
+const zero = '/assets/landingPage/zero.png'
 
-// const floyd = '/assets/landingPage/floyd.jpg'
+const floyd = '/assets/landingPage/floyd.webp'
 
-// const description = `A landing page containing learning resources and educational modules detailing the dangers of driving under the influence and describe the efforts the DADSS program is taking to prevent them.`
+const description = `A landing page containing learning resources and educational modules detailing the dangers of driving under the influence and describe the efforts the DADSS program is taking to prevent them.`
 
-// export default function JRTeLearning() {
-// 	return (
-// 		<>
-// 			<Head>
-// 				<title>DADSS | Discovery Hub</title>
-// 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-// 				<meta name='description' content={description} />
-// 			</Head>
-// 			<PageWrap>
-// 				<HeroImage
-// 					landingHero={landingHero}
-// 					position='center 35%'
-// 					height='45vh'>
-// 					<HeaderTextContainer>
-// 						<div className='TextWrap'>
-// 							<Header1 className='White'>
-// 								James River Transportation
-// 								<br />
-// 								Discovery Hub
-// 							</Header1>
-// 						</div>
-// 					</HeaderTextContainer>
-// 				</HeroImage>
+export default function JRTeLearning() {
+  return (
+    <>
+      <Head>
+        <title>DADSS | Discovery Hub</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='description' content={description} />
+      </Head>
+      <main>
+        <HeroImage
+          image={landingHero}
+          position={'center 70%'}
+          extended
+          bannerText={`James River Transportation Discovery Hub`}
+        />
 
-// 				<ContentBlock className='Gray'>
-// 					<Content style={{ padding: '25px 0' }}>
-// 						<b>Welcome to the James River Transportation Discovery Hub.</b>{' '}
-// 						Here, you can learn about the dangers of alcohol–impaired driving
-// 						and the innovative technologies currently in development to make our
-// 						roads and highways safer.
-// 					</Content>
-// 				</ContentBlock>
+        <ContentBlock
+          headerColor='white'
+          borderBottom={fontGray}
+          background={bgGray}>
+          <Typography color='textSecondary' paragraph>
+            <b>Welcome to the James River Transportation Discovery Hub.</b>{' '}
+            Here, you can learn about the dangers of alcohol–impaired driving
+            and the innovative technologies currently in development to make our
+            roads and highways safer.
+          </Typography>
+        </ContentBlock>
 
-// 				<MultiContentBlock>
-// 					<Header2 className='White'>Overview</Header2>
-// 					<Break>
-// 						<hr className='White' />
-// 						<Circle className='White' />
-// 						<hr className='White' />
-// 					</Break>
-// 					<ContainerH>
-// 						<ContentCard>
-// 							<Content className='Header'>
-// 								Driver Alcohol Detection System for Safety (DADSS) Program
-// 							</Content>
-// 							<hr />
-// 							<Content>
-// 								DADSS is a first-of-its-kind, vehicle–integrated, alcohol
-// 								detection technology. By passively detecting a driver's blood
-// 								alcohol concentration (BAC), it prevents a car from moving while
-// 								the driver’s BAC is at or above the legal limit of 0.08%.
-// 							</Content>
-// 							<Content>
-// 								This technology must meet rigorous performance standards before
-// 								it can be installed in cars or trucks. When ready, it will be
-// 								offered to vehicle owners as a voluntary safety option, much
-// 								like other driver–assist systems (i.e., automatic emergency
-// 								braking or lane departure warning systems).
-// 							</Content>
-// 						</ContentCard>
-// 						<ContentCard>
-// 							<Content className='Header'>
-// 								Key Partners in the DADSS Program
-// 							</Content>
-// 							<hr />
-// 							<Content>DADSS Program partners include:</Content>
-// 							<ul>
-// 								<li>
-// 									Automotive Coalition for Traffic Safety (ACTS), a Virginia
-// 									nonprofit funded by the world's leading automakers
-// 								</li>
-// 								<li>
-// 									U.S. Department of Transportation’s National Highway Traffic
-// 									Safety Administration (NHTSA)
-// 								</li>
-// 								<li>
-// 									Virginia Department of Motor Vehicle's Highway Safety Office
-// 								</li>
-// 							</ul>
-// 							<Content>
-// 								The DADSS Program is one of the most important government and
-// 								private sector partnerships in recent years. Public-private
-// 								partnerships like DADSS have led to innovations that enhance our
-// 								everyday lives, such as internet, GPS, and the microchip.
-// 							</Content>
-// 						</ContentCard>
-// 					</ContainerH>
-// 				</MultiContentBlock>
+        <section style={{ width: '100%', background: dadssGradient }}>
+          <Container>
+            <Typography
+              variant='h3'
+              align='center'
+              color='textSecondary'
+              style={{
+                paddingTop: theme.spacing(3),
+                marginBottom: theme.spacing(2),
+              }}>
+              Overview
+            </Typography>
+            <Divider color='white' />
 
-// 				<ContentBlock className='Gray'>
-// 					{jrtModules.length > 0 && (
-// 						<>
-// 							<Header2 className='White'>JRT DADSS Training Modules</Header2>
-// 							<Break>
-// 								<hr />
-// 								<Circle />
-// 								<hr />
-// 							</Break>
-// 							<HubCardContainer>
-// 								<ContainerH>
-// 									{jrtModules.map((module, index) => {
-// 										return (
-// 											<HubCardWrap key={index}>
-// 												<a
-// 													href={module.url}
-// 													target='_blank'
-// 													rel='noopener noreferrer'>
-// 													<HubCardFront>
-// 														<p>{module.title}</p>
-// 													</HubCardFront>
-// 													<HubCardBack bgImage={module.image}></HubCardBack>
-// 												</a>
-// 											</HubCardWrap>
-// 										)
-// 									})}
-// 								</ContainerH>
-// 							</HubCardContainer>
-// 						</>
-// 					)}
+            <Box pb={6}>
+              <Grid
+                container
+                justifyContent='space-between'
+                align='stretch'
+                spacing={2}>
+                <Grid item md={6}>
+                  <ContentBlock
+                    shadow
+                    background={bgGray}
+                    fontColor={theme.palette.text.secondary}>
+                    <Typography variant='h4' align='center' gutterBottom>
+                      Driver Alcohol Detection System For Safety (DADSS) Program
+                    </Typography>
+                    <Divider size='small' />
+                    <Box>
+                      <Typography paragraph>
+                        DADSS is a first-of-its-kind, vehicle–integrated,
+                        alcohol detection technology. By passively detecting a
+                        driver's blood alcohol concentration (BAC), it prevents
+                        a car from moving while the driver’s BAC is at or above
+                        the legal limit of 0.08%.
+                      </Typography>
+                      <Typography paragraph>
+                        This technology must meet rigorous performance standards
+                        before it can be installed in cars or trucks. When
+                        ready, it will be offered to vehicle owners as a
+                        voluntary safety option, much like other driver–assist
+                        systems (i.e., automatic emergency braking or lane
+                        departure warning systems).
+                      </Typography>
+                    </Box>
+                  </ContentBlock>
+                </Grid>
 
-// 					{eModules.length > 0 && (
-// 						<>
-// 							<Header2 className='White'>STEM Modules</Header2>
-// 							<Break>
-// 								<hr />
-// 								<Circle />
-// 								<hr />
-// 							</Break>
-// 							<HubCardContainer>
-// 								<ContainerH>
-// 									{eModules.map((module, index) => {
-// 										return (
-// 											<HubCardWrap key={index}>
-// 												<a
-// 													href={module.url}
-// 													target='_blank'
-// 													rel='noopener noreferrer'>
-// 													<HubCardFront background={transDarkOrange}>
-// 														<p>{module.title}</p>
-// 													</HubCardFront>
-// 													<HubCardBack bgImage={module.image}></HubCardBack>
-// 												</a>
-// 											</HubCardWrap>
-// 										)
-// 									})}
-// 								</ContainerH>
-// 							</HubCardContainer>
-// 						</>
-// 					)}
+                <Grid item md={6}>
+                  <ContentBlock
+                    shadow
+                    background={bgGray}
+                    fontColor={theme.palette.text.secondary}>
+                    <Typography variant='h4' align='center' gutterBottom>
+                      Key Partners In The DADSS Program
+                    </Typography>
+                    <Divider size='small' />
+                    <Box>
+                      <Typography paragraph>
+                        DADSS Program partners include:
+                      </Typography>
+                      <Box>
+                        <ul>
+                          <li>
+                            Automotive Coalition for Traffic Safety (ACTS), a
+                            Virginia nonprofit funded by the world's leading
+                            automakers
+                          </li>
+                          <li>
+                            U.S. Department of Transportation’s National Highway
+                            Traffic Safety Administration (NHTSA)
+                          </li>
+                          <li>
+                            Virginia Department of Motor Vehicle's Highway
+                            Safety Office
+                          </li>
+                        </ul>
+                      </Box>
+                      <Typography paragraph>
+                        The DADSS Program is one of the most important
+                        government and private sector partnerships in recent
+                        years. Public-private partnerships like DADSS have led
+                        to innovations that enhance our everyday lives, such as
+                        internet, GPS, and the microchip.
+                      </Typography>
+                    </Box>
+                  </ContentBlock>
+                </Grid>
 
-// 					{videos.length > 0 && (
-// 						<>
-// 							<Header2 className='White'>Educational Videos</Header2>
-// 							<Break>
-// 								<hr />
-// 								<Circle />
-// 								<hr />
-// 							</Break>
-// 							<HubCardContainer>
-// 								<ContainerH>
-// 									{videos.map((video, index) => {
-// 										return (
-// 											<PlayerContainer key={index}>
-// 												<Content className='TitleWrap'>{video.title}</Content>
+                <Grid item xs={12}>
+                  <ContentBlock
+                    shadow
+                    background={bgGray}
+                    fontColor={theme.palette.text.secondary}>
+                    <Typography variant='h4' align='center' gutterBottom>
+                      DADSS Driven To Protect Discovery Hub
+                    </Typography>
+                    <Divider size='small' />
+                    <Box>
+                      <Typography paragraph>
+                        The learning modules below allow you to:
+                      </Typography>
+                      <Box mb={2}>
+                        <ul>
+                          <li>
+                            Explore how alcohol is absorbed, processed and
+                            eliminated by the human body
+                          </li>
+                          <li>
+                            Learn how alcohol impairs your ability to safely
+                            operate a motor vehicle
+                          </li>
+                          <li>
+                            Obtain actionable information so you can avoid the
+                            dangers associated with drunk driving
+                          </li>
+                          <li>
+                            Find out how the novel DADSS technologies currently
+                            under development and testing will protect you and
+                            other motorists on the road in the future
+                          </li>
+                        </ul>
+                      </Box>
+                      <Typography paragraph>
+                        There are also Science, Technology, Engineering, and
+                        Math (STEM) modules available so students can learn
+                        about the science and engineering behind the DADSS
+                        technologies.
+                      </Typography>
+                    </Box>
+                  </ContentBlock>
+                </Grid>
+              </Grid>
+            </Box>
+          </Container>
+        </section>
 
-// 												<div className='PlayerWrap'>
-// 													<ReactPlayer
-// 														key={index}
-// 														className='ReactPlayer'
-// 														url={video.url}
-// 														width='100%'
-// 														height='100%'
-// 														controls={true}
-// 													/>
-// 												</div>
-// 											</PlayerContainer>
-// 										)
-// 									})}
-// 								</ContainerH>
-// 							</HubCardContainer>
-// 						</>
-// 					)}
-// 				</ContentBlock>
-// 			</PageWrap>
-// 		</>
-// 	)
-// }
+        <section>
+          <ContentBlock
+            header='JRT DADSS Training Modules'
+            headerColor={theme.palette.text.secondary}
+            background={bgGray}
+            borderTop={fontGray}
+            borderBottom={fontGray}
+            divider>
+            {jrtModules.length > 0 && (
+              <Grid container spacing={2} justifyContent='center'>
+                {jrtModules.map((module, index) => {
+                  return (
+                    <Grid item xs={12} md={6}>
+                      <Thumb
+                        img={module.image}
+                        url={module.url}
+                        label={module.title}
+                        background={transDtpBlue}
+                        filterDark
+                        external
+                        key={index}
+                      />
+                    </Grid>
+                  )
+                })}
+              </Grid>
+            )}
 
-// const HeaderTextContainer = styled.div`
-// 	height: 100%;
-// 	width: 100%;
-// 	display: flex;
-// 	justify-content: flex-end;
-// 	align-items: flex-end;
-// 	backdrop-filter: blur(2px);
-// 	.TextWrap {
-// 		display: flex;
-// 		flex-direction: column;
-// 		justify-content: center;
-// 		align-items: center;
-// 		padding: 40px 25px;
-// 		background: ${transGray};
-// 		width: 100%;
-// 	}
-// 	h1 {
-// 		width: 100%;
-// 		text-align: right;
-// 		margin: 0;
-// 	}
-// 	h2 {
-// 		text-align: right;
-// 	}
-// `
+            {eModules.length > 0 && (
+              <>
+                <Typography
+                  variant='h3'
+                  color='textSecondary'
+                  align='center'
+                  gutterBottom
+                  style={{ marginTop: theme.spacing(6) }}>
+                  STEM Modules
+                </Typography>
+                <Divider />
+                <Grid container spacing={2} justifyContent='center'>
+                  {eModules.map((module, index) => {
+                    return (
+                      <Grid item xs={12} md={6}>
+                        <Thumb
+                          img={module.image}
+                          url={module.url}
+                          label={module.title}
+                          background={transDarkOrange}
+                          filterDark
+                          external
+                          key={index}
+                        />
+                      </Grid>
+                    )
+                  })}
+                </Grid>
+              </>
+            )}
+            {videos.length > 0 && (
+              <>
+                <Typography
+                  variant='h3'
+                  color='textSecondary'
+                  gutterBottom
+                  align='center'
+                  style={{ marginTop: theme.spacing(6) }}>
+                  Educational Videos
+                </Typography>
+                <Divider />
+                <VideoPlayer videos={videos} />
+              </>
+            )}
+          </ContentBlock>
+        </section>
+      </main>
+    </>
+  )
+}
 
-// const PlayerContainer = styled.div`
-// 	display: flex;
-// 	flex-direction: column;
-// 	flex: 1 1 400px;
-// 	margin: 25px;
-// 	justify-content: flex-end;
-// 	align-items: center;
-// 	.PlayerWrap {
-// 		position: relative;
-// 		padding-top: 56.25%;
-// 		width: 100%;
+const jrtModules = [
+  {
+    title: `JRT DADSS Familarization`,
+    image: floyd,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/JRT-training-modules/JRT+DADSS+Familiarization/index.html`,
+  },
+]
 
-// 		.ReactPlayer {
-// 			position: absolute;
-// 			top: 0;
-// 			left: 0;
-// 			box-shadow: ${boxShadow};
-// 		}
-// 	}
-// 	.TitleWrap {
-// 		text-align: center;
-// 	}
-// `
+const eModules = [
+  {
+    title: `The Brain, Lungs, and BAC (What's their role in Driving)`,
+    image: brain,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/The+Brains+Lungs+And+BAC+Whats+Their+Role+In+Driving/index.html#/`,
+  },
+  {
+    title: `Alcohol Impaired Driving Informational`,
+    image: shots,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Alcohol+Impaired+Driving+Informational/index.html#/`,
+  },
+  {
+    title: `Alcohol Fact or Fiction`,
+    image: whiskey,
+    url: `https://kahoot.it/challenge/c581e616-fc89-49a8-aed0-7b79cc6ca52d_1614273467634`,
+  },
+  {
+    title: `Breath and Touch Alcohol Detection Systems`,
+    image: BT,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Breath+And+Touch+Alcohol+Detection+Systems+Raw/index.html#/`,
+  },
+  {
+    title: `Underage Alcohol Use and Zero Tolerance Law Informational`,
+    image: zero,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Underage+Alcohol+Use+and+Zero+Tolerance+Law+Informational/index.html#/`,
+  },
+]
 
-// const jrtModules = [
-// 	{
-// 		title: `JRT DADSS Familarization`,
-// 		image: floyd,
-// 		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/JRT-training-modules/JRT+DADSS+Familiarization/index.html`,
-// 	},
-// ]
-
-// const eModules = [
-// 	{
-// 		title: `The Brain, Lungs, and BAC (What's their role in Driving)`,
-// 		image: brain,
-// 		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/The+Brains+Lungs+And+BAC+Whats+Their+Role+In+Driving/index.html#/`,
-// 	},
-// 	{
-// 		title: `Alcohol Impaired Driving Informational`,
-// 		image: shots,
-// 		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Alcohol+Impaired+Driving+Informational/index.html#/`,
-// 	},
-// 	{
-// 		title: `Alcohol Fact or Fiction`,
-// 		image: whiskey,
-// 		url: `https://kahoot.it/challenge/c581e616-fc89-49a8-aed0-7b79cc6ca52d_1614273467634`,
-// 	},
-// 	{
-// 		title: `Breath and Touch Alcohol Detection Systems`,
-// 		image: BT,
-// 		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Breath+And+Touch+Alcohol+Detection+Systems+Raw/index.html#/`,
-// 	},
-// 	{
-// 		title: `Underage Alcohol Use and Zero Tolerance Law Informational`,
-// 		image: zero,
-// 		url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Underage+Alcohol+Use+and+Zero+Tolerance+Law+Informational/index.html#/`,
-// 	},
-// ]
-
-// const videos = [
-// 	{
-// 		title: `The DADSS and Driven To Protect Demonstration Vehicle`,
-// 		url: `https://youtu.be/D4AuGbnitZk`,
-// 	},
-// 	{
-// 		title: `Overview of the DADSS Technology`,
-// 		url: `https://youtu.be/SQK5H6h_JHc`,
-// 	},
-// 	{
-// 		title: `First Anniversary of our Partnership with James River Transportation`,
-// 		url: `https://youtu.be/LVud69MWn3Q`,
-// 	},
-// 	{
-// 		title: `Time-lapse of a DADSS Vehicle Integration`,
-// 		url: `https://youtu.be/JuGxxPAhbhI`,
-// 	},
-// 	{
-// 		title: `A Day in the Life of a Breath Sensor: The Testing Process`,
-// 		url: `https://youtu.be/P8fLx0OF57U`,
-// 	},
-// ]
+const videos = [
+  {
+    title: `The DADSS and Driven To Protect Demonstration Vehicle`,
+    id: `D4AuGbnitZk`,
+  },
+  {
+    title: `Overview of the DADSS Technology`,
+    id: `SQK5H6h_JHc`,
+  },
+  {
+    title: `First Anniversary of our Partnership with James River Transportation`,
+    id: `LVud69MWn3Q`,
+  },
+  {
+    title: `Time-lapse of a DADSS Vehicle Integration`,
+    id: `JuGxxPAhbhI`,
+  },
+  {
+    title: `A Day in the Life of a Breath Sensor: The Testing Process`,
+    id: `P8fLx0OF57U`,
+  },
+]
