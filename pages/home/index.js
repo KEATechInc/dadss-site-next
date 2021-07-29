@@ -134,8 +134,8 @@ export default function Home() {
               justifyContent: 'center',
               flexWrap: 'wrap',
             }}>
-            <NHTSA />
             <ACTS />
+            <NHTSA />
           </div>
 
           <Box mt={2}>

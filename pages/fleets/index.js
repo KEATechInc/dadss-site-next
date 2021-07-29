@@ -129,9 +129,9 @@ const Fleets = () => {
 
             <Grid item xs={12}>
               <LogoDivider>
-                <NHTSA />
-                <DADSS />
                 <ACTS />
+                <DADSS />
+                <NHTSA />
               </LogoDivider>
             </Grid>
           </Grid>

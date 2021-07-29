@@ -149,10 +149,10 @@ const DTPMaryland = () => {
             {/* logo section */}
             <Grid item xs={12}>
               <LogoDivider>
-                <MDT />
-                <NHTSA />
-                <DADSS />
                 <ACTS />
+                <DADSS />
+                <NHTSA />
+                <MDT />
               </LogoDivider>
             </Grid>
           </Grid>

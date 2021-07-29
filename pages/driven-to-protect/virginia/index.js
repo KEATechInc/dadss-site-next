@@ -263,10 +263,10 @@ const DTPVirginia = () => {
             {/* logo banner */}
             <Grid item xs={12}>
               <LogoDivider>
-                <VADMV />
-                <NHTSA />
-                <DADSS />
                 <ACTS />
+                <DADSS />
+                <NHTSA />
+                <VADMV />
               </LogoDivider>
             </Grid>
           </Grid>
