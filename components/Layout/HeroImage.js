@@ -11,7 +11,7 @@ const HeroImage = ({
 }) => {
   const HeroContainer = styled('div')({
     position: 'relative',
-    height: extended ? 400 : 250,
+    height: extended ? 425 : 300,
     width: '100%',
     backgroundImage: `url(${image})`,
     backgroundPosition: position ? position : 'center',

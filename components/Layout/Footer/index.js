@@ -12,18 +12,18 @@ const Footer = () => {
           <Typography variant='h6'>Follow us on social media:</Typography>
           <div>
             <Button
-              color='primary'
+              color='secondary'
               href='https://twitter.com/DADSSTech'
               target='_blank'
               rel='noreferrer'>
-              <RiTwitterFill style={{ fontSize: '2rem' }} />
+              <RiTwitterFill style={{ fontSize: '2rem', color: '#1DA1F2' }} />
             </Button>
             <Button
-              color='primary'
+              color='secondary'
               href='https://www.youtube.com/channel/UC5be5Eh_SVXbn6d6RI8BYtQ'
               target='_blank'
               rel='noreferrer'>
-              <RiYoutubeFill style={{ fontSize: '2rem' }} />
+              <RiYoutubeFill style={{ fontSize: '2rem', color: '#ff0000' }} />
             </Button>
           </div>
         </SocialWrapper>
