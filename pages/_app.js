@@ -30,10 +30,13 @@ export default function MyApp({ Component, pageProps }) {
           rel='stylesheet'
         />
 
-        <meta property='og:title' content='Driver Alcohol Detection System for Safety (DADSS)' />
+        <meta
+          property='og:title'
+          content='Driver Alcohol Detection System for Safety (DADSS)'
+        />
         <meta
           property='og:image'
-          content='/assets/logos/dadss-logo.svg'
+          content='https://www.dadss.org/assets/logos/graphic-logo-car.svg'
         />
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
