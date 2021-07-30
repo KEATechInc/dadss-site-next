@@ -36,7 +36,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta
           property='og:image'
-          content='https://www.dadss.org/assets/logos/graphic-logo-car.svg'
+          content='https://www.dadss.org/assets/logos/graphic-logo-car.png'
         />
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
