@@ -2,65 +2,47 @@ import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
-import styled from 'styled-components'
-import {
-	HeadBlock,
-	Header1,
-	Header3,
-	Break,
-	Circle,
-	ContentBlock,
-	Content,
-	Hyperlink,
-} from '../styles/generalStyles'
+import ContentBlock from '../components/Layout/ContentBlock'
+import { Typography } from '@material-ui/core'
+import Image from '../components/Layout/Image'
+import theme from '../src/theme'
 
 const DADSSLogo = '/assets/logos/graphic-logo-car.svg'
 
 const PageNotFound = () => {
-	useEffect(() => {
-		ReactGA.initialize('UA-58614629-1')
-		ReactGA.pageview(window.location.pathname)
-	}, [])
+  useEffect(() => {
+    ReactGA.initialize('UA-58614629-1')
+    ReactGA.pageview(window.location.pathname)
+  }, [])
 
-	const description = `Page not found. Oops. It appears something has gone wrong.`
+  const description = `Page not found. Oops. It appears something has gone wrong.`
 
-	return (
-		<>
-			<Head>
-				<title>DADSS | 404 - Page Not Found</title>
-				<meta name='description' content={description} />
-			</Head>
-			<BodyWrapper>
-				<HeadBlock>
-					<Header1>Page Not Found</Header1>
-					<Break>
-						<hr />
-						<Circle></Circle>
-						<hr />
-					</Break>
-				</HeadBlock>
-				<ContentBlock>
-					<Header3>Oops. Something has gone wrong.</Header3>
-					<Image src={DADSSLogo} alt='DADSS Car Logo' height={250} width={350} />
-					<Content>
-						Sorry about that. Follow this link to{' '}
-						<Link href='/'>
-							<Hyperlink>Return Home</Hyperlink>
-						</Link>
-						.
-					</Content>
-				</ContentBlock>
-			</BodyWrapper>
-		</>
-	)
+  return (
+    <>
+      <Head>
+        <title>DADSS | 404 - Page Not Found</title>
+        <meta name='description' content={description} />
+      </Head>
+      <main>
+        <ContentBlock header='Page Not Found' divider>
+          <Typography variant='h4' gutterBottom>
+            Oops. Something has gone wrong.
+          </Typography>
+          <img
+            src={DADSSLogo}
+            alt='DADSS Car Logo'
+            height='150px'
+            width='100%'
+            style={{ margin: theme.spacing(2) }}
+          />
+          <Typography>
+            Sorry about that. Follow this link to{' '}
+            <Link href='/'>Return Home</Link>.
+          </Typography>
+        </ContentBlock>
+      </main>
+    </>
+  )
 }
-
-const BodyWrapper = styled.div`
-	margin-top: 85px;
-	p {
-		text-align: center;
-	}
-`
 
 export default PageNotFound

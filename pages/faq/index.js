@@ -1,24 +1,16 @@
-import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import {
-  ContentBlock,
-  HeadBlock,
-  Header1,
-  Header3,
-  boxShadow,
-  darkOrange
-} from '../../styles/generalStyles'
 import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Typography,
+  styled,
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import Head from 'next/head'
 import { faqData } from '../../src/faqData'
-import Divider from '../../components/Divider'
 
 const FAQ = () => {
   const [expanded, setExpanded] = useState(false)
@@ -42,32 +34,27 @@ const FAQ = () => {
         <title>DADSS | FAQ</title>
         <meta name='description' content={description} />
       </Head>
-      <FAQWrapper>
-        <HeadBlock>
-          <Header1>Frequently Asked Questions</Header1>
-          <Divider />
-        </HeadBlock>
-
-        <ContentBlock className='FAQWrapper'>
+      <main>
+        <ContentBlock header='Frequently Asked Questions' divider>
           {faqData && (
             <>
               {faqData.map((faq, index) => {
                 return (
                   <Accordion
                     key={index}
-                    className='Accordion'
                     expanded={expanded === `panel${index + 1}`}
                     onChange={handleChange(`panel${index + 1}`)}>
-                    <AccordionSummary
-                      className='AccordionSummary'
-                      expandIcon={<ExpandMoreIcon />}>
-                      <a className='anchor' id={`panel${index + 1}`} />
-                      <Header3>{`${index + 1}. ${faq.question}`}</Header3>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <Anchor id={`panel${index + 1}`} />
+                      <Typography variant='h6' color='primary'>{`${
+                        index + 1
+                      }. ${faq.question}`}</Typography>
                     </AccordionSummary>
-                    <AccordionDetails className='AccordionDetails'>
+                    <AccordionDetails
+                      style={{ display: 'flex', flexDirection: 'column' }}>
                       {faq.answer.map((p, index) => {
                         return (
-                          <Typography component='span' key={index} gutterBottom>
+                          <Typography component='span' key={index} paragraph>
                             {p}
                           </Typography>
                         )
@@ -79,48 +66,16 @@ const FAQ = () => {
             </>
           )}
         </ContentBlock>
-      </FAQWrapper>
+      </main>
     </>
   )
 }
 
-const FAQWrapper = styled.div`
-  margin-top: 85px;
-  a.anchor {
-    display: block;
-    position: relative;
-    top: -100px;
-    visibility: hidden;
-  }
-  .FAQWrapper {
-    .Accordion {
-      max-width: 1000px;
-      border-radius: 0;
-      box-shadow: ${boxShadow};
-      .AccordionSummary {
-        margin: 0;
-      }
-      .AccordionDetails {
-        flex-direction: column;
-        padding-top: 0;
-        & span {
-          & a {
-            color: ${darkOrange};
-            font-weight: bold;
-            transition: 0.1s;
-            :hover {
-              cursor: pointer;
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
-    h3 {
-      width: 100%;
-      font-size: 1.4em;
-      text-align: left;
-    }
-  }
-`
+const Anchor = styled('a')({
+  display: 'block',
+  position: 'relative',
+  top: -100,
+  visibility: 'hidden',
+})
+
 export default FAQ

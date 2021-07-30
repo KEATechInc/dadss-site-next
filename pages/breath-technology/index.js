@@ -1,17 +1,9 @@
 import React from 'react'
-import { styled } from '@material-ui/core'
-import {
-  HeadBlock,
-  Header1,
-  Header2,
-  Header3,
-  ContentBlock,
-  Content,
-  Hyperlink,
-  Button,
-} from '../../styles/generalStyles'
+import { Typography, Button } from '@material-ui/core'
 import Head from 'next/head'
-import Divider from '../../components/Divider'
+import ContentBlock from '../../components/Layout/ContentBlock'
+import Image from '../../components/Layout/Image'
+import { bgGray, bgOrange, darkOrange, fontGray } from '../../src/theme'
 
 const DadssStill1 = '/assets/breathBasedTech/breath-based-still1.webp'
 const DadssStill2 = '/assets/breathBasedTech/breath-based-still2.webp'
@@ -29,46 +21,41 @@ const BreathTech = () => {
         <title>DADSS | Breath Technology</title>
         <meta name='description' content={description} />
       </Head>
-      <BreathBasedWrapper>
-        <HeadBlock>
-          <Header1>Breath Technology</Header1>
-          <Divider />
-        </HeadBlock>
-        <ContentBlock style={{ paddingTop: '25px' }}>
-          <Content>
+      
+      <main>
+        <ContentBlock header='Breath Technology' divider>
+          <Typography paragraph>
             When it comes to measuring a person’s blood alcohol concentration,
             most Americans are familiar with breathalyzers that require drivers
             to provide a deep-lung sample by blowing into a tube or other
             sensor.
-          </Content>
-          <Content>
-            In contrast, the breath system being developed by Senseair,
-            and their tier one auto supplier, Autoliv Development, is designed
-            to unobtrusively analyze alcohol in the driver’s breath. Drivers
-            will simply be able to enter the vehicle and breathe as they
-            normally would.
-          </Content>
-          <div className='ImageWrapper'>
-            <img
-              src={DadssStill1}
-              alt='Breath System'
-              height={560}
-              width={1000}
-              priority={true}
-            />
-          </div>
+          </Typography>
+          <Typography paragraph>
+            In contrast, the breath system being developed by Senseair, and
+            their tier one auto supplier, Autoliv Development, is designed to
+            unobtrusively analyze alcohol in the driver’s breath. Drivers will
+            simply be able to enter the vehicle and breathe as they normally
+            would.
+          </Typography>
+          <Image src={DadssStill1} alt='Breath System' />
         </ContentBlock>
-        <ContentBlock className='Orange'>
-          <Header2 className='Gray'>How it Works</Header2>
-          <Divider color='white' />
-          <Content>
+
+        <ContentBlock
+          header='How It Works'
+          headerColor={fontGray}
+          borderTop={darkOrange}
+          borderBottom={darkOrange}
+          background={bgOrange}
+          dividerColor='white'
+          divider>
+          <Typography paragraph>
             The system draws the driver’s exhaled breath into a sensor, which
             measures the concentrations of alcohol and carbon dioxide present.
             The known quantity of carbon dioxide in human breath serves as an
             indicator of the degree of dilution of the alcohol concentration in
             exhaled air.
-          </Content>
-          <Content>
+          </Typography>
+          <Typography paragraph>
             Molecules of alcohol and those of tracers such as carbon dioxide
             absorb infrared light at specific wavelengths. The Senseair device
             directs infrared light beams on the breath sample and analyzes the
@@ -78,16 +65,12 @@ const BreathTech = () => {
             required optical length of the device. The device is highly
             sensitive and able to analyze diluted breath samples at dilutions
             expected from a driver’s natural breath plume.
-          </Content>
-          <div className='ImageWrapper'>
-            <img src={DadssStill2} alt='Molecules' height={560} width={1000} />
-          </div>
+          </Typography>
+          <Image src={DadssStill2} alt='Molecules' />
         </ContentBlock>
 
-        <ContentBlock>
-          <Header2>Testing the Prototype</Header2>
-          <Divider />
-          <Content>
+        <ContentBlock header='Testing The Prototype' divider>
+          <Typography paragraph>
             To test the prototype under development, the DADSS Research Program
             has developed a wet gas breath simulator. The simulator blends gases
             such as carbon dioxide, nitrogen and oxygen with moisture to create
@@ -98,16 +81,9 @@ const BreathTech = () => {
             tests, as well as durability tests in different environmental
             situations, from temperature shifts, to sudden changes in motion, to
             interference such as dust or mechanical shock.
-          </Content>
-          <div className='ImageWrapper'>
-            <img
-              src={DadssStill3}
-              alt='Vehicle Testing'
-              height={560}
-              width={1000}
-            />
-          </div>
-          <Content>
+          </Typography>
+          <Image src={DadssStill3} alt='Vehicle Testing' marginBottom />
+          <Typography paragraph>
             In order to determine how best to install this system into new
             vehicles, extensive research is being undertaken to fully understand
             the process of the breath stream after exhalation and the breath’s
@@ -117,38 +93,43 @@ const BreathTech = () => {
             sensors placed strategically in the vehicle cabin that would allow
             the system to determine that the breath sample is from the driver
             and not from other passengers.
-          </Content>
-          <a href={PDF} target='_blank' rel='noreferrer'>
-            <Button>Download PDF</Button>
-          </a>
+          </Typography>
+          <Button
+            href={PDF}
+            target='_blank'
+            rel='noreferrer'
+            variant='outlined'
+            color='primary'>
+            Download PDF
+          </Button>
         </ContentBlock>
-        <ContentBlock className='Gray Manufacturer'>
-          <Header3 className='White'>About The Manufacturer</Header3>
-          <Content className='White'>
+
+        <ContentBlock
+          borderTop={fontGray}
+          borderBottom={fontGray}
+          background={bgGray}
+          fontColor='white'>
+          <Typography variant='h4' color='textSecondary' gutterBottom>
+            About The Manufacturer
+          </Typography>
+          <Typography>
             Senseair is an innovation-based sensor company and leading
             manufacturer of infrared carbon dioxide sensors and controllers. It
             is based in Sweden, with over 20 years’ experience in the field of
             infrared gas measurement technology. Learn more about the
             manufacturer at:{' '}
-            <Hyperlink
+            <a
               href='https://Senseair.com/'
               target='_blank'
               rel='noreferrer'
-              className='ContrastOrange'>
+              style={{ color: bgOrange }}>
               www.Senseair.com
-            </Hyperlink>
-          </Content>
+            </a>
+          </Typography>
         </ContentBlock>
-      </BreathBasedWrapper>
+      </main>
     </>
   )
 }
-
-const BreathBasedWrapper = styled('div')({
-  marginTop: 85,
-  '& .ImageWrapper': {
-    margin: '10px 0 5px',
-  },
-})
 
 export default BreathTech

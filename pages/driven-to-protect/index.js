@@ -1,20 +1,19 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import { useRouter } from 'next/router'
-import { DrivenToProtectWrapper } from '../../styles/drivenToProtectStyles'
-import {
-  Content,
-  ContentBlock,
-  HeadBlock,
-  Header1,
-  Hyperlink,
-  Header2,
-} from '../../styles/generalStyles'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Head from 'next/head'
 import Link from 'next/link'
-import Divider from '../../components/Divider'
+import Thumb from '../../components/Layout/Thumb'
+import ContentBlock from '../../components/Layout/ContentBlock'
+import Divider from '../../components/Layout/Divider'
+import { Grid, Typography, Box, Button, Container } from '@material-ui/core'
+import theme, { dtpBlue } from '../../src/theme'
+import HeroImage from '../../components/Layout/HeroImage'
 
+const heroBg = '/assets/drivenToProtect/GreyWash2.webp'
+const vaBg = '/assets/drivenToProtect/Blue-Image2.webp'
+const mdBg = '/assets/drivenToProtect/Blue-Image1.webp'
 const dtpLogo = '/assets/logos/dtpLogos/DTP-logo.webp'
 const description = `Driven to Protect is a public-private partnership between the\
 	Driver Alcohol Detection System for Safety (DADSS) Program\
@@ -34,103 +33,107 @@ const DrivenToProtect = () => {
         <title>DADSS | Driven To Protect</title>
         <meta name='description' content={description} />
       </Head>
-      <DrivenToProtectWrapper>
-        <HeadBlock className='HeroImage'>
-          <div className='LogoWrapper'>
-            <img
-              src={dtpLogo}
-              alt='DTP Logo'
-              width={850}
-              height={110}
-              object-fit='cover'
-              priority={true}
-            />
-          </div>
-        </HeadBlock>
-        <HeadBlock>
-          <Header1 className='Blue'>Driven to Protect</Header1>
+      <main>
+        <HeroImage image={heroBg} darken>
+          <img
+            src={dtpLogo}
+            alt='DTP Logo'
+            width={'100%'}
+            height={'100%'}
+          />
+        </HeroImage>
+
+        <ContentBlock
+          header='Driven To Protect'
+          headerColor={dtpBlue}
+          linkColor={dtpBlue}>
           <Divider />
-        </HeadBlock>
-        <ContentBlock style={{ paddingTop: '25px' }}>
-          <Content>
+
+          <Typography paragraph>
             Driven to Protect is a public-private partnership between the{' '}
-            <Hyperlink
-              className='Blue'
-              href='/'
-              target='_blank'
-              rel='noreferrer'>
+            <a href='/' target='_blank' rel='noreferrer'>
               Driver Alcohol Detection System for Safety (DADSS) Program
-            </Hyperlink>{' '}
+            </a>{' '}
             and individual state governments that is helping to develop
             technology to eliminate drunk driving and save lives.
-          </Content>
-          <Content>
+          </Typography>
+          <Typography paragraph>
             The vehicle-integrated alcohol detection technology will determine
             when a driver is impaired with a blood alcohol concentration at or
             above 0.08% and prevent the car from moving. The breakthrough
             technology will be fast, accurate, reliable, and affordable.
-          </Content>
-          <Content>
-            <Hyperlink
-              className='Blue'
+          </Typography>
+          <Typography paragraph>
+            <a
               href='https://www.youtube.com/watch?v=vddF6HjKrZY'
               target='_blank'
               rel='noreferrer'>
               Virginia was the first state to join DADSS
-            </Hyperlink>{' '}
+            </a>{' '}
             and help launch the Driven to Protect Initiative, followed by
             Maryland in 2019. Learn more about each state’s role in the fight
             against drunk driving below and visit the{' '}
-            <Link href='/discovery-hub'>
-              <Hyperlink className='Blue'>
-                Driven to Protect Discovery Hub
-              </Hyperlink>
-            </Link>{' '}
+            <Link href='/discovery-hub'>Driven to Protect Discovery Hub</Link>{' '}
             for free educational resources.
-          </Content>
-        </ContentBlock>
+          </Typography>
 
-        <ContentBlock className='DirectoryWrapper' style={{ paddingTop: '0' }}>
-          <div className='Virginia'>
-            <div
-              className='ImgWrapper'
-              onClick={() => router.push('/driven-to-protect/virginia')}>
-              <Header2 className='White'>Virginia</Header2>
-            </div>
-            <Content>
-              Learn how Virginia is testing the alcohol breath sensors in
-              partnership with James River Transportation and introducing the
-              technology to its citizens.
-            </Content>
-            <div className='LearnWrapper'>
-              <Hyperlink
-                className='Blue'
-                onClick={() => router.push('/driven-to-protect/virginia')}>
-                Learn more <AiFillCaretRight />
-              </Hyperlink>
-            </div>
-          </div>
-          <div className='Maryland'>
-            <div
-              className='ImgWrapper'
-              onClick={() => router.push('/driven-to-protect/maryland')}>
-              <Header2 className='White'>Maryland</Header2>
-            </div>
-            <Content>
-              Learn how Maryland is putting the technology on the road by
-              outfitting seven fleet vehicles with the alcohol breath sensors to
-              gather real-world data.
-            </Content>
-            <div className='LearnWrapper'>
-              <Hyperlink
-                className='Blue'
-                onClick={() => router.push('/driven-to-protect/maryland')}>
-                Learn more <AiFillCaretRight />
-              </Hyperlink>
-            </div>
-          </div>
+          <Box mt={2}>
+            <Grid container spacing={3}>
+              {/* virginia */}
+              <Grid item sm={6}>
+                <Thumb
+                  img={vaBg}
+                  url={'/driven-to-protect/virginia'}
+                  label={'Virginia'}
+                />
+
+                <Typography
+                  variant='body2'
+                  paragraph
+                  style={{ marginTop: theme.spacing(1) }}>
+                  Learn how Virginia is testing the alcohol breath sensors in
+                  partnership with James River Transportation and introducing
+                  the technology to its citizens.
+                </Typography>
+
+                <Button
+                  variant='outlined'
+                  color='secondary'
+                  fullWidth
+                  onClick={() => router.push('/driven-to-protect/virginia')}>
+                  Learn more <AiFillCaretRight />
+                </Button>
+              </Grid>
+
+              {/* maryland */}
+              <Grid item sm={6}>
+                <Thumb
+                  img={mdBg}
+                  url={'/driven-to-protect/maryland'}
+                  label={'Maryland'}
+                />
+
+                <Typography
+                  variant='body2'
+                  paragraph
+                  style={{ marginTop: theme.spacing(1) }}>
+                  Learn how Maryland is putting the technology on the road by
+                  outfitting seven fleet vehicles with the alcohol breath
+                  sensors to gather real-world data.
+                </Typography>
+
+                <Button
+                  variant='outlined'
+                  color='secondary'
+                  fullWidth
+                  onClick={() => router.push('/driven-to-protect/maryland')}>
+                  Learn more <AiFillCaretRight />
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
         </ContentBlock>
-      </DrivenToProtectWrapper>
+      </main>
     </>
   )
 }

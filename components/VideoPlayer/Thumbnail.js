@@ -1,6 +1,6 @@
 import { styled } from '@material-ui/core'
 import { useState, useEffect } from 'react'
-import { dtpLightBlue } from '../../styles/generalStyles'
+import { dtpLightBlue } from '../../src/theme'
 import { useSpring, animated as a } from '@react-spring/web'
 
 const Thumbnail = ({ current, setCurrent, thumbnail, index }) => {
@@ -20,6 +20,9 @@ const Thumbnail = ({ current, setCurrent, thumbnail, index }) => {
 
   const thumbnailStyles = useSpring({
     background: active ? dtpLightBlue : 'transparent',
+    config: {
+      friction: 18,
+    }
   })
 
   const ImageHolder = styled('div')({

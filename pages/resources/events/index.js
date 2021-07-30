@@ -1,177 +1,134 @@
 import { useState, useEffect } from 'react'
 import ReactGA from 'react-ga'
-import styled from 'styled-components'
-import {
-	Break,
-	Circle,
-	ContentBlock,
-	HeadBlock,
-	Header1,
-	Header2,
-	Header3,
-	Content,
-} from '../../../styles/generalStyles'
 import Head from 'next/head'
+import { Box, Typography } from '@material-ui/core'
+import ContentBlock from '../../../components/Layout/ContentBlock'
+import Divider from '../../../components/Layout/Divider'
 import { formatDate, getYear } from '../../../util/dateHandler'
 import { Pagination } from '@material-ui/lab'
 import { eventsQuery } from '../../../lib/queries'
 import { sanityClient } from '../../../lib/sanity'
+import theme from '../../../src/theme'
 
 export async function getStaticProps() {
-	const events = await sanityClient.fetch(eventsQuery)
+  const events = await sanityClient.fetch(eventsQuery)
 
-	return {
-		props: {
-			events,
-		},
-		revalidate: 300,
-	}
+  return {
+    props: {
+      events,
+    },
+    revalidate: 300,
+  }
 }
 
 const Events = (props) => {
-	useEffect(() => {
-		ReactGA.initialize('UA-58614629-1')
-		ReactGA.pageview(window.location.pathname)
-	}, [])
+  useEffect(() => {
+    ReactGA.initialize('UA-58614629-1')
+    ReactGA.pageview(window.location.pathname)
+  }, [])
 
-	const [currentPage, setCurrentPage] = useState(1)
-	const [postsPerPage] = useState(10)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(10)
 
-	const indexOfLastPost = currentPage * postsPerPage
-	const indexOfFirstPost = indexOfLastPost - postsPerPage
-	const currentPosts = props.events.slice(indexOfFirstPost, indexOfLastPost)
-	const totalPosts = props.events.length
-	const pageCount = Math.ceil(totalPosts / postsPerPage)
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = props.events.slice(indexOfFirstPost, indexOfLastPost)
+  const totalPosts = props.events.length
+  const pageCount = Math.ceil(totalPosts / postsPerPage)
 
-	const handleChange = (event, value) => {
-		setCurrentPage(value)
-		window.scrollTo(0, 0)
-	}
+  const handleChange = (event, value) => {
+    setCurrentPage(value)
+    window.scrollTo(0, 0)
+  }
 
-	const years = props.events.map((post) => {
-		return getYear(post.eventDate)
-	})
-	const uniqueYears = [...new Set(years)]
+  const years = props.events.map((post) => {
+    return getYear(post.eventDate)
+  })
+  const uniqueYears = [...new Set(years)]
 
-	const sortPosts = (sortByYear) => {
-		const sortedPosts = currentPosts.filter((posts) => {
-			return getYear(posts.eventDate) == sortByYear
-		})
-		return sortedPosts
-	}
+  const sortPosts = (sortByYear) => {
+    const sortedPosts = currentPosts.filter((posts) => {
+      return getYear(posts.eventDate) == sortByYear
+    })
+    return sortedPosts
+  }
 
-	const renderPosts = (sortedPosts) => {
-		return (
-			<>
-				{sortedPosts.map((post, index) => (
-					<div className='Details' key={(post.title, index)}>
-						<a href={post.url} target='_blank' rel='noreferrer'>
-							<Header3>{post.title}</Header3>
-						</a>
-						|<p className='EventDate'>{formatDate(post.eventDate)}</p> |
-						<p className='Location'>{post.location}</p>
-					</div>
-				))}
-			</>
-		)
-	}
+  const renderPosts = (sortedPosts) => {
+    return (
+      <>
+        {sortedPosts.map((post, i) => (
+          <Box
+            component='div'
+            key={i}
+            mb={2}
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+            }}>
+            <a href={post.url} target='_blank' rel='noreferrer'>
+              <Typography style={{ marginRight: theme.spacing(1) }}>
+                <b>{post.title}</b>
+              </Typography>
+            </a>
+            <Typography noWrap style={{ marginRight: theme.spacing(1) }}>
+              | {formatDate(post.eventDate)}
+            </Typography>
+            <Typography noWrap>| {post.location}</Typography>
+          </Box>
+        ))}
+      </>
+    )
+  }
 
-	const description = `Over the years, the DADSS Program has organized, presented at and\
+  const description = `Over the years, the DADSS Program has organized, presented at and\
 	exhibited at a range of events – from traffic safety and advanced\
 	technology conferences, to media events, to briefings with key\
 	partners. Learn about past events and check back for upcoming ones.`
 
-	return (
-		<>
-			<Head>
-				<title>DADSS | Events</title>
-				<meta name='description' content={description} />
-			</Head>
-			<EventsWrapper>
-				<HeadBlock>
-					<Header1>Events</Header1>
-					<Break>
-						<hr></hr>
-						<Circle></Circle>
-						<hr />
-					</Break>
-				</HeadBlock>
-				<ContentBlock
-					className='OpeningContent'
-					style={{ padding: '25px 25px 0' }}>
-					<Content>
-						Over the years, the DADSS Program has organized, presented at and
-						exhibited at a range of events – from traffic safety and advanced
-						technology conferences, to media events, to briefings with key
-						partners. Learn about past events and check back for upcoming ones.
-					</Content>
-				</ContentBlock>
-				<ContentBlock className='ContentWrapper'>
-					{uniqueYears.map((year, index) => {
-						return (
-							<>
-								{sortPosts(year).length > 0 && (
-									<>
-										<Header2 key={(year, index)}>{year}</Header2>
-										<Break>
-											<hr />
-										</Break>
-										{renderPosts(sortPosts(year))}
-									</>
-								)}
-							</>
-						)
-					})}
-					<Pagination
-						count={pageCount}
-						page={currentPage}
-						onChange={handleChange}
-						className='Pagination'></Pagination>
-				</ContentBlock>
-			</EventsWrapper>
-		</>
-	)
+  return (
+    <>
+      <Head>
+        <title>DADSS | Events</title>
+        <meta name='description' content={description} />
+      </Head>
+      <main>
+        <ContentBlock header='Events'>
+          <Divider />
+          <Typography paragraph>
+            Over the years, the DADSS Program has organized, presented at and
+            exhibited at a range of events – from traffic safety and advanced
+            technology conferences, to media events, to briefings with key
+            partners. Learn about past events and check back for upcoming ones.
+          </Typography>
+
+          {uniqueYears.map((year, i) => {
+            return (
+              <div key={i} style={{ width: '100%' }}>
+                {sortPosts(year).length > 0 && (
+                  <Box key={i} mt={1} style={{ width: '100%' }}>
+                    <Typography variant='h4' color='primary' align='center'>
+                      {year}
+                    </Typography>
+                    <Divider size='small' />
+                    {renderPosts(sortPosts(year))}
+                  </Box>
+                )}
+              </div>
+            )
+          })}
+
+          <Box mt={2}>
+            <Pagination
+              color='primary'
+              count={pageCount}
+              page={currentPage}
+              onChange={handleChange}
+            />
+          </Box>
+        </ContentBlock>
+      </main>
+    </>
+  )
 }
-
-const EventsWrapper = styled.div`
-	margin-top: 85px;
-	.OpeningContent {
-		padding: 25px;
-	}
-	.ContentWrapper {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		h2 {
-			font-size: 2rem;
-		}
-
-		.Details {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: left;
-			align-items: center;
-			width: 100%;
-			max-width: 1000px;
-			margin: 15px 0;
-			font-weight: 500;
-			font-size: 1.2rem;
-			h3 {
-				font-size: 1.2rem;
-				margin: 0 8px 0 0;
-				text-align: left;
-			}
-			a {
-				text-decoration: none;
-			}
-			p {
-				margin: 0 8px 0;
-			}
-		}
-	}
-	.Pagination {
-		margin-top: 25px;
-	}
-`
 
 export default Events

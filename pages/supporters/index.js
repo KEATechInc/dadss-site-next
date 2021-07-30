@@ -1,22 +1,10 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
-import { SupportersWrapper } from '../../styles/supportersStyles'
-import {
-  ContentBlock,
-  Header3,
-  Content,
-  Break,
-  Circle,
-  HeadBlock,
-  Header1,
-  Hyperlink,
-} from '../../styles/generalStyles'
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
+import ContentBlock from '../../components/Layout/ContentBlock'
 import { supportersData, manufacturerData } from '../../src/supportersData'
-import Divider from '../../components/Divider'
-
-const allCars = '/assets/logos/supporters/all-cars.jpg'
+import { Box, Typography } from '@material-ui/core'
 
 const Supporters = () => {
   useEffect(() => {
@@ -36,49 +24,55 @@ const Supporters = () => {
         <title>DADSS | Supporters</title>
         <meta name='description' content={description} />
       </Head>
-      <SupportersWrapper>
-        <HeadBlock>
-          <Header1>Our Supporters</Header1>
-          <Divider />
-        </HeadBlock>
-        <ContentBlock>
-          <Content>
+      <main>
+        <ContentBlock header='Our Supporters' divider>
+          <Typography>
             The Driver Alcohol Detection System for Safety (DADSS) research
             program is supported by safety and children’s advocates, insurance
             companies, state and local government representatives and members of
             the alcohol industry – who all agree that technology can be the
             answer to the persistent problem of drunk driving.
-          </Content>
+          </Typography>
+
+          <Box mt={3}>
+            <Typography
+              variant='h5'
+              color='primary'
+              align='center'
+              gutterBottom>
+              The world's leading car companies are involved in the DADSS
+              research program, including:
+            </Typography>
+
+            <Box mt={2} mb={2}>
+              <ImageGrid imageArray={manufacturerData} />
+            </Box>
+          </Box>
+
+          <Box mb={3} mt={3}>
+            <Typography
+              variant='h5'
+              color='primary'
+              align='center'
+              gutterBottom>
+              Other supporters of the DADSS program include:
+            </Typography>
+
+            <Box mt={2} mb={2}>
+              <ImageGrid imageArray={supportersData} />
+            </Box>
+
+            <Typography paragraph>
+              If your organization is interested in supporting the DADSS
+              program, please contact{' '}
+              <a href='mailto:info@dadss.org?subject=I want to be a DADSS supporter'>
+                info@dadss.org
+              </a>
+              .
+            </Typography>
+          </Box>
         </ContentBlock>
-
-        <ContentBlock>
-          <Header3>
-            The world's leading car companies are involved in the DADSS research
-            program, including:
-          </Header3>
-
-          <ImageGrid imageArray={manufacturerData} />
-        </ContentBlock>
-
-        <ContentBlock>
-          <Header3 style={{ marginBottom: 25 }}>
-            Other supporters of the DADSS program include:
-          </Header3>
-
-          <ImageGrid imageArray={supportersData} />
-        </ContentBlock>
-
-        <ContentBlock>
-          <Content>
-            If your organization is interested in supporting the DADSS program,
-            please contact{' '}
-            <Hyperlink href='mailto:info@dadss.org?subject=I want to be a DADSS supporter'>
-              info@dadss.org
-            </Hyperlink>
-            .
-          </Content>
-        </ContentBlock>
-      </SupportersWrapper>
+      </main>
     </>
   )
 }
