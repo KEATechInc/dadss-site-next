@@ -9,7 +9,6 @@ import { Typography, Button, Box } from '@material-ui/core'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
-import Loader from '../../components/Loader'
 import Divider from '../../components/Layout/Divider'
 
 export const getStaticProps = async ({ params }) => {
@@ -50,10 +49,6 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
 
   const handleChange = (event, value) => {
     router.push('/news/' + value)
-  }
-
-  if (router.isFallback) {
-    return <Loader></Loader>
   }
 
   // Render component

@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import Head from 'next/head'
-import Loader from '../../../components/Loader'
 import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import { postSlugsQuery, postQuery } from '../../../lib/queries'
@@ -40,10 +39,6 @@ const SinglePost = ({ post }) => {
 
   let filteredPreview
   const router = useRouter()
-
-  if (router.isFallback) {
-    return <Loader></Loader>
-  }
 
   return (
     <PostWrapper>

@@ -1,27 +1,18 @@
 import { useEffect } from 'react'
 import Layout from '../components/Layout'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline, responsiveFontSizes } from '@material-ui/core'
 import theme from '../src/theme'
 import PropTypes from 'prop-types'
 
-export default function App({ Component, pageProps }) {
-  const router = useRouter()
-
+export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side')
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles)
     }
-  }, [])
-
-  useEffect(() => {
-    router.events?.on('routeChangeComplete', () => {
-      window.scrollTo(0, 0)
-    })
   }, [])
 
   return (
@@ -49,7 +40,7 @@ export default function App({ Component, pageProps }) {
   )
 }
 
-App.propTypes = {
+MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 }
