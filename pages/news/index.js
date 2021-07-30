@@ -58,21 +58,21 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
         {currentPosts.map((post, index) => (
           <Box key={index} mb={3}>
             <Typography variant='h6' color='primary' gutterBottom>
-              <b>{post.title}</b>
+              <b>{post?.title}</b>
             </Typography>
             <Typography>
-              <b>{post.category}</b>
+              <b>{post?.category}</b>
             </Typography>
             <Typography>
-              <b>Published: {formatDate(post.published)}</b>
+              <b>Published: {formatDate(post?.published)}</b>
             </Typography>
             <span style={{ fontSize: 16 }}>
-              <Typography component={PortableText} blocks={post.preview} />
+              <Typography component={PortableText} blocks={post?.preview} />
             </span>
             <Button
               variant='outlined'
               color='primary'
-              onClick={() => router.push('/news/updates/' + post.slug.current)}>
+              onClick={() => router.push('/news/updates/' + post?.slug.current)}>
               Learn more <AiFillCaretRight />
             </Button>
           </Box>

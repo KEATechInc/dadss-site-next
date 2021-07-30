@@ -43,15 +43,15 @@ const SinglePost = ({ post }) => {
   return (
     <PostWrapper>
       <Head>
-        <title>{`DADSS | ${post.title}`}</title>
-        {(filteredPreview = post.preview[0].children[0].text)}
+        <title>{`DADSS | ${post?.title}`}</title>
+        {(filteredPreview = post?.preview[0].children[0].text)}
         <meta name='description' content={filteredPreview} />
       </Head>
 
-      <ContentBlock header={post.title}>
+      <ContentBlock header={post?.title}>
         <Divider />
         <span style={{ fontSize: 16 }}>
-          <Typography component={PortableText} blocks={post.body} />
+          <Typography component={PortableText} blocks={post?.body} />
         </span>
       </ContentBlock>
     </PostWrapper>
