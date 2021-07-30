@@ -29,6 +29,13 @@ export default function MyApp({ Component, pageProps }) {
           href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap'
           rel='stylesheet'
         />
+
+        <meta property='og:title' content='Driver Alcohol Detection System for Safety (DADSS)' />
+        <meta
+          property='og:image'
+          content='/assets/logos/dadss-logo.svg'
+        />
+        <meta name='twitter:card' content='summary_large_image' />
       </Head>
       <ThemeProvider theme={responsiveFontSizes(theme)}>
         <CssBaseline />
