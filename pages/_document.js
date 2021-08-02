@@ -8,11 +8,9 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          {/* PWA primary color */}
+          <link rel='manifest' href='/manifest.json' />
           <meta name='theme-color' content={theme.palette.primary.main} />
-          <link rel='icon' href='/favicon.ico' />
-          <link rel='apple-touch-icon' href='/favicon.ico' />
-          <link rel='shortcut icon' href='/favicon.ico' />
+
         </Head>
         <body>
           <Main />

@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
@@ -17,12 +19,14 @@
     "@sanity/image-url": "^0.140.22",
     "hamburger-react": "^2.4.1",
     "next": "^10.1.2",
+    "next-pwa": "^5.2.24",
     "next-sanity": "^0.1.10",
     "prop-types": "^15.6.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-ga": "^3.3.0",
     "react-is": "^17.0.1",
-    "react-player": "^2.9.0"
+    "react-player": "^2.9.0",
+    "webpack": "^5.48.0"
   }
 }
