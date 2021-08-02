@@ -39,48 +39,45 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='mobile-web-app-capable' content='yes' />
         <meta
           name='msapplication-config'
-          content='/static/icons/browserconfig.xml'
+          content='/browserconfig.xml'
         />
         <meta name='msapplication-TileColor' content='#2B5797' />
         <meta name='msapplication-tap-highlight' content='no' />
         <meta name='theme-color' content='#000000' />
 
-        <link
-          rel='apple-touch-icon'
-          href='/static/icons/favicon.ico'
-        />
+        <link rel='apple-touch-icon' href='/favicon.ico' />
         <link
           rel='apple-touch-icon'
           sizes='152x152'
-          href='/static/icons/favicon.ico'
+          href='/favicon.ico'
         />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
-          href='/static/icons/favicon.ico'
+          href='/favicon.ico'
         />
         <link
           rel='apple-touch-icon'
           sizes='167x167'
-          href='/static/icons/favicon.ico'
+          href='/favicon.ico'
         />
 
         <link
           rel='icon'
           type='image/png'
           sizes='32x32'
-          href='/static/icons/favicon.ico'
+          href='/favicon.ico'
         />
         <link
           rel='icon'
           type='image/png'
           sizes='16x16'
-          href='/static/icons/favicon.ico'
+          href='/favicon.ico'
         />
-        <link rel='manifest' href='/static/manifest.json' />
+        <link rel='manifest' href='/manifest.json' />
         <link
           rel='mask-icon'
-          href='/static/icons/favicon.ico'
+          href='/favicon.ico'
           color='#5bbad5'
         />
         <link rel='shortcut icon' href='/favicon.ico' />
@@ -91,7 +88,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='twitter:description' content='DADSS Website' />
         <meta
           name='twitter:image'
-          content='https://www.dadss.org/static/icons/favicon.ico'
+          content='https://www.dadss.org/favicon.ico'
         />
         <meta name='twitter:creator' content='DADSS' />
         <meta property='og:type' content='website' />
@@ -101,7 +98,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta property='og:url' content='https://www.dadss.org' />
         <meta
           property='og:image'
-          content='https://www.dadss.org/static/icons/favicon.ico'
+          content='https://www.dadss.org/favicon.ico'
         />
 
         <meta
