@@ -45,34 +45,33 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='msapplication-tap-highlight' content='no' />
         <meta name='theme-color' content='#000000' />
 
-        <link rel='apple-touch-icon' href='/favicon.ico' />
         <link
           rel='apple-touch-icon'
           sizes='152x152'
-          href='/favicon.ico'
+          href='/icons/dadss-152.png'
         />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
-          href='/favicon.ico'
+          href='/icons/dadss-180.png'
         />
         <link
           rel='apple-touch-icon'
           sizes='167x167'
-          href='/favicon.ico'
+          href='/icons/dadss-167.png'
         />
 
         <link
           rel='icon'
           type='image/png'
           sizes='32x32'
-          href='/favicon.ico'
+          href='/icons/dadss-32.png'
         />
         <link
           rel='icon'
           type='image/png'
           sizes='16x16'
-          href='/favicon.ico'
+          href='/icons/dadss-16.png'
         />
         <link rel='manifest' href='/manifest.json' />
         <link
@@ -88,7 +87,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='twitter:description' content='DADSS Website' />
         <meta
           name='twitter:image'
-          content='https://www.dadss.org/favicon.ico'
+          content='https://www.dadss.org/icons/dadsss-512.png'
         />
         <meta name='twitter:creator' content='DADSS' />
         <meta property='og:type' content='website' />
@@ -98,7 +97,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta property='og:url' content='https://www.dadss.org' />
         <meta
           property='og:image'
-          content='https://www.dadss.org/favicon.ico'
+          content='https://www.dadss.org/icons/dadsss-512.png'
         />
 
         <meta
