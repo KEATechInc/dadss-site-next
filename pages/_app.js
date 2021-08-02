@@ -29,8 +29,6 @@ export default function MyApp({ Component, pageProps }) {
           href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap'
           rel='stylesheet'
         />
-<<<<<<< Updated upstream
-=======
 
         <meta name='application-name' content='DADSS' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
@@ -115,7 +113,6 @@ export default function MyApp({ Component, pageProps }) {
           content='https://www.dadss.org/assets/logos/graphic-logo-car.png'
         />
         <meta name='twitter:card' content='summary_large_image' />
->>>>>>> Stashed changes
       </Head>
       <ThemeProvider theme={responsiveFontSizes(theme)}>
         <CssBaseline />
