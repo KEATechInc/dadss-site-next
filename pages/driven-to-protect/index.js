@@ -10,6 +10,7 @@ import Divider from '../../components/Layout/Divider'
 import { Grid, Typography, Box, Button, Container } from '@material-ui/core'
 import theme, { dtpBlue } from '../../src/theme'
 import HeroImage from '../../components/Layout/HeroImage'
+import BlueButton from '../../components/Layout/BlueButton'
 
 const heroBg = '/assets/drivenToProtect/GreyWash2.webp'
 const vaBg = '/assets/drivenToProtect/Blue-Image2.webp'
@@ -35,12 +36,7 @@ const DrivenToProtect = () => {
       </Head>
       <main>
         <HeroImage image={heroBg} darken>
-          <img
-            src={dtpLogo}
-            alt='DTP Logo'
-            width={'100%'}
-            height={'100%'}
-          />
+          <img src={dtpLogo} alt='DTP Logo' width={'100%'} height={'100%'} />
         </HeroImage>
 
         <ContentBlock
@@ -96,13 +92,11 @@ const DrivenToProtect = () => {
                   the technology to its citizens.
                 </Typography>
 
-                <Button
-                  variant='outlined'
-                  color='secondary'
+                <BlueButton
                   fullWidth
                   onClick={() => router.push('/driven-to-protect/virginia')}>
                   Learn more <AiFillCaretRight />
-                </Button>
+                </BlueButton>
               </Grid>
 
               {/* maryland */}
@@ -122,13 +116,11 @@ const DrivenToProtect = () => {
                   sensors to gather real-world data.
                 </Typography>
 
-                <Button
-                  variant='outlined'
-                  color='secondary'
+                <BlueButton
                   fullWidth
                   onClick={() => router.push('/driven-to-protect/maryland')}>
                   Learn more <AiFillCaretRight />
-                </Button>
+                </BlueButton>
               </Grid>
             </Grid>
           </Box>

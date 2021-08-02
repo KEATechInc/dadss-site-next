@@ -18,6 +18,7 @@ const ContentBlock = ({
   sticky,
   noPadding,
   shadow,
+  fullHeight,
 }) => {
   const SectionWrapper = styled('section')({
     display: 'flex',
@@ -25,8 +26,9 @@ const ContentBlock = ({
     borderTop: borderTop ? `3px solid ${borderTop}` : null,
     borderBottom: borderBottom ? `3px solid ${borderBottom}` : null,
     width: '100%',
+    height: fullHeight ? '100%' : null,
     position: sticky ? 'sticky' : null,
-    top: sticky ? 64 : null,
+    top: sticky ? 74 : null,
     boxShadow: shadow ? theme.shadows[3] : null,
   })
   const HeadText = styled(Typography)({

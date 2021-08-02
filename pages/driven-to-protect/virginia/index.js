@@ -20,6 +20,7 @@ import {
 import Video from '../../../components/Layout/Video'
 import LogoDivider from '../../../components/Layout/LogoDivider'
 import { ACTS, NHTSA, DADSS, VADMV } from '../../../components/Logos'
+import BlueButton from '../../../components/Layout/BlueButton'
 
 const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
 const dtpLogo = '/assets/logos/dtpLogos/VA-logo.webp'
@@ -223,13 +224,13 @@ const DTPVirginia = () => {
                       alcohol-impaired driving and the ways the DADSS technology
                       can prevent it.
                     </Typography>
-                    <Button
+                    <BlueButton
                       fullWidth
                       onClick={() => router.push('/discovery-hub')}
                       variant='outlined'
                       color='secondary'>
                       Learn More <AiFillCaretRight />
-                    </Button>
+                    </BlueButton>
                   </Box>
 
                   <Box>
@@ -246,15 +247,13 @@ const DTPVirginia = () => {
                       between DADSS and the Virginia DMV
                     </Typography>
 
-                    <Button
-                      variant='outlined'
-                      color='secondary'
+                    <BlueButton
                       href='https://twitter.com/DrvnToProtectVA'
                       target='_blank'
                       fullWidth
                       rel='noreferrer'>
                       Learn More <AiFillCaretRight />
-                    </Button>
+                    </BlueButton>
                   </Box>
                 </ContentBlock>
               </Grid>

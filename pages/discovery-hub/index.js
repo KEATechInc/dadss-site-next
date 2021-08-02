@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Divider from '../../components/Layout/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
 import HeroImage from '../../components/Layout/HeroImage'
-import { Box, Typography, Grid, Container } from '@material-ui/core'
+import { Box, Typography, Grid, Container, Button } from '@material-ui/core'
 import theme, {
   bgGray,
   dadssGradient,
@@ -14,6 +14,7 @@ import theme, {
 } from '../../src/theme'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Thumb from '../../components/Layout/Thumb'
+import BlueButton from '../../components/Layout/BlueButton'
 
 const landingHero = '/assets/landingPage/fw.webp'
 
@@ -85,6 +86,7 @@ export default function DiscoveryHub() {
                 spacing={2}>
                 <Grid item md={6}>
                   <ContentBlock
+                    fullHeight
                     shadow
                     background={bgGray}
                     fontColor={theme.palette.text.secondary}>
@@ -114,6 +116,7 @@ export default function DiscoveryHub() {
 
                 <Grid item md={6}>
                   <ContentBlock
+                    fullHeight
                     shadow
                     background={bgGray}
                     fontColor={theme.palette.text.secondary}>
@@ -155,6 +158,7 @@ export default function DiscoveryHub() {
 
                 <Grid item xs={12}>
                   <ContentBlock
+                    fullHeight
                     shadow
                     background={bgGray}
                     fontColor={theme.palette.text.secondary}>
@@ -222,6 +226,15 @@ export default function DiscoveryHub() {
                         filterDark
                         external
                       />
+                      <Box mt={2}>
+                        <BlueButton
+                          fullWidth
+                          href={module.url}
+                          target='_blank'
+                          rel='noreferrer'>
+                          Start Lesson
+                        </BlueButton>
+                      </Box>
                     </Grid>
                   )
                 })}
@@ -251,6 +264,18 @@ export default function DiscoveryHub() {
                           filterDark
                           external
                         />
+
+                        <Box mt={2}>
+                          <Button
+                            fullWidth
+                            color='primary'
+                            variant='outlined'
+                            href={module.url}
+                            target='_blank'
+                            rel='noreferrer'>
+                            Start Lesson
+                          </Button>
+                        </Box>
                       </Grid>
                     )
                   })}
