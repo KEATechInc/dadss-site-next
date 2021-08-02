@@ -220,7 +220,6 @@ export default function DiscoveryHub() {
                         label={module.title}
                         background={transDtpBlue}
                         filterDark
-                        external
                       />
                     </Grid>
                   )
@@ -249,7 +248,6 @@ export default function DiscoveryHub() {
                           label={module.title}
                           background={transDarkOrange}
                           filterDark
-                          external
                         />
                       </Grid>
                     )
@@ -287,7 +285,7 @@ const eModules = [
   {
     title: `Alcohol Impaired Driving Informational`,
     image: shots,
-    url: `/educational-modules/Alcohol+Impaired+Driving+Informational/index.html#/`,
+    url: `/educational-modules/alcohol-impaired-driving-informational/index.html#/`,
   },
   {
     title: `Alcohol Fact or Fiction`,

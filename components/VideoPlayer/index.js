@@ -1,5 +1,5 @@
 import { styled, Typography, Paper } from '@material-ui/core'
-import ReactPlayer from 'react-player/lazy'
+import ReactPlayer from 'react-player'
 import { useState } from 'react'
 import theme, { dadssGradient } from '../../src/theme'
 import Thumbnail from './Thumbnail'
