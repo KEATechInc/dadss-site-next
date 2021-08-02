@@ -30,7 +30,7 @@ const data = '/assets/landingPage/dataanalysis.webp'
 
 const description = `A landing page containing learning resources and educational modules detailing the dangers of driving under the influence and describe the efforts the DADSS program is taking to prevent them.`
 
-export default function DiscoverHub() {
+export default function DiscoveryHub() {
   useEffect(() => {
     ReactGA.initialize('UA-58614629-1')
     ReactGA.pageview(window.location.pathname)
@@ -213,7 +213,7 @@ export default function DiscoverHub() {
               <Grid container spacing={2} justifyContent='center'>
                 {eModules.map((module, index) => {
                   return (
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} key={index}>
                       <Thumb
                         img={module.image}
                         url={module.url}
@@ -221,7 +221,6 @@ export default function DiscoverHub() {
                         background={transDtpBlue}
                         filterDark
                         external
-                        key={index}
                       />
                     </Grid>
                   )
@@ -243,7 +242,7 @@ export default function DiscoverHub() {
                 <Grid container spacing={2} justifyContent='center'>
                   {stemModules.map((module, index) => {
                     return (
-                      <Grid item xs={12} md={6}>
+                      <Grid item xs={12} md={6} key={index}>
                         <Thumb
                           img={module.image}
                           url={module.url}
@@ -251,7 +250,6 @@ export default function DiscoverHub() {
                           background={transDarkOrange}
                           filterDark
                           external
-                          key={index}
                         />
                       </Grid>
                     )

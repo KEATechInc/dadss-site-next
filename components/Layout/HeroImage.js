@@ -68,7 +68,7 @@ const HeroImage = ({
   return (
     <HeroContainer>
       {darken && <Filter />}
-      <ChildContainer maxWidth='sm'>{children}</ChildContainer>
+      {children && <ChildContainer maxWidth='sm'>{children}</ChildContainer>}
     </HeroContainer>
   )
 }
