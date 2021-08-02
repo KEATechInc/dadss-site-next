@@ -37,13 +37,14 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='description' content='DADSS Website' />
         <meta name='format-detection' content='telephone=no' />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta
-          name='msapplication-config'
-          content='/browserconfig.xml'
-        />
+        <meta name='msapplication-config' content='/browserconfig.xml' />
         <meta name='msapplication-TileColor' content='#2B5797' />
         <meta name='msapplication-tap-highlight' content='no' />
         <meta name='theme-color' content='#000000' />
+
+        <link rel='icon' href='/favicon.ico' />
+        <link rel='apple-touch-icon' href='/favicon.ico' />
+        <link rel='shortcut icon' href='/favicon.ico' />
 
         <link
           rel='apple-touch-icon'
@@ -60,25 +61,11 @@ export default function MyApp({ Component, pageProps }) {
           sizes='167x167'
           href='/icons/dadss-167.png'
         />
+        <link rel='icon' type='image/png' sizes='32x32' href='/favicon.ico' />
+        <link rel='icon' type='image/png' sizes='16x16' href='/favicon.ico' />
 
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='32x32'
-          href='/icons/dadss-32.png'
-        />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='16x16'
-          href='/icons/dadss-16.png'
-        />
         <link rel='manifest' href='/manifest.json' />
-        <link
-          rel='mask-icon'
-          href='/favicon.ico'
-          color='#5bbad5'
-        />
+        <link rel='mask-icon' href='/favicon.ico' color='#5bbad5' />
         <link rel='shortcut icon' href='/favicon.ico' />
 
         <meta name='twitter:card' content='summary' />
