@@ -9,21 +9,25 @@ const Footer = () => {
     <footer>
       <FooterContainer>
         <SocialWrapper>
-          <Typography variant='h6'>Follow us on social media:</Typography>
+          <Typography>
+            Follow Us On Social Media:
+          </Typography>
           <div>
             <Button
               color='secondary'
+              size='small'
               href='https://twitter.com/DADSSTech'
               target='_blank'
               rel='noreferrer'>
-              <RiTwitterFill style={{ fontSize: '2rem', color: '#1DA1F2' }} />
+              <RiTwitterFill style={{ fontSize: '1.5rem', color: '#1DA1F2' }} />
             </Button>
             <Button
               color='secondary'
+              size='small'
               href='https://www.youtube.com/channel/UC5be5Eh_SVXbn6d6RI8BYtQ'
               target='_blank'
               rel='noreferrer'>
-              <RiYoutubeFill style={{ fontSize: '2rem', color: '#ff0000' }} />
+              <RiYoutubeFill style={{ fontSize: '1.5rem', color: '#ff0000' }} />
             </Button>
           </div>
         </SocialWrapper>

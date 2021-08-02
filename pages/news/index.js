@@ -57,7 +57,11 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
       <>
         {currentPosts.map((post, index) => (
           <Box key={index} mb={3}>
-            <Typography variant='h6' color='primary' gutterBottom>
+            <Typography
+              variant='h6'
+              color='primary'
+              gutterBottom
+              style={{ textTransform: 'capitalize' }}>
               <b>{post?.title}</b>
             </Typography>
             <Typography>
@@ -72,7 +76,9 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
             <Button
               variant='outlined'
               color='primary'
-              onClick={() => router.push('/news/updates/' + post?.slug.current)}>
+              onClick={() =>
+                router.push('/news/updates/' + post?.slug.current)
+              }>
               Learn more <AiFillCaretRight />
             </Button>
           </Box>

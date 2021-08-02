@@ -52,7 +52,7 @@ const Resources = ({ posts }) => {
         {posts &&
           posts.map((post, index) => (
             <Box key={index} mb={3}>
-              <Typography>
+              <Typography style={{ textTransform: 'capitalize' }}>
                 <b>{post.category}</b>
               </Typography>
               <Typography>
@@ -218,7 +218,7 @@ const Resources = ({ posts }) => {
                 </Box>
               </Box>
 
-              <Box mt={3} style={{ width: '100%' }}>
+              <Box mt={6} style={{ width: '100%' }}>
                 <Typography
                   variant='h3'
                   align='center'

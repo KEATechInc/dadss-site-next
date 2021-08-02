@@ -48,11 +48,17 @@ const ContentBlock = ({
   return (
     <SectionWrapper>
       <ContentContainer>
-        <HeadText variant='h3' align='center' gutterBottom>
-          {header}
-        </HeadText>
-        {divider && <Divider color={dividerColor} />}
-        {children}
+        {header ? (
+          <HeadText
+            variant='h3'
+            align='center'
+            gutterBottom
+            style={{ textTransform: 'capitalize' }}>
+            {header}
+          </HeadText>
+        ) : null}
+        {divider ? <Divider color={dividerColor} /> : null}
+        {children ? children : null}
       </ContentContainer>
     </SectionWrapper>
   )
