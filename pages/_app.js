@@ -30,18 +30,6 @@ export default function MyApp({ Component, pageProps }) {
           rel='stylesheet'
         />
 
-        <meta name='application-name' content='DADSS' />
-        <meta name='apple-mobile-web-app-capable' content='yes' />
-        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-        <meta name='apple-mobile-web-app-title' content='DADSS' />
-        <meta name='description' content='DADSS Website' />
-        <meta name='format-detection' content='telephone=no' />
-        <meta name='mobile-web-app-capable' content='yes' />
-        <meta name='msapplication-config' content='/browserconfig.xml' />
-        <meta name='msapplication-TileColor' content='#2B5797' />
-        <meta name='msapplication-tap-highlight' content='no' />
-        <meta name='theme-color' content='#000000' />
-
         <link rel='icon' href='/favicon.ico' />
         <link rel='apple-touch-icon' href='/favicon.ico' />
         <link rel='shortcut icon' href='/favicon.ico' />
@@ -79,18 +67,12 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='twitter:creator' content='DADSS' />
 
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='DADSS' />
+        <meta property='og:title' content='Driver Alcohol Detection System for Safety (DADSS)' />
         <meta
           property='og:description'
           content='Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
         />
-        <meta property='og:site_name' content='DADSS' />
         <meta property='og:url' content='https://www.dadss.org' />
-        <meta
-          property='og:image'
-          content='https://www.dadss.org/icons/dadsss-512.png'
-        />
-
         <meta
           property='og:title'
           content='Driver Alcohol Detection System for Safety (DADSS)'
@@ -101,6 +83,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
+
       <ThemeProvider theme={responsiveFontSizes(theme)}>
         <CssBaseline />
         <Layout>
