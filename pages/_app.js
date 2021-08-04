@@ -77,9 +77,13 @@ export default function MyApp({ Component, pageProps }) {
           content='https://www.dadss.org/icons/dadsss-512.png'
         />
         <meta name='twitter:creator' content='DADSS' />
+
         <meta property='og:type' content='website' />
         <meta property='og:title' content='DADSS' />
-        <meta property='og:description' content='DADSS Website' />
+        <meta
+          property='og:description'
+          content='Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
+        />
         <meta property='og:site_name' content='DADSS' />
         <meta property='og:url' content='https://www.dadss.org' />
         <meta
@@ -93,7 +97,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta
           property='og:image'
-          content='https://www.dadss.org/assets/logos/graphic-logo-car.png'
+          content='https://www.dadss.org/assets/logos/og-image.png'
         />
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
