@@ -67,7 +67,10 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='twitter:creator' content='DADSS' />
 
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='Driver Alcohol Detection System for Safety (DADSS)' />
+        <meta
+          property='og:title'
+          content='Driver Alcohol Detection System for Safety (DADSS)'
+        />
         <meta
           property='og:description'
           content='Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
@@ -78,6 +81,7 @@ export default function MyApp({ Component, pageProps }) {
           content='Driver Alcohol Detection System for Safety (DADSS)'
         />
         <meta
+          name='image'
           property='og:image'
           content='https://www.dadss.org/assets/logos/og-image.png'
         />
