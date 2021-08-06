@@ -16,18 +16,18 @@ import ContentBlock from '../../components/Layout/ContentBlock'
 import Thumb from '../../components/Layout/Thumb'
 import BlueButton from '../../components/Layout/BlueButton'
 
-const landingHero = '/assets/landingPage/fw.webp'
+const landingHero = '/public/assets/landingPage/fw.webp'
 
-const brain = '/assets/landingPage/brain.webp'
-const shots = '/assets/landingPage/shots.webp'
-const whiskey = '/assets/landingPage/whiskey.jpg'
-const BT = '/assets/landingPage/B-T.jpg'
-const zero = '/assets/landingPage/zero.png'
+const brain = '/public/assets/landingPage/brain.webp'
+const shots = '/public/assets/landingPage/shots.webp'
+const whiskey = '/public/assets/landingPage/whiskey.jpg'
+const BT = '/public/assets/landingPage/B-T.jpg'
+const zero = '/public/assets/landingPage/zero.png'
 
-const businessGuy = '/assets/landingPage/businessGuy.webp'
-const floyd = '/assets/landingPage/floyd.webp'
-const dash = '/assets/landingPage/dash.webp'
-const data = '/assets/landingPage/dataanalysis.webp'
+const businessGuy = '/public/assets/landingPage/businessGuy.webp'
+const floyd = '/public/assets/landingPage/floyd.webp'
+const dash = '/public/assets/landingPage/dash.webp'
+const data = '/public/assets/landingPage/dataanalysis.webp'
 
 const description = `A landing page containing learning resources and educational modules detailing the dangers of driving under the influence and describe the efforts the DADSS program is taking to prevent them.`
 
@@ -307,12 +307,12 @@ const eModules = [
   {
     title: `The Brain, Lungs, and BAC (What's their role in Driving)`,
     image: brain,
-    url: `/assets/educational-modules/brains-lungs-and-BAC/index.html#/`,
+    url: `/public/assets/educational-modules/brains-lungs-and-BAC/index.html#/`,
   },
   {
     title: `Alcohol Impaired Driving Informational`,
     image: shots,
-    url: `/assets/educational-modules/alcohol-impaired-driving-informational/index.html#/`,
+    url: `/public/assets/educational-modules/alcohol-impaired-driving-informational/index.html#/`,
   },
   {
     title: `Alcohol Fact or Fiction`,
@@ -322,34 +322,34 @@ const eModules = [
   {
     title: `Breath and Touch Alcohol Detection Systems`,
     image: BT,
-    url: `/assets/educational-modules/breath-and-touch-alcohol-detection-systems/index.html#/`,
+    url: `/public/assets/educational-modules/breath-and-touch-alcohol-detection-systems/index.html#/`,
   },
   {
     title: `Underage Alcohol Use and Zero Tolerance Law Informational`,
     image: zero,
-    url: `/assets/educational-modules/underage-alcohol-use-and-zero-tolerance/index.html#/`,
+    url: `/public/assets/educational-modules/underage-alcohol-use-and-zero-tolerance/index.html#/`,
   },
 ]
 const stemModules = [
   {
     title: `STEM Part 1: Spectroscopy `,
     image: floyd,
-    url: `/assets/educational-modules/STEM-part-1-spectroscopy/index.html#/`,
+    url: `/public/assets/educational-modules/STEM-part-1-spectroscopy/index.html#/`,
   },
   {
     title: `STEM Part 2: The DADSS Benchtop Unit`,
     image: dash,
-    url: `/assets/educational-modules/STEM-part-2-DADSS-benchtop-unit/index.html#/`,
+    url: `/public/assets/educational-modules/STEM-part-2-DADSS-benchtop-unit/index.html#/`,
   },
   {
     title: `STEM Part 3a: Data Collection and Analysis (Basic)`,
     image: businessGuy,
-    url: `/assets/educational-modules/STEM-part-3a-data-collection-and-analysis-basic/index.html#/`,
+    url: `/public/assets/educational-modules/STEM-part-3a-data-collection-and-analysis-basic/index.html#/`,
   },
   {
     title: `STEM Part 3b: Data Collection and Analysis (Advanced)`,
     image: data,
-    url: `/assets/educational-modules/STEM-part-3b-data-collection-and-analysis-advanced/index.html#/`,
+    url: `/public/assets/educational-modules/STEM-part-3b-data-collection-and-analysis-advanced/index.html#/`,
   },
 ]
 const videos = [
