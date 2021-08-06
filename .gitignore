@@ -4,6 +4,9 @@
 */workbox-*.js
 */sw.js
 */worker-*.js
+**/public/workbox-*.js
+**/public/sw.js
+**/public/worker-*.js
 
 # dependencies
 node_modules

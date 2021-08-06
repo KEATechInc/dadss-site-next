@@ -148,8 +148,8 @@ export default function DiscoveryHub() {
                       <Typography paragraph>
                         The DADSS Program is one of the most important
                         government and private sector partnerships in recent
-                        years.-private partnerships like DADSS have led
-                        to innovations that enhance our everyday lives, such as
+                        years.-private partnerships like DADSS have led to
+                        innovations that enhance our everyday lives, such as
                         internet, GPS, and the microchip.
                       </Typography>
                     </Box>
@@ -307,12 +307,12 @@ const eModules = [
   {
     title: `The Brain, Lungs, and BAC (What's their role in Driving)`,
     image: brain,
-    url: `/assets/educational-modules/brains-lungs-and-BAC/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/brains-lungs-and-BAC/index.html`,
   },
   {
     title: `Alcohol Impaired Driving Informational`,
     image: shots,
-    url: `/assets/educational-modules/alcohol-impaired-driving-informational/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/alcohol-impaired-driving-informational/index.html#/`,
   },
   {
     title: `Alcohol Fact or Fiction`,
@@ -322,34 +322,34 @@ const eModules = [
   {
     title: `Breath and Touch Alcohol Detection Systems`,
     image: BT,
-    url: `/assets/educational-modules/breath-and-touch-alcohol-detection-systems/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/breath-and-touch-alcohol-detection-systems/index.html`,
   },
   {
     title: `Underage Alcohol Use and Zero Tolerance Law Informational`,
     image: zero,
-    url: `/assets/educational-modules/underage-alcohol-use-and-zero-tolerance/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/underage-alcohol-use-and-zero-tolerance/index.html`,
   },
 ]
 const stemModules = [
   {
     title: `STEM Part 1: Spectroscopy `,
     image: floyd,
-    url: `/assets/educational-modules/STEM-part-1-spectroscopy/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-1-spectroscopy/index.html`,
   },
   {
     title: `STEM Part 2: The DADSS Benchtop Unit`,
     image: dash,
-    url: `/assets/educational-modules/STEM-part-2-DADSS-benchtop-unit/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-2-DADSS-benchtop-unit/index.html`,
   },
   {
     title: `STEM Part 3a: Data Collection and Analysis (Basic)`,
     image: businessGuy,
-    url: `/assets/educational-modules/STEM-part-3a-data-collection-and-analysis-basic/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-3a-data-collection-and-analysis-basic/index.html`,
   },
   {
     title: `STEM Part 3b: Data Collection and Analysis (Advanced)`,
     image: data,
-    url: `/assets/educational-modules/STEM-part-3b-data-collection-and-analysis-advanced/index.html#/`,
+    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-3b-data-collection-and-analysis-advanced/index.html`,
   },
 ]
 const videos = [
