@@ -307,12 +307,12 @@ const eModules = [
   {
     title: `The Brain, Lungs, and BAC (What's their role in Driving)`,
     image: brain,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/brains-lungs-and-BAC/index.html`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/The+Brains+Lungs+And+BAC+Whats+Their+Role+In+Driving/index.html`,
   },
   {
     title: `Alcohol Impaired Driving Informational`,
     image: shots,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/alcohol-impaired-driving-informational/index.html#/`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Alcohol+Impaired+Driving+Informational/index.html#/`,
   },
   {
     title: `Alcohol Fact or Fiction`,
@@ -322,34 +322,34 @@ const eModules = [
   {
     title: `Breath and Touch Alcohol Detection Systems`,
     image: BT,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/breath-and-touch-alcohol-detection-systems/index.html`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Breath+And+Touch+Alcohol+Detection+Systems+Raw/index.html`,
   },
   {
     title: `Underage Alcohol Use and Zero Tolerance Law Informational`,
     image: zero,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/underage-alcohol-use-and-zero-tolerance/index.html`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/Underage+Alcohol+Use+and+Zero+Tolerance+Law+Informational/index.html`,
   },
 ]
 const stemModules = [
   {
     title: `STEM Part 1: Spectroscopy `,
     image: floyd,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-1-spectroscopy/index.html`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+1+Spectroscopy+Raw/index.html`,
   },
   {
     title: `STEM Part 2: The DADSS Benchtop Unit`,
     image: dash,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-2-DADSS-benchtop-unit/index.html`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+2+The+DADSS+Benchtop+Unit+Raw/index.html`,
   },
   {
     title: `STEM Part 3a: Data Collection and Analysis (Basic)`,
     image: businessGuy,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-3a-data-collection-and-analysis-basic/index.html`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+3a+Data+Collection+And+Analysis+Basic+Raw/index.html`,
   },
   {
     title: `STEM Part 3b: Data Collection and Analysis (Advanced)`,
     image: data,
-    url: `https://sssbl77-aiwshhs.s3.amazonaws.com/public/assets/educational-modules/STEM-part-3b-data-collection-and-analysis-advanced/index.html`,
+    url: `https://dadss-d2p.s3.us-east-2.amazonaws.com/educational-modules/STEM+Part+3b+Data+Collection+And+Analysis+Advanced/index.html`,
   },
 ]
 const videos = [
