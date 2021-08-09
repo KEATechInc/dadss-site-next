@@ -1,11 +1,5 @@
-const withPWA = require('next-pwa')
 
-module.exports = withPWA({
-  pwa: {
-    dest: 'public',
-    // register: true,
-    // skipWaiting: true,
-  },
+module.exports = {
   future: {
     webpack5: true,
   },
@@ -13,6 +7,8 @@ module.exports = withPWA({
     dataset: 'production',
     project_id: '9i9p7w70',
     use_cdn: 'true',
+    aws_access_key: 'AKIAZTOGPREEG2SKKG3P',
+    aws_secret_key: '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',
   },
   async redirects() {
     return [
@@ -33,4 +29,4 @@ module.exports = withPWA({
       },
     ]
   },
-})
+}
