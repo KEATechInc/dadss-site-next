@@ -7,6 +7,9 @@ import theme from '../src/theme'
 import PropTypes from 'prop-types'
 
 export default function MyApp({ Component, pageProps }) {
+  const description =
+    'Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
+
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side')
@@ -57,12 +60,16 @@ export default function MyApp({ Component, pageProps }) {
         <link rel='shortcut icon' href='/favicon.ico' />
 
         <meta name='twitter:card' content='summary' />
+        <meta name='twitter:site' content='@DADSSTech' />
         <meta name='twitter:url' content='https://www.dadss.org' />
-        <meta name='twitter:title' content='DADSS' />
-        <meta name='twitter:description' content='DADSS Website' />
+        <meta
+          name='twitter:title'
+          content='Driver Alcohol Detection System for Safety (DADSS)'
+        />
+        <meta name='twitter:description' content={description} />
         <meta
           name='twitter:image'
-          content='https://www.dadss.org/icons/dadsss-512.png'
+          content='https://www.dadss.org/icons/dadsss-152.png'
         />
         <meta name='twitter:creator' content='DADSS' />
 
@@ -71,10 +78,7 @@ export default function MyApp({ Component, pageProps }) {
           property='og:title'
           content='Driver Alcohol Detection System for Safety (DADSS)'
         />
-        <meta
-          property='og:description'
-          content='Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
-        />
+        <meta property='og:description' content={description} />
         <meta property='og:url' content='https://www.dadss.org' />
         <meta
           property='og:title'
@@ -85,7 +89,6 @@ export default function MyApp({ Component, pageProps }) {
           property='og:image'
           content='https://www.dadss.org/icons/og-image.png'
         />
-        <meta name='twitter:card' content='summary_large_image' />
       </Head>
 
       <ThemeProvider theme={responsiveFontSizes(theme)}>
