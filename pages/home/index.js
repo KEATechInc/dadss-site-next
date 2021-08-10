@@ -46,7 +46,7 @@ export default function Home() {
             The Automotive Coalition for Traffic Safety has announced the first
             product equipped with DADSS Technology will be coming out of the lab
             and into commercial vehicles later this year, and the technology is
-            now available for open-source licensing in commercial vehicles.
+            now available for open licensing in commercial vehicles.
           </Typography>
           <Button
             variant='contained'
