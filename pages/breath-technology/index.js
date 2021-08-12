@@ -5,9 +5,10 @@ import ContentBlock from '../../components/Layout/ContentBlock'
 import Image from '../../components/Layout/Image'
 import { bgGray, bgOrange, darkOrange, fontGray } from '../../src/theme'
 
-const DadssStill1 = '/assets/breathBasedTech/breath-based-still1.webp'
-const DadssStill2 = '/assets/breathBasedTech/breath-based-still2.webp'
-const DadssStill3 = '/assets/breathBasedTech/breath-based-still3.webp'
+import DadssStill1 from '../../public/assets/breathBasedTech/breath-based-still1.webp'
+import DadssStill2 from '../../public/assets/breathBasedTech/breath-based-still2.webp'
+import DadssStill3 from '../../public/assets/breathBasedTech/breath-based-still3.webp'
+
 const PDF = '/assets/breathBasedTech/pdf/DADSS_Breath-Based.pdf'
 
 const BreathTech = () => {
@@ -21,7 +22,7 @@ const BreathTech = () => {
         <title>DADSS | Breath Technology</title>
         <meta name='description' content={description} />
       </Head>
-      
+
       <main>
         <ContentBlock header='Breath Technology' divider>
           <Typography paragraph>

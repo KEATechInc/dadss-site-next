@@ -5,8 +5,8 @@ import ContentBlock from '../../components/Layout/ContentBlock'
 import Image from '../../components/Layout/Image'
 import { bgGray, bgOrange, darkOrange, fontGray } from '../../src/theme'
 
-const DadssStill1 = '/assets/touchBasedTech/touch-based-still1.webp'
-const DadssStill2 = '/assets/touchBasedTech/touch-based-still2.webp'
+import DadssStill1 from '../../public/assets/touchBasedTech/touch-based-still1.webp'
+import DadssStill2 from '../../public/assets/touchBasedTech/touch-based-still2.webp'
 const PDF = '/assets/touchBasedTech/pdf/DADSS_Touch-Based.pdf'
 
 const TouchTech = () => {

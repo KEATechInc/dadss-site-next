@@ -1,4 +1,5 @@
 import { Grid, styled } from '@material-ui/core'
+import Image from 'next/image'
 
 const ImageGrid = ({ imageArray }) => {
   return (
@@ -8,11 +9,12 @@ const ImageGrid = ({ imageArray }) => {
           {imageArray.map((image, index) => {
             return (
               <Grid item md={3} key={index}>
-                <img
+                <Image
                   src={image.src}
                   alt='Supporter Logo'
                   height={110}
                   width={235}
+                  placeholder='blur'
                   onClick={() => window.open(`${image.url}`, '_blank')}
                 />
               </Grid>

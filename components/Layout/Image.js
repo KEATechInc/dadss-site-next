@@ -1,4 +1,5 @@
 import { Paper, styled } from '@material-ui/core'
+import I from 'next/image'
 
 const Image = ({ src, alt, marginBottom, marginTop }) => {
   const ImageWrap = styled(Paper)({
@@ -7,18 +8,22 @@ const Image = ({ src, alt, marginBottom, marginTop }) => {
     height: '100%',
     marginBottom: marginBottom ? 16 : null,
     marginTop: marginTop ? 16 : null,
-
   })
   return (
     <ImageWrap>
-      <ImageHolder src={src} alt={alt} />
+      <ImageHolder
+        src={src}
+        alt={alt}
+        layout='responsive'
+        placeholder='blur'
+      />
     </ImageWrap>
   )
 }
 
 export default Image
 
-const ImageHolder = styled('img')({
+const ImageHolder = styled(I)({
   height: '100%',
   width: '100%',
 })
