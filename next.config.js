@@ -1,5 +1,4 @@
 module.exports = {
-  webpack5: false,
   env: {
     dataset: 'production',
     project_id: '9i9p7w70',
