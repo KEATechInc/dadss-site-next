@@ -6,8 +6,9 @@ import theme, { dadssGradient, fontGray } from '../../../src/theme'
 import { linkData } from '../../../src/linkData'
 import AnimatedLink from './AnimatedLink'
 import MobileMenu from './MobileMenu'
+import Image from 'next/image'
 
-const logo1 = '../../../assets/logos/dadss-logo.svg'
+const logo1 = '/assets/logos/dadss-logo.svg'
 
 const Navbar = () => {
   // set state for mobile menu
@@ -37,7 +38,7 @@ const Navbar = () => {
           minHeight: 64,
         }}>
         {/* clickable logo */}
-        <img
+        <Image
           src={logo1}
           alt='DADSS Logo'
           height='45px'

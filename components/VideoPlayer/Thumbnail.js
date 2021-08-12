@@ -16,7 +16,7 @@ const Thumbnail = ({ current, setCurrent, thumbnail, index }) => {
     } else {
       setActive(false)
     }
-  }, [current])
+  }, [current, index])
 
   const thumbnailStyles = useSpring({
     background: active ? dtpLightBlue : 'transparent',

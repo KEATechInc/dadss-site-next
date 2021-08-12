@@ -1,16 +1,20 @@
+import Image from 'next/image'
 import theme from '../../src/theme'
-
-const logo = '/assets/logos/dadss-acts.webp'
+import logo from '../../public/assets/logos/dadss-acts.webp'
 
 const ACTS = () => {
   return (
-    <a href='https://www.actsautosafety.org/' target='_blank' rel='noreferrer'>
-      <img
+    <a
+      href='https://www.actsautosafety.org/'
+      target='_blank'
+      rel='noreferrer'
+      style={{ margin: theme.spacing(2) }}>
+      <Image
         src={logo}
-        height={65}
-        width={135}
         alt='ACTS Logo'
-        style={{ margin: theme.spacing(2) }}
+        objectFit='contain'
+        height='65px'
+        width='135px'
       />
     </a>
   )
