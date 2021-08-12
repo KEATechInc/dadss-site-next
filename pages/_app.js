@@ -48,13 +48,12 @@ export default function MyApp({ Component, pageProps }) {
           sizes='167x167'
           href='/icons/dadss-167.png'
         />
-        <link rel='icon' type='image/png' sizes='32x32' href='/icons/dadss-16.png' />
-        <link rel='icon' type='image/png' sizes='16x16' href='/icons/dadss-16.png' />
-        <link rel='apple-touch-icon' type='image/png' href='/icons/dadss-16.png' />
+        <link rel='icon' type='image/png' sizes='32x32' href='/icons/dadss-32.png' />
+        <link rel='apple-touch-icon' type='image/png' href='/icons/dadss-32.png' />
 
         <link rel='manifest' href='/manifest.json' />
-        <link rel='mask-icon' href='/icons/dadss-16.png' color='#5bbad5' />
-        <link rel='shortcut icon' href='/icons/dadss-16.png' />
+        <link rel='mask-icon' href='/icons/dadss-32.png' color='#5bbad5' />
+        <link rel='shortcut icon' href='/icons/dadss-32.png' />
 
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@DADSSTech' />
