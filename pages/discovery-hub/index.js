@@ -96,19 +96,19 @@ export default function DiscoveryHub() {
                     <Divider size='small' />
                     <Box>
                       <Typography paragraph>
-                        DADSS is a first-of-its-kind, vehicle–integrated,
+                        {`DADSS is a first-of-its-kind, vehicle–integrated,
                         alcohol detection technology. By passively detecting a
                         driver's blood alcohol concentration (BAC), it prevents
                         a car from moving while the driver’s BAC is at or above
-                        the legal limit of 0.08%.
+                        the legal limit of 0.08%.`}
                       </Typography>
                       <Typography paragraph>
-                        This technology must meet rigorous performance standards
+                        {`This technology must meet rigorous performance standards
                         before it can be installed in cars or trucks. When
                         ready, it will be offered to vehicle owners as a
                         voluntary safety option, much like other driver–assist
                         systems (i.e., automatic emergency braking or lane
-                        departure warning systems).
+                        departure warning systems).`}
                       </Typography>
                     </Box>
                   </ContentBlock>
@@ -131,17 +131,17 @@ export default function DiscoveryHub() {
                       <Box>
                         <ul>
                           <li>
-                            Automotive Coalition for Traffic Safety (ACTS), a
+                            {`Automotive Coalition for Traffic Safety (ACTS), a
                             Virginia nonprofit funded by the world's leading
-                            automakers
+                            automakers`}
                           </li>
                           <li>
                             U.S. Department of Transportation’s National Highway
                             Traffic Safety Administration (NHTSA)
                           </li>
                           <li>
-                            Virginia Department of Motor Vehicle's Highway
-                            Safety Office
+                            {`Virginia Department of Motor Vehicle's Highway
+                            Safety Office`}
                           </li>
                         </ul>
                       </Box>

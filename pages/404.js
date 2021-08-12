@@ -3,11 +3,10 @@ import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import ContentBlock from '../components/Layout/ContentBlock'
-import { Typography } from '@material-ui/core'
-import Image from '../components/Layout/Image'
-import theme from '../src/theme'
+import { Box, Typography } from '@material-ui/core'
+import Image from 'next/image'
 
-const DADSSLogo = '/assets/logos/graphic-logo-car.svg'
+import DADSSLogo from '../public/assets/logos/graphic-logo-car.svg'
 
 const PageNotFound = () => {
   useEffect(() => {
@@ -25,16 +24,14 @@ const PageNotFound = () => {
       </Head>
       <main>
         <ContentBlock header='Page Not Found' divider>
-          <Typography variant='h4' gutterBottom>
+          <Typography variant='h5' gutterBottom>
             Oops. Something has gone wrong.
           </Typography>
-          <img
-            src={DADSSLogo}
-            alt='DADSS Car Logo'
-            height='150px'
-            width='100%'
-            style={{ margin: theme.spacing(2) }}
-          />
+
+          <Box m={2}>
+            <Image src={DADSSLogo} alt='DADSS Car Logo' />
+          </Box>
+
           <Typography>
             Sorry about that. Follow this link to{' '}
             <Link href='/'>Return Home</Link>.

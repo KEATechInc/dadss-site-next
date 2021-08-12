@@ -7,15 +7,16 @@ import Link from 'next/link'
 import Thumb from '../../components/Layout/Thumb'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Divider from '../../components/Layout/Divider'
-import { Grid, Typography, Box, Button, Container } from '@material-ui/core'
+import { Grid, Typography, Box } from '@material-ui/core'
 import theme, { dtpBlue } from '../../src/theme'
 import HeroImage from '../../components/Layout/HeroImage'
 import BlueButton from '../../components/Layout/BlueButton'
+import Image from 'next/image'
 
 const heroBg = '/assets/drivenToProtect/GreyWash2.webp'
 const vaBg = '/assets/drivenToProtect/Blue-Image2.webp'
 const mdBg = '/assets/drivenToProtect/Blue-Image1.webp'
-const dtpLogo = '/assets/logos/dtpLogos/DTP-logo.webp'
+import dtpLogo from '../../public/assets/logos/dtpLogos/DTP-logo.webp'
 const description = `Driven to Protect is a public-private partnership between the\
 	Driver Alcohol Detection System for Safety (DADSS) Program\
 	and individual state governments that is helping to develop\
@@ -36,7 +37,7 @@ const DrivenToProtect = () => {
       </Head>
       <main>
         <HeroImage image={heroBg} darken>
-          <img src={dtpLogo} alt='DTP Logo' width={'100%'} height={'100%'} />
+          <Image src={dtpLogo} alt='DTP Logo' objectFit='contain'/>
         </HeroImage>
 
         <ContentBlock

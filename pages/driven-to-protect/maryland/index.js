@@ -16,9 +16,10 @@ import {
 import LogoDivider from '../../../components/Layout/LogoDivider'
 import SidebarImage from '../../../components/Layout/SidebarImage'
 import { DADSS, NHTSA, ACTS, MDT } from '../../../components/Logos'
+import Image from 'next/image'
 
 const heroBg = '/assets/drivenToProtect/GreyWash3.webp'
-const dtpLogo = '/assets/logos/dtpLogos/MD-logo.webp'
+import dtpLogo from '../../../public/assets/logos/dtpLogos/MD-logo.webp'
 const MDimg1 = '/assets/drivenToProtect/maryland/dtpMary1.webp'
 const MDimg2 = '/assets/drivenToProtect/maryland/dtpMary2.webp'
 const MDimg3 = '/assets/drivenToProtect/maryland/dtpMary3.webp'
@@ -45,7 +46,7 @@ const DTPMaryland = () => {
       </Head>
       <PageWrap>
         <HeroImage image={heroBg} darken>
-          <img src={dtpLogo} alt='DTP Logo' width={'100%'} height={'100%'} />
+          <Image src={dtpLogo} alt='DTP Logo' objectFit='contain' />
         </HeroImage>
 
         <Container>

@@ -84,11 +84,11 @@ export default function JRTeLearning() {
                     <Divider size='small' />
                     <Box>
                       <Typography paragraph>
-                        DADSS is a first-of-its-kind, vehicle–integrated,
+                        {`DADSS is a first-of-its-kind, vehicle–integrated,
                         alcohol detection technology. By passively detecting a
                         driver's blood alcohol concentration (BAC), it prevents
                         a car from moving while the driver’s BAC is at or above
-                        the legal limit of 0.08%.
+                        the legal limit of 0.08%.`}
                       </Typography>
                       <Typography paragraph>
                         This technology must meet rigorous performance standards
@@ -118,17 +118,17 @@ export default function JRTeLearning() {
                       <Box>
                         <ul>
                           <li>
-                            Automotive Coalition for Traffic Safety (ACTS), a
+                            {`Automotive Coalition for Traffic Safety (ACTS), a
                             Virginia nonprofit funded by the world's leading
-                            automakers
+                            automakers`}
                           </li>
                           <li>
-                            U.S. Department of Transportation’s National Highway
-                            Traffic Safety Administration (NHTSA)
+                            {`U.S. Department of Transportation’s National Highway
+                            Traffic Safety Administration (NHTSA)`}
                           </li>
                           <li>
-                            Virginia Department of Motor Vehicle's Highway
-                            Safety Office
+                            {`Virginia Department of Motor Vehicle's Highway
+                            Safety Office`}
                           </li>
                         </ul>
                       </Box>
@@ -203,7 +203,7 @@ export default function JRTeLearning() {
               <Grid container spacing={2} justifyContent='center'>
                 {jrtModules.map((module, index) => {
                   return (
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} key={index}>
                       <Thumb
                         img={module.image}
                         url={module.url}
@@ -233,7 +233,7 @@ export default function JRTeLearning() {
                 <Grid container spacing={2} justifyContent='center'>
                   {eModules.map((module, index) => {
                     return (
-                      <Grid item xs={12} md={6}>
+                      <Grid item xs={12} md={6} key={index}>
                         <Thumb
                           img={module.image}
                           url={module.url}

@@ -10,7 +10,6 @@ import ContentBlock from '../../../components/Layout/ContentBlock'
 import { dtpBlue } from '../../../src/theme'
 import {
   Box,
-  Button,
   Container,
   Grid,
   Hidden,
@@ -21,11 +20,10 @@ import Video from '../../../components/Layout/Video'
 import LogoDivider from '../../../components/Layout/LogoDivider'
 import { ACTS, NHTSA, DADSS, VADMV } from '../../../components/Logos'
 import BlueButton from '../../../components/Layout/BlueButton'
+import Image from 'next/image'
 
 const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
-const dtpLogo = '/assets/logos/dtpLogos/VA-logo.webp'
-const dadss = '/assets/logos/dtpLogos/dadss-logo.webp'
-const dmv = '/assets/logos/dtpLogos/dmv-logo.webp'
+import dtpLogo from '../../../public/assets/logos/dtpLogos/VA-logo.webp'
 const PDF = '/assets/drivenToProtect/pdf/Driven-to-Protect-Overview.pdf'
 
 const DTPVirginia = () => {
@@ -50,7 +48,7 @@ const DTPVirginia = () => {
 
       <PageWrap>
         <HeroImage image={heroBg} darken>
-          <img src={dtpLogo} alt='DTP Logo' width={'100%'} height={'100%'} />
+          <Image src={dtpLogo} alt='DTP Logo' objectFit='contain'/>
         </HeroImage>
 
         <Container>
