@@ -48,9 +48,9 @@ const DrivenToProtect = () => {
 
           <Typography paragraph>
             Driven to Protect is a public-private partnership between the{' '}
-            <a href='/' target='_blank' rel='noreferrer'>
+            <Link href='/' target='_blank' rel='noreferrer'>
               Driver Alcohol Detection System for Safety (DADSS) Program
-            </a>{' '}
+            </Link>{' '}
             and individual state governments that is helping to develop
             technology to eliminate drunk driving and save lives.
           </Typography>

@@ -7,6 +7,7 @@ import ContentBlock from '../../components/Layout/ContentBlock'
 import theme, { bgOrange, dtpBlue, dtpLightBlue } from '../../src/theme'
 import { Box, Typography, styled, Grid } from '@material-ui/core'
 import Divider from '../../components/Layout/Divider'
+import Image from 'next/image'
 
 export const getStaticProps = async () => {
   const webinarInfo = await sanityClient.fetch(webinarQuery)
@@ -22,7 +23,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const dtpLogo = '/assets/logos/dtpLogos/VA-logo.webp'
+import dtpLogo from '../../public/assets/logos/dtpLogos/VA-logo.webp'
 const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
 
 const Webinar = ({ webinarInfo }) => {
@@ -36,7 +37,7 @@ const Webinar = ({ webinarInfo }) => {
       </Head>
       <main>
         <HeroImage image={heroBg} darken>
-          <img src={dtpLogo} alt='DTP Logo' width={'100%'} height={'100%'} />
+          <Image src={dtpLogo} alt='DTP Logo' objectFit='contain' />
         </HeroImage>
 
         {/* webinar intro */}

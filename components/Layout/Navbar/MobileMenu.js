@@ -16,7 +16,7 @@ const MobileMenu = ({ isOpen, setOpen }) => {
         {linkData.map((link, i) => {
           return (
             <LinkWrapper key={i}>
-              <Link href={link.url}>
+              <Link href={link.url} passHref>
                 <Typography variant='h6' color='primary' gutterBottom>
                   <b>{link.label}</b>
                 </Typography>
@@ -25,7 +25,7 @@ const MobileMenu = ({ isOpen, setOpen }) => {
                 <SubWrapper key={i}>
                   {link.sublinks.map((sublink, i) => {
                     return (
-                      <Link key={i} href={sublink.url}>
+                      <Link key={i} href={sublink.url} passHref>
                         <Typography variant='h6' color='secondary' gutterBottom>
                           {sublink.label}
                         </Typography>

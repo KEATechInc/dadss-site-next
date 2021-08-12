@@ -26,7 +26,7 @@ const FAQ = () => {
   useEffect(() => {
     const route = router.asPath
     setExpanded(route.slice(5).toString())
-  }, [router.pathname])
+  }, [router.asPath])
 
   return (
     <>

@@ -39,8 +39,8 @@ const Supporters = () => {
               color='primary'
               align='center'
               gutterBottom>
-              The world's leading car companies are involved in the DADSS
-              research program, including:
+              {`The world's leading car companies are involved in the DADSS
+              research program, including:`}
             </Typography>
 
             <Box mt={2} mb={2}>

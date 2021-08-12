@@ -26,7 +26,7 @@ const AnimatedLink = ({ link }) => {
     <LinkWrap
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      <Link href={link.url}>
+      <Link href={link.url} passHref>
         <Label color='textPrimary' noWrap>
           {link.label}
         </Label>
@@ -45,7 +45,7 @@ const AnimatedLink = ({ link }) => {
           <div style={{ padding: theme.spacing(2), paddingBottom: 0 }}>
             {link.sublinks?.map((sublink, i) => {
               return (
-                <Link href={sublink.url} key={i}>
+                <Link href={sublink.url} passHref key={i}>
                   <Label color='textPrimary' paragraph>
                     {sublink.label}
                   </Label>

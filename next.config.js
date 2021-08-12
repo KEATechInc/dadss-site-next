@@ -4,6 +4,9 @@ module.exports = {
     project_id: '9i9p7w70',
     use_cdn: 'true',
   },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
   async redirects() {
     return [
       {

@@ -36,11 +36,11 @@ const Technologies = () => {
             </Typography>
             <div style={{ height: '100%' }}>
               <Typography paragraph>
-                This system measures alcohol as a driver breathes normally, when
+                {`This system measures alcohol as a driver breathes normally, when
                 in the driver's seat. It will be designed to take instantaneous
                 readings as the driver breathes normally and to accurately and
                 reliably distinguish between the driver’s breath and that of any
-                passengers.
+                passengers.`}
               </Typography>
             </div>
             <Button
