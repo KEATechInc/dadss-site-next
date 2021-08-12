@@ -33,10 +33,6 @@ export default function MyApp({ Component, pageProps }) {
           rel='stylesheet'
         />
 
-        <link rel='icon' href='/favicon.ico' />
-        <link rel='apple-touch-icon' href='/favicon.ico' />
-        <link rel='shortcut icon' href='/favicon.ico' />
-
         <link
           rel='apple-touch-icon'
           sizes='152x152'
@@ -52,12 +48,13 @@ export default function MyApp({ Component, pageProps }) {
           sizes='167x167'
           href='/icons/dadss-167.png'
         />
-        <link rel='icon' type='image/png' sizes='32x32' href='/favicon.ico' />
-        <link rel='icon' type='image/png' sizes='16x16' href='/favicon.ico' />
+        <link rel='icon' type='image/png' sizes='32x32' href='/icons/dadss-16.png' />
+        <link rel='icon' type='image/png' sizes='16x16' href='/icons/dadss-16.png' />
+        <link rel='apple-touch-icon' type='image/png' href='/icons/dadss-16.png' />
 
         <link rel='manifest' href='/manifest.json' />
-        <link rel='mask-icon' href='/favicon.ico' color='#5bbad5' />
-        <link rel='shortcut icon' href='/favicon.ico' />
+        <link rel='mask-icon' href='/icons/dadss-16.png' color='#5bbad5' />
+        <link rel='shortcut icon' href='/icons/dadss-16.png' />
 
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@DADSSTech' />
