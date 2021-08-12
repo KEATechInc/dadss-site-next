@@ -45,7 +45,6 @@ export default function MyApp({ Component, pageProps }) {
         <link rel='icon' type='image/png' sizes='32x32' href='/icons/dadss-32.png' />
         <link rel='apple-touch-icon' type='image/png' href='/icons/dadss-32.png' />
 
-        <link rel='manifest' href='/manifest.json' />
         <link rel='mask-icon' href='/icons/dadss-32.png' color='#5bbad5' />
         <link rel='shortcut icon' href='/icons/dadss-32.png' />
 

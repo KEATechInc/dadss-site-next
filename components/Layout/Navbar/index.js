@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { AppBar, Container, Hidden, Toolbar, styled } from '@material-ui/core'
+import {
+  AppBar,
+  Container,
+  Hidden,
+  Toolbar,
+  styled,
+  Box,
+} from '@material-ui/core'
 import Hamburger from 'hamburger-react'
 import theme, { dadssGradient, fontGray } from '../../../src/theme'
 import { linkData } from '../../../src/linkData'
@@ -38,14 +45,15 @@ const Navbar = () => {
           minHeight: 64,
         }}>
         {/* clickable logo */}
-        <Image
-          src={logo1}
-          alt='DADSS Logo'
-          height='45px'
-          width='150px'
-          onClick={goHome}
-          style={{ cursor: 'pointer' }}
-        />
+        <Box style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+          <Image
+            src={logo1}
+            alt='DADSS Logo'
+            height='45px'
+            width='150px'
+            onClick={goHome}
+          />
+        </Box>
 
         {/* generate links */}
         <Hidden smDown>

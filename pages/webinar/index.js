@@ -88,28 +88,32 @@ const Webinar = ({ webinarInfo }) => {
             </>
           )}
 
-          {webinarInfo.pageBuilder.map((card, index) => (
-            <Box mb={3} key={index}>
-              <PanelistCard
-                container
-                spacing={3}
-                justifyContent='center'
-                alignItems='center'>
-                <Grid item sm={3}>
-                  <img
-                    src={urlFor(card.panelistPortrait)}
-                    alt={card.panelistPortrait.alt}
-                  />
-                </Grid>
-                <Grid item sm={9}>
-                  <Typography
-                    component={PortableText}
-                    blocks={card.panelistDescription}
-                  />
-                </Grid>
-              </PanelistCard>
-            </Box>
-          ))}
+          {webinarInfo.pageBuilder.map((card, index) => {
+            return (
+              <Box mb={3} key={index}>
+                <PanelistCard
+                  container
+                  spacing={3}
+                  justifyContent='center'
+                  alignItems='center'>
+                  <Grid item sm={3}>
+                    <Image
+                      src={urlFor(card.panelistPortrait).url()}
+                      alt={card.panelistPortrait.alt}
+                      width={350}
+                      height={350}
+                    />
+                  </Grid>
+                  <Grid item sm={9}>
+                    <Typography
+                      component={PortableText}
+                      blocks={card.panelistDescription}
+                    />
+                  </Grid>
+                </PanelistCard>
+              </Box>
+            )
+          })}
         </ContentBlock>
         <ContentBlock>
           <Divider />
