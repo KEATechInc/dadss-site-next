@@ -14,7 +14,6 @@ const ImageGrid = ({ imageArray }) => {
                   alt='Supporter Logo'
                   height={110}
                   width={235}
-                  placeholder='blur'
                   onClick={() => window.open(`${image.url}`, '_blank')}
                 />
               </Grid>
