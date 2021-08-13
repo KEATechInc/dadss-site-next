@@ -79,18 +79,18 @@ const Supporters = () => {
 export default Supporters
 
 // supporters imports
-import aamva from '../../public/assets/supportersImages/aamva.webp'
-import ahua from '../../public/assets//supportersImages/ahua.webp'
-import dscus from '../../public/assets//supportersImages/dscus.webp'
-import faar from '../../public/assets//supportersImages/faar.webp'
-import fia from '../../public/assets//supportersImages/fia.webp'
-import ghsa from '../../public/assets//supportersImages/ghsa.webp'
-import iihs from '../../public/assets//supportersImages/iihs.webp'
-import madd from '../../public/assets//supportersImages/madd.webp'
-import nationwide from '../../public/assets//supportersImages/nationwide.webp'
-import noys from '../../public/assets//supportersImages/noys.webp'
-import nsc from '../../public/assets//supportersImages/nsc.webp'
-import skw from '../../public/assets//supportersImages/skw.webp'
+import aamva from '../../public/assets/supportersImages/aamva.png'
+import ahua from '../../public/assets//supportersImages/ahua.png'
+import dscus from '../../public/assets//supportersImages/dscus.png'
+import faar from '../../public/assets//supportersImages/faar.png'
+import fia from '../../public/assets//supportersImages/fia.png'
+import ghsa from '../../public/assets//supportersImages/ghsa.png'
+import iihs from '../../public/assets//supportersImages/iihs.png'
+import madd from '../../public/assets//supportersImages/madd.png'
+import nationwide from '../../public/assets//supportersImages/nationwide.png'
+import noys from '../../public/assets//supportersImages/noys.png'
+import nsc from '../../public/assets//supportersImages/nsc.png'
+import skw from '../../public/assets//supportersImages/skw.png'
 
 // manufacturer imports
 import bmw from '../../public/assets//manufacturerImages/bmw-group.webp'
