@@ -15,6 +15,7 @@ const ACTS = () => {
         objectFit='contain'
         height='65px'
         width='135px'
+        priority={true}
       />
     </a>
   )

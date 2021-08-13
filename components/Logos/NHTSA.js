@@ -16,6 +16,7 @@ const NHTSA = () => {
         width={270}
         alt='NHTSA Logo'
         objectFit='contain'
+        priority={true}
       />
     </a>
   )

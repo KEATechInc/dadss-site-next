@@ -48,7 +48,7 @@ const DTPVirginia = () => {
 
       <PageWrap>
         <HeroImage image={heroBg} darken>
-          <Image src={dtpLogo} alt='DTP Logo' objectFit='contain'/>
+          <Image src={dtpLogo} alt='DTP Logo' objectFit='contain' priority={true}/>
         </HeroImage>
 
         <Container>

@@ -10,7 +10,7 @@ const ACTS = () => {
       target='_blank'
       rel='noreferrer'
       style={{ margin: theme.spacing(2) }}>
-      <Image src={logo} height={65} width={180} alt='MDT Logo' objectFit='contain' />
+      <Image src={logo} height={65} width={180} alt='MDT Logo' objectFit='contain' priority={true} />
     </a>
   )
 }

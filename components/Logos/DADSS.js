@@ -15,6 +15,7 @@ const DADSS = () => {
           width={220}
           alt='DADSS Logo'
           objectFit='contain'
+          priority={true}
         />
       </Box>
     </Link>
