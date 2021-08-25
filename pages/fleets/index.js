@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Head from 'next/head'
 import Divider from '../../components/Layout/Divider'
 import HeroImage from '../../components/Layout/HeroImage'
@@ -16,11 +14,6 @@ const Art2 = '/assets/fleets/images/Artboard-2.webp'
 const Art3 = '/assets/fleets/images/Artboard-3.webp'
 
 const Fleets = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const description = `DADSS is currently seeking opportunities to partner with state\
 	fleets and/or private fleet organizations for trial deployment of\
 	this vehicle technology.`

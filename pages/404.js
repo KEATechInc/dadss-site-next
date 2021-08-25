@@ -1,5 +1,3 @@
-import ReactGA from 'react-ga'
-import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import ContentBlock from '../components/Layout/ContentBlock'
@@ -9,11 +7,6 @@ import Image from 'next/image'
 import DADSSLogo from '../public/assets/logos/graphic-logo-car.svg'
 
 const PageNotFound = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const description = `Page not found. Oops. It appears something has gone wrong.`
 
   return (

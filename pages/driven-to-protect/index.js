@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import { useRouter } from 'next/router'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Head from 'next/head'
@@ -23,10 +22,6 @@ const description = `Driven to Protect is a public-private partnership between t
 	technology to eliminate drunk driving and save lives.`
 
 const DrivenToProtect = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
   const router = useRouter()
 
   return (

@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import ReactGA from 'react-ga'
+import { useState } from 'react'
 import { formatDate, getYear } from '../../../../util/dateHandler'
 import Head from 'next/head'
 import { sanityClient } from '../../../../lib/sanity'
@@ -22,11 +21,6 @@ export const getStaticProps = async () => {
 }
 
 const EventsDTPVA = (props) => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(10)
 

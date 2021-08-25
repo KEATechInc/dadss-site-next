@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../../lib/sanity'
@@ -32,13 +30,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 const SinglePost = ({ post }) => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   let filteredPreview
-  const router = useRouter()
 
   return (
     <PostWrapper>

@@ -1,16 +1,9 @@
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import { Box, Typography } from '@material-ui/core'
 
 const Supporters = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const description = `The Driver Alcohol Detection System for Safety (DADSS) research\
   program is supported by safety and children’s advocates, insurance\
 	companies, state and local government representatives and members of\

@@ -1,15 +1,12 @@
 import { Typography, Box } from '@material-ui/core'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const Contact = () => {
   const description = `For all general questions about the DADSS program, please email\
 	info@dadss.org. For any media inquiries,\
 	please email media@dadss.org.`
-
-  const router = useRouter()
 
   return (
     <>

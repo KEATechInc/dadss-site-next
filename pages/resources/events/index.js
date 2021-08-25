@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import ReactGA from 'react-ga'
+import { useState } from 'react'
 import Head from 'next/head'
 import { Box, Typography } from '@material-ui/core'
 import ContentBlock from '../../../components/Layout/ContentBlock'
@@ -22,11 +21,6 @@ export async function getStaticProps() {
 }
 
 const Events = (props) => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(10)
 

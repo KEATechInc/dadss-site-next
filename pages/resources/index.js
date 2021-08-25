@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Link from 'next/link'
 import Head from 'next/head'
 import { formatDate } from '../../util/dateHandler'
@@ -41,10 +39,6 @@ export const getStaticProps = async () => {
 
 const Resources = ({ posts }) => {
   const router = useRouter()
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
 
   const renderPosts = () => {
     return (

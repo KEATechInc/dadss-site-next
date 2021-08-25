@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Head from 'next/head'
 import Divider from '../../../components/Layout/Divider'
 import HeroImage from '../../../components/Layout/HeroImage'
@@ -26,11 +24,6 @@ const MDimg3 = '/assets/drivenToProtect/maryland/dtpMary3.webp'
 const MDimg4 = '/assets/drivenToProtect/maryland/dtpMary4.webp'
 
 const DTPMaryland = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const description = `In August 2019, the state of Maryland formally announced the\
 	launch of its partnership between the Automotive Coalition for\
 	Traffic Safety’s DADSS Program and the Maryland Department of\

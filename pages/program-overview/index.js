@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Head from 'next/head'
 import Divider from '../../components/Layout/Divider'
 import ContentBlock from '../../components/Layout/ContentBlock'
@@ -13,11 +11,6 @@ const source2 =
   '/assets/programOverview/pdf/The Economic and Societal Impact Of Motor Vehicle Crashes, 2010 (Revised May 2015).pdf'
 
 const ProgramOverview = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const description = `Drunk driving remains a serious public health and safety issue.\
 	But what if we could help invent a world without drunk driving?`
 

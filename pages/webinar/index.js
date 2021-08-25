@@ -9,20 +9,6 @@ import { Box, Typography, styled, Grid } from '@material-ui/core'
 import Divider from '../../components/Layout/Divider'
 import Image from 'next/image'
 
-export const getStaticProps = async () => {
-  const webinarInfo = await sanityClient.fetch(webinarQuery)
-
-  const notFound = Object.keys(webinarInfo).length === 0 ? true : false
-
-  return {
-    props: {
-      webinarInfo,
-    },
-    revalidate: 300,
-    notFound,
-  }
-}
-
 import dtpLogo from '../../public/assets/logos/dtpLogos/VA-logo.webp'
 const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
 
@@ -150,3 +136,19 @@ const PanelistCard = styled(Grid)({
     boxShadow: theme.shadows[1],
   },
 })
+
+// prerender
+
+export const getStaticProps = async () => {
+  const webinarInfo = await sanityClient.fetch(webinarQuery)
+
+  const notFound = Object.keys(webinarInfo).length === 0 ? true : false
+
+  return {
+    props: {
+      webinarInfo,
+    },
+    revalidate: 300,
+    notFound,
+  }
+}

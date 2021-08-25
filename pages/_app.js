@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline, responsiveFontSizes } from '@material-ui/core'
 import theme from '../src/theme'
 import PropTypes from 'prop-types'
+import { init } from '../util/googleAnalytics'
 
 export default function MyApp({ Component, pageProps }) {
   const description =
@@ -16,6 +17,10 @@ export default function MyApp({ Component, pageProps }) {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles)
     }
+  }, [])
+
+  useEffect(() => {
+    init(process.env.ga4)
   }, [])
 
   return (
@@ -42,8 +47,17 @@ export default function MyApp({ Component, pageProps }) {
           sizes='167x167'
           href='/icons/dadss-167.png'
         />
-        <link rel='icon' type='image/png' sizes='32x32' href='/icons/dadss-32.png' />
-        <link rel='apple-touch-icon' type='image/png' href='/icons/dadss-32.png' />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/icons/dadss-32.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          type='image/png'
+          href='/icons/dadss-32.png'
+        />
 
         <link rel='mask-icon' href='/icons/dadss-32.png' color='#5bbad5' />
         <link rel='shortcut icon' href='/icons/dadss-32.png' />

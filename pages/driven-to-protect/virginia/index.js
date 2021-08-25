@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -27,11 +26,6 @@ import dtpLogo from '../../../public/assets/logos/dtpLogos/VA-logo.webp'
 const PDF = '/assets/drivenToProtect/pdf/Driven-to-Protect-Overview.pdf'
 
 const DTPVirginia = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const description = `Recognizing the potential of the DADSS technology to save lives by\
 	preventing drunk driving, Virginia became the first state to use\
 	NHTSA highway safety grant funds to partner with the DADSS Program\

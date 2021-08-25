@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../lib/sanity'
@@ -11,43 +9,10 @@ import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
 import Divider from '../../components/Layout/Divider'
 
-export const getStaticProps = async ({ params }) => {
-  const currentPage = params?.currentPage
-  const currentPageNumber = +(currentPage || 1)
-
-  const newsUpdates = await sanityClient.fetch(newsQuery)
-
-  const totalPosts = newsUpdates.length
-
-  const pageMin = (currentPageNumber - 1) * 5
-  const pageMax = currentPageNumber * 5
-
-  const currentPosts = newsUpdates.slice(pageMin, pageMax)
-
-  const pageCount = Math.ceil(totalPosts / 5)
-
-  const notFound = currentPageNumber ? false : true
-
-  return {
-    props: {
-      currentPageNumber,
-      currentPosts,
-      pageCount,
-    },
-    revalidate: 300,
-    notFound,
-  }
-}
-
 const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   const router = useRouter()
 
-  const handleChange = (event, value) => {
+  const handleChange = (e, value) => {
     router.push('/news/' + value)
   }
 
@@ -115,3 +80,31 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
 }
 
 export default NewsUpdates
+
+export const getStaticProps = async ({ params }) => {
+  const currentPage = params?.currentPage
+  const currentPageNumber = +(currentPage || 1)
+
+  const newsUpdates = await sanityClient.fetch(newsQuery)
+
+  const totalPosts = newsUpdates.length
+
+  const pageMin = (currentPageNumber - 1) * 5
+  const pageMax = currentPageNumber * 5
+
+  const currentPosts = newsUpdates.slice(pageMin, pageMax)
+
+  const pageCount = Math.ceil(totalPosts / 5)
+
+  const notFound = currentPageNumber ? false : true
+
+  return {
+    props: {
+      currentPageNumber,
+      currentPosts,
+      pageCount,
+    },
+    revalidate: 300,
+    notFound,
+  }
+}

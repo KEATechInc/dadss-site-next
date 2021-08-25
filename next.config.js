@@ -3,6 +3,7 @@ module.exports = {
     dataset: 'production',
     project_id: '9i9p7w70',
     use_cdn: 'true',
+    ga4: `G-EKPX48MV0L`,
   },
   images: {
     domains: ['cdn.sanity.io'],

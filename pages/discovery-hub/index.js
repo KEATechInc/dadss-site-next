@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import ReactGA from 'react-ga'
 import { useEffect } from 'react'
 import Divider from '../../components/Layout/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
@@ -32,11 +31,6 @@ const data = '/assets/landingPage/dataanalysis.webp'
 const description = `A landing page containing learning resources and educational modules detailing the dangers of driving under the influence and describe the efforts the DADSS program is taking to prevent them.`
 
 export default function DiscoveryHub() {
-  useEffect(() => {
-    ReactGA.initialize('UA-58614629-1')
-    ReactGA.pageview(window.location.pathname)
-  }, [])
-
   return (
     <>
       <Head>
