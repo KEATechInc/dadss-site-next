@@ -8,17 +8,7 @@ import { Pagination } from '@material-ui/lab'
 import { eventsQuery } from '../../../lib/queries'
 import { sanityClient } from '../../../lib/sanity'
 import theme from '../../../src/theme'
-
-export async function getStaticProps() {
-  const events = await sanityClient.fetch(eventsQuery)
-
-  return {
-    props: {
-      events,
-    },
-    revalidate: 300,
-  }
-}
+import revalidate from '../../../util/revalidate'
 
 const Events = (props) => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -126,3 +116,15 @@ const Events = (props) => {
 }
 
 export default Events
+
+
+export async function getStaticProps() {
+  const events = await sanityClient.fetch(eventsQuery)
+
+  return {
+    props: {
+      events,
+    },
+    revalidate: revalidate,
+  }
+}

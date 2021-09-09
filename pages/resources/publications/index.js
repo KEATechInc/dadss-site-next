@@ -8,17 +8,7 @@ import { publicationsQuery } from '../../../lib/queries'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
 import { Typography, Button, Box } from '@material-ui/core'
-
-export const getStaticProps = async () => {
-  const publications = await sanityClient.fetch(publicationsQuery)
-
-  return {
-    props: {
-      publications,
-    },
-    revalidate: 300,
-  }
-}
+import revalidate from '../../../util/revalidate'
 
 const Publications = (props) => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -110,3 +100,14 @@ const Publications = (props) => {
 }
 
 export default Publications
+
+export const getStaticProps = async () => {
+  const publications = await sanityClient.fetch(publicationsQuery)
+
+  return {
+    props: {
+      publications,
+    },
+    revalidate: revalidate,
+  }
+}

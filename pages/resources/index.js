@@ -16,6 +16,7 @@ import {
 } from '@material-ui/core'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import { darkOrange, dtpBlue } from '../../src/theme'
+import revalidate from '../../util/revalidate'
 
 const programPDF = '/assets/programOverview/pdf/DADSS_ProgramOverview.pdf'
 const faqPDF = '/assets/resources/pdf/FAQ.pdf'
@@ -25,17 +26,6 @@ const opinionPDF =
   '/assets/resources/pdf/DADSS_Public-Opinion-Research_091317_v1.pdf'
 const drivenPDF = '/assets/drivenToProtect/pdf/Driven-to-Protect-Overview.pdf'
 const infoPDF = '/assets/resources/pdf/DTP-JRT-Infographic-v2.pdf'
-
-export const getStaticProps = async () => {
-  const posts = await sanityClient.fetch(recentPostsQuery)
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 300,
-  }
-}
 
 const Resources = ({ posts }) => {
   const router = useRouter()
@@ -263,3 +253,14 @@ const Resources = ({ posts }) => {
 }
 
 export default Resources
+
+export const getStaticProps = async () => {
+  const posts = await sanityClient.fetch(recentPostsQuery)
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: revalidate,
+  }
+}

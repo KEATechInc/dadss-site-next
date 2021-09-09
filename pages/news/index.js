@@ -8,6 +8,7 @@ import ContentBlock from '../../components/Layout/ContentBlock'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import { Pagination } from '@material-ui/lab'
 import Divider from '../../components/Layout/Divider'
+import revalidate from '../../util/revalidate'
 
 const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
   const router = useRouter()
@@ -104,7 +105,7 @@ export const getStaticProps = async ({ params }) => {
       currentPosts,
       pageCount,
     },
-    revalidate: 300,
+    revalidate: revalidate,
     notFound,
   }
 }

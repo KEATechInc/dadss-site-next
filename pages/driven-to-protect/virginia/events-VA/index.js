@@ -8,17 +8,7 @@ import { Box, styled, Typography } from '@material-ui/core'
 import ContentBlock from '../../../../components/Layout/ContentBlock'
 import Divider from '../../../../components/Layout/Divider'
 import theme, { dtpBlue } from '../../../../src/theme'
-
-export const getStaticProps = async () => {
-  const events = await sanityClient.fetch(eventsVaQuery)
-
-  return {
-    props: {
-      events,
-    },
-    revalidate: 300,
-  }
-}
+import revalidate from '../../../../util/revalidate'
 
 const EventsDTPVA = (props) => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -135,3 +125,14 @@ const PageWrap = styled('main')({
     color: dtpBlue,
   },
 })
+
+export const getStaticProps = async () => {
+  const events = await sanityClient.fetch(eventsVaQuery)
+
+  return {
+    props: {
+      events,
+    },
+    revalidate: revalidate,
+  }
+}

@@ -10,6 +10,8 @@ import Divider from '../../components/Layout/Divider'
 import Image from 'next/image'
 
 import dtpLogo from '../../public/assets/logos/dtpLogos/VA-logo.webp'
+import revalidate from '../../util/revalidate'
+
 const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
 
 const Webinar = ({ webinarInfo }) => {
@@ -148,7 +150,7 @@ export const getStaticProps = async () => {
     props: {
       webinarInfo,
     },
-    revalidate: 300,
+    revalidate: revalidate,
     notFound,
   }
 }
