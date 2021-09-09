@@ -6,28 +6,6 @@ import { styled, Typography } from '@material-ui/core'
 import ContentBlock from '../../../components/Layout/ContentBlock'
 import theme from '../../../src/theme'
 
-export const getStaticPaths = async () => {
-  const paths = await sanityClient.fetch(postSlugsQuery)
-  return {
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: false,
-  }
-}
-
-export const getStaticProps = async ({ params }) => {
-  const post = await sanityClient.fetch(postQuery, { slug: params.slug })
-
-  const notFound = Object.keys(post).length === 0 ? true : false
-
-  return {
-    props: {
-      post,
-    },
-    revalidate: 300,
-    notFound,
-  }
-}
-
 const SinglePost = ({ post }) => {
   let filteredPreview
 
@@ -75,3 +53,25 @@ const PostWrapper = styled('div')({
 })
 
 export default SinglePost
+
+export const getStaticPaths = async () => {
+  const paths = await sanityClient.fetch(postSlugsQuery)
+  return {
+    paths: paths.map((slug) => ({ params: { slug } })),
+    fallback: false,
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
+  const post = await sanityClient.fetch(postQuery, { slug: params.slug })
+
+  const notFound = Object.keys(post).length === 0 ? true : false
+
+  return {
+    props: {
+      post,
+    },
+    revalidate: 300,
+    notFound,
+  }
+}
