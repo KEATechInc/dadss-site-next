@@ -2,10 +2,12 @@ import { styled, Typography } from '@material-ui/core'
 import { useSpring, animated as a } from '@react-spring/web'
 import { useState } from 'react'
 import theme, { dadssGradient, darkOrange } from '../../../src/theme'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const AnimatedLink = ({ link }) => {
   const [isHovered, setHovered] = useState(false)
+  const router = useRouter()
 
   const colorBarStyles = useSpring({
     opacity: isHovered ? 1 : 0,
@@ -24,13 +26,12 @@ const AnimatedLink = ({ link }) => {
 
   return (
     <LinkWrap
+      onClick={() => router.push(link.url)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      <Link href={link.url} passHref>
-        <Label color='textPrimary' noWrap>
-          {link.label}
-        </Label>
-      </Link>
+      <Label color='textPrimary' noWrap>
+        {link.label}
+      </Label>
 
       {/* if sublinks, dont show gradient bar */}
       {!link.sublinks ? (
@@ -41,7 +42,7 @@ const AnimatedLink = ({ link }) => {
 
       {/* conditional dropdown, if sublinks */}
       {link.sublinks ? (
-        <SubMenu style={submenuStyles}>
+        <SubMenu style={submenuStyles} onClick={(e) => e.stopPropagation()}>
           <div style={{ padding: theme.spacing(2), paddingBottom: 0 }}>
             {link.sublinks?.map((sublink, i) => {
               return (
@@ -63,12 +64,12 @@ const AnimatedLink = ({ link }) => {
 export default AnimatedLink
 
 const Label = styled(Typography)({
-  cursor: 'pointer',
   '&:hover': {
     color: darkOrange,
   },
 })
 const LinkWrap = styled('div')({
+  cursor: 'pointer',
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',

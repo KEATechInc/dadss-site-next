@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
 import Divider from '../../components/Layout/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
 import HeroImage from '../../components/Layout/HeroImage'
@@ -15,7 +14,7 @@ import ContentBlock from '../../components/Layout/ContentBlock'
 import Thumb from '../../components/Layout/Thumb'
 import BlueButton from '../../components/Layout/BlueButton'
 
-const landingHero = '/assets/landingPage/fw.webp'
+import landingHero from '../../public/assets/landingPage/fw.webp'
 
 const brain = '/assets/landingPage/brain.webp'
 const shots = '/assets/landingPage/shots.webp'

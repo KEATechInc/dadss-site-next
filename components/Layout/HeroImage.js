@@ -1,11 +1,12 @@
 import { Container, styled, Typography } from '@material-ui/core'
 import theme, { fontGray, transDarkOrange } from '../../src/theme'
+import Image from 'next/image'
+import { rgba } from '@react-spring/shared'
 
 const HeroImage = ({
   image,
   children,
   extended,
-  position,
   darken,
   bannerText,
 }) => {
@@ -13,9 +14,6 @@ const HeroImage = ({
     position: 'relative',
     height: extended ? 425 : 300,
     width: '100%',
-    backgroundImage: `url(${image})`,
-    backgroundPosition: position ? position : 'center',
-    backgroundSize: 'cover',
     borderBottom: `3px solid ${fontGray}`,
   })
   const ChildContainer = styled(Container)({
@@ -48,12 +46,22 @@ const HeroImage = ({
     bottom: 0,
     width: '100%',
     padding: theme.spacing(4),
-    background: transDarkOrange,
+    background: 'rgba(0, 0, 0, 0.7)',
   })
 
   if (extended) {
     return (
       <HeroContainer>
+        {image && (
+          <Image
+            src={image}
+            layout='fill'
+            placeholder='blur'
+            objectFit='cover'
+            objectPosition='center'
+          />
+        )}
+
         <TextBanner>
           <Container>
             <Typography variant='h3' color='textSecondary' align='left'>
@@ -67,6 +75,15 @@ const HeroImage = ({
 
   return (
     <HeroContainer>
+      {image && (
+        <Image
+          src={image}
+          layout='fill'
+          placeholder='blur'
+          objectFit='cover'
+          objectPosition='center'
+        />
+      )}
       {darken && <Filter />}
       {children && <ChildContainer maxWidth='sm'>{children}</ChildContainer>}
     </HeroContainer>

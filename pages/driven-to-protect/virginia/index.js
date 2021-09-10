@@ -21,7 +21,7 @@ import { ACTS, NHTSA, DADSS, VADMV } from '../../../components/Logos'
 import BlueButton from '../../../components/Layout/BlueButton'
 import Image from 'next/image'
 
-const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
+import heroBg from '../../../public/assets/drivenToProtect/GreyWash1.webp'
 import dtpLogo from '../../../public/assets/logos/dtpLogos/VA-logo.webp'
 const PDF = '/assets/drivenToProtect/pdf/Driven-to-Protect-Overview.pdf'
 

@@ -8,7 +8,7 @@ import LogoDivider from '../../components/Layout/LogoDivider'
 import { ACTS, DADSS, NHTSA } from '../../components/Logos'
 
 const Guidelines = '/assets/fleets/pdf/Guidelines-for-State-DADSS-Projects.pdf'
-const heroBg = '/assets/fleets/images/DADSS.webp'
+import heroBg from '../../public/assets/fleets/images/DADSS.webp'
 const Art1 = '/assets/fleets/images/Artboard-1.webp'
 const Art2 = '/assets/fleets/images/Artboard-2.webp'
 const Art3 = '/assets/fleets/images/Artboard-3.webp'

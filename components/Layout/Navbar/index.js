@@ -44,6 +44,7 @@ const Navbar = () => {
           justifyContent: 'space-between',
           minHeight: 64,
         }}>
+        
         {/* clickable logo */}
         <Box style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
           <Image

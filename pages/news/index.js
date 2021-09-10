@@ -65,7 +65,7 @@ const NewsUpdates = ({ currentPageNumber, currentPosts, pageCount }) => {
       <main>
         <ContentBlock header='News & Updates'>
           <Divider />
-          {renderPosts()}
+          <Box>{renderPosts()}</Box>
           <Box mt={2}>
             <Pagination
               color='primary'

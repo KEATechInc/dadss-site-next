@@ -12,7 +12,7 @@ import HeroImage from '../../components/Layout/HeroImage'
 import BlueButton from '../../components/Layout/BlueButton'
 import Image from 'next/image'
 
-const heroBg = '/assets/drivenToProtect/GreyWash2.webp'
+import heroBg from '../../public/assets/drivenToProtect/GreyWash2.webp'
 const vaBg = '/assets/drivenToProtect/Blue-Image2.webp'
 const mdBg = '/assets/drivenToProtect/Blue-Image1.webp'
 import dtpLogo from '../../public/assets/logos/dtpLogos/DTP-logo.webp'
