@@ -27,7 +27,6 @@ export default function Home() {
       <Head>
         <title>Driver Alcohol Detection System for Safety (DADSS)</title>
         <meta name='description' content={description} />
-        <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
       <main>
         {/* video hero */}

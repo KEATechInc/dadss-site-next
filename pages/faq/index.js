@@ -37,7 +37,7 @@ const FAQ = () => {
       <main>
         <ContentBlock header='Frequently Asked Questions' divider>
           {faqData && (
-            <>
+            <div>
               {faqData.map((faq, index) => {
                 return (
                   <Accordion
@@ -63,7 +63,7 @@ const FAQ = () => {
                   </Accordion>
                 )
               })}
-            </>
+            </div>
           )}
         </ContentBlock>
       </main>
