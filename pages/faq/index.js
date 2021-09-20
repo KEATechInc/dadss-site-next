@@ -10,9 +10,10 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Head from 'next/head'
-import { faqData } from '../../src/faqData'
+import { PortableText, sanityClient } from '../../lib/sanity'
+import { faqsQuery } from '../../lib/queries'
 
-const FAQ = () => {
+const FAQ = ({ faqData }) => {
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
 
@@ -34,31 +35,34 @@ const FAQ = () => {
         <title>DADSS | FAQ</title>
         <meta name='description' content={description} />
       </Head>
+
       <main>
         <ContentBlock header='Frequently Asked Questions' divider>
           {faqData && (
             <div>
-              {faqData.map((faq, index) => {
+              {faqData.map((faq, i) => {
                 return (
                   <Accordion
-                    key={index}
-                    expanded={expanded === `panel${index + 1}`}
-                    onChange={handleChange(`panel${index + 1}`)}>
+                    key={i}
+                    expanded={expanded === `panel${i + 1}`}
+                    onChange={handleChange(`panel${i + 1}`)}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      <Anchor id={`panel${index + 1}`} />
-                      <Typography variant='h6' color='primary'>{`${
-                        index + 1
-                      }. ${faq.question}`}</Typography>
+                      <Anchor id={`panel${i + 1}`} />
+                      <Typography variant='h6' color='primary'>{`${i + 1}. ${
+                        faq.question
+                      }`}</Typography>
                     </AccordionSummary>
                     <AccordionDetails
-                      style={{ display: 'flex', flexDirection: 'column' }}>
-                      {faq.answer.map((p, index) => {
-                        return (
-                          <Typography component='span' key={index} paragraph>
-                            {p}
-                          </Typography>
-                        )
-                      })}
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        fontSize: 16,
+                        paddingTop: 0,
+                      }}>
+                      <Typography
+                        component={PortableText}
+                        blocks={faq.answer}
+                      />
                     </AccordionDetails>
                   </Accordion>
                 )
@@ -79,3 +83,10 @@ const Anchor = styled('a')({
 })
 
 export default FAQ
+
+export const getStaticProps = async () => {
+  const faqData = await sanityClient.fetch(faqsQuery)
+  return {
+    props: { faqData },
+  }
+}

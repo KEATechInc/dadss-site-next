@@ -9,6 +9,7 @@ import blockContent from './blockContent'
 
 import post from './post'
 import event from './event'
+import faq from './faq'
 import publication from './publication'
 import eventDTPVA from './eventDTPVA'
 import webinar from './webinar'
@@ -26,6 +27,7 @@ export default createSchema({
     // in the studio.
     post,
     event,
+    faq,
     eventDTPVA,
     publication,
     blockContent,

@@ -1,6 +1,6 @@
 export default {
 	name: 'webinar',
-	title: 'Webinar',
+	title: 'Webinars',
 	type: 'document',
 	fields: [
 		{

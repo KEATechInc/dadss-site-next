@@ -1,6 +1,6 @@
 export default {
     name: 'eventDTPVA',
-	title: 'Driven To Protect VA Event',
+	title: 'Driven To Protect VA Events',
 	type: 'document',
 	fields: [
         {
