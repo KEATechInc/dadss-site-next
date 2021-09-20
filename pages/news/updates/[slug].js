@@ -5,7 +5,6 @@ import Divider from '../../../components/Layout/Divider'
 import { styled, Typography } from '@material-ui/core'
 import ContentBlock from '../../../components/Layout/ContentBlock'
 import theme from '../../../src/theme'
-import revalidate from '../../../util/revalidate'
 
 const SinglePost = ({ post }) => {
   let filteredPreview
@@ -72,7 +71,6 @@ export const getStaticProps = async ({ params }) => {
     props: {
       post,
     },
-    revalidate: revalidate,
     notFound,
   }
 }

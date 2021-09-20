@@ -18,6 +18,7 @@ const PlayerWrap = styled(Paper)({
   paddingTop: '56.25%',
   width: '100%',
   height: '100%',
+  lineHeight: 0,
 })
 
 const Player = styled(ReactPlayer)({
