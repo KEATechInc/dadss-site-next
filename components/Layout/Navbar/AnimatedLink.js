@@ -11,10 +11,16 @@ const AnimatedLink = ({ link }) => {
 
   const colorBarStyles = useSpring({
     opacity: isHovered ? 1 : 0,
+    config: {
+      tension: 350,
+    }
   })
   const submenuStyles = useSpring({
     opacity: isHovered ? 1 : 0,
     visibility: isHovered ? 'visible' : 'hidden',
+    config: {
+      tension: 350,
+    }
   })
   const SubMenu = styled(a.div)({
     position: 'absolute',
@@ -29,9 +35,9 @@ const AnimatedLink = ({ link }) => {
       onClick={() => router.push(link.url)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      <Label color='textPrimary' noWrap>
+      <Typography color='textPrimary' noWrap>
         {link.label}
-      </Label>
+      </Typography>
 
       {/* if sublinks, dont show gradient bar */}
       {!link.sublinks ? (
