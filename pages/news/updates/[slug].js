@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { sanityClient, PortableText } from '../../../lib/sanity'
 import { postSlugsQuery, postQuery } from '../../../lib/queries'
 import Divider from '../../../components/Layout/Divider'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import ContentBlock from '../../../components/Layout/ContentBlock'
 
 const SinglePost = ({ post }) => {

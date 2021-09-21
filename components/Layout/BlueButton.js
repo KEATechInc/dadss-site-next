@@ -1,4 +1,4 @@
-import { Button, styled } from '@material-ui/core'
+import { Button, styled } from '@mui/material'
 import { dtpLightBlue } from '../../src/theme'
 
 const BlueButton = (props) => {

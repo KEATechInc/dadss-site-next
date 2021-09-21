@@ -7,7 +7,7 @@ import {
   Toolbar,
   styled,
   Box,
-} from '@material-ui/core'
+} from '@mui/material'
 import Hamburger from 'hamburger-react'
 import theme, { dadssGradient, fontGray } from '../../../src/theme'
 import { linkData } from '../../../src/linkData'
@@ -57,7 +57,7 @@ const Navbar = () => {
         </Box>
 
         {/* generate links */}
-        <Hidden smDown>
+        <Hidden mdDown>
           <div style={{ display: 'flex', height: '64px' }}>
             {linkData?.map((link, i) => {
               return <AnimatedLink link={link} key={i} />
@@ -73,7 +73,7 @@ const Navbar = () => {
 
       <MobileMenu isOpen={isOpen} setOpen={setOpen} />
     </AppBar>
-  )
+  );
 }
 
 export default Navbar

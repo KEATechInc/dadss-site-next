@@ -1,4 +1,4 @@
-import { Typography, Box } from '@material-ui/core'
+import { Typography, Box } from '@mui/material'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Head from 'next/head'
 import Link from 'next/link'

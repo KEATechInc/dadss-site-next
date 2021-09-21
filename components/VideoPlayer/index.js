@@ -1,4 +1,4 @@
-import { styled, Typography, Paper } from '@material-ui/core'
+import { styled, Typography, Paper } from '@mui/material'
 import ReactPlayer from 'react-player'
 import { useState } from 'react'
 import theme, { dadssGradient } from '../../src/theme'

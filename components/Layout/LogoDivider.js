@@ -1,6 +1,6 @@
 import Divider from './Divider'
 import theme from '../../src/theme'
-import { styled } from '@material-ui/core'
+import { styled } from '@mui/material'
 
 const LogoDivider = ({ children }) => {
   return (

@@ -6,8 +6,8 @@ import ContentBlock from '../../../components/Layout/ContentBlock'
 import Divider from '../../../components/Layout/Divider'
 import { publicationsQuery } from '../../../lib/queries'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
-import { Pagination } from '@material-ui/lab'
-import { Typography, Button, Box } from '@material-ui/core'
+import { Pagination } from '@mui/material';
+import { Typography, Button, Box } from '@mui/material'
 import revalidate from '../../../util/revalidate'
 
 const Publications = (props) => {

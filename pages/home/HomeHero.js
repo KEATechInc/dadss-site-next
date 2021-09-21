@@ -1,4 +1,4 @@
-import { Container, styled } from '@material-ui/core'
+import { Container, styled } from '@mui/material'
 import ReactPlayer from 'react-player'
 
 const HomeHero = ({ videoUrl, background }) => {

@@ -1,4 +1,4 @@
-import { Paper, styled } from '@material-ui/core'
+import { Paper, styled } from '@mui/material'
 import theme from '../../src/theme'
 
 const SidebarImage = ({ image }) => {

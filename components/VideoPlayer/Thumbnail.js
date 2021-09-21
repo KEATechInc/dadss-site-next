@@ -1,4 +1,4 @@
-import { styled } from '@material-ui/core'
+import { styled } from '@mui/material'
 import { useState, useEffect } from 'react'
 import { dtpLightBlue } from '../../src/theme'
 import { useSpring, animated as a } from '@react-spring/web'

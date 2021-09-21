@@ -1,4 +1,4 @@
-import { styled, Typography } from '@material-ui/core'
+import { styled, Typography } from '@mui/material'
 import { useSpring, animated as a } from '@react-spring/web'
 import theme from '../../../src/theme'
 import { linkData } from '../../../src/linkData'

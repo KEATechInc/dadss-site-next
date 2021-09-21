@@ -1,6 +1,6 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { styled } from '@material-ui/core'
+import { styled } from '@mui/material'
 
 const Layout = ({ children }) => {
   return (

@@ -1,4 +1,4 @@
-import { Container, Paper, styled } from '@material-ui/core'
+import { Container, Paper, styled } from '@mui/material'
 import ReactPlayer from 'react-player'
 
 const Video = ({ videoUrl }) => {

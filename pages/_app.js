@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import Layout from '../components/Layout'
 import Head from 'next/head'
-import { ThemeProvider } from '@material-ui/styles'
-import { CssBaseline, responsiveFontSizes } from '@material-ui/core'
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
+import { CssBaseline, responsiveFontSizes } from '@mui/material'
 import theme from '../src/theme'
 import PropTypes from 'prop-types'
 import { init } from '../util/googleAnalytics'
@@ -94,12 +94,14 @@ export default function MyApp({ Component, pageProps }) {
         />
       </Head>
 
-      <ThemeProvider theme={responsiveFontSizes(theme)}>
-        <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={responsiveFontSizes(theme)}>
+          <CssBaseline />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
+      </StyledEngineProvider>
     </>
   )
 }

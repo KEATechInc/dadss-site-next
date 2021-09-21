@@ -3,7 +3,7 @@ import Image from 'next/image'
 import theme from '../../src/theme'
 
 import logo from '../../public/assets/logos/dtpLogos/dadss-logo.webp'
-import { Box } from '@material-ui/core'
+import { Box } from '@mui/material'
 
 const DADSS = () => {
   return (

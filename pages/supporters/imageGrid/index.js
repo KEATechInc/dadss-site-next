@@ -1,4 +1,4 @@
-import { Grid, styled } from '@material-ui/core'
+import { Grid, styled } from '@mui/material'
 import Image from 'next/image'
 
 const ImageGrid = ({ imageArray }) => {

@@ -1,4 +1,4 @@
-import { Container, styled, Typography } from '@material-ui/core'
+import { Container, styled, Typography } from '@mui/material'
 import React from 'react'
 import theme from '../../src/theme'
 import Divider from './Divider'

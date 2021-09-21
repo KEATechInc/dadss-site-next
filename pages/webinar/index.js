@@ -5,7 +5,7 @@ import { sanityClient, PortableText, urlFor } from '../../lib/sanity'
 import HeroImage from '../../components/Layout/HeroImage'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import theme, { bgOrange, dtpBlue, dtpLightBlue } from '../../src/theme'
-import { Box, Typography, styled, Grid } from '@material-ui/core'
+import { Box, Typography, styled, Grid } from '@mui/material'
 import Divider from '../../components/Layout/Divider'
 import Image from 'next/image'
 

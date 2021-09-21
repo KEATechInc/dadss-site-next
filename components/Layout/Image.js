@@ -1,4 +1,4 @@
-import { Paper, styled } from '@material-ui/core'
+import { Paper, styled } from '@mui/material'
 import I from 'next/image'
 
 const Image = ({ src, alt, marginBottom, marginTop }) => {

@@ -3,10 +3,10 @@ import { useRouter } from 'next/router'
 import { sanityClient, PortableText } from '../../lib/sanity'
 import { newsQuery } from '../../lib/queries'
 import { formatDate } from '../../util/dateHandler'
-import { Typography, Button, Box } from '@material-ui/core'
+import { Typography, Button, Box } from '@mui/material'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
-import { Pagination } from '@material-ui/lab'
+import { Pagination } from '@mui/material';
 import Divider from '../../components/Layout/Divider'
 import revalidate from '../../util/revalidate'
 

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { RiTwitterFill } from '@react-icons/all-files/ri/RiTwitterFill'
 import { RiYoutubeFill } from '@react-icons/all-files/ri/RiYoutubeFill'
-import { Button, Container, styled, Typography } from '@material-ui/core'
+import { Button, Container, styled, Typography } from '@mui/material'
 import theme from '../../../src/theme'
 
 const Footer = () => {

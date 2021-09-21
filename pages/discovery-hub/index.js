@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Divider from '../../components/Layout/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
 import HeroImage from '../../components/Layout/HeroImage'
-import { Box, Typography, Grid, Container, Button } from '@material-ui/core'
+import { Box, Typography, Grid, Container, Button } from '@mui/material'
 import theme, {
   bgGray,
   dadssGradient,

@@ -1,4 +1,4 @@
-import { Typography, Button } from '@material-ui/core'
+import { Typography, Button } from '@mui/material'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import theme, { fontGray, bgGray } from '../../src/theme'
 import { useRouter } from 'next/router'

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Divider from '../../components/Layout/Divider'
 import ContentBlock from '../../components/Layout/ContentBlock'
-import { Box, Typography, Button } from '@material-ui/core'
+import { Box, Typography, Button } from '@mui/material'
 import { bgOrange, darkOrange } from '../../src/theme'
 
 const PDF = '/assets/programOverview/pdf/DADSS_ProgramOverview.pdf'

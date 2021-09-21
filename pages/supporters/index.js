@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import ImageGrid from './imageGrid'
 import ContentBlock from '../../components/Layout/ContentBlock'
-import { Box, Typography } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
 
 const Supporters = () => {
   const description = `The Driver Alcohol Detection System for Safety (DADSS) research\

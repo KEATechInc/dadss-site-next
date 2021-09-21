@@ -1,4 +1,4 @@
-import { Container, styled, Typography } from '@material-ui/core'
+import { Container, styled, Typography } from '@mui/material'
 import theme, { fontGray, transDarkOrange } from '../../src/theme'
 import Image from 'next/image'
 import { rgba } from '@react-spring/shared'

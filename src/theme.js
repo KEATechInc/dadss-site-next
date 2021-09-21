@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles'
+import { createTheme } from '@mui/material/styles'
 
 // Site color schemes and defaults
 export const bgOrange = '#FF9969'
@@ -42,23 +42,22 @@ const theme = createTheme({
   typography: {
     fontFamily: ['Open Sans', `sans-serif`].join(','),
     h1: {
-      textAlign: 'center'
+      textAlign: 'center',
     },
     h2: {
-      textAlign: 'center'
+      textAlign: 'center',
     },
     h3: {
-      textAlign: 'center'
+      textAlign: 'center',
     },
     h4: {
       marginTop: 16,
-      textAlign: 'center'
+      textAlign: 'center',
     },
     h5: {
-      textAlign: 'center'
+      textAlign: 'center',
     },
-    h6: {
-    }
+    h6: {},
   },
   breakpoints: {
     values: {
@@ -69,9 +68,9 @@ const theme = createTheme({
       xl: 1970,
     },
   },
-  overrides: {
+  components: {
     MuiCssBaseline: {
-      '@global': {
+      styleOverrides: {
         html: {
           WebkitFontSmoothing: 'auto',
         },

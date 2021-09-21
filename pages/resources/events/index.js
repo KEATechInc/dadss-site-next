@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import { Box, Typography } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
 import ContentBlock from '../../../components/Layout/ContentBlock'
 import Divider from '../../../components/Layout/Divider'
 import { formatDate, getYear } from '../../../util/dateHandler'
-import { Pagination } from '@material-ui/lab'
+import { Pagination } from '@mui/material';
 import { eventsQuery } from '../../../lib/queries'
 import { sanityClient } from '../../../lib/sanity'
 import theme from '../../../src/theme'

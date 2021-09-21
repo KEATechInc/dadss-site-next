@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import ContentBlock from '../components/Layout/ContentBlock'
-import { Box, Typography } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 
 import DADSSLogo from '../public/assets/logos/graphic-logo-car.svg'

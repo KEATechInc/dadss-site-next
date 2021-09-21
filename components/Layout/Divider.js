@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@material-ui/core'
+import { styled } from '@mui/material'
 import theme, { bgOrange, dtpLightBlue } from '../../src/theme'
 
 const Divider = ({ color, size }) => {

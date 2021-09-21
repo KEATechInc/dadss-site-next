@@ -1,5 +1,5 @@
 import ContentBlock from '../../components/Layout/ContentBlock'
-import { Typography, Button, styled, Grid } from '@material-ui/core'
+import { Typography, Button, styled, Grid } from '@mui/material'
 import theme, { darkOrange, bgOrange, fontGray } from '../../src/theme'
 import {useRouter} from 'next/router'
 

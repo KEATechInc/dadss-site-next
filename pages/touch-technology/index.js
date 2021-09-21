@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Button } from '@material-ui/core'
+import { Typography, Button } from '@mui/material'
 import Head from 'next/head'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Image from '../../components/Layout/Image'
