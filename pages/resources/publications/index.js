@@ -6,7 +6,7 @@ import ContentBlock from '../../../components/Layout/ContentBlock'
 import Divider from '../../../components/Layout/Divider'
 import { publicationsQuery } from '../../../lib/queries'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
-import { Pagination } from '@mui/material';
+import { Pagination } from '@mui/material'
 import { Typography, Button, Box } from '@mui/material'
 import revalidate from '../../../util/revalidate'
 
@@ -33,33 +33,47 @@ const Publications = (props) => {
   const renderPosts = () => {
     return (
       <>
-        {currentPosts.map((post, index) => (
-          <Box mt={1} mb={2} key={index}>
-            <Typography color='primary' variant='h6' gutterBottom>
-              <b>{post.title}</b>
-            </Typography>
-            <Typography gutterBottom>
-              <b>{post.subtitle}</b>
-            </Typography>
-            <Typography>
-              <b>Paper Number: {post.paperNumber}</b>
-            </Typography>
-            <Typography>
-              <b>Publish Year: {getYear(post.publishDate)}</b>
-            </Typography>
-            <PortableText blocks={post.description} />
-            {(post.url || post.fileUpload) && (
-              <Button
-                variant='outlined'
-                color='primary'
-                href={post.url || post.fileUpload}
-                target='_blank'
-                rel='noreferrer'>
-                Learn more <AiFillCaretRight />
-              </Button>
-            )}
-          </Box>
-        ))}
+        {currentPosts.map((post, index) => {
+          console.log(post.fileUpload)
+          return (
+            <Box mt={1} mb={2} key={index}>
+              <Typography color='primary' variant='h6' gutterBottom>
+                <b>{post.title}</b>
+              </Typography>
+              <Typography gutterBottom>
+                <b>{post.subtitle}</b>
+              </Typography>
+              <Typography>
+                <b>Paper Number: {post.paperNumber}</b>
+              </Typography>
+              <Typography>
+                <b>Publish Year: {getYear(post.publishDate)}</b>
+              </Typography>
+              <PortableText blocks={post.description} />
+              {post.url !== undefined && !post.fileUpload && (
+                <Button
+                  variant='outlined'
+                  color='primary'
+                  href={post.url}
+                  target='_blank'
+                  rel='noreferrer'>
+                  Learn more <AiFillCaretRight />
+                </Button>
+              )}
+              {/* fileUpload needs to be fixed */}
+              {/* {post.fileUpload && (
+                <Button
+                  variant='outlined'
+                  color='primary'
+                  href={post.fileUpload}
+                  target='_blank'
+                  rel='noreferrer'>
+                  Learn more <AiFillCaretRight />
+                </Button>
+              )} */}
+            </Box>
+          )
+        })}
       </>
     )
   }
