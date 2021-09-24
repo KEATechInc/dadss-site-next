@@ -12,7 +12,6 @@ import theme, {
 } from '../../src/theme'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Thumb from '../../components/Layout/Thumb'
-import BlueButton from '../../components/Layout/BlueButton'
 
 import landingHero from '../../public/assets/landingPage/fw.webp'
 
@@ -39,169 +38,144 @@ export default function DiscoveryHub() {
       </Head>
 
       <main>
-        <HeroImage
-          image={landingHero}
-          position={'center 70%'}
-          extended
-          bannerText='Discovery Hub'
-        />
+        <HeroImage image={landingHero} />
 
-        <ContentBlock
-          headerColor='white'
-          borderBottom={fontGray}
-          background={bgGray}>
-          <Typography color='textSecondary' paragraph>
-            <b>Welcome to the Discovery Hub.</b> Here, you can learn about the
-            dangers of alcohol–impaired driving and the innovative technologies
+        <ContentBlock header='Discovery Hub' divider>
+          <Typography paragraph>
+            Welcome to the Discovery Hub. Here, you can learn about the dangers
+            of alcohol–impaired driving and the innovative technologies
             currently in development to make our roads and highways safer.
           </Typography>
-        </ContentBlock>
 
-        <section style={{ width: '100%', background: dadssGradient }}>
-          <Container>
-            <Typography
-              variant='h3'
-              align='center'
-              color='textSecondary'
-              style={{
-                paddingTop: theme.spacing(3),
-                paddingBottom: theme.spacing(2),
-              }}>
-              Overview
-            </Typography>
-            <Divider color='white' />
-
-            <Box pb={6}>
-              <Grid
-                container
-                justifyContent='space-between'
-                align='stretch'
-                spacing={2}>
-                <Grid item md={6}>
-                  <ContentBlock
-                    fullHeight
-                    shadow
-                    background={bgGray}
-                    fontColor={theme.palette.text.secondary}>
-                    <Typography variant='h4' align='center' gutterBottom>
-                      Driver Alcohol Detection System For Safety (DADSS) Program
-                    </Typography>
-                    <Divider size='small' />
-                    <Box>
-                      <Typography paragraph>
-                        {`DADSS is a first-of-its-kind, vehicle–integrated,
+          <Box pt={2}>
+            <Grid
+              container
+              justifyContent='space-between'
+              align='stretch'
+              spacing={2}>
+              <Grid item md={6}>
+                <ContentBlock
+                  fullHeight
+                  shadow
+                  background={bgGray}
+                  fontColor={theme.palette.text.secondary}>
+                  <Typography variant='h4' align='center' gutterBottom>
+                    Driver Alcohol Detection System For Safety (DADSS) Program
+                  </Typography>
+                  <Divider size='small' />
+                  <Box>
+                    <Typography paragraph>
+                      {`DADSS is a first-of-its-kind, vehicle–integrated,
                         alcohol detection technology. By passively detecting a
                         driver's blood alcohol concentration (BAC), it prevents
                         a car from moving while the driver’s BAC is at or above
                         the legal limit of 0.08%.`}
-                      </Typography>
-                      <Typography paragraph>
-                        {`This technology must meet rigorous performance standards
+                    </Typography>
+                    <Typography paragraph>
+                      {`This technology must meet rigorous performance standards
                         before it can be installed in cars or trucks. When
                         ready, it will be offered to vehicle owners as a
                         voluntary safety option, much like other driver–assist
                         systems (i.e., automatic emergency braking or lane
                         departure warning systems).`}
-                      </Typography>
-                    </Box>
-                  </ContentBlock>
-                </Grid>
-
-                <Grid item md={6}>
-                  <ContentBlock
-                    fullHeight
-                    shadow
-                    background={bgGray}
-                    fontColor={theme.palette.text.secondary}>
-                    <Typography variant='h4' align='center' gutterBottom>
-                      Key Partners In The DADSS Program
                     </Typography>
-                    <Divider size='small' />
+                  </Box>
+                </ContentBlock>
+              </Grid>
+
+              <Grid item md={6}>
+                <ContentBlock
+                  fullHeight
+                  shadow
+                  background={bgGray}
+                  fontColor={theme.palette.text.secondary}>
+                  <Typography variant='h4' align='center' gutterBottom>
+                    Key Partners In The DADSS Program
+                  </Typography>
+                  <Divider size='small' />
+                  <Box>
+                    <Typography paragraph>
+                      DADSS Program partners include:
+                    </Typography>
                     <Box>
-                      <Typography paragraph>
-                        DADSS Program partners include:
-                      </Typography>
-                      <Box>
-                        <ul>
-                          <li>
-                            {`Automotive Coalition for Traffic Safety (ACTS), a
+                      <ul>
+                        <li>
+                          {`Automotive Coalition for Traffic Safety (ACTS), a
                             Virginia nonprofit funded by the world's leading
                             automakers`}
-                          </li>
-                          <li>
-                            U.S. Department of Transportation’s National Highway
-                            Traffic Safety Administration (NHTSA)
-                          </li>
-                          <li>
-                            {`Virginia Department of Motor Vehicle's Highway
+                        </li>
+                        <li>
+                          U.S. Department of Transportation’s National Highway
+                          Traffic Safety Administration (NHTSA)
+                        </li>
+                        <li>
+                          {`Virginia Department of Motor Vehicle's Highway
                             Safety Office`}
-                          </li>
-                        </ul>
-                      </Box>
-                      <Typography paragraph>
-                        The DADSS Program is one of the most important
-                        government and private sector partnerships in recent
-                        years.-private partnerships like DADSS have led to
-                        innovations that enhance our everyday lives, such as
-                        internet, GPS, and the microchip.
-                      </Typography>
+                        </li>
+                      </ul>
                     </Box>
-                  </ContentBlock>
-                </Grid>
-
-                <Grid item xs={12}>
-                  <ContentBlock
-                    fullHeight
-                    shadow
-                    background={bgGray}
-                    fontColor={theme.palette.text.secondary}>
-                    <Typography variant='h4' align='center' gutterBottom>
-                      DADSS Driven To Protect Discovery Hub
+                    <Typography paragraph>
+                      The DADSS Program is one of the most important government
+                      and private sector partnerships in recent years.-private
+                      partnerships like DADSS have led to innovations that
+                      enhance our everyday lives, such as internet, GPS, and the
+                      microchip.
                     </Typography>
-                    <Divider size='small' />
-                    <Box>
-                      <Typography paragraph>
-                        The learning modules below allow you to:
-                      </Typography>
-                      <Box mb={2}>
-                        <ul>
-                          <li>
-                            Explore how alcohol is absorbed, processed and
-                            eliminated by the human body
-                          </li>
-                          <li>
-                            Learn how alcohol impairs your ability to safely
-                            operate a motor vehicle
-                          </li>
-                          <li>
-                            Obtain actionable information so you can avoid the
-                            dangers associated with drunk driving
-                          </li>
-                          <li>
-                            Find out how the novel DADSS technologies currently
-                            under development and testing will protect you and
-                            other motorists on the road in the future
-                          </li>
-                        </ul>
-                      </Box>
-                      <Typography paragraph>
-                        There are also Science, Technology, Engineering, and
-                        Math (STEM) modules available so students can learn
-                        about the science and engineering behind the DADSS
-                        technologies.
-                      </Typography>
-                    </Box>
-                  </ContentBlock>
-                </Grid>
+                  </Box>
+                </ContentBlock>
               </Grid>
-            </Box>
-          </Container>
-        </section>
+
+              <Grid item xs={12}>
+                <ContentBlock
+                  fullHeight
+                  shadow
+                  background={bgGray}
+                  fontColor={theme.palette.text.secondary}>
+                  <Typography variant='h4' align='center' gutterBottom>
+                    DADSS Driven To Protect Discovery Hub
+                  </Typography>
+                  <Divider size='small' />
+                  <Box>
+                    <Typography paragraph>
+                      The learning modules below allow you to:
+                    </Typography>
+                    <Box mb={2}>
+                      <ul>
+                        <li>
+                          Explore how alcohol is absorbed, processed and
+                          eliminated by the human body
+                        </li>
+                        <li>
+                          Learn how alcohol impairs your ability to safely
+                          operate a motor vehicle
+                        </li>
+                        <li>
+                          Obtain actionable information so you can avoid the
+                          dangers associated with drunk driving
+                        </li>
+                        <li>
+                          Find out how the novel DADSS technologies currently
+                          under development and testing will protect you and
+                          other motorists on the road in the future
+                        </li>
+                      </ul>
+                    </Box>
+                    <Typography paragraph>
+                      There are also Science, Technology, Engineering, and Math
+                      (STEM) modules available so students can learn about the
+                      science and engineering behind the DADSS technologies.
+                    </Typography>
+                  </Box>
+                </ContentBlock>
+              </Grid>
+            </Grid>
+          </Box>
+        </ContentBlock>
 
         <section>
           <ContentBlock
             header='General Education Modules'
-            borderTop={bgGray}
+            linkColor='#fff'
             divider>
             {eModules.length > 0 && (
               <Grid container spacing={2} justifyContent='center'>
@@ -217,13 +191,15 @@ export default function DiscoveryHub() {
                         external
                       />
                       <Box mt={2}>
-                        <BlueButton
+                        <Button
                           fullWidth
+                          color='secondary'
+                          variant='contained'
                           href={module.url}
                           target='_blank'
                           rel='noreferrer'>
                           Start Lesson
-                        </BlueButton>
+                        </Button>
                       </Box>
                     </Grid>
                   )
@@ -238,7 +214,7 @@ export default function DiscoveryHub() {
                   color='primary'
                   align='center'
                   gutterBottom
-                  style={{ marginTop: theme.spacing(6) }}>
+                  style={{ marginTop: theme.spacing(8) }}>
                   STEM Modules
                 </Typography>
                 <Divider />
@@ -258,8 +234,8 @@ export default function DiscoveryHub() {
                         <Box mt={2}>
                           <Button
                             fullWidth
-                            color='primary'
-                            variant='outlined'
+                            color='secondary'
+                            variant='contained'
                             href={module.url}
                             target='_blank'
                             rel='noreferrer'>
@@ -279,7 +255,7 @@ export default function DiscoveryHub() {
                   color='primary'
                   gutterBottom
                   align='center'
-                  style={{ marginTop: theme.spacing(6) }}>
+                  style={{ marginTop: theme.spacing(8) }}>
                   Educational Videos
                 </Typography>
                 <Divider />

@@ -14,7 +14,7 @@ export const boxShadow = '0px 2px 4px rgb(0,0,0,0.5)'
 export const breakShadow = '0px 1px 2px rgb(0,0,0,0.25)'
 export const textShadow = '0px 1px 2px rgb(0,0,0,0.25)'
 export const dadssGradientBG = 'rgb(240,153,34)'
-export const dadssGradient = 'linear-gradient(90deg, #FF9969 0%, #DA3D1D 90%)'
+export const dadssGradient = 'linear-gradient(135deg, #FF9969 0%, #DA3D1D 80%)'
 
 // Create a theme instance.
 const theme = createTheme({

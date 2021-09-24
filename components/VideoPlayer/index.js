@@ -1,7 +1,7 @@
 import { styled, Typography, Paper } from '@mui/material'
 import ReactPlayer from 'react-player'
 import { useState } from 'react'
-import theme, { darkOrange } from '../../src/theme'
+import theme, { bgGray } from '../../src/theme'
 import Thumbnail from './Thumbnail'
 
 const VideoPlayer = ({ videos, color }) => {
@@ -10,7 +10,7 @@ const VideoPlayer = ({ videos, color }) => {
   const VideoPlayerWrapper = styled(Paper)({
     padding: 16,
     width: '100%',
-    background: color ? color : darkOrange,
+    background: color ? color : bgGray,
   })
 
   return (

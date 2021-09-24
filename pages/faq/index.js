@@ -48,7 +48,7 @@ const FAQ = ({ faqData }) => {
                     onChange={handleChange(`panel${i + 1}`)}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                       <Anchor id={`panel${i + 1}`} />
-                      <Typography variant='h6' color='primary'>{`${i + 1}. ${
+                      <Typography variant='h6'>{`${i + 1}. ${
                         faq.question
                       }`}</Typography>
                     </AccordionSummary>

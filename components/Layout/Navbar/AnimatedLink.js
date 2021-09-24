@@ -87,6 +87,6 @@ const LinkWrap = styled('div')({
 const GradientBar = styled(a.div)({
   width: '100%',
   background: dadssGradient,
-  minHeight: 5,
-  marginTop: theme.spacing(1.9),
+  minHeight: 2,
+  marginTop: theme.spacing(2.4),
 })

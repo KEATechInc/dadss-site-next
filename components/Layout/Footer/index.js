@@ -8,6 +8,7 @@ import {
   Divider,
   Grid,
   Hidden,
+  Paper,
   styled,
   Typography,
 } from '@mui/material'
@@ -26,105 +27,106 @@ const Footer = () => {
   const combinedLinkData = [...linkData, ...footerLinkData]
 
   return (
-    <footer
-      style={{ background: bgOrange, borderTop: `2px solid ${darkOrange}` }}>
-      <FooterContainer>
-        <SocialWrapper>
-          <Typography variant='h5'>
-            <b>Follow Us On Social Media:</b>
-          </Typography>
-          <div>
-            <SocialButton link='https://www.facebook.com/DADSSTech'>
-              <RiFacebookCircleFill />
-            </SocialButton>
-            <SocialButton link='https://twitter.com/DADSSTech'>
-              <RiTwitterFill />
-            </SocialButton>
-            <SocialButton link='https://www.youtube.com/channel/UC5be5Eh_SVXbn6d6RI8BYtQ'>
-              <RiYoutubeFill />
-            </SocialButton>
-            <SocialButton link='https://www.linkedin.com/company/dadsstech/'>
-              <RiLinkedinFill />
-            </SocialButton>
-          </div>
-        </SocialWrapper>
+    <Paper elevation={4} style={{ background: bgOrange }}>
+      <footer>
+        <FooterContainer>
+          <SocialWrapper>
+            <Typography variant='h5'>
+              <b>Follow Us On Social Media:</b>
+            </Typography>
+            <div>
+              <SocialButton link='https://www.facebook.com/DADSSTech'>
+                <RiFacebookCircleFill />
+              </SocialButton>
+              <SocialButton link='https://twitter.com/DADSSTech'>
+                <RiTwitterFill />
+              </SocialButton>
+              <SocialButton link='https://www.youtube.com/channel/UC5be5Eh_SVXbn6d6RI8BYtQ'>
+                <RiYoutubeFill />
+              </SocialButton>
+              <SocialButton link='https://www.linkedin.com/company/dadsstech/'>
+                <RiLinkedinFill />
+              </SocialButton>
+            </div>
+          </SocialWrapper>
 
-        <FootBreak />
+          <FootBreak />
 
-        <Grid container spacing={4}>
-          <Hidden mdDown>
-            <Grid item md={3}>
-              <Box mb={2} style={{ cursor: 'pointer' }}>
-                <Image
-                  src={logo}
-                  alt='DADSS Logo'
-                  height='65px'
-                  width='225px'
-                  objectFit='contain'
-                  onClick={() => router.push('/')}
-                />
-              </Box>
-              <Typography align='left' variant='body2'>
-                © 2021 Driver Alcohol Detection System for Safety (DADSS). All
-                rights reserved.
-              </Typography>
-            </Grid>
-          </Hidden>
+          <Grid container spacing={4}>
+            <Hidden mdDown>
+              <Grid item md={3}>
+                <Box mb={2} style={{ cursor: 'pointer' }}>
+                  <Image
+                    src={logo}
+                    alt='DADSS Logo'
+                    height='65px'
+                    width='225px'
+                    objectFit='contain'
+                    onClick={() => router.push('/')}
+                  />
+                </Box>
+                <Typography align='left' variant='body2'>
+                  © 2021 Driver Alcohol Detection System for Safety (DADSS). All
+                  rights reserved.
+                </Typography>
+              </Grid>
+            </Hidden>
 
-          <Grid item md={9}>
-            <LinkWrapper>
-              {combinedLinkData.map((link, i) => {
-                const { url, label, sublinks } = link
-                return (
-                  <LinkColumn key={i}>
-                    <Typography noWrap gutterBottom>
-                      <b>
-                        <Link href={url}>{label}</Link>
-                      </b>
-                    </Typography>
-                    {sublinks?.map((sublink, i) => {
-                      const { url, label } = sublink
-                      return (
-                        <Typography noWrap gutterBottom key={i}>
+            <Grid item md={9}>
+              <LinkWrapper>
+                {combinedLinkData.map((link, i) => {
+                  const { url, label, sublinks } = link
+                  return (
+                    <LinkColumn key={i}>
+                      <Typography noWrap gutterBottom>
+                        <b>
                           <Link href={url}>{label}</Link>
-                        </Typography>
-                      )
-                    })}
-                  </LinkColumn>
-                )
-              })}
-            </LinkWrapper>
-          </Grid>
-
-          {/* condition - mobile */}
-          <Hidden mdUp>
-            <Grid item xs={12}>
-              <Divider />
-              <Box
-                mt={2}
-                mb={2}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                }}>
-                <Image
-                  src={logo}
-                  alt='DADSS Logo'
-                  height='65px'
-                  width='225px'
-                  objectFit='contain'
-                  onClick={() => router.push('/')}
-                />
-              </Box>
-              <Typography align='center' variant='body2'>
-                © 2021 Driver Alcohol Detection System for Safety (DADSS). All
-                rights reserved.
-              </Typography>
+                        </b>
+                      </Typography>
+                      {sublinks?.map((sublink, i) => {
+                        const { url, label } = sublink
+                        return (
+                          <Typography noWrap gutterBottom key={i}>
+                            <Link href={url}>{label}</Link>
+                          </Typography>
+                        )
+                      })}
+                    </LinkColumn>
+                  )
+                })}
+              </LinkWrapper>
             </Grid>
-          </Hidden>
-        </Grid>
-      </FooterContainer>
-    </footer>
+
+            {/* condition - mobile */}
+            <Hidden mdUp>
+              <Grid item xs={12}>
+                <Divider />
+                <Box
+                  mt={2}
+                  mb={2}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }}>
+                  <Image
+                    src={logo}
+                    alt='DADSS Logo'
+                    height='65px'
+                    width='225px'
+                    objectFit='contain'
+                    onClick={() => router.push('/')}
+                  />
+                </Box>
+                <Typography align='center' variant='body2'>
+                  © 2021 Driver Alcohol Detection System for Safety (DADSS). All
+                  rights reserved.
+                </Typography>
+              </Grid>
+            </Hidden>
+          </Grid>
+        </FooterContainer>
+      </footer>
+    </Paper>
   )
 }
 

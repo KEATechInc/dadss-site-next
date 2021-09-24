@@ -1,15 +1,8 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import {
-  AppBar,
-  Container,
-  Hidden,
-  Toolbar,
-  styled,
-  Box,
-} from '@mui/material'
+import { AppBar, Container, Hidden, Toolbar, styled, Box } from '@mui/material'
 import Hamburger from 'hamburger-react'
-import theme, { dadssGradient, fontGray } from '../../../src/theme'
+import theme, { bgOrange, dadssGradient, fontGray } from '../../../src/theme'
 import { linkData } from '../../../src/linkData'
 import AnimatedLink from './AnimatedLink'
 import MobileMenu from './MobileMenu'
@@ -44,9 +37,9 @@ const Navbar = () => {
           justifyContent: 'space-between',
           minHeight: 64,
         }}>
-        
         {/* clickable logo */}
-        <Box style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+        <Box
+          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
           <Image
             src={logo1}
             alt='DADSS Logo'
@@ -73,13 +66,13 @@ const Navbar = () => {
 
       <MobileMenu isOpen={isOpen} setOpen={setOpen} />
     </AppBar>
-  );
+  )
 }
 
 export default Navbar
 
 const GradientBar = styled('div')({
-  height: 3,
-  background: dadssGradient,
+  height: 2,
+  background: bgOrange,
   width: '100%',
 })
