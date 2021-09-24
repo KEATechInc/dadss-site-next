@@ -76,8 +76,8 @@ const Footer = () => {
               {combinedLinkData.map((link, i) => {
                 const { url, label, sublinks } = link
                 return (
-                  <LinkColumn>
-                    <Typography noWrap gutterBottom key={i}>
+                  <LinkColumn key={i}>
+                    <Typography noWrap gutterBottom>
                       <b>
                         <Link href={url}>{label}</Link>
                       </b>
