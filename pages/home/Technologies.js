@@ -1,6 +1,6 @@
 import ContentBlock from '../../components/Layout/ContentBlock'
 import { Typography, Button, styled, Grid } from '@mui/material'
-import theme, { darkOrange, bgOrange, fontGray } from '../../src/theme'
+import theme, { darkOrange, bgOrange, fontGray, bgGray } from '../../src/theme'
 import {useRouter} from 'next/router'
 
 const Breath = '/assets/logos/graphic-tech-breath.svg'
@@ -12,13 +12,14 @@ const Technologies = () => {
     <>
       {/* DADSS tech */}
       <ContentBlock
-        background={bgOrange}
-        borderTop={darkOrange}
-        borderBottom={darkOrange}
+        background={bgGray}
+        borderTop={fontGray}
+        borderBottom={fontGray}
         header={`Technologies We're Exploring`}
-        headerColor={fontGray}
+        headerColor={'#fff'}
+        fontColor={'#fff'}
         divider
-        dividerColor='white'>
+        dividerColor={bgOrange}>
         <Typography paragraph>
           The goal of the DADSS Research Program is to advance the state of
           alcohol detection technology by developing a system that is fast,
@@ -44,7 +45,7 @@ const Technologies = () => {
               </Typography>
             </div>
             <Button
-              color='secondary'
+              color='primary'
               variant='contained'
               onClick={() => router.push('/breath-technology')}>
               Overview
@@ -67,7 +68,7 @@ const Technologies = () => {
             </div>
 
             <Button
-              color='secondary'
+              color='primary'
               variant='contained'
               onClick={() => router.push('/touch-technology')}>
               Overview

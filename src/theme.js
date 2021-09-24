@@ -57,7 +57,6 @@ const theme = createTheme({
     h5: {
       textAlign: 'center',
     },
-    h6: {},
   },
   breakpoints: {
     values: {
@@ -76,8 +75,6 @@ const theme = createTheme({
         },
         a: {
           textDecoration: 'none',
-          fontWeight: 'bold',
-          color: darkOrange,
           '&:hover': {
             textDecoration: 'underline',
           },

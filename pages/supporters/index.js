@@ -41,7 +41,7 @@ const Supporters = () => {
             </Box>
           </Box>
 
-          <Box mb={3} mt={3}>
+          <Box mt={3}>
             <Typography
               variant='h5'
               color='primary'

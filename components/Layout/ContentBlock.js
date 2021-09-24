@@ -1,6 +1,6 @@
 import { Container, styled, Typography } from '@mui/material'
 import React from 'react'
-import theme from '../../src/theme'
+import theme, { darkOrange } from '../../src/theme'
 import Divider from './Divider'
 
 const ContentBlock = ({
@@ -23,8 +23,8 @@ const ContentBlock = ({
   const SectionWrapper = styled('section')({
     display: 'flex',
     background: background,
-    borderTop: borderTop ? `3px solid ${borderTop}` : null,
-    borderBottom: borderBottom ? `3px solid ${borderBottom}` : null,
+    borderTop: borderTop ? `2px solid ${borderTop}` : null,
+    borderBottom: borderBottom ? `2px solid ${borderBottom}` : null,
     width: '100%',
     height: fullHeight ? '100%' : null,
     position: sticky ? 'sticky' : null,
@@ -43,7 +43,8 @@ const ContentBlock = ({
     paddingRight: sidebar ? 0 : null,
     color: fontColor ? fontColor : theme.palette.text.primary,
     '& a': {
-      color: linkColor ? linkColor : null,
+      color: linkColor ? linkColor : darkOrange,
+      fontWeight: 'bold',
     },
   })
 

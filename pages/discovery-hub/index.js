@@ -201,10 +201,7 @@ export default function DiscoveryHub() {
         <section>
           <ContentBlock
             header='General Education Modules'
-            headerColor={theme.palette.text.secondary}
-            background={bgGray}
-            borderTop={fontGray}
-            borderBottom={fontGray}
+            borderTop={bgGray}
             divider>
             {eModules.length > 0 && (
               <Grid container spacing={2} justifyContent='center'>
@@ -238,7 +235,7 @@ export default function DiscoveryHub() {
               <>
                 <Typography
                   variant='h3'
-                  color='textSecondary'
+                  color='primary'
                   align='center'
                   gutterBottom
                   style={{ marginTop: theme.spacing(6) }}>
@@ -279,7 +276,7 @@ export default function DiscoveryHub() {
               <>
                 <Typography
                   variant='h3'
-                  color='textSecondary'
+                  color='primary'
                   gutterBottom
                   align='center'
                   style={{ marginTop: theme.spacing(6) }}>

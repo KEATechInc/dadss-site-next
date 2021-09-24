@@ -31,7 +31,7 @@ const Contact = () => {
             <Typography>
               You can also visit our{' '}
               <Link href='/faq'>Frequently Asked Questions</Link> and our{' '}
-              <Link href='/news-updates'>News and Updates</Link> pages. For
+              <Link href='/news'>News and Updates</Link> pages. For
               additional background on the program and resulting technologies,
               visit our <Link href='/resources'>Resources</Link> page.
             </Typography>

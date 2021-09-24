@@ -101,7 +101,7 @@ const Events = (props) => {
             )
           })}
 
-          <Box mt={2}>
+          <Box mt={4}>
             <Pagination
               color='primary'
               count={pageCount}

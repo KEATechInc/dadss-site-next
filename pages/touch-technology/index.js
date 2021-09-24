@@ -84,8 +84,8 @@ const TouchTech = () => {
         </ContentBlock>
 
         <ContentBlock
-          borderBottom={fontGray}
           borderTop={fontGray}
+          borderBottom={fontGray}
           fontColor='white'
           background={bgGray}>
           <Typography variant='h4' color='textSecondary' gutterBottom>

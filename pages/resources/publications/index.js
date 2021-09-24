@@ -101,12 +101,14 @@ const Publications = (props) => {
 
           {renderPosts()}
 
-          <Pagination
-            color='primary'
-            count={pageCount}
-            page={currentPage}
-            onChange={handleChange}
-          />
+          <Box mt={2}>
+            <Pagination
+              color='primary'
+              count={pageCount}
+              page={currentPage}
+              onChange={handleChange}
+            />
+          </Box>
         </ContentBlock>
       </main>
     </>

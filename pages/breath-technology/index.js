@@ -113,7 +113,7 @@ const BreathTech = () => {
           <Typography variant='h4' color='textSecondary' gutterBottom>
             About The Manufacturer
           </Typography>
-          <Typography>
+          <Typography paragraph>
             Senseair is an innovation-based sensor company and leading
             manufacturer of infrared carbon dioxide sensors and controllers. It
             is based in Sweden, with over 20 years’ experience in the field of

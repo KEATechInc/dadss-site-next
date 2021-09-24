@@ -48,6 +48,7 @@ export default function Home() {
             now available for open licensing in commercial vehicles.
           </Typography>
           <Button
+            style={{ color: '#fff', fontWeight: 400 }}
             variant='contained'
             color='secondary'
             href='https://www.actsautosafety.org/announcementpage?fbclid=IwAR1wAvDwsa5fIeB9RnkWAWfKIwCd7ykbCD5rwiaXThy-cpSnNcqC3Pzxm9I'
@@ -107,23 +108,23 @@ export default function Home() {
           <Image src={Car} alt='DADSS Logo' height={120} width={310} />
 
           <Typography paragraph>
-            The Driver Alcohol Detection System for Safety (DADSS) research
-            program brings together the{' '}
+            The Driver Alcohol Detection System for Safety (DADSS) Research
+            Program brings together the{' '}
             <b>Automotive Coalition for Traffic Safety (ACTS)</b>, which
             represents the world’s leading automakers, and the{' '}
-            <b>National Highway Traffic Safety Administration (NHTSA) </b>
-            in one of the most important government and private sector
-            partnerships in recent years. Public-private partnerships like DADSS
-            have led to innovations that enhance our everyday lives, such as the
-            internet, GPS and the microchip.
+            <b>National Highway Traffic Safety Administration (NHTSA)</b> in one
+            of the most important government and private sector partnerships in
+            transportation history. Public-private partnerships like DADSS have
+            led to innovations that enhance our everyday lives, such as the
+            Internet, GPS and the microchip.
           </Typography>
           <Typography paragraph>
             Congress and safety advocates nationwide are supporting the effort,
             making DADSS part of a multi-faceted national commitment to reduce
             and help eliminate drunk driving. The research and testing is being
-            overseen by a team of independent engineers and scientists, and will
-            be further tested under real-world operating conditions before it is
-            made available as a consumer option.
+            overseen by a team of independent engineers and scientists, and also
+            being tested under real-world operating conditions before it is made
+            available as a consumer option.
           </Typography>
 
           <div
