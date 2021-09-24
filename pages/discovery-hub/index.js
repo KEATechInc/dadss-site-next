@@ -65,7 +65,7 @@ export default function DiscoveryHub() {
               color='textSecondary'
               style={{
                 paddingTop: theme.spacing(3),
-                marginBottom: theme.spacing(2),
+                paddingBottom: theme.spacing(2),
               }}>
               Overview
             </Typography>
