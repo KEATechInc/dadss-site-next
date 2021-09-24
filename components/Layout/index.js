@@ -17,6 +17,6 @@ export default Layout
 
 const PageWrap = styled('div')({
   paddingTop: 65,
-  paddingBottom: theme.spacing(6),
+  paddingBottom: theme.spacing(4),
   minHeight: '65vh',
 })
