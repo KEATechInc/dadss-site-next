@@ -12,10 +12,9 @@ import {
   styled,
   Typography,
 } from '@mui/material'
-import theme, { bgOrange, darkOrange } from '../../../src/theme'
+import theme, { bgOrange } from '../../../src/theme'
 import SocialButton from './SocialButton'
-import { linkData } from '../../../src/linkData'
-import { footerLinkData } from '../../../src/footerLinkData'
+import { linkData, footerLinkData } from '../../../src/linkData'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Box } from '@mui/system'
@@ -24,7 +23,6 @@ const logo = '/assets/logos/dadss-logo-bw.svg'
 
 const Footer = () => {
   const router = useRouter()
-  const combinedLinkData = [...linkData, ...footerLinkData]
 
   return (
     <Paper elevation={4} style={{ background: bgOrange }}>
@@ -73,41 +71,55 @@ const Footer = () => {
             </Hidden>
 
             <Grid item md={9}>
-              <LinkWrapper>
-                {combinedLinkData.map((link, i) => {
-                  const { url, label, sublinks } = link
-                  return (
-                    <LinkColumn key={i}>
-                      <Typography noWrap gutterBottom>
-                        <b>
-                          <Link href={url}>{label}</Link>
-                        </b>
-                      </Typography>
-                      {sublinks?.map((sublink, i) => {
-                        const { url, label } = sublink
-                        return (
-                          <Typography noWrap gutterBottom key={i}>
-                            <Link href={url}>{label}</Link>
+              <Grid container>
+                <Grid item xs={12}>
+                  <LinkWrapper>
+                    {linkData.map((link, i) => {
+                      const { url, label, sublinks } = link
+                      return (
+                        <LinkColumn key={i}>
+                          <Typography noWrap gutterBottom>
+                            <b>
+                              <Link href={url}>{label}</Link>
+                            </b>
                           </Typography>
-                        )
-                      })}
-                    </LinkColumn>
-                  )
-                })}
-              </LinkWrapper>
+                          {sublinks?.map((sublink, i) => {
+                            const { url, label } = sublink
+                            return (
+                              <Typography noWrap gutterBottom key={i}>
+                                <Link href={url}>{label}</Link>
+                              </Typography>
+                            )
+                          })}
+                        </LinkColumn>
+                      )
+                    })}
+                  </LinkWrapper>
+                </Grid>
+                <Grid item xs={12}>
+                  <LinkWrapper>
+                    {footerLinkData.map((link, i) => {
+                      const { url, label } = link
+                      return (
+                        <LinkColumn key={i}>
+                          <Typography noWrap gutterBottom>
+                            <b>
+                              <Link href={url}>{label}</Link>
+                            </b>
+                          </Typography>
+                        </LinkColumn>
+                      )
+                    })}
+                  </LinkWrapper>
+                </Grid>
+              </Grid>
             </Grid>
 
             {/* condition - mobile */}
             <Hidden mdUp>
               <Grid item xs={12}>
                 <Divider />
-                <Box
-                  mt={2}
-                  mb={2}
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                  }}>
+                <Box mt={3} mb={2}>
                   <Image
                     src={logo}
                     alt='DADSS Logo'

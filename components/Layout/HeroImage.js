@@ -1,7 +1,6 @@
 import { Container, styled, Typography } from '@mui/material'
-import theme, { fontGray, transDarkOrange } from '../../src/theme'
+import theme, { bgOrange } from '../../src/theme'
 import Image from 'next/image'
-import { rgba } from '@react-spring/shared'
 
 const HeroImage = ({
   image,
@@ -14,7 +13,7 @@ const HeroImage = ({
     position: 'relative',
     height: extended ? 425 : 300,
     width: '100%',
-    borderBottom: `3px solid ${fontGray}`,
+    borderBottom: `2px solid ${bgOrange}`,
   })
   const ChildContainer = styled(Container)({
     position: 'absolute',

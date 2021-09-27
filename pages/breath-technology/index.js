@@ -106,8 +106,8 @@ const BreathTech = () => {
         </ContentBlock>
 
         <ContentBlock
-          borderTop={fontGray}
-          borderBottom={fontGray}
+          borderTop={bgOrange}
+          borderBottom={bgOrange}
           background={bgGray}
           fontColor='white'>
           <Typography variant='h4' color='textSecondary' gutterBottom>

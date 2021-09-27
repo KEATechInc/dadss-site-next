@@ -2,14 +2,8 @@ import Head from 'next/head'
 import Divider from '../../components/Layout/Divider'
 import VideoPlayer from '../../components/VideoPlayer'
 import HeroImage from '../../components/Layout/HeroImage'
-import { Box, Typography, Grid, Container, Button } from '@mui/material'
-import theme, {
-  bgGray,
-  dadssGradient,
-  fontGray,
-  transDarkOrange,
-  transDtpBlue,
-} from '../../src/theme'
+import { Box, Typography, Grid, Button } from '@mui/material'
+import theme, { bgGray, transDarkOrange, transDtpBlue } from '../../src/theme'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import Thumb from '../../components/Layout/Thumb'
 
@@ -33,7 +27,6 @@ export default function DiscoveryHub() {
     <>
       <Head>
         <title>DADSS | Discovery Hub</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta name='description' content={description} />
       </Head>
 

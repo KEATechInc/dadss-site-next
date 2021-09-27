@@ -16,7 +16,6 @@ const Divider = ({ color, size }) => {
       background: color ? color : bgOrange,
       border: color ? `1.5px solid ${color}` : `1.5px solid ${bgOrange}`,
       borderRadius: 10,
-      boxShadow: theme.shadows[1],
     },
   })
 
@@ -27,7 +26,6 @@ const Divider = ({ color, size }) => {
     borderRadius: 50,
     background: color ? color : bgOrange,
     margin: '0px 15px',
-    boxShadow: theme.shadows[1],
     '&.White': {
       background: 'white',
     },

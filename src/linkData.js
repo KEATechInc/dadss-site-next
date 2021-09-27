@@ -48,3 +48,19 @@ export const linkData = [
     url: '/discovery-hub',
   },
 ]
+
+// links exclusive to the footer
+export const footerLinkData = [
+  {
+    label: 'Terms And Conditions',
+    url: '/terms',
+  },
+  {
+    label: 'Contact Us',
+    url: '/contact',
+  },
+  {
+    label: 'FAQ',
+    url: '/faq',
+  },
+]

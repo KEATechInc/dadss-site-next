@@ -38,9 +38,9 @@ const ContentBlock = ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: noPadding ? 0 : sidebar ? 0 : theme.spacing(4),
-    paddingBottom: noPadding ? 0 : theme.spacing(4),
-    paddingRight: sidebar ? 0 : null,
+    paddingTop: noPadding ? 0 : sidebar ? 0 : theme.spacing(6),
+    paddingBottom: noPadding ? 0 : theme.spacing(6),
+    paddingRight: `${sidebar ? 0 : null} !important`,
     color: fontColor ? fontColor : theme.palette.text.primary,
     '& a': {
       color: linkColor ? linkColor : darkOrange,

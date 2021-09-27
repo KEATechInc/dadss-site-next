@@ -13,8 +13,8 @@ const Technologies = () => {
       {/* DADSS tech */}
       <ContentBlock
         background={bgGray}
-        borderTop={fontGray}
-        borderBottom={fontGray}
+        borderTop={bgOrange}
+        borderBottom={bgOrange}
         header={`Technologies We're Exploring`}
         headerColor={'#fff'}
         fontColor={'#fff'}

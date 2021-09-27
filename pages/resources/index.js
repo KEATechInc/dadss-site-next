@@ -21,9 +21,6 @@ import revalidate from '../../util/revalidate'
 
 const programPDF = '/assets/resources/pdf/DADSS Program Update.pdf'
 const programStats = '/assets/resources/pdf/DADSS_DigitalFlyer.pdf'
-const faqPDF = '/assets/resources/pdf/FAQ.pdf'
-const breathPDF = '/assets/breathBasedTech/pdf/DADSS_Breath-Based.pdf'
-const touchPDF = '/assets/touchBasedTech/pdf/DADSS_Touch-Based.pdf'
 const opinionPDF =
   '/assets/resources/pdf/DADSS_Public-Opinion-Research_091317_v1.pdf'
 const drivenPDF = '/assets/drivenToProtect/pdf/Driven-to-Protect-Overview.pdf'
