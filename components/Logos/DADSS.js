@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import theme from '../../src/theme'
-
-import logo from '../../public/assets/logos/dtpLogos/dadss-logo.webp'
+import logo from '../../public/assets/logos/dadss-logo.png'
 import { Box } from '@mui/material'
 
 const DADSS = () => {
@@ -12,7 +10,7 @@ const DADSS = () => {
         <Image
           src={logo}
           height={65}
-          width={220}
+          width={235}
           alt='DADSS Logo'
           objectFit='contain'
           priority={true}

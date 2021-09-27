@@ -79,7 +79,7 @@ const Resources = ({ posts }) => {
                 color='primary'
                 align='center'
                 gutterBottom
-                style={{ marginTop: 48 }}>
+                style={{ marginTop: 48, paddingBottom: 16 }}>
                 Resources
               </Typography>
               <Divider />

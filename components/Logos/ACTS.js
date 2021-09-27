@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import theme from '../../src/theme'
-import logo from '../../public/assets/logos/dadss-acts.webp'
+import logo from '../../public/assets/logos/dtpLogos/acts.png'
 
 const ACTS = () => {
   return (

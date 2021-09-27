@@ -49,7 +49,7 @@ const DTPMaryland = () => {
                 color='primary'
                 align='center'
                 gutterBottom
-                style={{ marginTop: 32, color: dtpBlue }}>
+                style={{ marginTop: 48, paddingBottom: 16, color: dtpBlue }}>
                 Maryland Joins The Partnership
               </Typography>
               <Divider />

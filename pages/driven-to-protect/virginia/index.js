@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -51,7 +50,7 @@ const DTPVirginia = () => {
                 color='primary'
                 align='center'
                 gutterBottom
-                style={{ marginTop: 32, color: dtpBlue }}>
+                style={{ marginTop: 48, paddingBottom: 16, color: dtpBlue }}>
                 Virginia: The First State Partnership
               </Typography>
               <Divider />
