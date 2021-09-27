@@ -36,7 +36,7 @@ const Fleets = () => {
                 color='primary'
                 align='center'
                 gutterBottom
-                style={{ marginTop: 32 }}>
+                style={{ marginTop: 48 }}>
                 Fleets
               </Typography>
               <Divider />
