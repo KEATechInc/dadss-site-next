@@ -2,13 +2,7 @@ import { Container, styled, Typography } from '@mui/material'
 import theme, { bgOrange } from '../../src/theme'
 import Image from 'next/image'
 
-const HeroImage = ({
-  image,
-  children,
-  extended,
-  darken,
-  bannerText,
-}) => {
+const HeroImage = ({ image, children, extended, darken, bannerText }) => {
   const HeroContainer = styled('div')({
     position: 'relative',
     height: extended ? 425 : 300,
@@ -54,6 +48,7 @@ const HeroImage = ({
         {image && (
           <Image
             src={image}
+            alt='Hero image'
             layout='fill'
             placeholder='blur'
             objectFit='cover'
@@ -77,6 +72,7 @@ const HeroImage = ({
       {image && (
         <Image
           src={image}
+          alt='Hero image'
           layout='fill'
           placeholder='blur'
           objectFit='cover'
