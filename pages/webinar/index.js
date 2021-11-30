@@ -64,8 +64,8 @@ const Webinar = ({ webinarInfo }) => {
         </ContentBlock> */}
 
         {/* panelist section */}
-        <ContentBlock>
-          <Grid container>
+        <ContentBlock noPadding>
+          <Grid container justifyContent='center'>
             <Grid item md={6} sx={{ mb: 3 }}>
               {webinarInfo.pageBuilder && (
                 <>
@@ -104,10 +104,11 @@ const Webinar = ({ webinarInfo }) => {
                 )
               })}
             </Grid>
+
             <Grid item md={6}>
               <iframe
                 src='https://docs.google.com/forms/d/e/1FAIpQLSfZhh67QvXM3jIEEfL3ETjp4rKmybhR7Jkr9hOjaG9eJObPwA/viewform?embedded=true'
-                width='640'
+                width='600'
                 height='1286'
                 frameborder='0'
                 marginheight='0'
@@ -115,6 +116,7 @@ const Webinar = ({ webinarInfo }) => {
                 Loading…
               </iframe>
             </Grid>
+
           </Grid>
         </ContentBlock>
         <ContentBlock>
