@@ -1,18 +1,16 @@
 import Head from 'next/head'
-import { formatDate } from '../../util/dateHandler'
 import { webinarQuery } from '../../lib/queries'
 import { sanityClient, PortableText, urlFor } from '../../lib/sanity'
 import HeroImage from '../../components/Layout/HeroImage'
 import ContentBlock from '../../components/Layout/ContentBlock'
-import theme, { bgOrange, dtpBlue, dtpLightBlue } from '../../src/theme'
+import theme, { bgOrange, dtpBlue } from '../../src/theme'
 import { Box, Typography, styled, Grid } from '@mui/material'
 import Divider from '../../components/Layout/Divider'
 import Image from 'next/image'
 
 import dtpLogo from '../../public/assets/logos/dtpLogos/VA-logo.webp'
 import revalidate from '../../util/revalidate'
-
-const heroBg = '/assets/drivenToProtect/GreyWash1.webp'
+import heroBg from '../../public/assets/drivenToProtect/GreyWash1.webp'
 
 const Webinar = ({ webinarInfo }) => {
   const description = `${webinarInfo.details[0].children[0].text}`
@@ -38,7 +36,7 @@ const Webinar = ({ webinarInfo }) => {
         </ContentBlock>
 
         {/* webinar call to action */}
-        <ContentBlock
+        {/* <ContentBlock
           background={dtpLightBlue}
           borderTop={dtpBlue}
           borderBottom={dtpBlue}
@@ -63,52 +61,70 @@ const Webinar = ({ webinarInfo }) => {
             </Typography>
             <PortableText blocks={webinarInfo.callToAction.howToRegister} />
           </CalloutBox>
-        </ContentBlock>
+        </ContentBlock> */}
 
         {/* panelist section */}
         <ContentBlock>
-          {webinarInfo.pageBuilder && (
-            <>
-              <Typography variant='h3' style={{ color: dtpBlue }}>
-                Meet The Expert Panelists
-              </Typography>
-              <Divider />
-            </>
-          )}
+          <Grid container>
+            <Grid item md={6} sx={{ mb: 3 }}>
+              {webinarInfo.pageBuilder && (
+                <>
+                  <Typography variant='h3' style={{ color: dtpBlue }}>
+                    Meet The Expert Panelists
+                  </Typography>
+                  <Divider size='small' />
+                </>
+              )}
 
-          {webinarInfo.pageBuilder.map((card, index) => {
-            return (
-              <Box mb={3} key={index}>
-                <PanelistCard
-                  container
-                  spacing={3}
-                  justifyContent='center'
-                  alignItems='center'>
-                  <Grid item sm={3}>
-                    <Image
-                      src={urlFor(card.panelistPortrait).url()}
-                      alt={card.panelistPortrait.alt}
-                      width={350}
-                      height={350}
-                    />
-                  </Grid>
-                  <Grid item sm={9}>
-                    <Typography
-                      component={PortableText}
-                      blocks={card.panelistDescription}
-                    />
-                  </Grid>
-                </PanelistCard>
-              </Box>
-            )
-          })}
+              {webinarInfo.pageBuilder.map((card, index) => {
+                return (
+                  <Box mb={3} key={index}>
+                    <PanelistCard
+                      container
+                      spacing={3}
+                      justifyContent='center'
+                      alignItems='center'>
+
+                      <Grid item sm={3}>
+                        <Image
+                          src={urlFor(card.panelistPortrait).url()}
+                          alt={card.panelistPortrait.alt}
+                          width={350}
+                          height={350}
+                        />
+                      </Grid>
+                      <Grid item sm={9}>
+                        <Typography
+                          component={PortableText}
+                          blocks={card.panelistDescription}
+                        />
+                      </Grid>
+                    </PanelistCard>
+                  </Box>
+                )
+              })}
+            </Grid>
+            <Grid item md={6}>
+              <iframe
+                src='https://docs.google.com/forms/d/e/1FAIpQLSfZhh67QvXM3jIEEfL3ETjp4rKmybhR7Jkr9hOjaG9eJObPwA/viewform?embedded=true'
+                width='640'
+                height='1286'
+                frameborder='0'
+                marginheight='0'
+                marginwidth='0'>
+                Loading…
+              </iframe>
+            </Grid>
+          </Grid>
         </ContentBlock>
         <ContentBlock>
           <Divider />
           <Typography align='center'>
-            Driven to Protect is a public-private partnership between the Driver
-            Alcohol Detection System for Safety (DADSS) Program and the Virginia
-            Department of Motor Vehicles.
+            <b>
+              Driven to Protect is a public-private partnership between the
+              Driver Alcohol Detection System for Safety (DADSS) Program and the
+              Virginia Department of Motor Vehicles.
+            </b>
           </Typography>
           <Divider />
         </ContentBlock>
@@ -132,7 +148,7 @@ const CalloutBox = styled(Box)({
 const PanelistCard = styled(Grid)({
   fontSize: 16,
   '& img': {
-    height: 250,
+    height: 150,
     width: '100%',
     objectFit: 'cover',
     boxShadow: theme.shadows[1],
