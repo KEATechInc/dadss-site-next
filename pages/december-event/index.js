@@ -3,7 +3,7 @@ import { webinarQuery } from '../../lib/queries'
 import { sanityClient, PortableText, urlFor } from '../../lib/sanity'
 import HeroImage from '../../components/Layout/HeroImage'
 import ContentBlock from '../../components/Layout/ContentBlock'
-import theme, { bgOrange, dtpBlue } from '../../src/theme'
+import theme, { bgOrange, dadssGradient, dtpBlue } from '../../src/theme'
 import { Box, Typography, styled, Grid } from '@mui/material'
 import Divider from '../../components/Layout/Divider'
 import Image from 'next/image'
@@ -65,8 +65,8 @@ const Webinar = ({ webinarInfo }) => {
 
         {/* panelist section */}
         <ContentBlock noPadding>
-          <Grid container justifyContent='center'>
-            <Grid item md={6} sx={{ mb: 3 }}>
+          <Grid container justifyContent='space-between' spacing={3}>
+            <Grid item md={8} sx={{ mb: 3 }}>
               {webinarInfo.pageBuilder && (
                 <>
                   <Typography variant='h3' style={{ color: dtpBlue }}>
@@ -75,7 +75,6 @@ const Webinar = ({ webinarInfo }) => {
                   <Divider size='small' />
                 </>
               )}
-
               {webinarInfo.pageBuilder.map((card, index) => {
                 return (
                   <Box mb={3} key={index}>
@@ -84,7 +83,6 @@ const Webinar = ({ webinarInfo }) => {
                       spacing={3}
                       justifyContent='center'
                       alignItems='center'>
-
                       <Grid item sm={3}>
                         <Image
                           src={urlFor(card.panelistPortrait).url()}
@@ -105,18 +103,17 @@ const Webinar = ({ webinarInfo }) => {
               })}
             </Grid>
 
-            <Grid item md={6}>
+            <Grid item md={4} container justifyContent='center'>
               <iframe
                 src='https://docs.google.com/forms/d/e/1FAIpQLSfZhh67QvXM3jIEEfL3ETjp4rKmybhR7Jkr9hOjaG9eJObPwA/viewform?embedded=true'
-                width='600'
-                height='1286'
+                width='400'
+                height='1425'
                 frameBorder='0'
                 marginHeight='0'
                 marginWidth='0'>
                 Loading…
               </iframe>
             </Grid>
-
           </Grid>
         </ContentBlock>
         <ContentBlock>
@@ -154,6 +151,7 @@ const PanelistCard = styled(Grid)({
     width: '100%',
     objectFit: 'cover',
     boxShadow: theme.shadows[1],
+    background: dadssGradient,
   },
 })
 
