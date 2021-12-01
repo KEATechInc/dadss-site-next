@@ -71,7 +71,7 @@ const Webinar = ({ webinarData }) => {
                 {pageBuilder && (
                   <>
                     <Typography variant='h3' style={{ color: dtpBlue }}>
-                      Meet The Expert Panelists
+                      Event Speakers
                     </Typography>
                     <Divider size='small' />
                   </>
