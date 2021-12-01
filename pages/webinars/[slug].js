@@ -17,7 +17,7 @@ const Webinar = ({ webinarData }) => {
     const description = `${details[0].children[0].text}`
     const Header = (
       <Head>
-        <title>DADSS | Webinar</title>
+        <title>DADSS | {title}</title>
         <meta name='description' content={description} />
       </Head>
     )
@@ -39,10 +39,35 @@ const Webinar = ({ webinarData }) => {
             <Typography component={PortableText} blocks={details} />
           </ContentBlock>
 
-          {/* panelist section */}
           <ContentBlock noPadding>
-            <Grid container justifyContent='space-between' spacing={3}>
-              <Grid item md={8} sx={{ mb: 3 }}>
+            {/* grid start */}
+            <Grid
+              container
+              justifyContent='space-between'
+              direction='row-reverse'
+              spacing={3}>
+              {/* google form section */}
+              {embedZone.src && (
+                <Grid
+                  item
+                  md={4}
+                  container
+                  justifyContent='center'
+                  sx={{ mb: 3 }}>
+                  <iframe
+                    src={embedZone.src}
+                    width='640'
+                    height='1000'
+                    frameBorder='0'
+                    marginHeight='0'
+                    marginWidth='0'>
+                    Loading…
+                  </iframe>
+                </Grid>
+              )}
+
+              {/* panelists section*/}
+              <Grid item md={embedZone.src ? 8 : 12} sx={{ mb: 3 }}>
                 {pageBuilder && (
                   <>
                     <Typography variant='h3' style={{ color: dtpBlue }}>
@@ -79,21 +104,9 @@ const Webinar = ({ webinarData }) => {
                   )
                 })}
               </Grid>
-
-              <Grid item md={4} container justifyContent='center'>
-                <iframe
-                  src={embedZone.src}
-                  width='640'
-                  height='1100'
-                  frameBorder='0'
-                  marginHeight='0'
-                  marginWidth='0'>
-                  Loading…
-                </iframe>
-              </Grid>
             </Grid>
           </ContentBlock>
-          <ContentBlock>
+          <ContentBlock noPadding>
             <Divider />
             <Typography align='center'>
               <b>
