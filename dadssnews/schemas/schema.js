@@ -6,15 +6,15 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 import blockContent from './blockContent'
-
 import post from './post'
 import event from './event'
 import faq from './faq'
 import publication from './publication'
 import eventDTPVA from './eventDTPVA'
 import webinar from './webinar'
-import panelistCard from './pageBuilderSchemas/panelistCard'
-import youtube from './youtube'
+import panelistCard from './pageBuilderComponents/panelistCard'
+import youtube from './inserts/youtube'
+import iframe from './inserts/iframe'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,7 +32,10 @@ export default createSchema({
     publication,
     blockContent,
     webinar,
+    // page builder components
     panelistCard,
+    // inserts
     youtube,
+    iframe,
   ]),
 })

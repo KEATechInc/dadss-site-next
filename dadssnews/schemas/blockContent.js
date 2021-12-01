@@ -88,5 +88,10 @@ export default {
       name: 'youtube',
       title: 'Youtube Video Embed',
     },
+    {
+      type: 'iframe',
+      name: 'iframe',
+      title: 'Iframe Embed'
+    }
   ],
 }
