@@ -80,17 +80,13 @@ const Webinar = ({ webinarData }) => {
                   const { panelistPortrait, panelistDescription } = card
                   return (
                     <Box mb={3} key={index}>
-                      <PanelistCard
-                        container
-                        spacing={3}
-                        justifyContent='center'
-                        alignItems='center'>
-                        <Grid item sm={3}>
+                      <PanelistCard container spacing={3} alignItems='center'>
+                        <Grid item sm={3} container justifyContent='center'>
                           <Image
                             src={urlFor(panelistPortrait).url()}
                             alt={panelistPortrait.alt}
-                            width={350}
-                            height={350}
+                            width={720}
+                            height={1080}
                           />
                         </Grid>
                         <Grid item sm={9}>
@@ -128,8 +124,11 @@ export default Webinar
 
 const PanelistCard = styled(Grid)({
   fontSize: 16,
+  '& p': {
+    marginTop: 0,
+  },
   '& img': {
-    height: 150,
+    height: 200,
     width: '100%',
     objectFit: 'cover',
     boxShadow: theme.shadows[1],
