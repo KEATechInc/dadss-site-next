@@ -19,18 +19,19 @@ import heroBg from '../../public/assets/drivenToProtect/GreyWash1.webp'
 
 const Webinar = ({ data, preview }) => {
   const router = useRouter()
-  if (!router.isFallback && !data.webinarData?.slug) {
-    return null
-  }
-  if (!data?.webinarData) {
-    return null
-  }
 
   const { data: webinarData } = usePreviewSubscription(webinarQuery, {
     params: { slug: data?.webinarData?.slug },
     initialData: data?.webinarData,
     enabled: preview && data?.webinarData?.slug,
   })
+
+  if (!router.isFallback && !data.webinarData?.slug) {
+    return null
+  }
+  if (!data?.webinarData) {
+    return null
+  }
 
   const { details, title, pageBuilder, embedZone } = webinarData
   const description = `${details[0].children[0].text}`
