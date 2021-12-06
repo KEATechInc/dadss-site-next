@@ -1,11 +1,13 @@
 import Head from 'next/head'
-import { webinarQuery, webinarSlugsQuery } from '../../lib/queries'
+import { webinarSlugsQuery } from '../../lib/queries'
 import {
   PortableText,
   urlFor,
   usePreviewSubscription,
   getClient,
+  filterDataToSingleItem,
 } from '../../lib/sanity'
+import { groq } from 'next-sanity'
 import HeroImage from '../../components/Layout/HeroImage'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import theme, { dadssGradient, dtpBlue } from '../../src/theme'
@@ -20,31 +22,28 @@ import heroBg from '../../public/assets/drivenToProtect/GreyWash1.webp'
 const Webinar = ({ data, preview }) => {
   const router = useRouter()
 
-  const { data: webinarData } = usePreviewSubscription(webinarQuery, {
-    params: { slug: data?.webinarData?.slug },
-    initialData: data?.webinarData,
-    enabled: preview && data?.webinarData?.slug,
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    initialData: data?.page,
+    enabled: preview,
   })
 
-  if (!router.isFallback && !data.webinarData?.slug) {
-    return null
-  }
-  if (!data?.webinarData) {
+  // Client-side uses the same query, so we may need to filter it down again
+  const page = filterDataToSingleItem(previewData, preview)
+
+  if (!page || router.isFallback) {
     return null
   }
 
-  const { details, title, pageBuilder, embedZone } = webinarData
-  const description = `${details[0].children[0].text}`
-  const Header = (
-    <Head>
-      <title>DADSS | {title}</title>
-      <meta name='description' content={description} />
-    </Head>
-  )
+  const { details, title, pageBuilder, embedZone } = page
+  const description = details ? details[0].children[0].text : ''
 
   return (
     <>
-      {Header}
+      <Head>
+        <title>DADSS | {title}</title>
+        <meta name='description' content={description} />
+      </Head>
       <main>
         <HeroImage image={heroBg} darken>
           <Image src={dtpLogo} alt='DTP Logo' objectFit='contain' />
@@ -67,7 +66,7 @@ const Webinar = ({ data, preview }) => {
             direction='row-reverse'
             spacing={3}>
             {/* google form section */}
-            {embedZone.src && (
+            {embedZone?.src && (
               <Grid
                 item
                 md={4}
@@ -87,7 +86,7 @@ const Webinar = ({ data, preview }) => {
             )}
 
             {/* panelists section*/}
-            <Grid item md={embedZone.src ? 8 : 12} sx={{ mb: 3 }}>
+            <Grid item md={embedZone?.src ? 8 : 12} sx={{ mb: 3 }}>
               {pageBuilder && (
                 <>
                   <Typography variant='h3' style={{ color: dtpBlue }}>
@@ -96,7 +95,7 @@ const Webinar = ({ data, preview }) => {
                   <Divider size='small' />
                 </>
               )}
-              {pageBuilder.map((card, index) => {
+              {pageBuilder?.map((card, index) => {
                 const { panelistPortrait, panelistDescription } = card
                 return (
                   <Box mb={3} key={index}>
@@ -157,14 +156,20 @@ const PanelistCard = styled(Grid)({
 
 // prerender
 export const getStaticProps = async ({ params, preview = false }) => {
-  const webinarData = await getClient(preview).fetch(webinarQuery, {
-    slug: params.slug,
-  })
-  if (!webinarData) return { notFound: true }
+  const query = groq`*[_type == "webinar" && slug.current == $slug]`
+  const queryParams = { slug: params.slug }
+  const previewData = await getClient(preview).fetch(query, queryParams)
+
+  // Escape hatch, if the query failed to return data
+  if (!previewData) return { notFound: true }
+
+  // Helper function to reduce all returned documents down to just one
+  const page = filterDataToSingleItem(previewData, preview)
+
   return {
     props: {
       preview,
-      data: { webinarData },
+      data: { page, query, queryParams },
     },
   }
 }

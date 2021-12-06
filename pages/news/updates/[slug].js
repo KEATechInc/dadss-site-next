@@ -1,56 +1,78 @@
 import Head from 'next/head'
-import { sanityClient, PortableText } from '../../../lib/sanity'
-import { postSlugsQuery, postQuery } from '../../../lib/queries'
+import {
+  PortableText,
+  getClient,
+  filterDataToSingleItem,
+  usePreviewSubscription,
+} from '../../../lib/sanity'
+import { postSlugsQuery } from '../../../lib/queries'
+import { groq } from 'next-sanity'
+import { useRouter } from 'next/router'
 import Divider from '../../../components/Layout/Divider'
 import { Typography } from '@mui/material'
 import { newsQuery } from '../../../lib/queries'
 import GetMoreContent from '../../../components/Layout/news/GetMoreContent'
 import ContentBlock from '../../../components/Layout/ContentBlock'
 
-const SinglePost = ({ post, linkData, titleData }) => {
-  if (post) {
-    const { title, preview, body } = post
-    const postPosition = titleData.indexOf(title)
+const SinglePost = ({ data, preview }) => {
+  const router = useRouter()
+  const { titleData, linkData } = data
 
-    return (
-      <>
-        <Head>
-          <title>{`DADSS | ${title}`}</title>
-          <meta name='description' content={preview[0].children[0].text} />
-        </Head>
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    initialData: data?.page,
+    enabled: preview,
+  })
 
-        <ContentBlock header={title}>
-          <Divider />
-          <div style={{ width: '-webkit-fill-available' }}>
-            <Typography component={PortableText} blocks={body} />
-            <GetMoreContent
-              postLinks={linkData}
-              postTitles={titleData}
-              currentPost={postPosition}
-            />
-          </div>
-        </ContentBlock>
-      </>
-    )
+  // Client-side uses the same query, so we may need to filter it down again
+  const page = filterDataToSingleItem(previewData, preview)
+
+  if (!page || router.isFallback) {
+    return null
   }
 
-  return null
+  const { title, body } = page
+  const description = page.preview ? page.preview[0].children[0].text : ''
+  const postPosition = titleData.indexOf(title)
+
+  return (
+    <>
+      <Head>
+        <title>{`DADSS | ${title}`}</title>
+        <meta name='description' content={description} />
+      </Head>
+
+      <ContentBlock header={title}>
+        <Divider />
+        <div style={{ width: '-webkit-fill-available' }}>
+          <Typography component={PortableText} blocks={body} />
+          <GetMoreContent
+            postLinks={linkData}
+            postTitles={titleData}
+            currentPost={postPosition}
+          />
+        </div>
+      </ContentBlock>
+    </>
+  )
 }
 
 export default SinglePost
 
-export const getStaticPaths = async () => {
-  const paths = await sanityClient.fetch(postSlugsQuery)
-  return {
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: false,
-  }
-}
+// Prerender data
+export const getStaticProps = async ({ params, preview = false }) => {
+  const query = groq`*[_type == "post" && slug.current == $slug]`
+  const queryParams = { slug: params.slug }
+  const previewData = await getClient(preview).fetch(query, queryParams)
 
-export const getStaticProps = async ({ params }) => {
-  const post = await sanityClient.fetch(postQuery, { slug: params.slug })
-  const allPosts = await sanityClient.fetch(newsQuery)
+  // Escape hatch, if the query failed to return data
+  if (!previewData) return { notFound: true }
 
+  // Helper function to reduce all returned documents down to just one
+  const page = filterDataToSingleItem(previewData, preview)
+
+  // Get title and link data for content recommendations
+  const allPosts = await getClient().fetch(newsQuery)
   const titleData = allPosts.map((entry) => entry.title)
   const linkData = allPosts.map((entry) => {
     const { slug, url } = entry
@@ -60,14 +82,18 @@ export const getStaticProps = async ({ params }) => {
     }
   })
 
-  const notFound = Object.keys(post).length === 0 ? true : false
-
   return {
     props: {
-      post,
-      titleData,
-      linkData,
+      preview,
+      data: { page, query, queryParams, titleData, linkData },
     },
-    notFound,
+  }
+}
+
+export const getStaticPaths = async () => {
+  const paths = await getClient().fetch(postSlugsQuery)
+  return {
+    paths: paths.map((slug) => ({ params: { slug } })),
+    fallback: true,
   }
 }
