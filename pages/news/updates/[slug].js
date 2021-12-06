@@ -16,7 +16,6 @@ import ContentBlock from '../../../components/Layout/ContentBlock'
 
 const SinglePost = ({ data, preview }) => {
   const router = useRouter()
-  const { titleData, linkData } = data
 
   const { data: previewData } = usePreviewSubscription(data?.query, {
     params: data?.queryParams ?? {},
@@ -33,7 +32,7 @@ const SinglePost = ({ data, preview }) => {
 
   const { title, body } = page
   const description = page.preview ? page.preview[0].children[0].text : ''
-  const postPosition = titleData.indexOf(title)
+  const postPosition = data?.titleData.indexOf(title)
 
   return (
     <>
@@ -47,8 +46,8 @@ const SinglePost = ({ data, preview }) => {
         <div style={{ width: '-webkit-fill-available' }}>
           <Typography component={PortableText} blocks={body} />
           <GetMoreContent
-            postLinks={linkData}
-            postTitles={titleData}
+            postLinks={data?.linkData}
+            postTitles={data?.titleData}
             currentPost={postPosition}
           />
         </div>
