@@ -18,13 +18,13 @@ import dtpLogo from '../../public/assets/logos/dtpLogos/VA-logo.webp'
 import heroBg from '../../public/assets/drivenToProtect/GreyWash1.webp'
 
 const Webinar = ({ data, preview }) => {
+  const { data: webinarData } = usePreviewSubscription(webinarQuery, {
+    params: { slug: data.webinarData?.slug },
+    initialData: data.webinarData,
+    enabled: preview && data.webinarData?.slug,
+  })
+  
   if (data) {
-    const { data: webinarData } = usePreviewSubscription(webinarQuery, {
-      params: { slug: data.webinarData?.slug },
-      initialData: data.webinarData,
-      enabled: preview && data.webinarData?.slug,
-    })
-
     const { details, title, pageBuilder, embedZone } = webinarData
     const description = `${details[0].children[0].text}`
     const Header = (
