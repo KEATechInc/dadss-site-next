@@ -24,112 +24,109 @@ const Webinar = ({ data, preview }) => {
     enabled: preview && data.webinarData?.slug,
   })
 
-  if (data) {
-    const { details, title, pageBuilder, embedZone } = data.webinarData
-    const description = `${details[0].children[0].text}`
-    const Header = (
-      <Head>
-        <title>DADSS | {title}</title>
-        <meta name='description' content={description} />
-      </Head>
-    )
+  const { details, title, pageBuilder, embedZone } = webinarData
+  const description = `${details[0].children[0].text}`
+  const Header = (
+    <Head>
+      <title>DADSS | {title}</title>
+      <meta name='description' content={description} />
+    </Head>
+  )
 
-    return (
-      <>
-        {Header}
-        <main>
-          <HeroImage image={heroBg} darken>
-            <Image src={dtpLogo} alt='DTP Logo' objectFit='contain' />
-          </HeroImage>
+  return (
+    <>
+      {Header}
+      <main>
+        <HeroImage image={heroBg} darken>
+          <Image src={dtpLogo} alt='DTP Logo' objectFit='contain' />
+        </HeroImage>
 
-          {/* webinar intro */}
-          <ContentBlock
-            header={title}
-            headerColor={dtpBlue}
-            linkColor={dtpBlue}
-            divider>
-            <Typography component={PortableText} blocks={details} />
-          </ContentBlock>
+        {/* webinar intro */}
+        <ContentBlock
+          header={title}
+          headerColor={dtpBlue}
+          linkColor={dtpBlue}
+          divider>
+          <Typography component={PortableText} blocks={details} />
+        </ContentBlock>
 
-          <ContentBlock noPadding>
-            {/* grid start */}
-            <Grid
-              container
-              justifyContent='space-between'
-              direction='row-reverse'
-              spacing={3}>
-              {/* google form section */}
-              {embedZone.src && (
-                <Grid
-                  item
-                  md={4}
-                  container
-                  justifyContent='center'
-                  sx={{ mb: 3 }}>
-                  <iframe
-                    src={embedZone.src}
-                    width='640'
-                    height='1000'
-                    frameBorder='0'
-                    marginHeight='0'
-                    marginWidth='0'>
-                    Loading…
-                  </iframe>
-                </Grid>
-              )}
-
-              {/* panelists section*/}
-              <Grid item md={embedZone.src ? 8 : 12} sx={{ mb: 3 }}>
-                {pageBuilder && (
-                  <>
-                    <Typography variant='h3' style={{ color: dtpBlue }}>
-                      Event Speakers
-                    </Typography>
-                    <Divider size='small' />
-                  </>
-                )}
-                {pageBuilder.map((card, index) => {
-                  const { panelistPortrait, panelistDescription } = card
-                  return (
-                    <Box mb={3} key={index}>
-                      <PanelistCard container spacing={3} alignItems='center'>
-                        <Grid item sm={3} container justifyContent='center'>
-                          <Image
-                            src={urlFor(panelistPortrait).url()}
-                            alt={panelistPortrait.alt}
-                            width={720}
-                            height={1080}
-                          />
-                        </Grid>
-                        <Grid item sm={9}>
-                          <Typography
-                            component={PortableText}
-                            blocks={panelistDescription}
-                          />
-                        </Grid>
-                      </PanelistCard>
-                    </Box>
-                  )
-                })}
+        <ContentBlock noPadding>
+          {/* grid start */}
+          <Grid
+            container
+            justifyContent='space-between'
+            direction='row-reverse'
+            spacing={3}>
+            {/* google form section */}
+            {embedZone.src && (
+              <Grid
+                item
+                md={4}
+                container
+                justifyContent='center'
+                sx={{ mb: 3 }}>
+                <iframe
+                  src={embedZone.src}
+                  width='640'
+                  height='1000'
+                  frameBorder='0'
+                  marginHeight='0'
+                  marginWidth='0'>
+                  Loading…
+                </iframe>
               </Grid>
+            )}
+
+            {/* panelists section*/}
+            <Grid item md={embedZone.src ? 8 : 12} sx={{ mb: 3 }}>
+              {pageBuilder && (
+                <>
+                  <Typography variant='h3' style={{ color: dtpBlue }}>
+                    Event Speakers
+                  </Typography>
+                  <Divider size='small' />
+                </>
+              )}
+              {pageBuilder.map((card, index) => {
+                const { panelistPortrait, panelistDescription } = card
+                return (
+                  <Box mb={3} key={index}>
+                    <PanelistCard container spacing={3} alignItems='center'>
+                      <Grid item sm={3} container justifyContent='center'>
+                        <Image
+                          src={urlFor(panelistPortrait).url()}
+                          alt={panelistPortrait.alt}
+                          width={720}
+                          height={1080}
+                        />
+                      </Grid>
+                      <Grid item sm={9}>
+                        <Typography
+                          component={PortableText}
+                          blocks={panelistDescription}
+                        />
+                      </Grid>
+                    </PanelistCard>
+                  </Box>
+                )
+              })}
             </Grid>
-          </ContentBlock>
-          <ContentBlock noPadding>
-            <Divider />
-            <Typography align='center'>
-              <b>
-                Driven to Protect is a public-private partnership between the
-                Driver Alcohol Detection System for Safety (DADSS) Program and
-                the Virginia Department of Motor Vehicles.
-              </b>
-            </Typography>
-            <Divider />
-          </ContentBlock>
-        </main>
-      </>
-    )
-  }
-  return null
+          </Grid>
+        </ContentBlock>
+        <ContentBlock noPadding>
+          <Divider />
+          <Typography align='center'>
+            <b>
+              Driven to Protect is a public-private partnership between the
+              Driver Alcohol Detection System for Safety (DADSS) Program and the
+              Virginia Department of Motor Vehicles.
+            </b>
+          </Typography>
+          <Divider />
+        </ContentBlock>
+      </main>
+    </>
+  )
 }
 
 export default Webinar
@@ -154,7 +151,7 @@ export const getStaticPaths = async () => {
   const paths = await sanityClient.fetch(webinarSlugsQuery)
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   }
 }
 
