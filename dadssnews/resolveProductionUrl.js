@@ -14,13 +14,15 @@ export default function resolveProductionUrl(doc) {
       `slug`,
       `webinars/${doc?.slug?.current}` ?? `/`
     )
+    return previewUrl.toString()
   }
   if (doc._type === 'post') {
     previewUrl.searchParams.append(
       `slug`,
       `news/updates/${doc?.slug?.current}` ?? `/`
     )
+    return previewUrl.toString()
   }
 
-  return previewUrl.toString()
+  return null
 }
