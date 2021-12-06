@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { webinarQuery, webinarSlugsQuery } from '../../lib/queries'
 import {
-  sanityClient,
   PortableText,
   urlFor,
   usePreviewSubscription,
@@ -13,15 +12,24 @@ import theme, { dadssGradient, dtpBlue } from '../../src/theme'
 import { Box, Typography, styled, Grid } from '@mui/material'
 import Divider from '../../components/Layout/Divider'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import dtpLogo from '../../public/assets/logos/dtpLogos/VA-logo.webp'
 import heroBg from '../../public/assets/drivenToProtect/GreyWash1.webp'
 
 const Webinar = ({ data, preview }) => {
+  const router = useRouter()
+  if (!router.isFallback && !data.webinarData?.slug) {
+    return null
+  }
+  if (!data?.webinarData) {
+    return null
+  }
+
   const { data: webinarData } = usePreviewSubscription(webinarQuery, {
-    params: { slug: data.webinarData?.slug },
-    initialData: data.webinarData,
-    enabled: preview && data.webinarData?.slug,
+    params: { slug: data?.webinarData?.slug },
+    initialData: data?.webinarData,
+    enabled: preview && data?.webinarData?.slug,
   })
 
   const { details, title, pageBuilder, embedZone } = webinarData
@@ -147,25 +155,22 @@ const PanelistCard = styled(Grid)({
 })
 
 // prerender
-export const getStaticPaths = async () => {
-  const paths = await sanityClient.fetch(webinarSlugsQuery)
-  return {
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: false,
-  }
-}
-
 export const getStaticProps = async ({ params, preview = false }) => {
-  const { slug = '' } = params
   const webinarData = await getClient(preview).fetch(webinarQuery, {
-    slug: slug,
+    slug: params.slug,
   })
-  const notFound = Object.keys(webinarData).length === 0 ? true : false
+  if (!webinarData) return { notFound: true }
   return {
     props: {
       preview,
       data: { webinarData },
     },
-    notFound,
+  }
+}
+export const getStaticPaths = async () => {
+  const paths = await getClient().fetch(webinarSlugsQuery)
+  return {
+    paths: paths.map((slug) => ({ params: { slug } })),
+    fallback: true,
   }
 }
