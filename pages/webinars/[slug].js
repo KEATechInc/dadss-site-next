@@ -1,6 +1,12 @@
 import Head from 'next/head'
 import { webinarQuery, webinarSlugsQuery } from '../../lib/queries'
-import { sanityClient, PortableText, urlFor } from '../../lib/sanity'
+import {
+  sanityClient,
+  PortableText,
+  urlFor,
+  usePreviewSubscription,
+  getClient,
+} from '../../lib/sanity'
 import HeroImage from '../../components/Layout/HeroImage'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import theme, { dadssGradient, dtpBlue } from '../../src/theme'
@@ -11,8 +17,14 @@ import Image from 'next/image'
 import dtpLogo from '../../public/assets/logos/dtpLogos/VA-logo.webp'
 import heroBg from '../../public/assets/drivenToProtect/GreyWash1.webp'
 
-const Webinar = ({ webinarData }) => {
-  if (webinarData) {
+const Webinar = ({ data, preview }) => {
+  if (data) {
+    const { data: webinarData } = usePreviewSubscription(webinarQuery, {
+      params: { slug: data.webinarData?.slug },
+      initialData: data.webinarData,
+      enabled: preview && data.webinarData?.slug,
+    })
+
     const { details, title, pageBuilder, embedZone } = webinarData
     const description = `${details[0].children[0].text}`
     const Header = (
@@ -122,6 +134,7 @@ const Webinar = ({ webinarData }) => {
 
 export default Webinar
 
+// styled components
 const PanelistCard = styled(Grid)({
   fontSize: 16,
   '& p': {
@@ -141,19 +154,20 @@ export const getStaticPaths = async () => {
   const paths = await sanityClient.fetch(webinarSlugsQuery)
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, preview = false }) => {
   const { slug = '' } = params
-  const webinarData = await sanityClient.fetch(webinarQuery, {
+  const webinarData = await getClient(preview).fetch(webinarQuery, {
     slug: slug,
   })
   const notFound = Object.keys(webinarData).length === 0 ? true : false
   return {
     props: {
-      webinarData,
+      preview,
+      data: { webinarData },
     },
     notFound,
   }
