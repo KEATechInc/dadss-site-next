@@ -6,6 +6,7 @@ import { Box, Container, Grid, Hidden, Typography, styled } from '@mui/material'
 import SidebarImage from '../../components/Layout/SidebarImage'
 import LogoDivider from '../../components/Layout/LogoDivider'
 import { ACTS, DADSS, NHTSA } from '../../components/Logos'
+import Link from 'next/link'
 
 const Guidelines = '/assets/fleets/pdf/Guidelines-for-State-DADSS-Projects.pdf'
 import heroBg from '../../public/assets/fleets/images/DADSS.webp'
@@ -43,13 +44,6 @@ const Fleets = () => {
             </Grid>
 
             <Grid item md={9}>
-              <Typography
-                variant='h4'
-                align='center'
-                color='primary'
-                gutterBottom>
-                DADSS Field Operation Trial Opportunities
-              </Typography>
               <Typography paragraph>
                 The Driver Alcohol Detection System for Safety Program (DADSS)
                 is developing innovative, vehicle-integrated alcohol detection
@@ -107,6 +101,15 @@ const Fleets = () => {
                 webinar on YouTube to hear from experts about how our
                 breakthrough technology can help support fleet operators in
                 furthering their safe driving goals.
+              </Typography>
+              <Typography paragraph>
+                Learn more about how fleets in Virginia are{' '}
+                <Link href='/driven-to-protect/virginia'>
+                  helping to generate hundreds of thousands of real-world
+                  operating miles
+                </Link>{' '}
+                needed to commercialize fully passive vehicle-integrated breath
+                technology.
               </Typography>
             </Grid>
 

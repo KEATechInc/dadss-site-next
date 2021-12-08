@@ -25,6 +25,7 @@ const opinionPDF =
   '/assets/resources/pdf/DADSS_Public-Opinion-Research_091317_v1.pdf'
 const drivenPDF = '/assets/drivenToProtect/pdf/Driven-to-Protect-Overview.pdf'
 const infoPDF = '/assets/resources/pdf/DTP-JRT-Infographic-v2.pdf'
+const facts = '/assets/resources/pdf/Driven to Protect_The Facts.pdf'
 
 const Resources = ({ posts }) => {
   const router = useRouter()
@@ -216,6 +217,12 @@ const Resources = ({ posts }) => {
                   <li>
                     <a href={infoPDF} target='_blank' rel='noreferrer'>
                       Infographic: On-road Testing
+                    </a>
+                  </li>
+                  <li>
+                    <a href={facts} target='_blank' rel='noreferrer'>
+                      Fact Sheet: Driven to Protect | Virginia’s Impact in the
+                      Commonwealth
                     </a>
                   </li>
                 </ul>

@@ -42,20 +42,21 @@ export default function Home() {
             Announcement
           </Typography>
           <Typography color='textSecondary' paragraph>
-            The Automotive Coalition for Traffic Safety has announced the first
-            product equipped with DADSS Technology will be coming out of the lab
-            and into commercial vehicles later this year, and the technology is
-            now available for open licensing in commercial vehicles.
+            {`The Driven to Protect | Virginia Initiative and Schneider, a
+            premier provider of transportation, intermodal and logistics
+            services, announced a collaboration that will make Schneider the
+            first truckload carrier to install lifesaving technology developed
+            through the Driver Alcohol Detection System for Safety (DADSS)
+            Program.`}
           </Typography>
-          <Button
-            style={{ color: '#fff', fontWeight: 400 }}
-            variant='contained'
-            color='secondary'
-            href='https://www.actsautosafety.org/announcementpage?fbclid=IwAR1wAvDwsa5fIeB9RnkWAWfKIwCd7ykbCD5rwiaXThy-cpSnNcqC3Pzxm9I'
-            target='_blank'
-            rel='noopener noreferrer'>
-            Learn More
-          </Button>
+          <Link href='/webinars/december-event'>
+            <Button
+              style={{ color: '#fff', fontWeight: 400 }}
+              variant='contained'
+              color='secondary'>
+              Learn More
+            </Button>
+          </Link>
         </ContentBlock>
 
         {/* content start */}

@@ -18,6 +18,10 @@ export const dtpSublinks = [
     label: 'Maryland',
     url: '/driven-to-protect/maryland',
   },
+  {
+    label: 'December Event',
+    url: '/webinars/december-event',
+  },
 ]
 
 export const linkData = [

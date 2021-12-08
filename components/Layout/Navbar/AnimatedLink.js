@@ -13,14 +13,14 @@ const AnimatedLink = ({ link }) => {
     opacity: isHovered ? 1 : 0,
     config: {
       tension: 350,
-    }
+    },
   })
   const submenuStyles = useSpring({
     opacity: isHovered ? 1 : 0,
     visibility: isHovered ? 'visible' : 'hidden',
     config: {
       tension: 350,
-    }
+    },
   })
   const SubMenu = styled(a.div)({
     position: 'absolute',
@@ -49,11 +49,11 @@ const AnimatedLink = ({ link }) => {
       {/* conditional dropdown, if sublinks */}
       {link.sublinks ? (
         <SubMenu style={submenuStyles} onClick={(e) => e.stopPropagation()}>
-          <div style={{ padding: theme.spacing(2), paddingBottom: 0 }}>
+          <div style={{ padding: theme.spacing(2) }}>
             {link.sublinks?.map((sublink, i) => {
               return (
                 <Link href={sublink.url} passHref key={i}>
-                  <Label color='textPrimary' paragraph>
+                  <Label color='textPrimary' noWrap gutterBottom>
                     {sublink.label}
                   </Label>
                 </Link>
