@@ -74,14 +74,14 @@ const DTPVirginia = () => {
                 <a
                   href='https://www.actsautosafety.org/'
                   target='_blank'
-                  rel='norefferer'>
+                  rel='noreferrer'>
                   Automotive Coalition for Traffic Safety (ACTS)
                 </a>{' '}
                 and the{' '}
                 <a
                   href='https://www.nhtsa.gov/'
                   target='_blank'
-                  rel='norefferer'>
+                  rel='noreferrer'>
                   National Highway Traffic Safety Administration (NHTSA)
                 </a>
                 {`, is developing advanced vehicle safety technology that can
@@ -267,7 +267,7 @@ const DTPVirginia = () => {
                       driving and the ways the DADSS technology can prevent it.`}
                   </Typography>
 
-                  <Link href='/discovery-hub'>
+                  <Link href='/discovery-hub' passHref>
                     <BlueButton sx={{ mb: 3 }} fullWidth>
                       Learn More <AiFillCaretRight />
                     </BlueButton>

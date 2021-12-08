@@ -49,7 +49,7 @@ export default function Home() {
             through the Driver Alcohol Detection System for Safety (DADSS)
             Program.`}
           </Typography>
-          <Link href='/webinars/december-event'>
+          <Link href='/webinars/december-event' passHref>
             <Button
               style={{ color: '#fff', fontWeight: 400 }}
               variant='contained'
