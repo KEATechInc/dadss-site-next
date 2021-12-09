@@ -17,10 +17,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision",
-        "@sanity/production-preview"
-      ]
+      "plugins": ["@sanity/vision", "@sanity/production-preview"]
     }
   },
   "parts": [
@@ -30,7 +27,11 @@
     },
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
-      "path": "./resolveProductionUrl.js"
+      "path": "./parts/resolveProductionUrl.js"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./parts/deskStructure.js"
     }
   ]
 }
