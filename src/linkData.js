@@ -23,8 +23,27 @@ export const dtpSublinks = [
     url: '/webinars/december-event',
   },
 ]
+export const homeSublinks = [
+  {
+    label: 'Program Overview',
+    url: '/program-overview',
+  },
+  {
+    label: 'Breath Technology',
+    url: '/breath-technology',
+  },
+  {
+    label: 'Touch Technology',
+    url: '/touch-technology',
+  },
+]
 
 export const linkData = [
+  {
+    label: 'Home',
+    url: '/',
+    sublinks: homeSublinks,
+  },
   {
     label: 'Supporters',
     url: '/supporters',

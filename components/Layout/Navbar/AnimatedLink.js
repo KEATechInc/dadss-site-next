@@ -43,7 +43,7 @@ const AnimatedLink = ({ link }) => {
       {!link.sublinks ? (
         <GradientBar style={colorBarStyles} />
       ) : (
-        <div style={{ height: 20.2 }} />
+        <div style={{ height: 21 }} />
       )}
 
       {/* conditional dropdown, if sublinks */}

@@ -319,11 +319,12 @@ const AnnouncementWrap = styled('div')({
 })
 
 // prerender data
-export const getStaticProps = async () => {
-  const homepageData = await getClient().fetch(homeQuery)
+export const getStaticProps = async ({ preview = false }) => {
+  const homepageData = await getClient(preview).fetch(homeQuery)
 
   return {
     props: {
+      preview,
       homepageData,
     },
   }

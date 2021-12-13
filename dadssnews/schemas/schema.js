@@ -17,6 +17,7 @@ import youtube from './inserts/youtube'
 import iframe from './inserts/iframe'
 import homepage from './homepage'
 import contentSection from './pageBuilderComponents/contentSection'
+import resources from './resources'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,6 +37,7 @@ export default createSchema({
     publication,
     webinar,
     homepage,
+    resources,
     // DTP
     eventDTPVA,
     // page builder components
