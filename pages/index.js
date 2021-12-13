@@ -7,13 +7,23 @@ import { Typography, styled, Grid, Container } from '@mui/material'
 import theme, { dadssGradient, bgGray, bgOrange } from '../src/theme'
 import { NHTSA, ACTS } from '../components/Logos'
 import ReactPlayer from 'react-player'
-import { getClient, PortableText, urlFor } from '../lib/sanity'
+import {
+  getClient,
+  PortableText,
+  urlFor,
+  usePreviewSubscription,
+} from '../lib/sanity'
 import { homeQuery } from '../lib/queries'
 import StandardButton from '../components/Layout/Button'
 
-export default function Home({ homepageData }) {
+export default function Home({ data, preview }) {
   const description =
     'Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
+
+  const { data: homepageData } = usePreviewSubscription(homeQuery, {
+    initialData: data?.homepageData,
+    enabled: preview,
+  })
 
   return (
     <>
@@ -23,12 +33,12 @@ export default function Home({ homepageData }) {
       </Head>
       <main>
         {/* video hero */}
-        {homepageData.heroVideoUrl && (
+        {homepageData?.heroVideoUrl && (
           <div style={{ background: 'black', width: '100%' }}>
             <Container>
               <PlayerWrap>
                 <Player
-                  url={homepageData.heroVideoUrl}
+                  url={homepageData?.heroVideoUrl}
                   width='100%'
                   height='100%'
                   controls={true}
@@ -39,27 +49,27 @@ export default function Home({ homepageData }) {
         )}
 
         {/* banner */}
-        {homepageData.announcementBody && (
+        {homepageData?.announcementBody && (
           <AnnouncementWrap>
             <ContentBlock background={dadssGradient} borderBottom={bgGray}>
-              {homepageData.announcementHeader && (
+              {homepageData?.announcementHeader && (
                 <Typography
                   variant='h4'
                   color='textSecondary'
                   align='center'
                   gutterBottom>
-                  {homepageData.announcementHeader}
+                  {homepageData?.announcementHeader}
                 </Typography>
               )}
 
               <Typography
                 color='textSecondary'
                 component={PortableText}
-                blocks={homepageData.announcementBody}
+                blocks={homepageData?.announcementBody}
               />
 
-              {homepageData.announcementCtaUrl && (
-                <a className='btnWrap' href={homepageData.announcementCtaUrl}>
+              {homepageData?.announcementCtaUrl && (
+                <a className='btnWrap' href={homepageData?.announcementCtaUrl}>
                   <StandardButton color='secondary'>Learn More</StandardButton>
                 </a>
               )}
@@ -67,13 +77,13 @@ export default function Home({ homepageData }) {
           </AnnouncementWrap>
         )}
 
-        {homepageData.quotation && (
+        {homepageData?.quotation && (
           <ContentBlock>
             <Typography variant='h4' component='p' align='center'>
               <ImQuotesLeft
                 style={{ marginRight: theme.spacing(2), fontSize: '.9em' }}
               />
-              {homepageData.quotation}
+              {homepageData?.quotation}
               <ImQuotesRight
                 style={{ marginLeft: theme.spacing(2), fontSize: '.9em' }}
               />
@@ -82,25 +92,25 @@ export default function Home({ homepageData }) {
         )}
 
         {/* content start - section one */}
-        {homepageData.sectionOneBody && (
+        {homepageData?.sectionOneBody && (
           <ContentBlock>
-            {homepageData.sectionOneImage && (
+            {homepageData?.sectionOneImage && (
               <Image
                 sx={{ mb: 4 }}
-                src={urlFor(homepageData.sectionOneImage)}
+                src={urlFor(homepageData?.sectionOneImage)}
                 height={150}
                 width={150}
               />
             )}
 
-            {homepageData.sectionOneHeader && (
+            {homepageData?.sectionOneHeader && (
               <>
                 <Typography
                   variant='h2'
                   align='center'
                   color='primary'
                   gutterBottom>
-                  {homepageData.sectionOneHeader}
+                  {homepageData?.sectionOneHeader}
                 </Typography>
                 <Divider />
               </>
@@ -108,46 +118,46 @@ export default function Home({ homepageData }) {
 
             <Typography
               component={PortableText}
-              blocks={homepageData.sectionOneBody}
+              blocks={homepageData?.sectionOneBody}
             />
 
-            {homepageData.sectionOneCtaUrl && (
-              <a className='btnWrap' href={homepageData.sectionOneCtaUrl}>
+            {homepageData?.sectionOneCtaUrl && (
+              <a className='btnWrap' href={homepageData?.sectionOneCtaUrl}>
                 <StandardButton color='primary'>
-                  {homepageData.sectionOneCtaCaption}
+                  {homepageData?.sectionOneCtaCaption}
                 </StandardButton>
               </a>
             )}
           </ContentBlock>
         )}
 
-        {homepageData.sectionTwoBody && (
+        {homepageData?.sectionTwoBody && (
           <ContentBlock>
-            {homepageData.sectionTwoImage && (
+            {homepageData?.sectionTwoImage && (
               <Image
                 sx={{ mb: 4 }}
-                src={urlFor(homepageData.sectionTwoImage)}
+                src={urlFor(homepageData?.sectionTwoImage)}
                 height={100}
               />
             )}
 
-            {homepageData.sectionTwoHeader && (
+            {homepageData?.sectionTwoHeader && (
               <>
                 <Typography
                   variant='h2'
                   align='center'
                   color='primary'
                   gutterBottom>
-                  {homepageData.sectionTwoHeader}
+                  {homepageData?.sectionTwoHeader}
                 </Typography>
                 <Divider />
               </>
             )}
 
-            {homepageData.sectionTwoBody && (
+            {homepageData?.sectionTwoBody && (
               <Typography
                 component={PortableText}
-                blocks={homepageData.sectionTwoBody}
+                blocks={homepageData?.sectionTwoBody}
               />
             )}
 
@@ -164,10 +174,10 @@ export default function Home({ homepageData }) {
               <NHTSA />
             </div>
 
-            {homepageData.sectionTwoCtaUrl && (
-              <a className='btnWrap' href={homepageData.sectionTwoCtaUrl}>
+            {homepageData?.sectionTwoCtaUrl && (
+              <a className='btnWrap' href={homepageData?.sectionTwoCtaUrl}>
                 <StandardButton color='primary'>
-                  {homepageData.sectionTwoCtaCaption}
+                  {homepageData?.sectionTwoCtaCaption}
                 </StandardButton>
               </a>
             )}
@@ -175,37 +185,37 @@ export default function Home({ homepageData }) {
         )}
 
         {/* horizontal technologies section */}
-        {homepageData.horizontalSectionHeader && (
+        {homepageData?.horizontalSectionHeader && (
           <ContentBlock
             background={bgGray}
             borderTop={bgOrange}
             borderBottom={bgOrange}
-            header={homepageData.horizontalSectionHeader}
+            header={homepageData?.horizontalSectionHeader}
             headerColor={'#fff'}
             fontColor={'#fff'}
             divider
             dividerColor={bgOrange}>
-            {homepageData.horizontalSubHeaderCopy && (
+            {homepageData?.horizontalSubHeaderCopy && (
               <Typography
                 component={PortableText}
-                blocks={homepageData.horizontalSubHeaderCopy}
+                blocks={homepageData?.horizontalSubHeaderCopy}
               />
             )}
 
             <Grid container spacing={4}>
-              {homepageData.horizontalSubSectionOneBody && (
+              {homepageData?.horizontalSubSectionOneBody && (
                 <SubContent item xs={12} sm={6}>
-                  {homepageData.horizontalSubSectionImageOne && (
+                  {homepageData?.horizontalSubSectionImageOne && (
                     <Image
-                      src={urlFor(homepageData.horizontalSubSectionImageOne)}
+                      src={urlFor(homepageData?.horizontalSubSectionImageOne)}
                       height={150}
                       width={115}
                     />
                   )}
-                  {homepageData.horizontalSubSectionHeaderOne && (
+                  {homepageData?.horizontalSubSectionHeaderOne && (
                     <>
                       <Typography variant='h4' gutterBottom>
-                        {homepageData.horizontalSubSectionHeaderOne}
+                        {homepageData?.horizontalSubSectionHeaderOne}
                       </Typography>
                       <Divider size='small' />
                     </>
@@ -213,35 +223,35 @@ export default function Home({ homepageData }) {
                   <Typography
                     sx={{ height: '100%' }}
                     component={PortableText}
-                    blocks={homepageData.horizontalSubSectionOneBody}
+                    blocks={homepageData?.horizontalSubSectionOneBody}
                   />
-                  {homepageData.horizontalSubSectionOneCtaUrl &&
-                    homepageData.horizontalSubSectionOneCtaCaption && (
+                  {homepageData?.horizontalSubSectionOneCtaUrl &&
+                    homepageData?.horizontalSubSectionOneCtaCaption && (
                       <a
                         className='btnWrap'
-                        href={homepageData.horizontalSubSectionOneCtaUrl}>
+                        href={homepageData?.horizontalSubSectionOneCtaUrl}>
                         <StandardButton color='primary'>
-                          {homepageData.horizontalSubSectionOneCtaCaption}
+                          {homepageData?.horizontalSubSectionOneCtaCaption}
                         </StandardButton>
                       </a>
                     )}
                 </SubContent>
               )}
 
-              {homepageData.horizontalSubSectionTwoBody && (
+              {homepageData?.horizontalSubSectionTwoBody && (
                 <SubContent item xs={12} sm={6}>
-                  {homepageData.horizontalSubSectionImageTwo && (
+                  {homepageData?.horizontalSubSectionImageTwo && (
                     <Image
-                      src={urlFor(homepageData.horizontalSubSectionImageTwo)}
+                      src={urlFor(homepageData?.horizontalSubSectionImageTwo)}
                       height={150}
                       width={115}
                     />
                   )}
 
-                  {homepageData.horizontalSubSectionHeaderTwo && (
+                  {homepageData?.horizontalSubSectionHeaderTwo && (
                     <>
                       <Typography variant='h4' gutterBottom>
-                        {homepageData.horizontalSubSectionHeaderTwo}
+                        {homepageData?.horizontalSubSectionHeaderTwo}
                       </Typography>
                       <Divider size='small' />
                     </>
@@ -249,17 +259,17 @@ export default function Home({ homepageData }) {
 
                   <Typography
                     component={PortableText}
-                    blocks={homepageData.horizontalSubSectionTwoBody}
+                    blocks={homepageData?.horizontalSubSectionTwoBody}
                     sx={{ height: '100%' }}
                   />
 
-                  {homepageData.horizontalSubSectionTwoCtaUrl &&
-                    homepageData.horizontalSubSectionTwoCtaCaption && (
+                  {homepageData?.horizontalSubSectionTwoCtaUrl &&
+                    homepageData?.horizontalSubSectionTwoCtaCaption && (
                       <a
                         className='btnWrap'
-                        href={homepageData.horizontalSubSectionTwoCtaUrl}>
+                        href={homepageData?.horizontalSubSectionTwoCtaUrl}>
                         <StandardButton color='primary'>
-                          {homepageData.horizontalSubSectionTwoCtaCaption}
+                          {homepageData?.horizontalSubSectionTwoCtaCaption}
                         </StandardButton>
                       </a>
                     )}
@@ -270,8 +280,8 @@ export default function Home({ homepageData }) {
         )}
 
         {/* generic page builder sections */}
-        {homepageData.pageBuilder &&
-          homepageData.pageBuilder.map((section, i) => {
+        {homepageData?.pageBuilder &&
+          homepageData?.pageBuilder.map((section, i) => {
             return (
               <ContentBlock key={i} header={section.sectionHeader} divider>
                 <Typography
@@ -325,7 +335,7 @@ export const getStaticProps = async ({ preview = false }) => {
   return {
     props: {
       preview,
-      homepageData,
+      data: { homepageData },
     },
   }
 }
