@@ -20,9 +20,9 @@ const Divider = ({ color, size }) => {
   })
 
   const Circle = styled('div')({
-    height: 12,
-    width: 12,
-    minWidth: 12,
+    height: 15,
+    width: 15,
+    minWidth: 15,
     borderRadius: 50,
     background: color ? color : bgOrange,
     margin: '0px 15px',

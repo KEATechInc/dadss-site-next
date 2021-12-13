@@ -30,6 +30,9 @@ const ContentBlock = ({
     position: sticky ? 'sticky' : null,
     top: sticky ? 74 : null,
     boxShadow: shadow ? theme.shadows[3] : null,
+    '& .btnWrap:hover': {
+      textDecoration: 'none',
+    },
   })
   const HeadText = styled(Typography)({
     color: headerColor ? headerColor : theme.palette.primary.main,
@@ -38,8 +41,8 @@ const ContentBlock = ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: noPadding ? 0 : sidebar ? 0 : theme.spacing(6),
-    paddingBottom: noPadding ? 0 : theme.spacing(6),
+    paddingTop: noPadding ? 0 : sidebar ? 0 : theme.spacing(5),
+    paddingBottom: noPadding ? 0 : theme.spacing(5),
     paddingRight: `${sidebar ? 0 : null} !important`,
     color: fontColor ? fontColor : theme.palette.text.primary,
     '& a': {
@@ -53,7 +56,7 @@ const ContentBlock = ({
       <ContentContainer>
         {header ? (
           <HeadText
-            variant='h3'
+            variant='h2'
             align='center'
             gutterBottom
             style={{ textTransform: 'capitalize' }}>

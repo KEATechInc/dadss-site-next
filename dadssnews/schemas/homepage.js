@@ -28,7 +28,7 @@ export default {
       description: 'Body content for the announcement banner.',
     },
     {
-      name: 'ctaUrl',
+      name: 'announcementCtaUrl',
       title: 'Announcement CTA URL',
       type: 'url',
       description:
@@ -37,6 +37,12 @@ export default {
         Rule.uri({
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
+    },
+    {
+      name: 'announcementCtaCaption',
+      title: 'Announcement CTA Caption',
+      type: 'string',
+      description: 'CTA language to appear on button.',
     },
     // quotation
     {
@@ -156,10 +162,30 @@ export default {
       description: 'Header for the horizontal section (section three).',
     },
     {
-      name: 'subHeaderCopy',
-      title: 'Subheader Copy',
+      name: 'horizontalSubHeaderCopy',
+      title: 'Horizontal Subheader Copy',
       type: 'blockContent',
       description: 'Copy to go below horizontal section header.',
+    },
+    {
+      name: 'horizontalSubSectionImageOne',
+      title: 'Horizontal Subsection Image One',
+      type: 'image',
+      description:
+        'This image will appear before the section content. Works best with a transparent .PNG, .SVG, etc.',
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessiblity.',
+          validation: (Rule) =>
+            Rule.error('This field is required.').required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
     },
     {
       name: 'horizontalSubSectionHeaderOne',
@@ -189,6 +215,26 @@ export default {
       title: 'Horizontal Section One CTA Caption',
       type: 'string',
       description: 'CTA language to appear on button.',
+    },
+    {
+      name: 'horizontalSubSectionImageTwo',
+      title: 'Horizontal Subsection Image Two',
+      type: 'image',
+      description:
+        'This image will appear before the section content. Works best with a transparent .PNG, .SVG, etc.',
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessiblity.',
+          validation: (Rule) =>
+            Rule.error('This field is required.').required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
     },
     {
       name: 'horizontalSubSectionHeaderTwo',
