@@ -20,5 +20,5 @@ export default function preview(req, res) {
     // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
     res.writeHead(307, {Location: `/${req?.query?.slug}` ?? `/`})
   
-    return res.end('Preview mode enabled')
+    return null
   }
