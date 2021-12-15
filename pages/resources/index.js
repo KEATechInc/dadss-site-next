@@ -1,11 +1,8 @@
 import Head from 'next/head'
 import { formatDate } from '../../util/dateHandler'
-import {
-  PortableText,
-  getClient,
-  usePreviewSubscription,
-} from '../../lib/sanity'
+import { PortableText, getClient } from '../../lib/sanity'
 import { recentPostsQuery, resourcesQuery } from '../../lib/queries'
+import { useRouter } from 'next/router'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Divider from '../../components/Layout/Divider'
 import { Box, Container, Grid, Hidden, Typography, styled } from '@mui/material'
@@ -14,18 +11,20 @@ import { darkOrange, dtpBlue } from '../../src/theme'
 import StandardButton from '../../components/Layout/Button'
 import Link from 'next/link'
 
-const Resources = ({ data, preview }) => {
-  const { data: resourcesData } = usePreviewSubscription(resourcesQuery, {
-    params: data?.queryParams ?? {},
-    initialData: data?.resources,
-    enabled: preview,
-  })
+const Resources = ({ data }) => {
+  const router = useRouter()
+
+  if (!data || router.isFallback) {
+    return null
+  }
+
+  const { posts, resources } = data
 
   const renderPosts = () => {
     return (
       <>
-        {data?.posts &&
-          data?.posts.map((post, index) => (
+        {posts &&
+          posts.map((post, index) => (
             <Box key={index} mb={3}>
               <Typography style={{ textTransform: 'capitalize' }}>
                 <b>{post.category}</b>
@@ -75,24 +74,24 @@ const Resources = ({ data, preview }) => {
 
             <Grid item md={8}>
               <ResourceWrap>
-                {resourcesData?.dadssResources && (
+                {resources.dadssResources && (
                   <Typography
                     component={PortableText}
-                    blocks={resourcesData?.dadssResources}
+                    blocks={resources.dadssResources}
                   />
                 )}
               </ResourceWrap>
 
-              {resourcesData?.dtpVaResources && (
+              {resources.dtpVaResources && (
                 <DtpResourceWrap mt={6} mb={6} style={{ width: '100%' }}>
-                  {resourcesData?.dtpVaResourcesHeader && (
+                  {resources.dtpVaResourcesHeader && (
                     <>
                       <Typography
                         variant='h2'
                         align='center'
                         gutterBottom
                         style={{ color: dtpBlue }}>
-                        {resourcesData?.dtpVaResourcesHeader}
+                        {resources.dtpVaResourcesHeader}
                       </Typography>
                       <Divider />
                     </>
@@ -100,7 +99,7 @@ const Resources = ({ data, preview }) => {
 
                   <Typography
                     component={PortableText}
-                    blocks={resourcesData?.dtpVaResources}
+                    blocks={resources.dtpVaResources}
                   />
                 </DtpResourceWrap>
               )}
@@ -143,13 +142,12 @@ const DtpResourceWrap = styled(Box)({
   },
 })
 
-export const getStaticProps = async ({ preview = false }) => {
-  const posts = await getClient(preview).fetch(recentPostsQuery)
-  const resources = await getClient(preview).fetch(resourcesQuery)
+export const getStaticProps = async () => {
+  const posts = await getClient().fetch(recentPostsQuery)
+  const resources = await getClient().fetch(resourcesQuery)
 
   return {
     props: {
-      preview,
       data: { posts, resources },
     },
   }

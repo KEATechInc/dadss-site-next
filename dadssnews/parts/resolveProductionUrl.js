@@ -23,12 +23,12 @@ export default function resolveProductionUrl(doc) {
     )
     return previewUrl.toString()
   }
-  if (doc._type === 'homepage') {
-    return `${baseUrl}/`
-  }
-  if (doc._type === 'resources') {
-    return `${baseUrl}/resources`
-  }
+  // if (doc._type === 'homepage') {
+  //   return `${baseUrl}/`
+  // }
+  // if (doc._type === 'resources') {
+  //   return `${baseUrl}/resources`
+  // }
 
-  return null
+  return 'Preview mode enabled'
 }
