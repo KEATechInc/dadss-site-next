@@ -330,10 +330,7 @@ const AnnouncementWrap = styled('div')({
 
 // prerender data
 export const getStaticProps = async () => {
-  const homepageData = await getClient().fetch(homeQuery)
-
-  // Escape hatch, if the query failed to return data
-  if (!homepageData) return { notFound: true }
+  const page = await getClient().fetch(homeQuery)
 
   return {
     props: {
