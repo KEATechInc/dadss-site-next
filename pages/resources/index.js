@@ -16,6 +16,7 @@ import Link from 'next/link'
 
 const Resources = ({ data, preview }) => {
   const { data: resourcesData } = usePreviewSubscription(resourcesQuery, {
+    params: data?.queryParams ?? {},
     initialData: data?.resources,
     enabled: preview,
   })

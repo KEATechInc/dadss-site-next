@@ -1,6 +1,5 @@
 // /deskStructure.js
 import S from '@sanity/desk-tool/structure-builder'
-import resources from '../schemas/resources'
 
 export default () =>
   S.list()
