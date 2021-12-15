@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import { formatDate } from '../../util/dateHandler'
-import { PortableText, getClient } from '../../lib/sanity'
+import {
+  PortableText,
+  getClient,
+  usePreviewSubscription,
+} from '../../lib/sanity'
 import { recentPostsQuery, resourcesQuery } from '../../lib/queries'
 import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight'
 import Divider from '../../components/Layout/Divider'
@@ -10,7 +14,12 @@ import { darkOrange, dtpBlue } from '../../src/theme'
 import StandardButton from '../../components/Layout/Button'
 import Link from 'next/link'
 
-const Resources = ({ data }) => {
+const Resources = ({ data, preview }) => {
+  const { data: resourcesData } = usePreviewSubscription(resourcesQuery, {
+    initialData: data?.resources,
+    enabled: preview,
+  })
+
   const renderPosts = () => {
     return (
       <>
@@ -65,24 +74,24 @@ const Resources = ({ data }) => {
 
             <Grid item md={8}>
               <ResourceWrap>
-                {data?.resources.dadssResources && (
+                {resourcesData?.dadssResources && (
                   <Typography
                     component={PortableText}
-                    blocks={data?.resources.dadssResources}
+                    blocks={resourcesData?.dadssResources}
                   />
                 )}
               </ResourceWrap>
 
-              {data?.resources.dtpVaResources && (
+              {resourcesData?.dtpVaResources && (
                 <DtpResourceWrap mt={6} mb={6} style={{ width: '100%' }}>
-                  {data?.resources.dtpVaResourcesHeader && (
+                  {resourcesData?.dtpVaResourcesHeader && (
                     <>
                       <Typography
                         variant='h2'
                         align='center'
                         gutterBottom
                         style={{ color: dtpBlue }}>
-                        {data?.resources.dtpVaResourcesHeader}
+                        {resourcesData?.dtpVaResourcesHeader}
                       </Typography>
                       <Divider />
                     </>
@@ -90,7 +99,7 @@ const Resources = ({ data }) => {
 
                   <Typography
                     component={PortableText}
-                    blocks={data?.resources.dtpVaResources}
+                    blocks={resourcesData?.dtpVaResources}
                   />
                 </DtpResourceWrap>
               )}
