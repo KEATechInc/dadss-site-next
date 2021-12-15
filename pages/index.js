@@ -8,30 +8,18 @@ import theme, { dadssGradient, bgGray, bgOrange } from '../src/theme'
 import { NHTSA, ACTS } from '../components/Logos'
 import ReactPlayer from 'react-player'
 import { useRouter } from 'next/router'
-import {
-  getClient,
-  PortableText,
-  urlFor,
-  usePreviewSubscription,
-  filterDataToSingleItem,
-} from '../lib/sanity'
+import { getClient, PortableText, urlFor } from '../lib/sanity'
 import { homeQuery } from '../lib/queries'
 import StandardButton from '../components/Layout/Button'
 
-export default function Home({ data, preview }) {
+export default function Home({ data }) {
   const router = useRouter()
 
-  const { data: homepageData } = usePreviewSubscription(homeQuery, {
-    initialData: data?.homepageData,
-    enabled: preview,
-  })
-
-  // Client-side uses the same query, so we may need to filter it down again
-  const page = filterDataToSingleItem(homepageData, preview)
-
-  if (!page || router.isFallback) {
+  if (!data.page || router.isFallback) {
     return null
   }
+
+  const { page } = data
 
   const description =
     'Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
@@ -341,18 +329,14 @@ const AnnouncementWrap = styled('div')({
 })
 
 // prerender data
-export const getStaticProps = async ({ preview = false }) => {
-  const homepageData = await getClient(preview).fetch(homeQuery)
+export const getStaticProps = async () => {
+  const homepageData = await getClient().fetch(homeQuery)
 
   // Escape hatch, if the query failed to return data
   if (!homepageData) return { notFound: true }
 
-  // Helper function to reduce all returned documents down to just one
-  const page = filterDataToSingleItem(homepageData, preview)
-
   return {
     props: {
-      preview,
       data: { page },
     },
   }
