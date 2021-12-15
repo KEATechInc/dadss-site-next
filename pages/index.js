@@ -21,9 +21,6 @@ import StandardButton from '../components/Layout/Button'
 export default function Home({ data, preview }) {
   const router = useRouter()
 
-  const description =
-    'Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
-
   const { data: homepageData } = usePreviewSubscription(homeQuery, {
     initialData: data?.homepageData,
     enabled: preview,
@@ -35,6 +32,9 @@ export default function Home({ data, preview }) {
   if (!page || router.isFallback) {
     return null
   }
+
+  const description =
+    'Despite progress over the past three decades, drunk driving claims approximately 10,000 lives each year. The Driver Alcohol Detection System for Safety (DADSS) Program is researching a first-of-its-kind technology that holds the greatest potential we have seen to reverse this trend.'
 
   return (
     <>
@@ -109,6 +109,7 @@ export default function Home({ data, preview }) {
               <Image
                 sx={{ mb: 4 }}
                 src={urlFor(page.sectionOneImage)}
+                alt=''
                 height={150}
                 width={150}
               />
@@ -145,6 +146,7 @@ export default function Home({ data, preview }) {
               <Image
                 sx={{ mb: 4 }}
                 src={urlFor(page.sectionTwoImage)}
+                alt=''
                 height={100}
               />
             )}
@@ -216,6 +218,7 @@ export default function Home({ data, preview }) {
                   {page.horizontalSubSectionImageOne && (
                     <Image
                       src={urlFor(page.horizontalSubSectionImageOne)}
+                      alt=''
                       height={150}
                       width={115}
                     />
@@ -251,6 +254,7 @@ export default function Home({ data, preview }) {
                   {page.horizontalSubSectionImageTwo && (
                     <Image
                       src={urlFor(page.horizontalSubSectionImageTwo)}
+                      alt=''
                       height={150}
                       width={115}
                     />
