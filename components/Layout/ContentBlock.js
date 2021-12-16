@@ -2,6 +2,7 @@ import { Container, styled, Typography } from '@mui/material'
 import React from 'react'
 import theme, { darkOrange } from '../../src/theme'
 import Divider from './Divider'
+import { urlFor } from '../../lib/sanity'
 
 const ContentBlock = ({
   children,
@@ -9,6 +10,7 @@ const ContentBlock = ({
   borderTop,
   borderBottom,
   header,
+  headerImage,
   headerColor,
   divider,
   dividerColor,
@@ -54,7 +56,16 @@ const ContentBlock = ({
   return (
     <SectionWrapper>
       <ContentContainer>
-        {header ? (
+        {headerImage && (
+          <img
+            style={{ marginBottom: 16 }}
+            src={urlFor(headerImage)}
+            alt=''
+            height={150}
+            width={250}
+          />
+        )}
+        {header && (
           <HeadText
             variant='h2'
             align='center'
@@ -62,7 +73,7 @@ const ContentBlock = ({
             style={{ textTransform: 'capitalize' }}>
             {header}
           </HeadText>
-        ) : null}
+        )}
         {divider ? <Divider color={dividerColor} /> : null}
         {children ? children : null}
       </ContentContainer>

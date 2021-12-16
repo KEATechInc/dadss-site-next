@@ -4,17 +4,11 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'sectionHeader',
-      title: 'Section Header',
-      type: 'string',
-      description: 'Header for this section',
-    },
-    {
       name: 'sectionImage',
       title: 'Section Image',
       type: 'image',
       description:
-        'This image will appear before the section content. Works best with a transparent .PNG, .SVG, etc.',
+        'This image will appear above the section header. Works best with a transparent .PNG, .SVG, etc.',
       fields: [
         {
           name: 'alt',
@@ -30,6 +24,12 @@ export default {
       ],
     },
     {
+      name: 'sectionHeader',
+      title: 'Section Header',
+      type: 'string',
+      description: 'Header for this section',
+    },
+    {
       name: 'sectionBody',
       title: 'Section Body Content',
       type: 'blockContent',
@@ -38,13 +38,27 @@ export default {
     {
       name: 'ctaUrl',
       title: 'CTA URL',
-      type: 'url',
+      type: 'object',
+      fields: [
+        {
+          name: 'url',
+          type: 'url',
+          title: 'URL',
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ['http', 'https', 'mailto', 'tel'],
+            }),
+          hidden: ({ parent, value }) => !value && parent?.upload,
+        },
+        {
+          name: 'upload',
+          type: 'file',
+          title: 'File Upload',
+          hidden: ({ parent, value }) => !value && parent?.url,
+        },
+      ],
       description:
-        'URL to be placed within CTA button below content. If left blank, a button will not appear.',
-      validation: (Rule) =>
-        Rule.uri({
-          scheme: ['http', 'https', 'mailto', 'tel'],
-        }),
+        'Either an URL or file to be placed within CTA button below content. If left blank, a button will not appear.',
     },
     {
       name: 'ctaCaption',

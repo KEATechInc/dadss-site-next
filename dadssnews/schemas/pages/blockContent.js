@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default {
   title: 'Block Content',
   name: 'blockContent',
@@ -27,6 +29,30 @@ export default {
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
+          {
+            title: 'Superscript',
+            value: 'sup',
+            blockEditor: {
+              icon: () => <div>↑</div>,
+              render: ({ children }) => (
+                <span>
+                  <sup>{children}</sup>
+                </span>
+              ),
+            },
+          },
+          {
+            title: 'Subscript',
+            value: 'sub',
+            blockEditor: {
+              icon: () => <div>↓</div>,
+              render: ({ children }) => (
+                <span>
+                  <sub>{children}</sub>
+                </span>
+              ),
+            },
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -91,7 +117,7 @@ export default {
     {
       type: 'iframe',
       name: 'iframe',
-      title: 'Iframe Embed'
-    }
+      title: 'Iframe Embed',
+    },
   ],
 }

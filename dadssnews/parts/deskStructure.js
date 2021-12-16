@@ -16,8 +16,9 @@ export default () =>
               eventItems,
               publicationItems,
               homepageItem,
-              faqItems,
+              programOverviewItem,
               resourcesItems,
+              faqItems,
             ])
         ),
       S.listItem()
@@ -31,6 +32,9 @@ export default () =>
 const homepageItem = S.listItem()
   .title('Homepage')
   .child(S.document().title('Homepage').schemaType('homepage'))
+const programOverviewItem = S.listItem()
+  .title('Program Overview')
+  .child(S.document().title('Program Overview').schemaType('programOverview'))
 const resourcesItems = S.listItem()
   .title('Resources')
   .child(S.document().title('Resources').schemaType('resources'))

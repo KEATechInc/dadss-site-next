@@ -92,30 +92,10 @@ export default function Home({ data }) {
 
         {/* content start - section one */}
         {page.sectionOneBody && (
-          <ContentBlock>
-            {page.sectionOneImage && (
-              <Image
-                sx={{ mb: 4 }}
-                src={urlFor(page.sectionOneImage)}
-                alt=''
-                height={150}
-                width={150}
-              />
-            )}
-
-            {page.sectionOneHeader && (
-              <>
-                <Typography
-                  variant='h2'
-                  align='center'
-                  color='primary'
-                  gutterBottom>
-                  {page.sectionOneHeader}
-                </Typography>
-                <Divider />
-              </>
-            )}
-
+          <ContentBlock
+            headerImage={page.sectionOneImage}
+            header={page.sectionOneHeader}
+            divider>
             <Typography component={PortableText} blocks={page.sectionOneBody} />
 
             {page.sectionOneCtaUrl && (
@@ -129,29 +109,10 @@ export default function Home({ data }) {
         )}
 
         {page.sectionTwoBody && (
-          <ContentBlock>
-            {page.sectionTwoImage && (
-              <Image
-                sx={{ mb: 4 }}
-                src={urlFor(page.sectionTwoImage)}
-                alt=''
-                height={100}
-              />
-            )}
-
-            {page.sectionTwoHeader && (
-              <>
-                <Typography
-                  variant='h2'
-                  align='center'
-                  color='primary'
-                  gutterBottom>
-                  {page.sectionTwoHeader}
-                </Typography>
-                <Divider />
-              </>
-            )}
-
+          <ContentBlock
+            headerImage={page.sectionTwoImage}
+            header={page.sectionTwoHeader}
+            divider>
             {page.sectionTwoBody && (
               <Typography
                 component={PortableText}
@@ -282,17 +243,38 @@ export default function Home({ data }) {
         {/* generic page builder sections */}
         {page.pageBuilder &&
           page.pageBuilder.map((section, i) => {
+            const {
+              sectionImage,
+              sectionHeader,
+              sectionBody,
+              ctaCaption,
+              ctaUrl,
+            } = section
             return (
-              <ContentBlock key={i} header={section.sectionHeader} divider>
-                <Typography
-                  component={PortableText}
-                  blocks={section.sectionBody}
-                />
-                <a className='btnWrap' href={section.ctaUrl}>
-                  <StandardButton color='primary'>
-                    {section.ctaCaption}
-                  </StandardButton>
-                </a>
+              <ContentBlock
+                key={i}
+                header={sectionHeader}
+                headerImage={sectionImage}
+                divider>
+                <Typography component={PortableText} blocks={sectionBody} />
+                {ctaCaption && ctaUrl && (
+                  <>
+                    {/* asset download available ? use asset url : use supplied cta url */}
+                    {page.assetUrl[i] ? (
+                      <a
+                        className='btnWrap'
+                        href={page.assetUrl[i]}
+                        target='_blank'
+                        rel='noreferrer'>
+                        <StandardButton>{ctaCaption}</StandardButton>
+                      </a>
+                    ) : (
+                      <a className='btnWrap' href={ctaUrl.url}>
+                        <StandardButton>{ctaCaption}</StandardButton>
+                      </a>
+                    )}
+                  </>
+                )}
               </ContentBlock>
             )
           })}
