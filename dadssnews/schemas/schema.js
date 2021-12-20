@@ -21,6 +21,7 @@ import resources from './pages/resources'
 import programOverview from './pages/programOverview'
 import breathTechnology from './pages/breathTechnology'
 import touchTechnology from './pages/touchTechnology'
+import drivenToProtectLanding from './pages/drivenToProtectLanding'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -46,6 +47,7 @@ export default createSchema({
     touchTechnology,
     // DTP
     eventDTPVA,
+    drivenToProtectLanding,
     // page builder components
     panelistCard,
     contentSection,

@@ -25,7 +25,11 @@ export default () =>
         ),
       S.listItem()
         .title('Driven To Protect')
-        .child(S.list().title('Driven To Protect').items([DTPVAeventItems])),
+        .child(
+          S.list()
+            .title('Driven To Protect')
+            .items([DTPVAeventItems, dtpLandingItem])
+        ),
       S.divider(),
       ...S.documentTypeListItems(),
     ])
@@ -34,7 +38,13 @@ export default () =>
 const homepageItem = S.listItem()
   .title('Homepage')
   .child(S.document().title('Homepage').schemaType('homepage'))
-
+const dtpLandingItem = S.listItem()
+  .title('Driven To Protect Landing Page')
+  .child(
+    S.document()
+      .title('Driven To Protect Landing Page')
+      .schemaType('drivenToProtectLanding')
+  )
 const programOverviewItem = S.listItem()
   .title('Program Overview')
   .child(S.document().title('Program Overview').schemaType('programOverview'))
@@ -88,10 +98,10 @@ const publicationItems = S.listItem()
       .defaultOrdering([{ field: '_updatedAt', direction: 'asc' }])
   )
 const DTPVAeventItems = S.listItem()
-  .title('Events (VA)')
+  .title('VA Events')
   .child(
     S.documentList()
-      .title('Events (VA)')
+      .title('VA Events')
       .filter('_type == "eventDTPVA"')
       .defaultOrdering([{ field: '_updatedAt', direction: 'asc' }])
   )
