@@ -8,7 +8,7 @@ import Divider from '../../components/Layout/Divider'
 import { Box, Container, Grid, Hidden, Typography, styled } from '@mui/material'
 import ContentBlock from '../../components/Layout/ContentBlock'
 import { darkOrange, dtpBlue } from '../../src/theme'
-import StandardButton from '../../components/Layout/Button'
+import StandardButton from '../../components/Layout/StandardButton'
 import Link from 'next/link'
 
 const Resources = ({ data }) => {

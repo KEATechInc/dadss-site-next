@@ -5,7 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
-import blockContent from './pages/blockContent'
+import blockContent from './components/blockContent'
 import post from './pages/post'
 import event from './pages/event'
 import faq from './pages/faq'
@@ -19,6 +19,8 @@ import homepage from './pages/homepage'
 import contentSection from './pageBuilderComponents/contentSection'
 import resources from './pages/resources'
 import programOverview from './pages/programOverview'
+import breathTechnology from './pages/breathTechnology'
+import touchTechnology from './pages/touchTechnology'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -40,6 +42,8 @@ export default createSchema({
     homepage,
     resources,
     programOverview,
+    breathTechnology,
+    touchTechnology,
     // DTP
     eventDTPVA,
     // page builder components

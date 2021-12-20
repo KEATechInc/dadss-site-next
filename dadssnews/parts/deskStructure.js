@@ -17,6 +17,8 @@ export default () =>
               publicationItems,
               homepageItem,
               programOverviewItem,
+              breathTechItem,
+              touchTechItem,
               resourcesItems,
               faqItems,
             ])
@@ -32,9 +34,16 @@ export default () =>
 const homepageItem = S.listItem()
   .title('Homepage')
   .child(S.document().title('Homepage').schemaType('homepage'))
+
 const programOverviewItem = S.listItem()
   .title('Program Overview')
   .child(S.document().title('Program Overview').schemaType('programOverview'))
+const breathTechItem = S.listItem()
+  .title('Breath Technology')
+  .child(S.document().title('Breath Technology').schemaType('breathTechnology'))
+const touchTechItem = S.listItem()
+  .title('Touch Technology')
+  .child(S.document().title('Touch Technology').schemaType('touchTechnology'))
 const resourcesItems = S.listItem()
   .title('Resources')
   .child(S.document().title('Resources').schemaType('resources'))

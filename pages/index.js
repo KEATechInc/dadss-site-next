@@ -10,7 +10,7 @@ import ReactPlayer from 'react-player'
 import { useRouter } from 'next/router'
 import { getClient, PortableText, urlFor } from '../lib/sanity'
 import { homeQuery } from '../lib/queries'
-import StandardButton from '../components/Layout/Button'
+import StandardButton from '../components/Layout/StandardButton'
 
 export default function Home({ data }) {
   const router = useRouter()

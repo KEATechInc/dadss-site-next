@@ -30,7 +30,7 @@ const SinglePost = ({ data, preview }) => {
     return null
   }
 
-  const { title, body } = page
+  const { title, body } = data.page
   const description = page.preview ? page.preview[0].children[0].text : ''
   const postPosition = data?.titleData.indexOf(title)
 

@@ -5,7 +5,7 @@ import { Typography } from '@mui/material'
 import { getClient, PortableText } from '../../lib/sanity'
 import { programOverviewQuery } from '../../lib/queries'
 import { useRouter } from 'next/router'
-import StandardButton from '../../components/Layout/Button'
+import StandardButton from '../../components/Layout/StandardButton'
 import { bgOrange, darkOrange, fontGray } from '../../src/theme'
 import evenCheck from '../../lib/evenCheck'
 
