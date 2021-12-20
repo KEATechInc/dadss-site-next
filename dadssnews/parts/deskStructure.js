@@ -28,7 +28,7 @@ export default () =>
         .child(
           S.list()
             .title('Driven To Protect')
-            .items([DTPVAeventItems, dtpLandingItem])
+            .items([DTPVAeventItems, dtpLandingItem, dtpVaItem])
         ),
       S.divider(),
       ...S.documentTypeListItems(),
@@ -39,6 +39,13 @@ const homepageItem = S.listItem()
   .title('Homepage')
   .child(S.document().title('Homepage').schemaType('homepage'))
 const dtpLandingItem = S.listItem()
+  .title('Driven To Protect Virginia')
+  .child(
+    S.document()
+      .title('Driven To Protect Virginia')
+      .schemaType('drivenToProtectVA')
+  )
+const dtpVaItem = S.listItem()
   .title('Driven To Protect Landing Page')
   .child(
     S.document()

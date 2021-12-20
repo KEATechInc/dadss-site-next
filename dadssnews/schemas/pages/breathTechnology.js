@@ -21,7 +21,7 @@ export default {
     {
       name: 'calloutBoxContent',
       type: 'blockContent',
-      title: 'Callout Box Contaner',
+      title: 'Callout Box Container',
       description: 'Content for a callout box at the bottom of the page.',
     },
   ],
