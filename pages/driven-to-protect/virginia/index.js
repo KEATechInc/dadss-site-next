@@ -99,7 +99,9 @@ const DTPVirginia = ({ data }) => {
                               href={page.assetUrl[i]}
                               target='_blank'
                               rel='noreferrer'>
-                              <StandardButton>{ctaCaption}</StandardButton>
+                              <BlueButton sx={{ mb: 2 }}>
+                                {ctaCaption}
+                              </BlueButton>
                             </a>
                           ) : (
                             <a
@@ -107,7 +109,9 @@ const DTPVirginia = ({ data }) => {
                               href={ctaUrl.url}
                               target='_blank'
                               rel='noreferrer'>
-                              <StandardButton>{ctaCaption}</StandardButton>
+                              <BlueButton sx={{ mb: 2 }}>
+                                {ctaCaption}
+                              </BlueButton>
                             </a>
                           )}
                         </>
