@@ -3,6 +3,7 @@ import React from 'react'
 import theme, { darkOrange } from '../../src/theme'
 import Divider from './Divider'
 import { urlFor } from '../../lib/sanity'
+import Image from 'next/image'
 
 const ContentBlock = ({
   children,
@@ -57,7 +58,7 @@ const ContentBlock = ({
     <SectionWrapper>
       <ContentContainer>
         {headerImage && (
-          <img
+          <Image
             style={{ marginBottom: 16 }}
             src={urlFor(headerImage)}
             alt=''
